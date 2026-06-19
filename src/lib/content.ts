@@ -20,7 +20,7 @@ export const hero = {
   stats: [
     { val: "18+", label: "AI Systems Deployed" },
     { val: "16+", label: "Industries Served" },
-    { val: "4.8Â , label: "Average ROI" },
+    { val: "4.8√ó", label: "Average ROI" },
     { val: "60", label: "Days to Measurable Impact" },
   ],
 };
