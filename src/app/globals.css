@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+/*
+  AI Ropeway — "Spectrum" edition.
+  Cohere-INSPIRED qualities (original, not a copy): colorful motion background,
+  techy mono-accented typography, consistent rounded shapes, subtle animation,
+  a distinctive capsule nav. Warm light canvas with a multi-hue accent set.
+  All backgrounds are in-flow (no fixed full-viewport layers) so it renders
+  reliably everywhere.
+*/
+
+@theme {
+  /* Canvas */
+  --color-canvas: #fbfaf7;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f3f0e8;
+
+  /* Ink */
+  --color-ink: #1a1813;
+  --color-ink-soft: #433f38;
+  --color-ink-muted: #6b655b;
+  --color-ink-faint: #a39c8c;
+
+  /* Borders */
+  --color-line: #ece6da;
+  --color-line-strong: #dbd3c3;
+
+  /* Colorful accent set (the "colorful backgrounds" Cohere trait) */
+  --color-coral: #ff6a4d;
+  --color-amber: #f5a623;
+  --color-pink: #ff7ca8;
+  --color-indigo: #6c5ce7;
+  --color-teal: #14b8a6;
+  /* Primary accent alias → indigo */
+  --color-accent: #6c5ce7;
+
+  --font-display: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Consistent, generous radii — same shape language everywhere */
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 30px;
+  --radius-3xl: 38px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-canvas);
+}
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background-color: var(--color-canvas);
+  /* faint multi-hue wash baked into the page (no fixed layers) */
+  background-image:
+    radial-gradient(38rem 30rem at 90% -6%, rgba(255, 106, 77, 0.08), transparent 60%),
+    radial-gradient(34rem 28rem at -4% 6%, rgba(108, 92, 231, 0.08), transparent 60%);
+  background-repeat: no-repeat;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Techy mono eyebrow — "typography that works in AI" */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-coral);
+}
+
+/* Primary pill — confident dark ink, pops on the warm canvas */
+.btn-primary {
+  background: var(--color-ink);
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 24px -14px rgba(26, 24, 19, 0.8);
+}
+.btn-primary:hover {
+  background: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 30px -14px rgba(26, 24, 19, 0.9);
+}
+
+/* Ghost pill */
+.btn-ghost {
+  border: 1px solid var(--color-line-strong);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--color-ink);
+  background: var(--color-surface-soft);
+}
+
+/* Soft, rounded card */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  box-shadow:
+    0 1px 2px rgba(26, 24, 19, 0.03),
+    0 18px 40px -28px rgba(26, 24, 19, 0.2);
+}
+
+/* Multi-hue gradient text for accent words */
+.text-spectrum {
+  background: linear-gradient(100deg, var(--color-coral), var(--color-indigo) 55%, var(--color-teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Mono eyebrow label — techy look */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Motion blob canvas — relative wrapper + absolute blobs */
+.spectrum {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(88px);
+  opacity: 0.28;
+  will-change: transform;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-indigo);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(108, 92, 231, 0.18);
+  color: var(--color-indigo);
+}
+
+/* ----- Motion ----- */
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6%, 8%) scale(1.12); }
+}
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1.05); }
+  50% { transform: translate(-8%, 6%) scale(0.95); }
+}
+@keyframes drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, -7%) scale(1.1); }
+}
+.blob-a { animation: drift-a 18s ease-in-out infinite; }
+.blob-b { animation: drift-b 22s ease-in-out infinite; }
+.blob-c { animation: drift-c 26s ease-in-out infinite; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee-track { display: inline-flex; white-space: nowrap; animation: marquee 42s linear infinite; }
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 14s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .blob-a, .blob-b, .blob-c, .marquee-track, .spin-slow { animation: none; }
+  html { scroll-behavior: auto; }
+}
