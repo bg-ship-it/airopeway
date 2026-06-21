@@ -8,9 +8,18 @@ import { faqs } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
 export const metadata: Metadata = {
-  title: "Pricing | AI Ropeway",
+  title: "Pricing",
   description:
     "Every engagement starts with a free AI audit. Deploy a focused sprint or embed AI Ropeway as your ongoing partner — priced to ROI, not strategy decks.",
+  alternates: { canonical: "/pricing" },
+  openGraph: {
+    type: "website",
+    url: "https://www.airopeway.com/pricing",
+    siteName: "AI Ropeway",
+    title: "Pricing | AI Ropeway",
+    description:
+      "Every engagement starts with a free AI audit. Priced to ROI, not strategy decks.",
+  },
 };
 
 type Tier = {
