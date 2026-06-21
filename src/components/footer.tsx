@@ -1,7 +1,16 @@
 import Link from "next/link";
-import { footer, nav } from "@/lib/content";
+import { footer } from "@/lib/content";
 import { Cta } from "@/components/cta";
 import { Logo } from "@/components/logo";
+
+// Real page links (crawlable) — index pages plus key routes.
+const footerLinks = [
+  { label: "18 AI Systems", href: "/systems" },
+  { label: "Industries", href: "/industries" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "About", href: "/about" },
+  { label: "Free AI Audit", href: "/#audit" },
+];
 
 export function SiteFooter() {
   return (
@@ -11,7 +20,7 @@ export function SiteFooter() {
           <Logo />
 
           <nav className="flex flex-wrap gap-x-6 gap-y-2">
-            {nav.map((item) => (
+            {footerLinks.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { systems } from "@/lib/content";
+import { systemPages as systems } from "@/lib/catalog";
 import { Cta } from "@/components/cta";
 import { Reveal } from "@/components/reveal";
 import { ArrowUpRight } from "lucide-react";
@@ -29,7 +29,7 @@ export function Systems() {
           {systems.map((s, i) => (
             <Reveal key={s.num} delay={(i % 3) * 0.06}>
               <Link
-                href="/#audit"
+                href={`/systems/${s.slug}`}
                 className="group flex h-full flex-col rounded-2xl border border-line bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_18px_40px_-26px_rgba(22,21,26,0.35)]"
               >
                 <div className="flex items-center justify-between">

@@ -4,11 +4,25 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { faqs } from "@/lib/content";
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <section id="faq" className="mx-auto max-w-3xl px-5 py-20 md:px-8 md:py-28">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="mb-10 text-center">
         <p className="mono-label mb-4 text-accent">Common Questions</p>
         <h2 className="font-display text-[clamp(1.9rem,4vw,2.9rem)] font-bold leading-[1.1]">
