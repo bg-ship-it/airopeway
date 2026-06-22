@@ -116,7 +116,7 @@ export const about = {
   body: "AI Ropeway handles the systems and deployment — embedding AI into how you operate, sell, support, and grow. AI Placers handles the workforce side — placing AI-native talent into businesses ready to scale.",
   points: [
     "Premier AI deployment partner for modern businesses",
-    "Operating across India, Australia, UK, and North America",
+    "Serving businesses globally",
     "18 proprietary AI systems ready to deploy",
     "ROI-first, not strategy-deck-first",
   ],
@@ -147,7 +147,7 @@ export const founderQuote = {
 export const footer = {
   lines: [
     "Founded by Bharat Gulati · IIM Indore Alumnus · Also founder of AI Placers",
-    "Serving India · Australia · UK · North America",
+    "Serving businesses globally",
   ],
   email: "bg@aiplacers.com",
 };
