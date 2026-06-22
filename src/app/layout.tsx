@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { SiteNav } from "@/components/nav";
 import { SiteFooter } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
+import { CookieBanner } from "@/components/cookie-banner";
+
+const GTM_ID = "GTM-T3T6HRG9";
 
 const grotesk = Space_Grotesk({
   variable: "--font-grotesk",
@@ -80,7 +84,6 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-// Organization + WebSite structured data (JSON-LD) for rich results & entity recognition.
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -118,7 +121,43 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${grotesk.variable} ${inter.variable} ${jbMono.variable} h-full`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  wait_for_update:500
+});
+`,
+          }}
+        />
+        <Script
+          id="gtm-head"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`,
+          }}
+        />
+      </head>
       <body className="min-h-full">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -127,6 +166,7 @@ export default function RootLayout({
         <main>{children}</main>
         <SiteFooter />
         <MobileCta />
+        <CookieBanner />
       </body>
     </html>
   );
