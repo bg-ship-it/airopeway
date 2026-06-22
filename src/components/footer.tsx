@@ -3,12 +3,12 @@ import { footer } from "@/lib/content";
 import { Cta } from "@/components/cta";
 import { Logo } from "@/components/logo";
 
-// Real page links (crawlable) — index pages plus key routes.
 const footerLinks = [
   { label: "18 AI Systems", href: "/systems" },
   { label: "Industries", href: "/industries" },
   { label: "Pricing", href: "/pricing" },
   { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
   { label: "Free AI Audit", href: "/#audit" },
 ];
 

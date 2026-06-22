@@ -6,6 +6,7 @@ import { SiteNav } from "@/components/nav";
 import { SiteFooter } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { CookieBanner } from "@/components/cookie-banner";
+import { BlogPreview } from "@/components/sections/blog-preview";
 
 const GTM_ID = "GTM-T3T6HRG9";
 
@@ -164,6 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
         <SiteNav />
         <main>{children}</main>
+        <BlogPreview />
         <SiteFooter />
         <MobileCta />
         <CookieBanner />
