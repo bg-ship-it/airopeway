@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 import { imageUrl } from "@/lib/sanity";
+import { BlogCover } from "@/components/blog-cover";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -59,7 +60,11 @@ export default async function BlogPage() {
                   />
                 </div>
               ) : (
-                <div className="h-48 bg-gradient-to-br from-[var(--color-coral)]/10 via-[var(--color-amber)]/10 to-[var(--color-indigo)]/10" />
+                <BlogCover
+                  slug={post.slug}
+                  title={post.title}
+                  className="h-48 w-full transition-transform duration-300 group-hover:scale-[1.03]"
+                />
               )}
               <div className="flex flex-1 flex-col p-6">
                 {post.categories?.length > 0 && (
