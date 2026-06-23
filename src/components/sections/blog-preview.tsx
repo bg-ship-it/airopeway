@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getLatestPosts } from "@/lib/blog";
 import { imageUrl } from "@/lib/sanity";
+import { BlogCover } from "@/components/blog-cover";
 import { ArrowUpRight } from "lucide-react";
 
 function formatDate(iso: string | null): string {
@@ -53,7 +54,11 @@ export async function BlogPreview() {
                   />
                 </div>
               ) : (
-                <div className="h-44 w-full bg-gradient-to-br from-[var(--color-coral)]/10 via-[var(--color-amber)]/10 to-[var(--color-indigo)]/10" />
+                <BlogCover
+                  slug={post.slug}
+                  title={post.title}
+                  className="h-44 w-full transition-transform duration-300 group-hover:scale-[1.03]"
+                />
               )}
               <div className="flex flex-1 flex-col p-5">
                 {post.categories?.length > 0 && (
