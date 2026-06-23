@@ -6,6 +6,7 @@ import { PortableText } from "@portabletext/react";
 import { ArrowLeft } from "lucide-react";
 import { getPost, getAllSlugs } from "@/lib/blog";
 import { imageUrl } from "@/lib/sanity";
+import { BlogCover } from "@/components/blog-cover";
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();
@@ -180,18 +181,22 @@ export default async function BlogPostPage({
         )}
       </div>
 
-      {post.imageRef && (
-        <div className="relative mt-8 h-64 w-full overflow-hidden rounded-2xl md:h-80">
-          <Image
-            src={imageUrl(post.imageRef)}
-            alt={post.title}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 640px) 100vw, 672px"
-          />
-        </div>
-      )}
+      <div className="mt-8 overflow-hidden rounded-2xl">
+        {post.imageRef ? (
+          <div className="relative h-64 w-full md:h-80">
+            <Image
+              src={imageUrl(post.imageRef)}
+              alt={post.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 640px) 100vw, 672px"
+            />
+          </div>
+        ) : (
+          <BlogCover slug={slug} title={post.title} className="w-full h-56 md:h-72" />
+        )}
+      </div>
 
       {post.excerpt && !post.body?.length && (
         <p className="mt-8 text-lg leading-relaxed text-ink-muted">
