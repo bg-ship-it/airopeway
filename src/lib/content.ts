@@ -6,6 +6,7 @@ export const nav = [
   { label: "Industries", href: "/#industries" },
   { label: "Process", href: "/#process" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/#faq" },
 ];
 
