@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import {
-  PreviewBanner,
-  HeroA,
+  PreviewBadge,
+  Hero,
+  PillarsSection,
+  RevenueStack,
   FounderBlock,
-  GtmOsSection,
   ProofCases,
   CompareTable,
   PricingTiers,
@@ -12,22 +13,24 @@ import {
 } from "@/components/preview/sections";
 
 export const metadata: Metadata = {
-  title: "Preview · Variant A · Founder-led GTM",
-  description: "Internal preview — founder-led hero pivot for AI Ropeway homepage.",
+  title: "Preview · v3 hybrid · AI GTM",
+  description:
+    "Internal preview — AI GTM positioning hybrid for AI Ropeway homepage.",
 };
 
-export default function GtmPreviewA() {
+export default function GtmPreviewHybrid() {
   return (
     <>
-      <PreviewBanner variant="A" />
-      <HeroA />
+      <PreviewBadge />
+      <Hero />
+      <PillarsSection />
+      <RevenueStack />
       <FounderBlock />
-      <GtmOsSection />
       <ProofCases />
       <CompareTable />
       <PricingTiers />
       <StackStrip />
-      <StatusFooter variant="A" />
+      <StatusFooter />
     </>
   );
 }
