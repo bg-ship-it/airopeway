@@ -4,10 +4,11 @@ import { Cta } from "@/components/cta";
 import { Logo } from "@/components/logo";
 
 const footerLinks = [
-  { label: "18 AI Systems", href: "/systems" },
-  { label: "Industries", href: "/industries" },
+  { label: "8 Agents", href: "/#revenue-stack" },
   { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
+  { label: "Industries", href: "/industries" },
+  { label: "Beyond GTM", href: "/systems" },
+  { label: "Founder", href: "/about" },
   { label: "Blog", href: "/blog" },
   { label: "Free AI Audit", href: "/#audit" },
 ];
