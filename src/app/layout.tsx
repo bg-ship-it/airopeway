@@ -8,6 +8,7 @@ import { MobileCta } from "@/components/mobile-cta";
 import { CookieBanner } from "@/components/cookie-banner";
 import { BlogPreview } from "@/components/sections/blog-preview";
 import { FloatingBottomCta } from "@/components/preview/floating-bottom-cta";
+import { faqs } from "@/lib/content";
 
 const GTM_ID = "GTM-T3T6HRG9";
 
@@ -29,9 +30,9 @@ const jbMono = JetBrains_Mono({
 });
 
 const SITE_URL = "https://www.airopeway.com";
-const TITLE = "AI Ropeway | AI GTM engines that book meetings on autopilot";
+const TITLE = "AI GTM engines that book meetings | AI Ropeway";
 const DESCRIPTION =
-  "We design, build, and deploy AI GTM engines for B2B founders — signal detection, enrichment, personalized outreach, reply triage. Shipped into your repo in 14 days. Live demo on your data, first call.";
+  "AI GTM engines for B2B founders. Signal detection, enrichment, personalized outreach, reply triage. Shipped to your repo in 14 days. Live demo on your data.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     siteName: "AI Ropeway",
     title: TITLE,
     description: DESCRIPTION,
@@ -93,7 +94,7 @@ const jsonLd = {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       name: "AI Ropeway",
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       description: DESCRIPTION,
       email: "bg@aiplacers.com",
       founder: { "@type": "Person", name: "Bharat Gulati" },
@@ -103,11 +104,20 @@ const jsonLd = {
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
+      url: `${SITE_URL}/`,
       name: "AI Ropeway",
       description: DESCRIPTION,
       publisher: { "@id": `${SITE_URL}/#organization` },
       inLanguage: "en",
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ],
 };
