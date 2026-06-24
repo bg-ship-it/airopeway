@@ -3,22 +3,22 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { MotionBg } from "@/components/motion-bg";
-import { about, founderQuote, footer } from "@/lib/content";
+import { founderQuote, footer } from "@/lib/content";
 
 const SITE_URL = "https://www.airopeway.com";
 
 export const metadata: Metadata = {
-  title: "About AI Ropeway",
+  title: "About · Founder-led AI GTM engineering",
   description:
-    "AI Ropeway is a premier AI deployment partner founded by Bharat Gulati (IIM Indore alumnus, founder of AI Placers). We deploy 18 AI systems for businesses across India, Australia, the UK, and North America.",
+    "Founded by Bharat Gulati — 12+ yrs enterprise sales, ex-VP Sales scaling AI GTM from zero, IIM Indore AI/ML. We ship AI GTM engines into your repo in 14 days.",
   alternates: { canonical: "/about" },
   openGraph: {
     type: "website",
     url: `${SITE_URL}/about`,
     siteName: "AI Ropeway",
-    title: "About AI Ropeway | AI Ropeway",
+    title: "About AI Ropeway | Founder-led AI GTM engineering",
     description:
-      "Premier AI deployment partner founded by Bharat Gulati. ROI-first, not strategy-deck-first.",
+      "Founded by Bharat Gulati — ex-VP Sales who scaled AI GTM from zero. We ship AI GTM engines into your repo, you own the code.",
   },
 };
 
@@ -34,13 +34,29 @@ const jsonLd = {
     {
       "@type": "Person",
       name: "Bharat Gulati",
-      jobTitle: "Founder",
+      jobTitle: "Founder & AI GTM Engineer",
       worksFor: { "@type": "Organization", name: "AI Ropeway", url: SITE_URL },
       alumniOf: { "@type": "CollegeOrUniversity", name: "IIM Indore" },
+      knowsAbout: [
+        "AI GTM engineering",
+        "AI SDR systems",
+        "signal-based outbound",
+        "revenue operations automation",
+        "B2B SaaS sales",
+      ],
       email: footer.email,
     },
   ],
 };
+
+const principles = [
+  "AI GTM engines, not strategy decks",
+  "Code shipped into your repo on day one",
+  "Live demo on your ICP data, first call",
+  "No SaaS lock-in, no per-seat fees",
+  "Founder-led delivery, weekly meetings",
+  "Measurable pipeline impact in 30 days",
+];
 
 export default function AboutPage() {
   return (
@@ -50,16 +66,22 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="px-3 pt-28 pb-10 md:px-5 md:pt-36">
+      <section className="px-3 pt-6 pb-10 md:px-5 md:pt-8">
         <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-line bg-surface-soft px-5 py-16 md:px-12 md:py-20">
           <MotionBg />
           <div className="relative z-10 max-w-3xl">
-            <p className="mono-label mb-4 text-accent">{about.label}</p>
+            <p className="mono-label mb-4 text-accent">About · Founder-led</p>
             <h1 className="font-display text-[clamp(2.2rem,5vw,3.6rem)] font-bold leading-[1.06]">
-              {about.headline}
+              VP Sales who scaled AI GTM from zero.{" "}
+              <span className="text-accent">
+                Now I ship the systems that do it for you.
+              </span>
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-ink-soft">
-              {about.body}
+              AI Ropeway is an AI GTM engineering studio for B2B SaaS founders.
+              We design, build, and deploy AI GTM engines — signal detection,
+              enrichment, personalized outreach, reply triage — shipped into
+              your repo in 14 days. You own everything we ship.
             </p>
           </div>
         </div>
@@ -67,7 +89,7 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-5xl px-5 py-12 md:px-8">
         <div className="grid gap-4 sm:grid-cols-2">
-          {about.points.map((point) => (
+          {principles.map((point) => (
             <div
               key={point}
               className="flex items-start gap-3 rounded-2xl border border-line bg-surface p-5"
@@ -88,18 +110,23 @@ export default function AboutPage() {
           </h2>
           <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-ink-soft">
             <p>
-              AI Ropeway was founded by Bharat Gulati, an IIM Indore alumnus and
-              the founder of AI Placers. The two companies share one mission:
-              AI Ropeway handles the systems and deployment — embedding AI into
-              how you operate, sell, support, and grow — while AI Placers handles
-              the workforce side, placing AI-native talent into businesses ready
-              to scale.
+              12+ years enterprise sales. Most recently VP Sales scaling an AI
+              automation platform&apos;s GTM from zero. IIM Indore alum, AI/ML
+              specialization — a rare bridge between deep go-to-market and
+              shipping AI in production.
             </p>
             <p>
-              Our approach is deliberately ROI-first, not strategy-deck-first. We
-              identify where AI can save time, reduce cost, and increase revenue,
-              then deploy working systems that generate measurable outcomes.
-              Implementation is our product.
+              I&apos;ve actually been the VP Sales who built outbound from
+              nothing. Now I ship the AI systems that do the same job at
+              machine speed — and you own the code on day one. No agency
+              middle layer, no offshoring, no junior-dev surprises.
+            </p>
+            <p>
+              AI Ropeway focuses on AI GTM as the wedge because that&apos;s
+              where ROI lands fastest. Beyond GTM, we ship 18 other systems
+              — voice AI, content engines, ops automation, support
+              deflection. AI Placers (sister company) handles the AI-native
+              workforce side.
             </p>
           </div>
 
@@ -128,18 +155,18 @@ export default function AboutPage() {
 
       <section className="mx-auto max-w-5xl px-5 pb-20 text-center md:px-8">
         <Cta href="/#audit" size="lg">
-          Claim Your Free AI Audit
+          Book live demo on your data
         </Cta>
         <p className="mt-6 text-sm text-ink-muted">
-          Or explore the{" "}
-          <Link href="/systems" className="text-accent hover:underline">
-            18 AI systems
+          See the{" "}
+          <Link href="/#revenue-stack" className="text-accent hover:underline">
+            8-agent AI GTM stack
           </Link>{" "}
-          we deploy and{" "}
-          <Link href="/industries" className="text-accent hover:underline">
-            AI solutions by industry
-          </Link>
-          .
+          or browse{" "}
+          <Link href="/systems" className="text-accent hover:underline">
+            18 other systems
+          </Link>{" "}
+          we ship.
         </p>
       </section>
     </>
