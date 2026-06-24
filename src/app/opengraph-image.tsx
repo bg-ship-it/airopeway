@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "AI Ropeway — Premier AI Transformation Partner. Do 5× more. Run on half the team.";
+  "AI Ropeway — AI GTM engines that book meetings on autopilot. You own everything we ship.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,7 +47,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            AI Consulting
+            AI GTM Engineering
           </div>
         </div>
 
@@ -61,7 +61,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            Premier AI Transformation Partner
+            For B2B SaaS Founders
           </div>
           <div
             style={{
@@ -72,10 +72,10 @@ export default function Image() {
               letterSpacing: "-2px",
             }}
           >
-            Do 5× more. Run on half the team.
+            AI GTM engines that book meetings on autopilot.
           </div>
           <div style={{ fontSize: "30px", color: "#433f38", marginTop: "6px" }}>
-            18 battle-tested AI systems, deployed into your business.
+            8 agents. Shipped to your repo in 14 days. You own the code.
           </div>
         </div>
 
