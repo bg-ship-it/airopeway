@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { MotionBg } from "@/components/motion-bg";
 import { systemPages } from "@/lib/catalog";
@@ -8,17 +8,17 @@ import { systemPages } from "@/lib/catalog";
 const SITE_URL = "https://www.airopeway.com";
 
 export const metadata: Metadata = {
-  title: "18 AI Systems We Deploy",
+  title: "Beyond AI GTM · 18 other AI systems we ship",
   description:
-    "Explore the 18 battle-tested AI systems AI Ropeway deploys into your business — from AI GTM strategy and voice agents to automation, RevOps, and AI employees.",
+    "AI GTM is our wedge — but every layer of your business has an AI ropeway. Voice AI, content engines, ops automation, support deflection: 18 production-ready systems.",
   alternates: { canonical: "/systems" },
   openGraph: {
     type: "website",
     url: `${SITE_URL}/systems`,
     siteName: "AI Ropeway",
-    title: "18 AI Systems We Deploy | AI Ropeway",
+    title: "Beyond AI GTM · 18 other AI systems | AI Ropeway",
     description:
-      "The 18 battle-tested AI systems AI Ropeway deploys into your business.",
+      "Voice AI, content engines, ops automation, support deflection. 18 production-ready systems beyond AI GTM.",
   },
 };
 
@@ -34,7 +34,7 @@ export default function SystemsIndexPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "AI Systems deployed by AI Ropeway",
+    name: "AI systems shipped by AI Ropeway",
     itemListElement: systemPages.map((s, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -50,19 +50,39 @@ export default function SystemsIndexPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="px-3 pt-28 pb-10 md:px-5 md:pt-36">
+      <section className="px-3 pt-6 pb-10 md:px-5 md:pt-8">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-line bg-surface-soft px-5 py-16 text-center md:px-12 md:py-20">
           <MotionBg />
           <div className="relative z-10 mx-auto max-w-2xl">
-            <p className="mono-label mb-4 text-accent">The Deployment Stack</p>
+            <p className="mono-label mb-4 text-accent">
+              Beyond AI GTM · 18 other systems
+            </p>
             <h1 className="font-display text-[clamp(2.3rem,5vw,3.8rem)] font-bold leading-[1.05]">
-              18 AI systems we deploy into your business
+              AI GTM is the wedge.{" "}
+              <span className="text-accent">
+                18 more systems for every other layer.
+              </span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg text-ink-soft">
-              Each system is battle-tested and deployed into your existing stack
-              — turning operations into a revenue engine that runs at machine
-              speed. Explore them below.
+              We lead with AI GTM because that&apos;s where ROI lands fastest.
+              But every layer of your business has an AI ropeway. Voice AI,
+              content engines, ops automation, support deflection — each
+              shipped into your existing stack, code in your repo.
             </p>
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/#revenue-stack"
+                className="inline-flex items-center gap-1.5 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-canvas hover:opacity-80"
+              >
+                See the 8-agent GTM stack <ArrowRight className="size-4" />
+              </Link>
+              <Link
+                href="/#pricing"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-surface px-5 py-2.5 text-sm font-semibold text-ink hover:bg-surface-soft"
+              >
+                Pricing
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -94,7 +114,7 @@ export default function SystemsIndexPage() {
 
         <div className="mt-12 text-center">
           <Cta href="/#audit" size="lg">
-            See Which Systems Fit Your Business
+            Book live demo on your data
           </Cta>
         </div>
       </section>
