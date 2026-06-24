@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { CookieBanner } from "@/components/cookie-banner";
 import { BlogPreview } from "@/components/sections/blog-preview";
+import { FloatingBottomCta } from "@/components/preview/floating-bottom-cta";
 
 const GTM_ID = "GTM-T3T6HRG9";
 
@@ -28,9 +29,9 @@ const jbMono = JetBrains_Mono({
 });
 
 const SITE_URL = "https://www.airopeway.com";
-const TITLE = "AI Ropeway | AI GTM, SDR & AI Employees for Global SMBs";
+const TITLE = "AI Ropeway | AI GTM engines that book meetings on autopilot";
 const DESCRIPTION =
-  "AI Ropeway deploys 18 battle-tested AI systems into your business — turning operations into a revenue engine that runs at machine speed. Claim your free AI audit.";
+  "We design, build, and deploy AI GTM engines for B2B founders — signal detection, enrichment, personalized outreach, reply triage. Shipped into your repo in 14 days. Live demo on your data, first call.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -41,16 +42,16 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   applicationName: "AI Ropeway",
   keywords: [
-    "AI consulting",
-    "AI transformation",
-    "AI GTM strategy",
+    "AI GTM",
     "AI SDR",
-    "AI employees",
-    "AI automation",
-    "AI deployment partner",
-    "AI systems for SMBs",
-    "RevOps automation",
     "AI agents",
+    "B2B SaaS GTM",
+    "AI outbound",
+    "signal-based outbound",
+    "AI revenue operations",
+    "AI sales automation",
+    "AI lead generation",
+    "AI consulting",
   ],
   authors: [{ name: "Bharat Gulati" }],
   creator: "AI Ropeway",
@@ -167,6 +168,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <main>{children}</main>
         <BlogPreview />
         <SiteFooter />
+        <FloatingBottomCta />
         <MobileCta />
         <CookieBanner />
       </body>
