@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { Logo } from "@/components/logo";
-import { cn } from "@/lib/cn";
 
 const previewNav = [
   { label: "8 Agents", href: "#revenue-stack" },
@@ -16,29 +15,11 @@ const previewNav = [
 ];
 
 export function PreviewNav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <nav
-      id="preview-nav-root"
-      className="fixed inset-x-0 top-3 z-50 px-3 md:top-5 md:px-5"
-    >
-      <div
-        className={cn(
-          "mx-auto flex max-w-5xl items-center justify-between rounded-full py-2 pl-2 pr-2 transition-all duration-300",
-          scrolled
-            ? "border border-line bg-canvas/85 shadow-[0_10px_30px_-18px_rgba(22,21,26,0.4)] backdrop-blur-md"
-            : "border border-transparent bg-canvas/40 backdrop-blur-sm",
-        )}
-      >
+    <nav id="preview-nav-root" className="relative z-30 px-3 pt-3 md:px-5 md:pt-5">
+      <div className="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-line bg-canvas/85 py-2 pl-2 pr-2 shadow-[0_10px_30px_-18px_rgba(22,21,26,0.4)] backdrop-blur-md">
         <Link href="/" className="focus-ring flex items-center rounded-2xl">
           <Logo />
         </Link>
