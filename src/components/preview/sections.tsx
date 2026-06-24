@@ -34,7 +34,7 @@ export function PreviewBadge() {
       <div className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-xs">
         <span className="size-1.5 rounded-full bg-amber" />
         <span className="font-mono uppercase tracking-wider text-amber">
-          PREVIEW · v3 hybrid · noindex
+          PREVIEW · v4 final draft · noindex
         </span>
       </div>
     </div>
@@ -324,7 +324,7 @@ export function RevenueStack() {
 
 export function FounderBlock() {
   return (
-    <section className="px-3 md:px-5">
+    <section id="founder" className="px-3 md:px-5">
       <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface px-5 py-14 md:px-12 md:py-20">
         <p className="mono-label mb-4 text-accent">[004] · Founder</p>
         <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-start">
@@ -655,8 +655,14 @@ export function PricingTiers() {
             decks before the price.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            India-based delivery means you get senior engineering at 25–40%
-            below SF-based agency rates — without losing quality.
+            Your AI agents work{" "}
+            <strong className="font-semibold text-ink">24/7</strong>. The
+            founder works{" "}
+            <strong className="font-semibold text-ink">
+              alongside your team
+            </strong>{" "}
+            — weekly meetings, real ownership, code in your repo. No
+            offshoring layers. No junior-dev surprises.
           </p>
         </div>
 
@@ -719,6 +725,70 @@ export function PricingTiers() {
   );
 }
 
+export function OtherSystems() {
+  const others = [
+    "AI Voice Agents",
+    "AI Customer Support",
+    "AI Content Engine",
+    "AI Inventory & Demand",
+    "AI Onboarding",
+    "AI Churn Prevention",
+    "AI Knowledge Base",
+    "AI Recruiting Ops",
+    "AI Finance Ops",
+    "+9 more",
+  ];
+
+  return (
+    <section className="px-3 md:px-5">
+      <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface px-5 py-14 md:px-12 md:py-16">
+        <div className="mb-8 flex flex-wrap items-center gap-3 border-b border-line pb-4">
+          <span className="font-mono text-sm text-ink-soft">↳</span>
+          <span className="mono-label text-ink-soft">
+            BEYOND GTM · 18 OTHER SYSTEMS
+          </span>
+          <Link
+            href="/systems"
+            className="ml-auto font-mono text-xs text-accent hover:underline"
+          >
+            See all 18 →
+          </Link>
+        </div>
+
+        <p className="mono-label mb-4 text-accent">[008] · Other systems</p>
+        <h2 className="font-display text-[clamp(1.6rem,3.4vw,2.4rem)] font-bold leading-[1.12]">
+          Need more than AI GTM?{" "}
+          <span className="text-accent">18 additional systems</span> we ship.
+        </h2>
+        <p className="mt-3 max-w-2xl text-lg leading-relaxed text-ink-soft">
+          Voice AI, content engines, ops automation, customer-support
+          deflection. We lead with AI GTM because that&apos;s where ROI lands
+          fastest — but every layer of your business has an AI ropeway too.
+          Each system gets its own dedicated build page.
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          {others.map((o) => (
+            <span
+              key={o}
+              className="rounded-full border border-line bg-surface-soft px-4 py-2 text-sm text-ink-soft"
+            >
+              {o}
+            </span>
+          ))}
+        </div>
+
+        <Link
+          href="/systems"
+          className="mt-6 inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface px-5 py-2.5 text-sm font-semibold text-ink hover:bg-surface-soft"
+        >
+          Browse all 18 system pages <ArrowRight className="size-4" />
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 export function StackStrip() {
   const tools = [
     "Claude",
@@ -749,7 +819,7 @@ export function StackStrip() {
             BUILT WITH · {tools.length - 1}+ INTEGRATIONS
           </span>
         </div>
-        <p className="mono-label mb-4 text-accent">[008] · The stack</p>
+        <p className="mono-label mb-4 text-accent">[009] · The stack</p>
         <h2 className="font-display mb-6 text-2xl font-bold leading-tight md:text-3xl">
           Tools your team already trusts. No proprietary lock-in.
         </h2>
@@ -777,7 +847,7 @@ export function StatusFooter() {
         </span>
         <span className="font-mono inline-flex items-center gap-2">
           <span className="size-1.5 rounded-full bg-teal" />
-          v 3.0 · hybrid preview · ALL SYSTEMS NORMAL
+          v 4.0 · final draft · ALL SYSTEMS NORMAL
         </span>
       </div>
     </div>
