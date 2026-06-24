@@ -30,11 +30,11 @@ const accentChips = [
 
 export function PreviewBadge() {
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-24 md:pt-28">
+    <div className="mx-auto max-w-6xl px-5 pt-6 md:pt-8">
       <div className="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-xs">
         <span className="size-1.5 rounded-full bg-amber" />
         <span className="font-mono uppercase tracking-wider text-amber">
-          PREVIEW · v4 final draft · noindex
+          PREVIEW · v5 final draft · noindex
         </span>
       </div>
     </div>
@@ -403,7 +403,7 @@ const cases = [
   },
   {
     num: "CASE 03",
-    title: "Growth-stage agency · series A",
+    title: "Growth-stage agency",
     blurb:
       "CRM Auto-Pilot + Revenue Pulse. Killed 14 hrs/week of RevOps grunt work. Forecast accuracy +27%.",
     client: "[TBD-3: client name]",
@@ -464,15 +464,6 @@ export function ProofCases() {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-8 rounded-2xl border-l-4 border-accent bg-surface p-6">
-          <p className="text-lg leading-relaxed text-ink-soft italic">
-            &ldquo;[TBD testimonial — replace with real customer quote.]&rdquo;
-          </p>
-          <p className="mt-3 text-sm text-ink-muted">
-            — [Customer name], [title], [company]
-          </p>
         </div>
       </div>
     </section>
@@ -847,7 +838,7 @@ export function StatusFooter() {
         </span>
         <span className="font-mono inline-flex items-center gap-2">
           <span className="size-1.5 rounded-full bg-teal" />
-          v 4.0 · final draft · ALL SYSTEMS NORMAL
+          v 5.0 · go-live candidate · ALL SYSTEMS NORMAL
         </span>
       </div>
     </div>
