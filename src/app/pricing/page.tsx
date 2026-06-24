@@ -7,101 +7,170 @@ import { Reveal } from "@/components/reveal";
 import { faqs } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
+const SITE_URL = "https://www.airopeway.com";
+
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "Pricing · AI GTM engines from $3k",
   description:
-    "Every engagement starts with a free AI audit. Deploy a focused sprint or embed AI Ropeway as your ongoing partner — priced to ROI, not strategy decks.",
+    "Transparent AI GTM pricing. Sprint $3k one-time, Partnership $2.5k/mo, Full Stack $5k/mo, Enterprise custom. Free 60-min audit + live demo on your data first.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     type: "website",
-    url: "https://www.airopeway.com/pricing",
+    url: `${SITE_URL}/pricing`,
     siteName: "AI Ropeway",
-    title: "Pricing | AI Ropeway",
+    title: "Pricing | AI GTM engines from $3k | AI Ropeway",
     description:
-      "Every engagement starts with a free AI audit. Priced to ROI, not strategy decks.",
+      "Transparent AI GTM pricing. Sprint, Partnership, Full Stack, Enterprise. Free 60-min audit first.",
   },
 };
 
 type Tier = {
   name: string;
   price: string;
-  cadence?: string;
+  cadence: string;
   blurb: string;
   cta: string;
   featured?: boolean;
   features: string[];
+  target: string;
 };
 
-// NOTE: figures are indicative anchors — final scope is set in the free audit.
 const tiers: Tier[] = [
   {
-    name: "AI Audit",
-    price: "Free",
-    blurb: "Start here. A 60-minute deep-dive that quantifies your opportunity.",
-    cta: "Book Free Audit",
+    name: "AI GTM Sprint",
+    price: "$3,000",
+    cadence: "one-time",
+    blurb:
+      "1 AI SDR engine, built and deployed in 14 days. Signal detection + enrichment + personalized outreach. Full code handoff.",
+    cta: "Scope a Sprint",
+    target: "Founders testing AI GTM",
     features: [
-      "60-minute operations deep-dive",
-      "Top 3–5 AI opportunities, ranked by ROI",
-      "Quantified time, cost & revenue impact",
-      "Custom deployment roadmap",
-      "No commitment, no spam",
+      "1 system shipped in 14 days",
+      "Full code handoff to your repo",
+      "ICP & signal config included",
+      "3 months bug-fix support",
+      "Free 60-min AI GTM audit first",
     ],
   },
   {
-    name: "Deployment Sprint",
-    price: "From $4,000",
-    cadence: "/ 60-day sprint",
-    blurb: "We deploy a focused set of AI systems into your existing stack.",
-    cta: "Scope My Sprint",
+    name: "GTM Partnership",
+    price: "$2,500",
+    cadence: "/mo · ongoing",
+    blurb:
+      "Dedicated AI GTM engineer. 1 new system every month. Continuous optimization. Weekly check-ins.",
+    cta: "Start Partnership",
+    target: "Growing B2B SaaS teams",
+    features: [
+      "Dedicated AI GTM engineer",
+      "Ship a new agent every month",
+      "Weekly optimization cycles",
+      "Slack channel access",
+      "Cancel anytime",
+    ],
+  },
+  {
+    name: "Full Stack GTM",
+    price: "$5,000",
+    cadence: "/mo · 2 engineers",
+    blurb:
+      "Full Revenue Stack live: GTM + content engine + CRM automation. Bi-weekly strategy calls. Founder-led.",
+    cta: "Scope Flagship",
     featured: true,
+    target: "Scaling companies",
     features: [
-      "Everything in AI Audit",
-      "3–5 AI systems deployed in 60 days",
-      "Integration with your CRM & tools",
-      "Weekly optimisation & reporting",
-      "Team enablement & handover",
-      "Measurable ROI within 30–60 days",
+      "All 8 agents in production",
+      "GTM + content + RevOps",
+      "Bi-weekly strategy calls",
+      "Founder-led delivery",
+      "Quarterly architecture review",
     ],
   },
   {
-    name: "Embedded AI Partner",
+    name: "Enterprise",
     price: "Custom",
-    blurb: "Ongoing partnership — we run and expand your AI as you scale.",
-    cta: "Talk to Us",
+    cadence: "multi-system",
+    blurb:
+      "Multi-system deployment + Voice AI bundle (via AI Placers). Dedicated PM. Quarterly business reviews.",
+    cta: "Talk to Founder",
+    target: "Mid-market & enterprise",
     features: [
-      "Everything in Deployment Sprint",
-      "Access to all 18 AI systems",
-      "Dedicated deployment team",
-      "AI Employees & RevOps automation",
-      "Governance, security & change management",
-      "Quarterly roadmap & expansion",
+      "Multi-system custom build",
+      "Voice AI add-on (via AI Placers)",
+      "Dedicated PM",
+      "Quarterly business reviews",
+      "Priority response SLA",
     ],
   },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": tiers.map((t) => {
+    const numericMatch = t.price.match(/\$([\d,]+)/);
+    const offer: Record<string, unknown> = {
+      "@type": "Offer",
+      url: `${SITE_URL}/pricing`,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      category: t.cadence,
+    };
+    if (numericMatch) {
+      offer.price = numericMatch[1].replace(/,/g, "");
+    } else {
+      offer.priceSpecification = {
+        "@type": "PriceSpecification",
+        priceCurrency: "USD",
+        price: "0",
+        description: "Custom pricing",
+      };
+    }
+    return {
+      "@type": "Service",
+      "@id": `${SITE_URL}/pricing#${t.name.replace(/\s+/g, "-").toLowerCase()}`,
+      name: t.name,
+      description: t.blurb,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: ["IN", "AU", "GB", "US", "CA"],
+      audience: { "@type": "Audience", audienceType: t.target },
+      offers: offer,
+    };
+  }),
+};
+
 export default function PricingPage() {
   return (
     <>
-      <section className="px-3 pt-28 pb-10 md:px-5 md:pt-36">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <section className="px-3 pt-6 pb-10 md:px-5 md:pt-8">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-line bg-surface-soft px-5 py-16 text-center md:px-12 md:py-20">
           <MotionBg />
           <div className="relative z-10 mx-auto max-w-2xl">
             <p className="mono-label mb-4 text-accent">Pricing</p>
             <h1 className="font-display text-[clamp(2.4rem,5.5vw,4rem)] font-bold leading-[1.05]">
-              Priced to ROI, not strategy decks.
+              Transparent. <span className="text-accent">Specific.</span> No
+              decks before the price.
             </h1>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-ink-soft">
-              Every engagement starts with a free audit. You only invest once
-              we&apos;ve shown you exactly where AI pays for itself.
+            <p className="mx-auto mt-5 max-w-2xl text-lg text-ink-soft">
+              AI GTM engines that work 24/7. Founder works{" "}
+              <strong className="font-semibold text-ink">
+                alongside your team
+              </strong>{" "}
+              — weekly meetings, real ownership, code in your repo. No
+              offshoring layers. No junior-dev surprises. Every engagement
+              starts with a free 60-min audit and live demo on your ICP data.
             </p>
           </div>
         </div>
       </section>
 
       <section className="px-5 pb-8 md:px-8">
-        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
           {tiers.map((tier, i) => (
-            <Reveal key={tier.name} delay={i * 0.08}>
+            <Reveal key={tier.name} delay={i * 0.06}>
               <div
                 className={cn(
                   "relative flex h-full flex-col rounded-3xl p-7 md:p-8",
@@ -115,24 +184,22 @@ export default function PricingPage() {
                     className="absolute -top-3 left-7 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-white"
                     style={{ background: "var(--color-accent)" }}
                   >
-                    Most popular
+                    Flagship
                   </span>
                 )}
-                <h2 className="font-display text-2xl font-bold">{tier.name}</h2>
-                <div className="mt-4 flex items-baseline gap-1.5">
-                  <span className="font-display text-4xl font-bold">
+                <h2 className="font-display text-xl font-bold">{tier.name}</h2>
+                <div className="mt-3 flex items-baseline gap-1.5">
+                  <span className="font-display text-3xl font-bold">
                     {tier.price}
                   </span>
-                  {tier.cadence && (
-                    <span
-                      className={cn(
-                        "text-sm",
-                        tier.featured ? "text-white/55" : "text-ink-muted",
-                      )}
-                    >
-                      {tier.cadence}
-                    </span>
-                  )}
+                  <span
+                    className={cn(
+                      "text-xs",
+                      tier.featured ? "text-white/55" : "text-ink-muted",
+                    )}
+                  >
+                    {tier.cadence}
+                  </span>
                 </div>
                 <p
                   className={cn(
@@ -143,7 +210,7 @@ export default function PricingPage() {
                   {tier.blurb}
                 </p>
 
-                <ul className="mt-7 flex-1 space-y-3">
+                <ul className="mt-6 flex-1 space-y-3">
                   {tier.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-sm">
                       <Check
@@ -152,17 +219,28 @@ export default function PricingPage() {
                           tier.featured ? "text-amber" : "text-teal",
                         )}
                       />
-                      <span className={tier.featured ? "text-white/85" : "text-ink-soft"}>
+                      <span
+                        className={tier.featured ? "text-white/85" : "text-ink-soft"}
+                      >
                         {f}
                       </span>
                     </li>
                   ))}
                 </ul>
 
+                <p
+                  className={cn(
+                    "mt-6 font-mono text-[10px] uppercase tracking-wider",
+                    tier.featured ? "text-white/45" : "text-ink-faint",
+                  )}
+                >
+                  For: {tier.target}
+                </p>
+
                 <Link
                   href="/#audit"
                   className={cn(
-                    "focus-ring mt-8 inline-flex cursor-pointer items-center justify-center gap-2 rounded-full py-3.5 text-sm font-semibold transition-colors",
+                    "focus-ring mt-5 inline-flex cursor-pointer items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold transition-colors",
                     tier.featured
                       ? "bg-white text-ink hover:bg-white/90"
                       : "btn-primary",
@@ -177,8 +255,8 @@ export default function PricingPage() {
         </div>
 
         <p className="mx-auto mt-8 max-w-2xl px-5 text-center text-xs text-ink-faint">
-          Figures are indicative. Final scope and investment are set together in
-          your free AI audit — sized to the ROI we can prove, not a fixed package.
+          Every engagement starts with a free 60-minute AI GTM audit and live
+          demo on your ICP data. Final scope set in the audit.
         </p>
       </section>
 
@@ -186,20 +264,22 @@ export default function PricingPage() {
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
           {[
             {
-              title: "ROI-first, always",
-              body: "We quantify the opportunity before you spend a rupee or dollar. If the numbers don't work, we'll tell you.",
+              title: "Code in your repo, day one",
+              body: "Every system ships to your GitHub. No SaaS lock-in, no per-seat fees, no “data held hostage” on the way out.",
             },
             {
-              title: "No rip-and-replace",
-              body: "We deploy into your existing CRM, helpdesk and tools. No long migrations, no disruption.",
+              title: "Live demo on your ICP, first call",
+              body: "We don’t pitch slides. We demo a working AI GTM engine on your real ICP data — before you commit anything.",
             },
             {
-              title: "Results in 30–60 days",
-              body: "Sprints are built to show measurable impact fast. Some systems show ROI in week one.",
+              title: "Founder-led, 24/7 agents",
+              body: "Bharat ships alongside your team weekly. Agents run round-the-clock. No agency middle layer, no juniors learning on your dime.",
             },
           ].map((item) => (
             <div key={item.title} className="card rounded-3xl p-6">
-              <h3 className="font-display text-lg font-semibold">{item.title}</h3>
+              <h3 className="font-display text-lg font-semibold">
+                {item.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-muted">
                 {item.body}
               </p>
@@ -214,7 +294,10 @@ export default function PricingPage() {
         </h2>
         <div className="space-y-3">
           {faqs.slice(0, 4).map((item) => (
-            <div key={item.q} className="rounded-2xl border border-line bg-surface p-6">
+            <div
+              key={item.q}
+              className="rounded-2xl border border-line bg-surface p-6"
+            >
               <h3 className="font-medium text-ink">{item.q}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-soft">
                 {item.a}
@@ -224,7 +307,7 @@ export default function PricingPage() {
         </div>
         <div className="mt-10 text-center">
           <Cta href="/#audit" size="lg">
-            Claim Your Free AI Audit
+            Book live demo on your data
           </Cta>
         </div>
       </section>
