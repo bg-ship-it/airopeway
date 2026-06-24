@@ -8,14 +8,15 @@ import {
   ProofCases,
   CompareTable,
   PricingTiers,
+  OtherSystems,
   StackStrip,
   StatusFooter,
 } from "@/components/preview/sections";
 
 export const metadata: Metadata = {
-  title: "Preview · v3 hybrid · AI GTM",
+  title: "Preview · v4 final draft · AI GTM",
   description:
-    "Internal preview — AI GTM positioning hybrid for AI Ropeway homepage.",
+    "Internal preview — final draft for review before going live.",
 };
 
 export default function GtmPreviewHybrid() {
@@ -29,6 +30,7 @@ export default function GtmPreviewHybrid() {
       <ProofCases />
       <CompareTable />
       <PricingTiers />
+      <OtherSystems />
       <StackStrip />
       <StatusFooter />
     </>
