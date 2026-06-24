@@ -2,17 +2,15 @@
 // Only UI/UX is being redesigned — wording is unchanged.
 
 export const nav = [
-  { label: "18 Systems", href: "/#systems" },
-  { label: "Industries", href: "/#industries" },
-  { label: "Process", href: "/#process" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "8 Agents", href: "/#revenue-stack" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Founder", href: "/#founder" },
+  { label: "Other systems", href: "/systems" },
   { label: "Blog", href: "/blog" },
-  { label: "FAQ", href: "/#faq" },
 ];
 
 export const hero = {
   eyebrow: "Premier AI Transformation Partner",
-  // Original headline, restructured for the new type treatment
   headlineLines: ["Do 5× more.", "Run on half the team.", "Scale 50× faster —", "or get left behind."],
   subhead:
     "Your competitors are deploying AI right now. Every week you operate manually costs you market share, margin, and momentum. AI Ropeway deploys 18 battle-tested AI systems into your business — turning operations into a revenue engine that runs at machine speed.",
