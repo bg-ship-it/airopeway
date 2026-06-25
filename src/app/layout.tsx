@@ -95,7 +95,21 @@ const jsonLd = {
       url: SITE_URL,
       description: DESCRIPTION,
       email: "bg@aiplacers.com",
-      founder: { "@type": "Person", name: "Bharat Gulati" },
+      founder: {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#founder`,
+        name: "Bharat Gulati",
+        jobTitle: "Founder",
+        email: "bg@aiplacers.com",
+        alumniOf: {
+          "@type": "EducationalOrganization",
+          name: "IIM Indore",
+        },
+        sameAs: [
+          "https://www.linkedin.com/in/bharatgulati",
+          "https://www.aiplacers.com",
+        ],
+      },
       areaServed: ["IN", "AU", "GB", "US", "CA"],
       sameAs: ["https://www.aiplacers.com"],
     },
@@ -123,6 +137,7 @@ export default function RootLayout({
       className={`${grotesk.variable} ${inter.variable} ${jbMono.variable} h-full`}
     >
       <head>
+        {/* Google Consent Mode v2 — must run before GTM loads */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -138,6 +153,7 @@ gtag('consent','default',{
 `,
           }}
         />
+        {/* Google Tag Manager */}
         <Script
           id="gtm-head"
           strategy="afterInteractive"
@@ -151,6 +167,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </head>
       <body className="min-h-full">
+        {/* GTM noscript fallback */}
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}

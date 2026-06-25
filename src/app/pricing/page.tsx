@@ -32,7 +32,6 @@ type Tier = {
   features: string[];
 };
 
-// NOTE: figures are indicative anchors — final scope is set in the free audit.
 const tiers: Tier[] = [
   {
     name: "AI Audit",
@@ -79,9 +78,23 @@ const tiers: Tier[] = [
   },
 ];
 
+const pricingFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.slice(0, 4).map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingFaqJsonLd) }}
+      />
       <section className="px-3 pt-28 pb-10 md:px-5 md:pt-36">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-line bg-surface-soft px-5 py-16 text-center md:px-12 md:py-20">
           <MotionBg />
@@ -187,7 +200,7 @@ export default function PricingPage() {
           {[
             {
               title: "ROI-first, always",
-              body: "We quantify the opportunity before you spend a rupee or dollar. If the numbers don't work, we'll tell you.",
+              body: "We quantify the opportunity before you spend a rupee or dollar. If the numbers don’t work, we’ll tell you.",
             },
             {
               title: "No rip-and-replace",
