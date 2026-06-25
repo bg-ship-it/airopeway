@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Cta } from "@/components/cta";
+import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "intent-watcher-ai-buying-signals";
@@ -9,20 +10,29 @@ const TITLE = "Intent Watcher: AI buying signals that fire only on warm prospect
 const DESCRIPTION =
   "How the Intent Watcher agent surfaces real buying signals from LinkedIn, job posts, funding rounds, and review sites — so your outbound stops wasting reach on cold accounts.";
 const PUBLISHED = "2026-06-25T01:00:00.000Z";
+const MODIFIED = "2026-06-25T01:00:00.000Z";
+
+const sources: Source[] = [
+  {
+    publisher: "Crunchbase",
+    title: "Crunchbase",
+    url: "https://www.crunchbase.com",
+    note: "Funding-announcement source Intent Watcher polls for budget-unlock signals.",
+  },
+  {
+    publisher: "G2",
+    title: "G2 business software reviews",
+    url: "https://www.g2.com",
+    note: "Review-site activity source used as a competitor-evaluation buying signal.",
+  },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
-  openGraph: {
-    type: "article",
-    url: `${SITE_URL}/blog/${SLUG}`,
-    siteName: "AI Ropeway",
-    title: `${TITLE} | AI Ropeway`,
-    description: DESCRIPTION,
-    publishedTime: PUBLISHED,
-    authors: ["Bharat Gulati"],
-  },
+  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, modifiedTime: MODIFIED, authors: ["Bharat Gulati"] },
+  twitter: { card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
 
 const faqs = [
@@ -35,34 +45,9 @@ const faqs = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": ["BlogPosting", "Article"],
-      "@id": `${SITE_URL}/blog/${SLUG}#article`,
-      headline: TITLE,
-      description: DESCRIPTION,
-      url: `${SITE_URL}/blog/${SLUG}`,
-      datePublished: PUBLISHED,
-      dateModified: PUBLISHED,
-      author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/about` },
-      publisher: { "@id": `${SITE_URL}/#organization` },
-      mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`,
-      about: ["buying intent signals", "AI SDR", "signal-based outbound"],
-      isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` },
-      inLanguage: "en",
-    },
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
-        { "@type": "ListItem", position: 3, name: TITLE, item: `${SITE_URL}/blog/${SLUG}` },
-      ],
-    },
-    {
-      "@type": "FAQPage",
-      "@id": `${SITE_URL}/blog/${SLUG}#faq`,
-      mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-    },
+    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: MODIFIED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/founder` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["buying intent signals", "AI SDR", "signal-based outbound"], citation: sourcesToCitations(sources), isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
+    { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: TITLE, item: `${SITE_URL}/blog/${SLUG}` }] },
+    { "@type": "FAQPage", "@id": `${SITE_URL}/blog/${SLUG}#faq`, mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ],
 };
 
@@ -86,10 +71,7 @@ export default function Post() {
             <p className="mt-5 text-lg leading-relaxed text-ink-soft">
               The agent that watches the public web for the exact moment an account starts behaving like a buyer — then routes only those accounts to the rest of your AI GTM engine.
             </p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted">
-              <span>By Bharat Gulati · Founder, AI Ropeway</span>
-              <span>~6 min read</span>
-            </div>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By <Link href="/founder" className="text-accent hover:underline">Bharat Gulati</Link> · Founder, AI Ropeway</span><span>Last updated June 25, 2026</span><span>~6 min read</span></div>
           </header>
 
           <div className="space-y-6 text-[17px] leading-[1.75] text-ink-soft">
@@ -119,7 +101,10 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">How it works under the hood</h2>
             <p>
-              Intent Watcher runs on a scheduled poll loop. Each source has its own connector — LinkedIn Sales Nav for activity, Google Job Search APIs for hiring posts, Crunchbase for funding, G2/Capterra for review moves. Signals stream into a Supabase event table.
+              Intent Watcher runs on a scheduled poll loop. Each source has its own connector — LinkedIn Sales Nav for activity, Google Job Search APIs for hiring posts,{" "}
+              <a href="https://www.crunchbase.com" target="_blank" rel="noopener" className="text-accent hover:underline">Crunchbase</a>{" "}
+              for funding,{" "}
+              <a href="https://www.g2.com" target="_blank" rel="noopener" className="text-accent hover:underline">G2</a>/Capterra for review moves. Signals stream into a Supabase event table.
             </p>
             <p>
               An ICP-scoring function (defined at sprint kickoff, tunable per industry) reads the events, multiplies by signal weights, and emits a {`"fire"`} event when the account crosses threshold. Account Mapper takes it from there.
@@ -151,6 +136,8 @@ export default function Post() {
                 </details>
               ))}
             </div>
+
+            <PostSources items={sources} />
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Ship Intent Watcher in 14 days</h2>

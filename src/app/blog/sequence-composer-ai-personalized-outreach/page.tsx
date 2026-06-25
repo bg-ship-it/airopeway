@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Cta } from "@/components/cta";
+import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "sequence-composer-ai-personalized-outreach";
@@ -9,12 +10,29 @@ const TITLE = "Sequence Composer: AI personalized outreach that isn't a template
 const DESCRIPTION =
   "How the Sequence Composer agent writes research-grounded cold outreach using the actual buying signal that fired — not the same template Apollo gave 50,000 other reps.";
 const PUBLISHED = "2026-06-25T05:00:00.000Z";
+const MODIFIED = "2026-06-25T05:00:00.000Z";
+
+const sources: Source[] = [
+  {
+    publisher: "Anthropic",
+    title: "Claude",
+    url: "https://www.anthropic.com/claude",
+    note: "The default LLM Sequence Composer uses for signal-grounded generation.",
+  },
+  {
+    publisher: "Gartner",
+    title: "Future of Sales",
+    url: "https://www.gartner.com/en/sales/insights/future-of-sales",
+    note: "Research on the shift toward digital, buyer-centric B2B engagement.",
+  },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
-  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, authors: ["Bharat Gulati"] },
+  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, modifiedTime: MODIFIED, authors: ["Bharat Gulati"] },
+  twitter: { card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
 
 const faqs = [
@@ -27,7 +45,7 @@ const faqs = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: PUBLISHED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/about` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["personalized outreach", "AI SDR", "cold email AI"], isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
+    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: MODIFIED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/founder` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["personalized outreach", "AI SDR", "cold email AI"], citation: sourcesToCitations(sources), isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: TITLE, item: `${SITE_URL}/blog/${SLUG}` }] },
     { "@type": "FAQPage", "@id": `${SITE_URL}/blog/${SLUG}#faq`, mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ],
@@ -44,7 +62,7 @@ export default function Post() {
             <p className="mono-label mb-4 text-accent">Agent 05 · Signal-Based Outbound</p>
             <h1 className="font-display text-[clamp(2rem,4.5vw,3.2rem)] font-bold leading-[1.06]">Sequence Composer: <span className="text-accent">AI personalized outreach</span> that isn’t a template with merge tags</h1>
             <p className="mt-5 text-lg leading-relaxed text-ink-soft">The agent that turns a fired signal + enriched account profile into outreach that reads like a thoughtful rep wrote it — because the substance is real, not invented.</p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By Bharat Gulati</span><span>~7 min read</span></div>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By <Link href="/founder" className="text-accent hover:underline">Bharat Gulati</Link></span><span>Last updated June 25, 2026</span><span>~7 min read</span></div>
           </header>
 
           <div className="space-y-6 text-[17px] leading-[1.75] text-ink-soft">
@@ -56,7 +74,7 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Why this matters</h2>
             <p>Reply rates on signal-grounded outreach run 3–10× above template outreach in the same ICP. The difference is not cleverness — it is that the prospect can immediately tell the email is about <em>them</em>, not about the sender’s pipeline.</p>
-            <p>The unfortunate truth: most “AI personalization” tools generate emails that pattern-match like AI. Sequence Composer avoids that because the source material (the signal) is concrete and verifiable. Concrete inputs produce concrete outputs.</p>
+            <p>The unfortunate truth: most “AI personalization” tools generate emails that pattern-match like AI. Sequence Composer avoids that because the source material (the signal) is concrete and verifiable. Concrete inputs produce concrete outputs. We run it on <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener" className="text-accent hover:underline">Anthropic Claude</a> with per-ICP prompt scaffolding.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Stack & integration</h2>
             <p>Anthropic Claude for generation. Custom prompt scaffolding tuned per ICP. Smartlead or Lemlist for sending. n8n or Make.com for the orchestration. Output is structured so the Inbox Operator agent can route across the warmed inbox pool.</p>
@@ -71,6 +89,8 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>
+
+            <PostSources items={sources} />
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Ship Sequence Composer with the rest of the stack</h2>
