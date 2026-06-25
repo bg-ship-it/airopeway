@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Cta } from "@/components/cta";
+import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "crm-auto-pilot-ai-crm-automation";
@@ -9,12 +10,29 @@ const TITLE = "CRM Auto-Pilot: AI CRM automation that keeps your pipeline honest
 const DESCRIPTION =
   "How the CRM Auto-Pilot agent updates stages from real activity, fills missing fields, merges duplicates, and surfaces stale deals — so your CRM stops lying to you about pipeline.";
 const PUBLISHED = "2026-06-25T07:00:00.000Z";
+const MODIFIED = "2026-06-25T07:00:00.000Z";
+
+const sources: Source[] = [
+  {
+    publisher: "HubSpot",
+    title: "HubSpot API documentation",
+    url: "https://developers.hubspot.com",
+    note: "CRM platform Auto-Pilot integrates with via REST API and webhooks.",
+  },
+  {
+    publisher: "Salesforce",
+    title: "Salesforce Developer documentation",
+    url: "https://developer.salesforce.com",
+    note: "CRM platform Auto-Pilot integrates with for stage automation and dedup.",
+  },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
-  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, authors: ["Bharat Gulati"] },
+  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, modifiedTime: MODIFIED, authors: ["Bharat Gulati"] },
+  twitter: { card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
 
 const faqs = [
@@ -27,7 +45,7 @@ const faqs = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: PUBLISHED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/about` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["CRM automation", "revenue operations", "AI RevOps"], isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
+    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: MODIFIED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/founder` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["CRM automation", "revenue operations", "AI RevOps"], citation: sourcesToCitations(sources), isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: TITLE, item: `${SITE_URL}/blog/${SLUG}` }] },
     { "@type": "FAQPage", "@id": `${SITE_URL}/blog/${SLUG}#faq`, mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ],
@@ -44,7 +62,7 @@ export default function Post() {
             <p className="mono-label mb-4 text-accent">Agent 07 · Revenue Ops Automation</p>
             <h1 className="font-display text-[clamp(2rem,4.5vw,3.2rem)] font-bold leading-[1.06]">CRM Auto-Pilot: <span className="text-accent">AI CRM automation</span> that keeps your pipeline honest</h1>
             <p className="mt-5 text-lg leading-relaxed text-ink-soft">Most CRMs lie about pipeline because reps update them manually — or don’t. CRM Auto-Pilot is the agent that updates stages from real activity, fills missing fields, and surfaces deals that need attention.</p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By Bharat Gulati</span><span>~6 min read</span></div>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By <Link href="/founder" className="text-accent hover:underline">Bharat Gulati</Link></span><span>Last updated June 25, 2026</span><span>~6 min read</span></div>
           </header>
 
           <div className="space-y-6 text-[17px] leading-[1.75] text-ink-soft">
@@ -59,6 +77,7 @@ export default function Post() {
               <li>Logs sequence + reply activity from Reply Triager into the contact timeline.</li>
               <li>Tags accounts with the signal that brought them in (closes the attribution loop).</li>
             </ul>
+            <p>The integration runs against your CRM’s API — <a href="https://developers.hubspot.com" target="_blank" rel="noopener" className="text-accent hover:underline">HubSpot</a>, <a href="https://developer.salesforce.com" target="_blank" rel="noopener" className="text-accent hover:underline">Salesforce</a>, Pipedrive, and others — through a dedicated automation user so it never collides with rep edits.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Why CRMs lie</h2>
             <p>The default human contract with a CRM is “I will update it when I have time.” Reps don’t have time. Stages get advanced retroactively to make pipeline meetings less painful. Deals get marked closed-lost in batches at quarter-end. Nobody is doing this maliciously — the data model has the wrong incentive structure.</p>
@@ -69,6 +88,8 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>
+
+            <PostSources items={sources} />
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Stop running pipeline reviews on a CRM that lies</h2>

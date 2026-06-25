@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Cta } from "@/components/cta";
+import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-ropeway-vs-apollo";
@@ -9,12 +10,29 @@ const TITLE = "AI Ropeway vs Apollo: data platform vs full AI GTM engine";
 const DESCRIPTION =
   "Apollo is the best B2B data platform for SDR teams. AI Ropeway is the full AI GTM engine that uses Apollo as one of its data sources. Here's an honest comparison of where each one wins.";
 const PUBLISHED = "2026-06-25T10:00:00.000Z";
+const MODIFIED = "2026-06-25T10:00:00.000Z";
+
+const sources: Source[] = [
+  {
+    publisher: "Apollo",
+    title: "Apollo pricing",
+    url: "https://www.apollo.io/pricing",
+    note: "Primary source for Apollo seat and credit pricing referenced in the cost comparison.",
+  },
+  {
+    publisher: "Gartner",
+    title: "Future of Sales",
+    url: "https://www.gartner.com/en/sales/insights/future-of-sales",
+    note: "Gartner research on the shift of B2B buying toward digital, AI-augmented channels.",
+  },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
-  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, authors: ["Bharat Gulati"] },
+  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, modifiedTime: MODIFIED, authors: ["Bharat Gulati"] },
+  twitter: { card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
 
 const faqs = [
@@ -27,7 +45,7 @@ const faqs = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: PUBLISHED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/about` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["AI Ropeway vs Apollo", "Apollo alternatives", "AI GTM stack"], isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
+    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: MODIFIED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/founder` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["AI Ropeway vs Apollo", "Apollo alternatives", "AI GTM stack"], citation: sourcesToCitations(sources), isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: TITLE, item: `${SITE_URL}/blog/${SLUG}` }] },
     { "@type": "FAQPage", "@id": `${SITE_URL}/blog/${SLUG}#faq`, mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ],
@@ -58,7 +76,7 @@ export default function Post() {
             <p className="mono-label mb-4 text-accent">Comparison · AI GTM stack</p>
             <h1 className="font-display text-[clamp(2rem,4.5vw,3.2rem)] font-bold leading-[1.06]">AI Ropeway vs Apollo: <span className="text-accent">data platform vs full AI GTM engine</span></h1>
             <p className="mt-5 text-lg leading-relaxed text-ink-soft">Apollo is a great B2B data platform. AI Ropeway is the AI GTM engine that runs on top of platforms like Apollo. The choice is not “which one” — it’s how you stack them.</p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By Bharat Gulati</span><span>~7 min read</span></div>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By <Link href="/founder" className="text-accent hover:underline">Bharat Gulati</Link></span><span>Last updated June 25, 2026</span><span>~7 min read</span></div>
           </header>
 
           <div className="space-y-6 text-[17px] leading-[1.75] text-ink-soft">
@@ -79,6 +97,7 @@ export default function Post() {
                 <tbody>{rows.map(([k, c, ar]) => (<tr key={k} className="border-t border-line"><td className="px-4 py-3 font-medium text-ink">{k}</td><td className="px-4 py-3 text-ink-muted">{c}</td><td className="px-4 py-3 text-ink-soft">{ar}</td></tr>))}</tbody>
               </table>
             </div>
+            <p className="text-sm text-ink-muted">Apollo pricing sourced from <a href="https://www.apollo.io/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">Apollo’s pricing page</a> as of June 2026; check the source for current rates.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When to use Apollo alone</h2>
             <p>Small team, low complexity, need to ship this week. You’re fine running on someone else’s SaaS rails. You don’t need 8 coordinated agents — you just need to send some emails and book some meetings. Apollo is the right call.</p>
@@ -88,6 +107,8 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>
+
+            <PostSources items={sources} />
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">See the full engine in action</h2>
