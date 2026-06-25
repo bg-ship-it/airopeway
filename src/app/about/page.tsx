@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     description:
       "Founded by Bharat Gulati — ex-VP Sales who scaled AI GTM from zero. We ship AI GTM engines into your repo, you own the code.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "About AI Ropeway | Founder-led AI GTM engineering",
+    description:
+      "Founded by Bharat Gulati — ex-VP Sales who scaled AI GTM from zero. We ship AI GTM engines into your repo.",
+  },
 };
 
 const jsonLd = {
@@ -45,6 +51,18 @@ const jsonLd = {
         "B2B SaaS sales",
       ],
       email: footer.email,
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About",
+          item: `${SITE_URL}/about`,
+        },
+      ],
     },
   ],
 };

@@ -20,19 +20,41 @@ export const metadata: Metadata = {
     description:
       "Industry-specific AI GTM playbooks across 16 verticals. Shipped to your repo in 14 days.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI GTM by industry · 16 vertical playbooks | AI Ropeway",
+    description:
+      "Industry-specific AI GTM playbooks across 16 verticals. Shipped to your repo in 14 days.",
+  },
 };
 
 export default function IndustriesIndexPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "AI GTM playbooks by industry",
-    itemListElement: industryPages.map((i, idx) => ({
-      "@type": "ListItem",
-      position: idx + 1,
-      name: `AI for ${i.name}`,
-      url: `${SITE_URL}/industries/${i.id}`,
-    })),
+    "@graph": [
+      {
+        "@type": "ItemList",
+        name: "AI GTM playbooks by industry",
+        itemListElement: industryPages.map((i, idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          name: `AI for ${i.name}`,
+          url: `${SITE_URL}/industries/${i.id}`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Industries",
+            item: `${SITE_URL}/industries`,
+          },
+        ],
+      },
+    ],
   };
 
   return (

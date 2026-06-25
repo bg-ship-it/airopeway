@@ -6,12 +6,36 @@ import { getAllPosts } from "@/lib/blog";
 import { imageUrl } from "@/lib/sanity";
 import { BlogCover } from "@/components/blog-cover";
 
+const SITE_URL = "https://www.airopeway.com";
+
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "AI insights, deployment playbooks, and GTM strategies from the AI Ropeway team.",
   alternates: { canonical: "/blog" },
-  openGraph: { url: "https://www.airopeway.com/blog" },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/blog`,
+    siteName: "AI Ropeway",
+    title: "Blog | AI Ropeway",
+    description:
+      "AI insights, deployment playbooks, and GTM strategies from the AI Ropeway team.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | AI Ropeway",
+    description:
+      "AI insights, deployment playbooks, and GTM strategies from the AI Ropeway team.",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+  ],
 };
 
 function formatDate(iso: string | null): string {
@@ -28,6 +52,11 @@ export default async function BlogPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-32 md:py-40">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <div className="mb-14">
         <p className="mono-label mb-4 text-accent">AI Ropeway Blog</p>
         <h1 className="font-display text-[clamp(2.4rem,5vw,4rem)] font-bold leading-[1.06]">
