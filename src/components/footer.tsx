@@ -8,7 +8,7 @@ const footerLinks = [
   { label: "Pricing", href: "/pricing" },
   { label: "Industries", href: "/industries" },
   { label: "Beyond GTM", href: "/systems" },
-  { label: "Founder", href: "/about" },
+  { label: "Founder", href: "/founder" },
   { label: "Blog", href: "/blog" },
   { label: "Free AI Audit", href: "/#audit" },
 ];
