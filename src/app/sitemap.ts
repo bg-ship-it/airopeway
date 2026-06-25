@@ -31,12 +31,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const posts = await getAllPosts().catch(() => []);
-  const blogUrls: MetadataRoute.Sitemap = posts.map((p) => ({
-    url: `${SITE_URL}/blog/${p.slug}`,
-    lastModified: p.publishedAt ? new Date(p.publishedAt) : now,
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }));
+  const blogUrls: MetadataRoute.Sitemap = posts
+    .filter((p) => p.publishedAt)
+    .map((p) => ({
+      url: `${SITE_URL}/blog/${p.slug}`,
+      lastModified: new Date(p.publishedAt!),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
 
   return [...staticPages, ...systemUrls, ...industryUrls, ...blogUrls];
 }
