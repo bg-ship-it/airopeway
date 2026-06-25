@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     description:
       "Voice AI, content engines, ops automation, support deflection. 18 production-ready systems beyond AI GTM.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Beyond AI GTM · 18 other AI systems | AI Ropeway",
+    description:
+      "Voice AI, content engines, ops automation, support deflection. 18 production-ready systems beyond AI GTM.",
+  },
 };
 
 const chip = [
@@ -33,14 +39,30 @@ const chip = [
 export default function SystemsIndexPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "AI systems shipped by AI Ropeway",
-    itemListElement: systemPages.map((s, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: s.name,
-      url: `${SITE_URL}/systems/${s.slug}`,
-    })),
+    "@graph": [
+      {
+        "@type": "ItemList",
+        name: "AI systems shipped by AI Ropeway",
+        itemListElement: systemPages.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: s.name,
+          url: `${SITE_URL}/systems/${s.slug}`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "AI Systems",
+            item: `${SITE_URL}/systems`,
+          },
+        ],
+      },
+    ],
   };
 
   return (
