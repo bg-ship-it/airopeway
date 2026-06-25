@@ -21,15 +21,22 @@ export async function generateMetadata({
   const industry = getIndustry(slug);
   if (!industry) return {};
   const description = `AI GTM for ${industry.name}. ${industry.solution} Shipped to your repo in 14 days. Live demo on your ICP data, first call.`;
+  const title = `AI GTM for ${industry.name}`;
+  const ogTitle = `${title} | AI Ropeway`;
   return {
-    title: `AI GTM for ${industry.name}`,
+    title,
     description,
     alternates: { canonical: `/industries/${industry.id}` },
     openGraph: {
       type: "website",
       url: `${SITE_URL}/industries/${industry.id}`,
       siteName: "AI Ropeway",
-      title: `AI GTM for ${industry.name} | AI Ropeway`,
+      title: ogTitle,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
       description,
     },
   };

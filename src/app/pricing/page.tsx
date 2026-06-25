@@ -22,6 +22,12 @@ export const metadata: Metadata = {
     description:
       "Transparent AI GTM pricing. Sprint, Partnership, Full Stack, Enterprise. Free 60-min audit first.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing | AI GTM engines from $3k | AI Ropeway",
+    description:
+      "Transparent AI GTM pricing. Sprint, Partnership, Full Stack, Enterprise. Free 60-min audit first.",
+  },
 };
 
 type Tier = {
@@ -105,36 +111,50 @@ const tiers: Tier[] = [
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": tiers.map((t) => {
-    const numericMatch = t.price.match(/\$([\d,]+)/);
-    const offer: Record<string, unknown> = {
-      "@type": "Offer",
-      url: `${SITE_URL}/pricing`,
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      category: t.cadence,
-    };
-    if (numericMatch) {
-      offer.price = numericMatch[1].replace(/,/g, "");
-    } else {
-      offer.priceSpecification = {
-        "@type": "PriceSpecification",
+  "@graph": [
+    ...tiers.map((t) => {
+      const numericMatch = t.price.match(/\$([\d,]+)/);
+      const offer: Record<string, unknown> = {
+        "@type": "Offer",
+        url: `${SITE_URL}/pricing`,
         priceCurrency: "USD",
-        price: "0",
-        description: "Custom pricing",
+        availability: "https://schema.org/InStock",
+        category: t.cadence,
       };
-    }
-    return {
-      "@type": "Service",
-      "@id": `${SITE_URL}/pricing#${t.name.replace(/\s+/g, "-").toLowerCase()}`,
-      name: t.name,
-      description: t.blurb,
-      provider: { "@id": `${SITE_URL}/#organization` },
-      areaServed: ["IN", "AU", "GB", "US", "CA"],
-      audience: { "@type": "Audience", audienceType: t.target },
-      offers: offer,
-    };
-  }),
+      if (numericMatch) {
+        offer.price = numericMatch[1].replace(/,/g, "");
+      } else {
+        offer.priceSpecification = {
+          "@type": "PriceSpecification",
+          priceCurrency: "USD",
+          price: "0",
+          description: "Custom pricing",
+        };
+      }
+      return {
+        "@type": "Service",
+        "@id": `${SITE_URL}/pricing#${t.name.replace(/\s+/g, "-").toLowerCase()}`,
+        name: t.name,
+        description: t.blurb,
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: ["IN", "AU", "GB", "US", "CA"],
+        audience: { "@type": "Audience", audienceType: t.target },
+        offers: offer,
+      };
+    }),
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Pricing",
+          item: `${SITE_URL}/pricing`,
+        },
+      ],
+    },
+  ],
 };
 
 export default function PricingPage() {

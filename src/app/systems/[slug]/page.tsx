@@ -5,7 +5,6 @@ import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { MotionBg } from "@/components/motion-bg";
 import { systemPages, getSystem } from "@/lib/catalog";
-import { industryPages } from "@/lib/catalog";
 
 const SITE_URL = "https://www.airopeway.com";
 
@@ -22,15 +21,22 @@ export async function generateMetadata({
   const system = getSystem(slug);
   if (!system) return {};
   const description = `${system.desc} AI Ropeway deploys ${system.name} into your business — measurable outcomes, no months-long projects.`;
+  const title = system.name;
+  const ogTitle = `${system.name} | AI Ropeway`;
   return {
-    title: system.name,
+    title,
     description,
     alternates: { canonical: `/systems/${system.slug}` },
     openGraph: {
       type: "website",
       url: `${SITE_URL}/systems/${system.slug}`,
       siteName: "AI Ropeway",
-      title: `${system.name} | AI Ropeway`,
+      title: ogTitle,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
       description,
     },
   };
