@@ -125,14 +125,18 @@ export default async function BlogPostPage({
   const post = await getPost(slug);
   if (!post) notFound();
 
+  const postUrl = `https://www.airopeway.com/blog/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
     headline: post.title,
     description: post.excerpt ?? "",
     author: {
       "@type": "Person",
       name: post.authorName ?? "Bharat Gulati",
+      jobTitle: "Founder, AI Ropeway",
+      sameAs: ["https://www.linkedin.com/in/bharatgulati"],
     },
     publisher: {
       "@type": "Organization",
@@ -140,7 +144,8 @@ export default async function BlogPostPage({
       url: "https://www.airopeway.com",
     },
     datePublished: post.publishedAt ?? undefined,
-    url: `https://www.airopeway.com/blog/${slug}`,
+    dateModified: post.updatedAt ?? post.publishedAt ?? undefined,
+    url: postUrl,
   };
 
   return (

@@ -5,7 +5,6 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Branded social-share card (1200×630) matching the site's spectrum design.
 export default function Image() {
   return new ImageResponse(
     (
