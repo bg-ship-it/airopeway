@@ -465,6 +465,7 @@ export function ProofCases() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
