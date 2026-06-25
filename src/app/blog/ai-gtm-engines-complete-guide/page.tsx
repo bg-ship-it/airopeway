@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { Cta } from "@/components/cta";
+import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-gtm-engines-complete-guide";
@@ -10,6 +11,27 @@ const DESCRIPTION =
   "What an AI GTM engine is, the 8 agents that build one, how to ship in 14 days, and the build-vs-buy economics for B2B SaaS founders.";
 const PUBLISHED = "2026-06-25T00:00:00.000Z";
 const MODIFIED = "2026-06-25T00:00:00.000Z";
+
+const sources: Source[] = [
+  {
+    publisher: "The Bridge Group",
+    title: "SDR Metrics & Compensation Report",
+    url: "https://bridgegroupinc.com/sdr-metrics",
+    note: "Benchmark data on SDR ramp time, tenure, and fully-loaded compensation referenced in the build-vs-buy economics.",
+  },
+  {
+    publisher: "Gartner",
+    title: "Future of Sales",
+    url: "https://www.gartner.com/en/sales/insights/future-of-sales",
+    note: "Gartner's research on the shift of B2B buying to digital and AI-augmented channels.",
+  },
+  {
+    publisher: "McKinsey & Company",
+    title: "An unconstrained future: How generative AI could reshape B2B sales",
+    url: "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights",
+    note: "Analysis of generative AI's impact on B2B go-to-market motions.",
+  },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -24,6 +46,11 @@ export const metadata: Metadata = {
     publishedTime: PUBLISHED,
     modifiedTime: MODIFIED,
     authors: ["Bharat Gulati"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${TITLE} | AI Ropeway`,
+    description: DESCRIPTION,
   },
 };
 
@@ -68,7 +95,7 @@ const jsonLd = {
       author: {
         "@type": "Person",
         name: "Bharat Gulati",
-        url: `${SITE_URL}/about`,
+        url: `${SITE_URL}/founder`,
       },
       publisher: { "@id": `${SITE_URL}/#organization` },
       mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`,
@@ -78,6 +105,7 @@ const jsonLd = {
         "signal-based outbound",
         "revenue operations automation",
       ],
+      citation: sourcesToCitations(sources),
       inLanguage: "en",
     },
     {
@@ -191,8 +219,15 @@ export default function PillarPost() {
               into your repo.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-muted">
-              <span>By Bharat Gulati · Founder, AI Ropeway</span>
+              <span>
+                By{" "}
+                <Link href="/founder" className="text-accent hover:underline">
+                  Bharat Gulati
+                </Link>{" "}
+                · Founder, AI Ropeway
+              </span>
               <span>Published June 25, 2026</span>
+              <span>Last updated June 25, 2026</span>
               <span>~10 min read</span>
             </div>
           </header>
@@ -230,7 +265,17 @@ export default function PillarPost() {
               <p>
                 The economics flipped sometime in 2025 and most go-to-market
                 leaders are still pricing their plans against the 2023 stack.
-                Here is the honest math:
+                Industry benchmark data from{" "}
+                <a
+                  href="https://bridgegroupinc.com/sdr-metrics"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-accent hover:underline"
+                >
+                  The Bridge Group
+                </a>{" "}
+                puts SDR ramp and tenure in stark relief. Here is the honest
+                math:
               </p>
               <ul className="my-6 space-y-3 pl-0">
                 {[
@@ -254,7 +299,27 @@ export default function PillarPost() {
                 The exceptions are real but narrow: enterprise sales with
                 7-figure ACVs and 12-month cycles still need humans driving
                 the relationship. Everything below that ACV line, AI GTM wins
-                on cost, speed, scale, and asset ownership.
+                on cost, speed, scale, and asset ownership. Both{" "}
+                <a
+                  href="https://www.gartner.com/en/sales/insights/future-of-sales"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-accent hover:underline"
+                >
+                  Gartner
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-accent hover:underline"
+                >
+                  McKinsey
+                </a>{" "}
+                project the bulk of B2B buying interactions moving to digital,
+                AI-augmented channels — the direction an AI GTM engine is
+                built for.
               </p>
             </section>
 
@@ -383,7 +448,15 @@ export default function PillarPost() {
                 pillars. None of them do. They cover Pillar II reasonably
                 well and leave Pillars I and III to chance — which is why
                 their pipeline numbers look great in week 3 and collapse in
-                month 4.
+                month 4. See our breakdowns of{" "}
+                <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">
+                  AI Ropeway vs Clay
+                </Link>{" "}
+                and{" "}
+                <Link href="/blog/ai-ropeway-vs-apollo" className="text-accent hover:underline">
+                  AI Ropeway vs Apollo
+                </Link>{" "}
+                for how the tool layer fits under the engine.
               </p>
             </section>
 
@@ -472,7 +545,10 @@ export default function PillarPost() {
                   <strong className="text-ink">
                     Founder-led delivery.
                   </strong>{" "}
-                  Bharat Gulati (ex-VP Sales scaling AI GTM from zero, IIM
+                  <Link href="/founder" className="text-accent hover:underline">
+                    Bharat Gulati
+                  </Link>{" "}
+                  (ex-VP Sales scaling AI GTM from zero, IIM
                   Indore AI/ML) ships alongside your team weekly. No agency
                   middle layer. No junior dev learning on your dime.
                 </li>
@@ -518,6 +594,8 @@ export default function PillarPost() {
               </div>
             </section>
 
+            <PostSources items={sources} />
+
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">
                 Ready to ship your AI GTM engine?
@@ -536,7 +614,7 @@ export default function PillarPost() {
                   pricing
                 </Link>{" "}
                 ·{" "}
-                <Link href="/about" className="text-accent hover:underline">
+                <Link href="/founder" className="text-accent hover:underline">
                   founder bio
                 </Link>{" "}
                 ·{" "}
