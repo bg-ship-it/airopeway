@@ -12,7 +12,6 @@ export const nav = [
 
 export const hero = {
   eyebrow: "Premier AI Transformation Partner",
-  // Original headline, restructured for the new type treatment
   headlineLines: ["Do 5× more.", "Run on half the team.", "Scale 50× faster —", "or get left behind."],
   subhead:
     "Your competitors are deploying AI right now. Every week you operate manually costs you market share, margin, and momentum. AI Ropeway deploys 18 battle-tested AI systems into your business — turning operations into a revenue engine that runs at machine speed.",
@@ -42,8 +41,8 @@ export const edge = {
   label: "Your Competitive Edge",
   headline: ["Act now.", "Lead for decades."],
   paragraphs: [
-    "AI adoption is not coming. It is already separating the top 10% of businesses from everyone else. The companies winning today aren't bigger — they're faster, leaner, and running AI in their operations.",
-    "The cost of waiting isn't zero. It's compounding. Every manual process, every slow follow-up, every missed personalisation is a competitor's gain.",
+    "AI adoption is not coming. It is already separating the top 10% of businesses from everyone else. The companies winning today aren’t bigger — they’re faster, leaner, and running AI in their operations.",
+    "The cost of waiting isn’t zero. It’s compounding. Every manual process, every slow follow-up, every missed personalisation is a competitor’s gain.",
     "We deploy. You grow. No excuses.",
   ],
   metrics: [
@@ -128,7 +127,7 @@ export const faqs = [
   { q: "How quickly can we see results?", a: "Most clients see measurable impact within 30–60 days of deployment. Some systems like AI lead qualification show ROI in week one." },
   { q: "Which industries do you work with?", a: "We work across 18+ industries including retail, healthcare, finance, SaaS, D2C, logistics, education, real estate, and more." },
   { q: "What does the free AI audit include?", a: "A 60-minute deep-dive into your operations. We identify top 3–5 AI opportunities, estimate ROI, and give you a deployment priority list — no strings attached." },
-  { q: "How is AI Ropeway different from a typical agency?", a: "We don't do strategy decks. We deploy working AI systems that generate measurable outcomes. Implementation is our product." },
+  { q: "How is AI Ropeway different from a typical agency?", a: "We don’t do strategy decks. We deploy working AI systems that generate measurable outcomes. Implementation is our product." },
   { q: "What tools and platforms do you work with?", a: "We integrate with your existing CRM, helpdesk, e-commerce platform, and marketing tools. No rip-and-replace required." },
 ];
 

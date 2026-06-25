@@ -12,7 +12,6 @@ export type SystemPage = {
   benefits: string[];
 };
 
-// Unique intro + benefits per system. Descriptive and accurate — no invented metrics.
 const systemExtra: Record<
   string,
   { slug: string; intro: string; benefits: string[] }
@@ -208,7 +207,6 @@ export function getSystem(slug: string): SystemPage | undefined {
   return systemPages.find((s) => s.slug === slug);
 }
 
-// Industries already carry a stable `id` we use as the slug + rich copy.
 export const industryPages: Industry[] = baseIndustries;
 
 export function getIndustry(slug: string): Industry | undefined {

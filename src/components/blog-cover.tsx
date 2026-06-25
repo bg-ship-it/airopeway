@@ -4,7 +4,7 @@
  */
 
 type CoverConfig = {
-  bg: [string, string];
+  bg: [string, string];   // gradient stops
   accent: string;
   svg: React.ReactNode;
 };
@@ -31,6 +31,7 @@ const covers: Record<string, CoverConfig> = {
         <line x1="200" y1="120" x2="300" y2="165" stroke="#a78bfa" strokeWidth="1.5" opacity="0.4" />
         <line x1="120" y1="80" x2="100" y2="165" stroke="#a78bfa" strokeWidth="1" opacity="0.25" />
         <line x1="280" y1="80" x2="300" y2="165" stroke="#c4b5fd" strokeWidth="1" opacity="0.25" />
+        {/* Orbit ring */}
         <ellipse cx="200" cy="120" rx="70" ry="40" fill="none" stroke="#a78bfa" strokeWidth="1" strokeDasharray="4 6" opacity="0.3" />
       </>
     ),
