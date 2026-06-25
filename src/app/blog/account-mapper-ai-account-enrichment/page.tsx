@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Cta } from "@/components/cta";
+import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "account-mapper-ai-account-enrichment";
@@ -9,12 +10,29 @@ const TITLE = "Account Mapper: AI account enrichment that gives outreach actual 
 const DESCRIPTION =
   "How the Account Mapper agent builds ICP-scored account profiles automatically — firmographics, tech stack, headcount, recent news — so Sequence Composer writes outreach worth replying to.";
 const PUBLISHED = "2026-06-25T02:00:00.000Z";
+const MODIFIED = "2026-06-25T02:00:00.000Z";
+
+const sources: Source[] = [
+  {
+    publisher: "Clay",
+    title: "Clay — waterfall enrichment",
+    url: "https://www.clay.com",
+    note: "The data layer Account Mapper runs its waterfall enrichment on.",
+  },
+  {
+    publisher: "Crunchbase",
+    title: "Crunchbase",
+    url: "https://www.crunchbase.com",
+    note: "Funding-data source referenced in the enrichment waterfall.",
+  },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
-  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, authors: ["Bharat Gulati"] },
+  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, modifiedTime: MODIFIED, authors: ["Bharat Gulati"] },
+  twitter: { card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
 
 const faqs = [
@@ -27,7 +45,7 @@ const faqs = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: PUBLISHED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/about` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["account enrichment", "ICP scoring", "AI SDR"], isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
+    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: MODIFIED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/founder` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["account enrichment", "ICP scoring", "AI SDR"], citation: sourcesToCitations(sources), isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: TITLE, item: `${SITE_URL}/blog/${SLUG}` }] },
     { "@type": "FAQPage", "@id": `${SITE_URL}/blog/${SLUG}#faq`, mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ],
@@ -44,7 +62,7 @@ export default function Post() {
             <p className="mono-label mb-4 text-accent">Agent 02 · AI SDR Engine</p>
             <h1 className="font-display text-[clamp(2rem,4.5vw,3.2rem)] font-bold leading-[1.06]">Account Mapper: <span className="text-accent">AI account enrichment</span> that gives outreach actual ammo</h1>
             <p className="mt-5 text-lg leading-relaxed text-ink-soft">The agent that turns a “fired signal” into a full ICP-scored account profile in seconds — so the email Sequence Composer writes is grounded in real research, not template merge tags.</p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By Bharat Gulati</span><span>~5 min read</span></div>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By <Link href="/founder" className="text-accent hover:underline">Bharat Gulati</Link></span><span>Last updated June 25, 2026</span><span>~5 min read</span></div>
           </header>
 
           <div className="space-y-6 text-[17px] leading-[1.75] text-ink-soft">
@@ -55,7 +73,7 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Why waterfall logic matters</h2>
             <p>Single-source enrichment fails silently. ZoomInfo misses 30% of companies; Apollo misses different ones; Clearbit different again. A waterfall pattern — hit source A, fall through to B if confidence is low, then C — covers 85–95% of any ICP at a fraction of the cost of paying for all three.</p>
-            <p>Account Mapper runs the waterfall pattern Clay popularized but does it inside your AI GTM engine, with the providers and confidence thresholds you control.</p>
+            <p>Account Mapper runs the waterfall pattern <a href="https://www.clay.com" target="_blank" rel="noopener" className="text-accent hover:underline">Clay</a> popularized but does it inside your AI GTM engine, with the providers and confidence thresholds you control.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">ICP scoring</h2>
             <p>Every enriched account gets a score against the ICP you defined at sprint kickoff. Score uses signal type (Intent Watcher), firmographic fit (Account Mapper), and historical conversion patterns (Revenue Pulse data, once it’s running). Accounts below threshold get logged but not contacted. Accounts above threshold flow to Sequence Composer.</p>
@@ -72,6 +90,8 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>
+
+            <PostSources items={sources} />
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Ship Account Mapper alongside the other 7 agents</h2>

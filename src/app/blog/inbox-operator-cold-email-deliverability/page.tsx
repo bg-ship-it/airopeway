@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Cta } from "@/components/cta";
+import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "inbox-operator-cold-email-deliverability";
@@ -9,12 +10,29 @@ const TITLE = "Inbox Operator: cold email deliverability that lands in primary, 
 const DESCRIPTION =
   "How the Inbox Operator agent handles domain warmup, inbox rotation, deliverability monitoring, and the unsexy plumbing that decides whether your cold outreach reaches the inbox at all.";
 const PUBLISHED = "2026-06-25T03:00:00.000Z";
+const MODIFIED = "2026-06-25T03:00:00.000Z";
+
+const sources: Source[] = [
+  {
+    publisher: "Google",
+    title: "Email sender guidelines",
+    url: "https://support.google.com/a/answer/81126",
+    note: "Google's official requirements for SPF, DKIM, DMARC, spam rate, and bulk sender authentication — the spec Inbox Operator configures against.",
+  },
+  {
+    publisher: "DMARC.org",
+    title: "DMARC overview",
+    url: "https://dmarc.org/overview/",
+    note: "Authoritative reference on DMARC alignment and policy, one of the records Inbox Operator provisions per sending domain.",
+  },
+];
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
-  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, authors: ["Bharat Gulati"] },
+  openGraph: { type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, modifiedTime: MODIFIED, authors: ["Bharat Gulati"] },
+  twitter: { card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
 
 const faqs = [
@@ -27,7 +45,7 @@ const faqs = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: PUBLISHED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/about` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["cold email deliverability", "inbox warmup", "AI SDR"], isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
+    { "@type": ["BlogPosting", "Article"], "@id": `${SITE_URL}/blog/${SLUG}#article`, headline: TITLE, description: DESCRIPTION, url: `${SITE_URL}/blog/${SLUG}`, datePublished: PUBLISHED, dateModified: MODIFIED, author: { "@type": "Person", name: "Bharat Gulati", url: `${SITE_URL}/founder` }, publisher: { "@id": `${SITE_URL}/#organization` }, mainEntityOfPage: `${SITE_URL}/blog/${SLUG}`, about: ["cold email deliverability", "inbox warmup", "AI SDR"], citation: sourcesToCitations(sources), isPartOf: { "@id": `${SITE_URL}/blog/ai-gtm-engines-complete-guide#article` }, inLanguage: "en" },
     { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE_URL }, { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: TITLE, item: `${SITE_URL}/blog/${SLUG}` }] },
     { "@type": "FAQPage", "@id": `${SITE_URL}/blog/${SLUG}#faq`, mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ],
@@ -44,7 +62,7 @@ export default function Post() {
             <p className="mono-label mb-4 text-accent">Agent 03 · AI SDR Engine</p>
             <h1 className="font-display text-[clamp(2rem,4.5vw,3.2rem)] font-bold leading-[1.06]">Inbox Operator: <span className="text-accent">cold email deliverability</span> that lands in primary, not spam</h1>
             <p className="mt-5 text-lg leading-relaxed text-ink-soft">The unsexy plumbing layer that decides whether anything else in your AI GTM engine matters. Most teams skip it. Their reply rates tell on them.</p>
-            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By Bharat Gulati</span><span>~6 min read</span></div>
+            <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By <Link href="/founder" className="text-accent hover:underline">Bharat Gulati</Link></span><span>Last updated June 25, 2026</span><span>~6 min read</span></div>
           </header>
 
           <div className="space-y-6 text-[17px] leading-[1.75] text-ink-soft">
@@ -59,6 +77,9 @@ export default function Post() {
               <li>Monitoring deliverability per provider (Gmail, Outlook, Yahoo) and bounce rates per inbox.</li>
               <li>Auto-rotating or pausing inboxes when reputation drops, before the damage spreads.</li>
             </ul>
+            <p>The authentication requirements aren’t arbitrary — they’re published. Google’s{" "}
+              <a href="https://support.google.com/a/answer/81126" target="_blank" rel="noopener" className="text-accent hover:underline">email sender guidelines</a>{" "}
+              mandate SPF, DKIM, and (for bulk senders) DMARC, plus a spam-complaint rate under 0.3%. Inbox Operator configures every sending domain to clear that bar before the first cold send.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Why this is the agent founders skip and regret</h2>
             <p>The economics are brutal: 1 day of bad deliverability burns the warmup investment of the previous 3 weeks. Recovery takes another 3–6 weeks. Meanwhile your sequences are running and your prospects are silently not seeing them.</p>
@@ -77,6 +98,8 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>
+
+            <PostSources items={sources} />
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Ship Inbox Operator before you ship outreach</h2>
