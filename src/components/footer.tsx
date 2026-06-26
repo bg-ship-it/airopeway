@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footer } from "@/lib/content";
+import { footer, BOOK_URL } from "@/lib/content";
 import { Cta } from "@/components/cta";
 import { Logo } from "@/components/logo";
 
@@ -10,7 +10,7 @@ const footerLinks = [
   { label: "Beyond GTM", href: "/systems" },
   { label: "Founder", href: "/founder" },
   { label: "Blog", href: "/blog" },
-  { label: "Free AI Audit", href: "/#audit" },
+  { label: "Book a Call", href: BOOK_URL },
 ];
 
 export function SiteFooter() {
@@ -21,19 +21,30 @@ export function SiteFooter() {
           <Logo />
 
           <nav className="flex flex-wrap gap-x-6 gap-y-2">
-            {footerLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-sm text-ink-soft transition-colors hover:text-ink"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {footerLinks.map((item) => {
+              const external = item.href.startsWith("http");
+              const cls =
+                "text-sm text-ink-soft transition-colors hover:text-ink";
+              return external ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cls}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link key={item.label} href={item.href} className={cls}>
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
 
-          <Cta href="/#audit" showArrow={false}>
-            Free AI Audit
+          <Cta href={BOOK_URL} showArrow={false}>
+            Book a Call
           </Cta>
         </div>
 

@@ -1,6 +1,10 @@
 // All copy preserved verbatim from the original airopeway.com.
 // Only UI/UX is being redesigned — wording is unchanged.
 
+// External booking link. Every “book a call / free audit” CTA resolves here
+// (the on-page audit form was retired in favour of Calendly).
+export const BOOK_URL = "https://calendly.com/bg-aiplacers/new-meeting";
+
 export const nav = [
   { label: "8 Agents", href: "/#revenue-stack" },
   { label: "Pricing", href: "/#pricing" },
