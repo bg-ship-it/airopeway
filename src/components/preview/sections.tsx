@@ -16,6 +16,7 @@ import {
   Code2,
   PlayCircle,
 } from "lucide-react";
+import { BOOK_URL } from "@/lib/content";
 
 const accentChips = [
   "var(--color-coral)",
@@ -74,12 +75,14 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="/#audit"
+            <a
+              href={BOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-canvas hover:opacity-80"
             >
               Book live demo on your data <ArrowRight className="size-4" />
-            </Link>
+            </a>
             <Link
               href="#revenue-stack"
               className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface/80 px-6 py-3 text-sm font-semibold text-ink hover:bg-surface"
@@ -354,10 +357,10 @@ export function FounderBlock() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm">
               <Link
-                href="https://www.linkedin.com/"
+                href="/founder"
                 className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface-soft px-4 py-2 text-ink-soft hover:bg-surface"
               >
-                LinkedIn <ArrowUpRight className="size-3.5" />
+                Founder bio <ArrowUpRight className="size-3.5" />
               </Link>
               <Link
                 href="#manifesto"
@@ -465,6 +468,7 @@ export function ProofCases() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
@@ -693,8 +697,10 @@ export function PricingTiers() {
               <p className="mt-4 font-mono text-[10px] uppercase tracking-wider text-ink-faint">
                 For: {t.target}
               </p>
-              <Link
-                href="/#audit"
+              <a
+                href={BOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`mt-5 inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-xs font-semibold transition ${
                   t.featured
                     ? "bg-ink text-canvas hover:opacity-80"
@@ -702,7 +708,7 @@ export function PricingTiers() {
                 }`}
               >
                 {t.cta} <ArrowRight className="size-3.5" />
-              </Link>
+              </a>
             </div>
           ))}
         </div>
@@ -838,7 +844,7 @@ export function StatusFooter() {
         </span>
         <span className="font-mono inline-flex items-center gap-2">
           <span className="size-1.5 rounded-full bg-teal" />
-          v 5.0 · LIVE · ALL SYSTEMS NORMAL
+          v 5.0 · go-live candidate · ALL SYSTEMS NORMAL
         </span>
       </div>
     </div>
