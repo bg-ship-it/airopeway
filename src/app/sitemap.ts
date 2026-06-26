@@ -16,11 +16,16 @@ const STATIC_BLOG_POSTS = [
   "revenue-pulse-pipeline-analytics",
   "ai-ropeway-vs-clay",
   "ai-ropeway-vs-apollo",
+  "enterprise-ai-agent-management-guide",
+  "ai-sales-automation-revops-2026",
+  "ai-business-transformation-board-playbook",
+  "ai-automation-workflow-operational-bottlenecks",
+  "ai-gtm-strategy-pipeline",
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const lastModBlog = new Date("2026-06-25");
+  const lastModBlog = new Date("2026-06-27");
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
