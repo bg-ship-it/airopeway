@@ -1,12 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, ExternalLink } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { MotionBg } from "@/components/motion-bg";
 import { industryPages, getIndustry } from "@/lib/catalog";
 
 const SITE_URL = "https://www.airopeway.com";
+
+// Independent research used as context for the industry impact figures.
+// The per-industry numbers are AI Ropeway deployment outcomes (see the
+// methodology note); these sources back the general AI-impact claim.
+const SOURCES = [
+  {
+    publisher: "McKinsey & Company",
+    title: "The economic potential of generative AI",
+    url: "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier",
+  },
+  {
+    publisher: "Gartner",
+    title: "Future of Sales",
+    url: "https://www.gartner.com/en/sales/insights/future-of-sales",
+  },
+];
 
 export function generateStaticParams() {
   return industryPages.map((i) => ({ slug: i.id }));
@@ -65,6 +81,12 @@ export default async function IndustryPage({
         areaServed: ["IN", "AU", "GB", "US", "CA"],
         url: `${SITE_URL}/industries/${industry.id}`,
         audience: { "@type": "Audience", audienceType: `${industry.name} B2B founders` },
+        citation: SOURCES.map((s) => ({
+          "@type": "CreativeWork",
+          name: s.title,
+          url: s.url,
+          publisher: { "@type": "Organization", name: s.publisher },
+        })),
       },
       {
         "@type": "BreadcrumbList",
@@ -170,10 +192,42 @@ export default async function IndustryPage({
                 </div>
               ))}
             </div>
-            <Cta href="/#audit" className="mt-7 w-full" showArrow={false}>
+            <p className="mt-4 text-xs leading-relaxed text-ink-faint">
+              Figures are representative outcomes from AI Ropeway deployments
+              and vary by client, data quality, and scope. Verified per-client
+              case studies available on request.
+            </p>
+            <Cta href="/#audit" className="mt-6 w-full" showArrow={false}>
               Book live demo on your data
             </Cta>
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-5 pb-8 md:px-8">
+        <div className="rounded-2xl border border-line bg-surface-soft p-5 md:p-6">
+          <p className="mono-label mb-3 text-ink-faint">Methodology &amp; sources</p>
+          <p className="text-sm leading-relaxed text-ink-soft">
+            Industry impact ranges reflect AI Ropeway deployment outcomes.
+            For independent research on AI&apos;s economic impact across
+            sectors and the shift of B2B buying toward AI-augmented channels,
+            see:
+          </p>
+          <ul className="mt-3 space-y-2">
+            {SOURCES.map((s) => (
+              <li key={s.url}>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
+                >
+                  {s.publisher} — {s.title}
+                  <ExternalLink className="size-3.5" />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

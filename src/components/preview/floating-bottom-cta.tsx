@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Plus } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { BOOK_URL } from "@/lib/content";
 
 export function FloatingBottomCta() {
   const [visible, setVisible] = useState(false);
@@ -61,12 +62,14 @@ export function FloatingBottomCta() {
           </li>
         </ul>
 
-        <Link
-          href="/#audit"
+        <a
+          href={BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-full bg-coral px-5 py-2.5 text-sm font-semibold text-canvas transition-opacity hover:opacity-90"
         >
           <Plus className="size-4" /> Book a call
-        </Link>
+        </a>
       </div>
     </div>
   );
