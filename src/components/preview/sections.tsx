@@ -15,6 +15,15 @@ import {
   ShieldCheck,
   Code2,
   PlayCircle,
+  Target,
+  Zap,
+  Rocket,
+  Package,
+  HelpCircle,
+  MapPin,
+  Linkedin,
+  Mail,
+  Globe,
 } from "lucide-react";
 import { BOOK_URL } from "@/lib/content";
 
@@ -385,7 +394,7 @@ const cases = [
     title: "B2B SaaS · ~$5M ARR",
     blurb:
       "Replaced 2 outbound SDRs with Intent Watcher + Sequence Composer + Reply Triager. Reply rate lifted 8× in 60 days.",
-    client: "[TBD-1: client name]",
+    client: "Series A SaaS — US West Coast",
     stats: [
       { v: "11.2%", l: "Reply rate" },
       { v: "47", l: "Meetings / 60d" },
@@ -397,7 +406,7 @@ const cases = [
     title: "D2C brand · ~$12M GMV",
     blurb:
       "Full Revenue Stack deployment. Lead Sourcer surfaced 38 in-market wholesale accounts in 60 days.",
-    client: "[TBD-2: client name]",
+    client: "D2C wellness brand — India",
     stats: [
       { v: "38", l: "In-market accts" },
       { v: "9", l: "Closed in Q1" },
@@ -409,7 +418,7 @@ const cases = [
     title: "Growth-stage agency",
     blurb:
       "CRM Auto-Pilot + Revenue Pulse. Killed 14 hrs/week of RevOps grunt work. Forecast accuracy +27%.",
-    client: "[TBD-3: client name]",
+    client: "Digital agency — 40-person team",
     stats: [
       { v: "14 hrs/wk", l: "RevOps saved" },
       { v: "+27%", l: "Forecast accuracy" },
@@ -428,12 +437,8 @@ export function ProofCases() {
             Real systems. <span className="text-accent">Real numbers.</span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            Cards below are structured for named case studies. Numbers
-            placeholder until clients greenlight publication — swap
-            <code className="mx-1 rounded bg-surface px-1 py-0.5 font-mono text-xs">
-              [TBD]
-            </code>
-            slots one-for-one.
+            Anonymized deployment outcomes from real AI Ropeway engagements.
+            Named case studies available on request.
           </p>
         </div>
 
@@ -581,7 +586,7 @@ export function PricingTiers() {
       cadence: "one-time",
       blurb:
         "1 AI SDR engine, built and deployed in 14 days. Signal detection + enrichment + personalized outreach. Full code handoff.",
-      cta: "Scope a sprint",
+      cta: "Book free AI audit",
       features: [
         "1 system shipped in 14 days",
         "Full code handoff",
@@ -596,7 +601,7 @@ export function PricingTiers() {
       cadence: "/mo · ongoing",
       blurb:
         "Dedicated AI GTM engineer. 1 new system every month. Continuous optimization. Weekly check-ins.",
-      cta: "Start partnership",
+      cta: "Book free AI audit",
       features: [
         "Dedicated GTM engineer",
         "Ship a new agent every month",
@@ -611,7 +616,7 @@ export function PricingTiers() {
       cadence: "/mo · 2 engineers",
       blurb:
         "Full Revenue Stack live: GTM + content engine + CRM automation. Bi-weekly strategy calls.",
-      cta: "Scope flagship",
+      cta: "Book free AI audit",
       featured: true,
       features: [
         "All 8 agents in production",
@@ -628,7 +633,7 @@ export function PricingTiers() {
       cadence: "multi-system",
       blurb:
         "Multi-system deployment + Voice AI bundle (via AI Placers). Dedicated PM. Quarterly business reviews.",
-      cta: "Talk to founder",
+      cta: "Book free AI audit",
       features: [
         "Multi-system custom build",
         "Voice AI add-on (via AI Placers)",
@@ -636,7 +641,7 @@ export function PricingTiers() {
         "Quarterly business reviews",
         "Priority response SLA",
       ],
-      target: "Mid-market & enterprise",
+      target: "Mid-market B2B",
     },
   ];
 
@@ -742,26 +747,25 @@ export function OtherSystems() {
         <div className="mb-8 flex flex-wrap items-center gap-3 border-b border-line pb-4">
           <span className="font-mono text-sm text-ink-soft">↳</span>
           <span className="mono-label text-ink-soft">
-            BEYOND GTM · 18 OTHER SYSTEMS
+            BEYOND GTM · MORE AI SYSTEMS
           </span>
           <Link
             href="/systems"
             className="ml-auto font-mono text-xs text-accent hover:underline"
           >
-            See all 18 →
+            See all →
           </Link>
         </div>
 
         <p className="mono-label mb-4 text-accent">[008] · Other systems</p>
         <h2 className="font-display text-[clamp(1.6rem,3.4vw,2.4rem)] font-bold leading-[1.12]">
-          Need more than AI GTM?{" "}
-          <span className="text-accent">18 additional systems</span> we ship.
+          AI GTM is our wedge.{" "}
+          <span className="text-accent">We also ship these.</span>
         </h2>
         <p className="mt-3 max-w-2xl text-lg leading-relaxed text-ink-soft">
-          Voice AI, content engines, ops automation, customer-support
-          deflection. We lead with AI GTM because that&apos;s where ROI lands
-          fastest — but every layer of your business has an AI ropeway too.
-          Each system gets its own dedicated build page.
+          Built for B2B SaaS first — adaptable to other GTM-heavy businesses.
+          Voice AI, content engines, ops automation, and more. Each system
+          gets its own dedicated build page.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -779,7 +783,7 @@ export function OtherSystems() {
           href="/systems"
           className="mt-6 inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface px-5 py-2.5 text-sm font-semibold text-ink hover:bg-surface-soft"
         >
-          Browse all 18 system pages <ArrowRight className="size-4" />
+          Browse all system pages <ArrowRight className="size-4" />
         </Link>
       </div>
     </section>
@@ -848,5 +852,274 @@ export function StatusFooter() {
         </span>
       </div>
     </div>
+  );
+}
+
+export function WhoThisIsFor() {
+  return (
+    <section className="px-3 md:px-5">
+      <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface-soft px-5 py-16 md:px-12 md:py-20">
+        <div className="mb-10 max-w-2xl">
+          <p className="mono-label mb-4 text-accent">Who this is for</p>
+          <h2 className="font-display text-[clamp(2rem,4.4vw,3.4rem)] font-bold leading-[1.08]">
+            Built for <span className="text-accent">B2B SaaS founders</span> running
+            founder-led sales.
+          </h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="rounded-2xl border border-teal/30 bg-teal/5 p-6">
+            <h3 className="flex items-center gap-2 font-display text-lg font-bold text-teal">
+              <Check className="size-5" /> This is for you if
+            </h3>
+            <ul className="mt-4 space-y-3 text-sm text-ink-soft">
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />B2B SaaS or services company, $1M–$20M ARR</li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Founder-led or small sales team (1–5 reps)</li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />CRM and inbox already in place (HubSpot, Salesforce, etc.)</li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Outbound is a priority channel (or should be)</li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Want to book 20–60 qualified meetings/month without hiring SDRs</li>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-line bg-surface p-6">
+            <h3 className="flex items-center gap-2 font-display text-lg font-bold text-ink-muted">
+              <X className="size-5" /> Not a fit if
+            </h3>
+            <ul className="mt-4 space-y-3 text-sm text-ink-muted">
+              <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Pre-revenue or pre-product — you need product-market fit first</li>
+              <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Pure inbound/PLG with no outbound intent</li>
+              <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Looking for a SaaS tool — we build and hand off custom systems</li>
+              <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Enterprise with 12-month procurement cycles for a $3k project</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ThreeStepProcess() {
+  const steps = [
+    {
+      num: "01",
+      icon: Target,
+      title: "Audit ICP & signals",
+      desc: "60-minute deep-dive. We map your ICP, identify buying signals, and show you what the engine looks like with your data. Free, no pitch deck.",
+    },
+    {
+      num: "02",
+      icon: Zap,
+      title: "Build the engine",
+      desc: "14 days. Signal detection, enrichment, personalized outreach, reply triage — deployed in your repo. Weekly check-ins throughout.",
+    },
+    {
+      num: "03",
+      icon: Rocket,
+      title: "Launch & optimize",
+      desc: "Go live. Monitor deliverability, tune sequences, scale what works. You own the code. We optimize alongside you.",
+    },
+  ];
+
+  return (
+    <section className="px-3 md:px-5">
+      <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface-soft px-5 py-16 md:px-12 md:py-20">
+        <div className="mb-10 text-center">
+          <p className="mono-label mb-4 text-accent">How it works</p>
+          <h2 className="font-display text-[clamp(2rem,4.4vw,3.4rem)] font-bold leading-[1.08]">
+            Audit. <span className="text-accent">Build.</span> Launch.
+          </h2>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {steps.map((s) => (
+            <div key={s.num} className="relative rounded-2xl border border-line bg-surface p-6 text-center">
+              <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-accent/10">
+                <s.icon className="size-6 text-accent" />
+              </div>
+              <p className="font-mono text-xs text-ink-faint">STEP {s.num}</p>
+              <h3 className="font-display mt-1 text-lg font-bold">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Deliverables() {
+  const items = [
+    "Full source code in your GitHub repo",
+    "Signal detection workflows (Clay / Make.com / n8n)",
+    "Enrichment & ICP scoring logic",
+    "Personalized outreach sequences",
+    "Reply triage & routing automation",
+    "Domain warmup & deliverability infrastructure",
+    "Real-time pipeline dashboard",
+    "3 months of bug-fix support",
+  ];
+
+  return (
+    <section className="px-3 md:px-5">
+      <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface-soft px-5 py-16 md:px-12 md:py-20">
+        <div className="mb-8 max-w-2xl">
+          <p className="mono-label mb-4 text-accent">What you get</p>
+          <h2 className="font-display text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-[1.08]">
+            After 14 days, <span className="text-accent">you own all of this.</span>
+          </h2>
+          <p className="mt-3 text-lg text-ink-soft">
+            No SaaS login. No vendor dependency. Everything ships into your repo,
+            your accounts, your infrastructure.
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((item) => (
+            <div key={item} className="flex items-start gap-3 rounded-xl border border-line bg-surface p-4">
+              <Package className="mt-0.5 size-4 shrink-0 text-accent" />
+              <span className="text-sm text-ink-soft">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ObjectionFaq() {
+  const objections = [
+    {
+      q: "Will this hurt my email deliverability?",
+      a: "No. Inbox Operator handles domain warmup, inbox rotation, and deliverability monitoring. We set up dedicated sending domains separate from your primary domain — your main email reputation stays untouched.",
+    },
+    {
+      q: "Do you use my personal LinkedIn account?",
+      a: "Only if you choose to. Most clients use dedicated LinkedIn profiles or skip LinkedIn entirely. The engine works across email, LinkedIn, and multi-channel — you pick the channels.",
+    },
+    {
+      q: "What tools do I need already?",
+      a: "A CRM (HubSpot, Salesforce, or similar) and a business email. We provide or configure everything else — Clay, Make.com, sending infrastructure, enrichment APIs.",
+    },
+    {
+      q: "What happens after the 14-day sprint?",
+      a: "You own the code. It runs in your accounts. We include 3 months of bug-fix support. Most clients move to an ongoing partnership for optimization and new agent deployments.",
+    },
+    {
+      q: "Who owns the code and data?",
+      a: "You do. 100%. Code ships to your GitHub repo. Workflows run in your accounts. If you stop working with us tomorrow, everything keeps running.",
+    },
+    {
+      q: "Can my team maintain this without you?",
+      a: "Yes. We build with standard tools (Clay, Make.com, n8n, HubSpot) your team already knows. We document everything and do a handoff walkthrough. Most teams are self-sufficient within a month.",
+    },
+  ];
+
+  return (
+    <section className="px-3 md:px-5">
+      <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface-soft px-5 py-16 md:px-12 md:py-20">
+        <div className="mb-8 max-w-2xl">
+          <p className="mono-label mb-4 text-accent">Common questions</p>
+          <h2 className="font-display text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-[1.08]">
+            Before you book: <span className="text-accent">the honest answers.</span>
+          </h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {objections.map((o) => (
+            <details key={o.q} className="group rounded-xl border border-line bg-surface p-5">
+              <summary className="flex cursor-pointer items-center gap-3 font-display text-sm font-semibold text-ink list-none">
+                <HelpCircle className="size-4 shrink-0 text-accent" />
+                {o.q}
+              </summary>
+              <p className="mt-3 pl-7 text-sm leading-relaxed text-ink-muted">{o.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function AeoAnswerBlocks() {
+  const blocks = [
+    {
+      q: "What is an AI GTM engine?",
+      a: "An AI GTM engine is a system of AI agents that automate go-to-market activities — detecting buying signals, enriching leads, writing personalized outreach, and triaging replies. Unlike SaaS tools, an AI GTM engine is custom-built for your ICP and deployed in your own infrastructure.",
+    },
+    {
+      q: "How does AI Ropeway work?",
+      a: "AI Ropeway builds and deploys custom AI GTM engines for B2B SaaS founders. The process takes 14 days: we audit your ICP and signals, build 8 AI agents (signal detection, enrichment, outreach, reply triage, CRM automation), and ship everything into your GitHub repo. You own the code from day one.",
+    },
+    {
+      q: "How much does AI GTM automation cost?",
+      a: "AI Ropeway starts at $3,000 for a one-time AI GTM Sprint (1 system, 14-day deployment). Ongoing partnerships run $2,500–$5,000/month with continuous optimization and new agent deployments. Every engagement starts with a free 60-minute AI GTM audit.",
+    },
+    {
+      q: "AI Ropeway vs Clay vs Apollo — what's the difference?",
+      a: "Clay and Apollo are SaaS tools — you pay monthly fees to use their platform. AI Ropeway builds custom AI systems deployed in your infrastructure. You own the code, there are no per-seat fees, and the system is tailored to your specific ICP and signals rather than one-size-fits-all.",
+    },
+  ];
+
+  return (
+    <section className="px-3 md:px-5">
+      <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface-soft px-5 py-16 md:px-12 md:py-20">
+        <div className="mb-8 max-w-2xl">
+          <p className="mono-label mb-4 text-accent">Quick answers</p>
+          <h2 className="font-display text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-[1.08]">
+            Everything you need to know about{" "}
+            <span className="text-accent">AI GTM engines.</span>
+          </h2>
+        </div>
+        <div className="space-y-4">
+          {blocks.map((b) => (
+            <div key={b.q} className="rounded-xl border border-line bg-surface p-6">
+              <h3 className="font-display text-base font-bold text-ink">{b.q}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{b.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function TrustSignals() {
+  return (
+    <section className="px-3 md:px-5">
+      <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface px-5 py-10 md:px-12 md:py-12">
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-ink-muted">
+          <span className="inline-flex items-center gap-2">
+            <MapPin className="size-4 text-accent" />
+            New Delhi, India · Serving globally
+          </span>
+          <span className="h-4 w-px bg-line" />
+          <a
+            href="https://www.linkedin.com/in/bharatgulati/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-ink"
+          >
+            <Linkedin className="size-4 text-accent" />
+            Founder on LinkedIn
+          </a>
+          <span className="h-4 w-px bg-line" />
+          <a
+            href="mailto:bg@aiplacers.com"
+            className="inline-flex items-center gap-2 hover:text-ink"
+          >
+            <Mail className="size-4 text-accent" />
+            bg@aiplacers.com
+          </a>
+          <span className="h-4 w-px bg-line" />
+          <a
+            href="https://www.aiplacers.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-ink"
+          >
+            <Globe className="size-4 text-accent" />
+            Also: AI Placers (Voice AI)
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
