@@ -9,7 +9,7 @@ export const nav = [
   { label: "8 Agents", href: "/#revenue-stack" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Founder", href: "/#founder" },
-  { label: "Other systems", href: "/systems" },
+  { label: "More AI Systems", href: "/systems" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -126,12 +126,12 @@ export const about = {
 };
 
 export const faqs = [
-  { q: "Do I need a tech team to implement this?", a: "No. We handle all deployment, integration, and setup. You get working AI systems without hiring developers." },
-  { q: "How quickly can we see results?", a: "Most clients see measurable impact within 30–60 days of deployment. Some systems like AI lead qualification show ROI in week one." },
-  { q: "Which industries do you work with?", a: "We work across 18+ industries including retail, healthcare, finance, SaaS, D2C, logistics, education, real estate, and more." },
-  { q: "What does the free AI audit include?", a: "A 60-minute deep-dive into your operations. We identify top 3–5 AI opportunities, estimate ROI, and give you a deployment priority list — no strings attached." },
-  { q: "How is AI Ropeway different from a typical agency?", a: "We don't do strategy decks. We deploy working AI systems that generate measurable outcomes. Implementation is our product." },
-  { q: "What tools and platforms do you work with?", a: "We integrate with your existing CRM, helpdesk, e-commerce platform, and marketing tools. No rip-and-replace required." },
+  { q: "What is an AI GTM engine?", a: "An AI GTM engine is a system of AI agents that automate go-to-market activities — detecting buying signals, enriching leads, writing personalized outreach, and triaging replies. Unlike SaaS tools, an AI GTM engine is custom-built for your ICP and deployed in your own infrastructure." },
+  { q: "How does AI Ropeway work?", a: "We build and deploy custom AI GTM engines for B2B SaaS founders. The process takes 14 days: audit your ICP and signals, build AI agents for signal detection, enrichment, outreach, and reply triage, then ship everything into your GitHub repo. You own the code from day one." },
+  { q: "How much does AI GTM automation cost?", a: "AI Ropeway starts at $3,000 for a one-time AI GTM Sprint (1 system, 14-day deployment). Ongoing partnerships run $2,500–$5,000/month with continuous optimization and new agent deployments. Every engagement starts with a free 60-minute AI GTM audit." },
+  { q: "What does the free AI audit include?", a: "A 60-minute deep-dive into your ICP, buying signals, and outbound motion. We run a live demo on your actual data, identify the highest-impact AI GTM opportunities, and give you a deployment roadmap — no pitch deck, no strings attached." },
+  { q: "How is AI Ropeway different from Clay or Apollo?", a: "Clay and Apollo are SaaS tools — you pay monthly fees to use their platform. AI Ropeway builds custom AI systems deployed in your infrastructure. You own the code, there are no per-seat fees, and the system is tailored to your specific ICP and signals rather than one-size-fits-all." },
+  { q: "Do I need a tech team to run this?", a: "No. We build with standard tools your team already knows — Clay, Make.com, n8n, HubSpot. We handle all deployment and include a handoff walkthrough. Most teams are self-sufficient within a month." },
 ];
 
 export const auditBenefits = [

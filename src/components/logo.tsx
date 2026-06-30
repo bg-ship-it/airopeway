@@ -47,7 +47,7 @@ export function Logo({ className }: { className?: string }) {
           style={{ color: GOLD, letterSpacing: "0.32em" }}
         >
           <span className="h-px w-2.5" style={{ background: GOLD, opacity: 0.5 }} />
-          AI Consulting
+          AI GTM Engineering
           <span
             className="h-px w-2.5"
             style={{ background: GOLD, opacity: 0.5 }}

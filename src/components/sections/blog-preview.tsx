@@ -6,7 +6,7 @@ import { BlogCover } from "@/components/blog-cover";
 import { ArrowUpRight } from "lucide-react";
 
 function formatDate(iso: string | null): string {
-  if (!iso) return "Coming soon";
+  if (!iso) return "";
   return new Date(iso).toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
