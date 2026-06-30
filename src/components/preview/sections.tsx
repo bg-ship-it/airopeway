@@ -21,7 +21,7 @@ import {
   Package,
   HelpCircle,
   MapPin,
-  Linkedin,
+  ExternalLink,
   Mail,
   Globe,
 } from "lucide-react";
@@ -1097,7 +1097,7 @@ export function TrustSignals() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 hover:text-ink"
           >
-            <Linkedin className="size-4 text-accent" />
+            <ExternalLink className="size-4 text-accent" />
             Founder on LinkedIn
           </a>
           <span className="h-4 w-px bg-line" />
