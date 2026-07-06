@@ -517,11 +517,21 @@ export function CompareTable() {
   const cell = (v: string | boolean, win = false) => {
     if (v === true)
       return (
-        <Check
-          className={`size-4 ${win ? "text-accent" : "text-ink-muted"}`}
-        />
+        <span className="inline-flex items-center">
+          <Check
+            aria-hidden="true"
+            className={`size-4 ${win ? "text-accent" : "text-ink-muted"}`}
+          />
+          <span className="sr-only">Yes</span>
+        </span>
       );
-    if (v === false) return <X className="size-4 text-ink-faint" />;
+    if (v === false)
+      return (
+        <span className="inline-flex items-center">
+          <X aria-hidden="true" className="size-4 text-ink-faint" />
+          <span className="sr-only">No</span>
+        </span>
+      );
     return (
       <span className={win ? "font-medium text-accent" : "text-ink-muted"}>
         {v}
@@ -845,10 +855,6 @@ export function StatusFooter() {
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line pt-6 text-xs text-ink-faint">
         <span className="font-mono">
           © 2026 AI Ropeway · bg@aiplacers.com
-        </span>
-        <span className="font-mono inline-flex items-center gap-2">
-          <span className="size-1.5 rounded-full bg-teal" />
-          v 5.0 · go-live candidate · ALL SYSTEMS NORMAL
         </span>
       </div>
     </div>

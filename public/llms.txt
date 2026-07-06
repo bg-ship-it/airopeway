@@ -1,0 +1,33 @@
+# AI Ropeway
+
+> AI Ropeway (airopeway.com) designs, builds, and deploys custom AI GTM engines for B2B SaaS founders: signal detection, lead enrichment, personalized outreach, and reply triage. Systems are shipped into the client's own GitHub repo in 14 days — the client owns 100% of the code, with no SaaS fees or vendor lock-in.
+
+## What we build
+- AI SDR Engine: intent detection, enrichment, inbox warmup and deliverability infrastructure.
+- Signal-Based Outbound: finds in-market accounts, writes research-grounded personalized outreach, triages replies.
+- Revenue Ops Automation: CRM hygiene, pipeline accuracy, real-time revenue dashboards.
+- 8 production agents: Intent Watcher, Account Mapper, Inbox Operator, Lead Sourcer, Sequence Composer, Reply Triager, CRM Auto-Pilot, Revenue Pulse.
+- Also: 18 AI systems including Voice AI, AI content engines, and ops automation: https://www.airopeway.com/systems
+
+## Pricing (USD)
+- AI GTM Sprint: $3,000 one-time — 1 AI SDR engine built and deployed in 14 days, full code handoff, 3 months bug-fix support.
+- GTM Partnership: $2,500/month — dedicated GTM engineer, one new system per month, weekly optimization.
+- Full Stack GTM: $5,000/month — all 8 agents in production, GTM + content + RevOps, founder-led delivery.
+- Enterprise: custom — multi-system deployment plus Voice AI bundle via AI Placers.
+Every engagement starts with a free 60-minute AI GTM audit with a live demo on the client's own ICP data: https://calendly.com/bg-aiplacers/new-meeting
+
+## Who it is for
+B2B SaaS and services founders at $1M-$20M ARR running founder-led sales with small teams (1-5 reps) who want 20-60 qualified meetings/month without hiring SDRs.
+
+## Key facts
+- Founder: Bharat Gulati — 12+ years enterprise sales, former VP Sales who scaled an AI automation platform's GTM from zero, IIM Indore alumnus (AI/ML specialization). https://www.linkedin.com/in/bharatgulati/
+- Clients own all code and infrastructure from day one; built with standard tools (Claude, Clay, Make.com, n8n, HubSpot, Supabase).
+- Based in New Delhi, India; serving clients globally.
+- Sister company: AI Placers — no-code AI voice agents for inbound/outbound calls (https://www.aiplacers.com).
+
+## Resources
+- AI GTM guide: https://www.airopeway.com/blog/ai-gtm-engines-complete-guide
+- AI Ropeway vs Clay: https://www.airopeway.com/blog/ai-ropeway-vs-clay
+- AI Ropeway vs Apollo: https://www.airopeway.com/blog/ai-ropeway-vs-apollo
+- Founder: https://www.airopeway.com/founder
+- Contact: bg@aiplacers.com
