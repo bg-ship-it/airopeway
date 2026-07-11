@@ -29,11 +29,11 @@ const footerColumns = [
   {
     heading: "Resources",
     links: [
+      { label: "What is an AI GTM Engine?", href: "/what-is-an-ai-gtm-engine" },
+      { label: "ROI Calculator", href: "/roi-calculator" },
+      { label: "Free AI GTM Playbook", href: "/ai-gtm-playbook" },
       { label: "AI GTM Guide", href: "/blog/ai-gtm-engines-complete-guide" },
-      { label: "AI GTM Strategy", href: "/blog/ai-gtm-strategy-pipeline" },
-      { label: "AI Agent Management", href: "/blog/enterprise-ai-agent-management-guide" },
       { label: "AI vs Clay", href: "/blog/ai-ropeway-vs-clay" },
-      { label: "AI vs Apollo", href: "/blog/ai-ropeway-vs-apollo" },
       { label: "All Posts", href: "/blog" },
     ],
   },
