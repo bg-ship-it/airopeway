@@ -326,7 +326,7 @@ export function RevenueStack() {
 
         <p className="mt-8 text-sm text-ink-muted">
           <strong className="font-semibold text-ink">Built with:</strong>{" "}
-          Claude · Clay · Make.com · Apollo · GetReplies · n8n · HubSpot ·
+          Claude · Clay · Make.com · Apollo · n8n · HubSpot ·
           Supabase · LinkedIn Sales Nav · +30 more
         </p>
       </div>
@@ -484,7 +484,7 @@ export function CompareTable() {
     {
       k: "Annual cost",
       sdr: "$96k / rep",
-      agency: "$96k+",
+      agency: "$60k",
       diy: "$30k tools",
       us: "$36k+",
     },
@@ -806,7 +806,6 @@ export function StackStrip() {
     "Clay",
     "Make.com",
     "Apollo",
-    "GetReplies",
     "n8n",
     "HubSpot",
     "Salesforce",
@@ -818,7 +817,15 @@ export function StackStrip() {
     "Cursor",
     "Railway",
     "Vercel",
-    "+20 more",
+    "Outreach",
+    "Pipedrive",
+    "Attio",
+    "Instantly",
+    "Lemlist",
+    "Snov.io",
+    "Codex",
+    "Exa",
+    "100+ more",
   ];
 
   return (
@@ -955,10 +962,10 @@ export function ThreeStepProcess() {
 
 export function Deliverables() {
   const items = [
-    "Full source code in your GitHub repo",
-    "Signal detection workflows (Clay / Make.com / n8n)",
+    "Full source shipped to you",
+    "Signal detection workflows",
     "Enrichment & ICP scoring logic",
-    "Personalized outreach sequences",
+    "Multi-channel Personalized outreach sequences",
     "Reply triage & routing automation",
     "Domain warmup & deliverability infrastructure",
     "Real-time pipeline dashboard",
@@ -1124,6 +1131,62 @@ export function TrustSignals() {
             <Globe className="size-4 text-accent" />
             Also: AI Placers (Voice AI)
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function AboutSection() {
+  const points = [
+    "Premier AI deployment partner for modern businesses",
+    "Serving businesses globally",
+    "18 proprietary AI systems ready to deploy",
+    "ROI-first, not strategy-deck-first",
+  ];
+  return (
+    <section id="about" className="px-3 md:px-5">
+      <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface px-5 py-16 md:px-12 md:py-20">
+        <p className="mono-label mb-4 text-accent">About · AI Ropeway × AI Placers</p>
+        <div className="grid gap-8 md:grid-cols-[1.1fr_1fr] md:items-start">
+          <div>
+            <h2 className="font-display text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-[1.1]">
+              Two companies. <span className="text-accent">One mission.</span>
+            </h2>
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">
+              AI Ropeway handles the systems and deployment — embedding AI into
+              how you operate, sell, support, and grow. AI Placers handles the
+              workforce side — placing AI-native voice agents into businesses
+              ready to scale.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface-soft px-4 py-2 text-ink-soft hover:bg-surface"
+              >
+                More about us <ArrowUpRight className="size-3.5" />
+              </Link>
+              <a
+                href="https://www.aiplacers.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface-soft px-4 py-2 text-ink-soft hover:bg-surface"
+              >
+                Visit AI Placers <ExternalLink className="size-3.5" />
+              </a>
+            </div>
+          </div>
+          <ul className="space-y-3">
+            {points.map((p) => (
+              <li
+                key={p}
+                className="flex items-start gap-3 rounded-xl border border-line bg-surface-soft p-4 text-sm text-ink-soft"
+              >
+                <Check className="mt-0.5 size-4 shrink-0 text-teal" />
+                {p}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

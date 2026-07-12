@@ -5,6 +5,7 @@ import {
   PillarsSection,
   RevenueStack,
   FounderBlock,
+  AboutSection,
   ProofCases,
   AeoAnswerBlocks,
   CompareTable,
@@ -26,6 +27,7 @@ export default function Home() {
       <PillarsSection />
       <RevenueStack />
       <FounderBlock />
+      <AboutSection />
       <ProofCases />
       <AeoAnswerBlocks />
       <CompareTable />
