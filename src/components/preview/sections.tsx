@@ -484,7 +484,7 @@ export function CompareTable() {
     {
       k: "Annual cost",
       sdr: "$96k / rep",
-      agency: "$96k+",
+      agency: "$60k+",
       diy: "$30k tools",
       us: "$36k+",
     },
@@ -879,9 +879,9 @@ export function WhoThisIsFor() {
               <Check className="size-5" /> This is for you if
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-ink-soft">
-              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />B2B SaaS or services company, $1M–$20M ARR</li>
-              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Founder-led or small sales team (1–5 reps)</li>
-              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />CRM and inbox already in place (HubSpot, Salesforce, etc.)</li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />B2B SaaS or services company, $100k–$20M ARR</li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Founder-led or small sales team (1–20 reps)</li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />CRM/ERP already in place (HubSpot, Salesforce, GHL, etc.)</li>
               <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Outbound is a priority channel (or should be)</li>
               <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Want to book 20–60 qualified meetings/month without hiring SDRs</li>
             </ul>
@@ -955,7 +955,7 @@ export function ThreeStepProcess() {
 
 export function Deliverables() {
   const items = [
-    "Full source code in your GitHub repo",
+    "Full access to the system",
     "Signal detection workflows (Clay / Make.com / n8n)",
     "Enrichment & ICP scoring logic",
     "Personalized outreach sequences",

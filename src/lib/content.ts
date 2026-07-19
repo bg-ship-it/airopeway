@@ -3,7 +3,7 @@
 
 // External booking link. Every “book a call / free audit” CTA resolves here
 // (the on-page audit form was retired in favour of Calendly).
-export const BOOK_URL = "https://calendly.com/bg-aiplacers/new-meeting";
+export const BOOK_URL = "https://cal.com/bharat-gulati-ard07h/gtm-audit-by-ai-ropeway";
 
 export const nav = [
   { label: "8 Agents", href: "/#revenue-stack" },
