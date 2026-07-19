@@ -58,7 +58,7 @@ export function SiteFooter() {
             <Logo />
             <p className="mt-3 max-w-xs text-sm text-ink-muted">
               AI GTM engines for B2B founders. Signal detection, enrichment,
-              outreach, reply triage — shipped to your repo in 14 days.
+              outreach, reply triage — live in your stack in 14 days.
             </p>
             <Cta href={BOOK_URL} className="mt-5" showArrow={false}>
               Book a Call
