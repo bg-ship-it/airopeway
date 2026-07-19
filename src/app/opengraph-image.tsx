@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "AI Ropeway — AI GTM engines that book meetings on autopilot. You own everything we ship.";
+  "AI Ropeway — AI GTM engines that book meetings on autopilot. Full access to everything we ship.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -75,7 +75,7 @@ export default function Image() {
             AI GTM engines that book meetings on autopilot.
           </div>
           <div style={{ fontSize: "30px", color: "#433f38", marginTop: "6px" }}>
-            8 agents. Shipped to your repo in 14 days. You own the code.
+            8 agents. Live in your stack in 14 days. Full access from day one.
           </div>
         </div>
 

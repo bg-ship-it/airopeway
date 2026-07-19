@@ -66,7 +66,7 @@ export function Hero() {
             <span className="text-accent">book meetings</span> on autopilot.
             <br />
             <em className="font-medium italic text-ink-muted">
-              You own everything we ship.
+              Full access to everything we ship.
             </em>
           </h1>
 
@@ -76,7 +76,7 @@ export function Hero() {
               AI GTM engines
             </strong>{" "}
             for B2B founders — signal detection, enrichment, personalized
-            outreach, reply triage. Shipped into your repo in{" "}
+            outreach, reply triage. Live in your stack in{" "}
             <strong className="font-semibold text-ink">14 days</strong>.
             Live demo on{" "}
             <strong className="font-semibold text-ink">your data</strong> on
@@ -103,7 +103,7 @@ export function Hero() {
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-muted">
             <span className="inline-flex items-center gap-1.5">
               <Code2 className="size-4 text-teal" />
-              Code in your repo, day one
+              Full system access, day one
             </span>
             <span className="inline-flex items-center gap-1.5">
               <PlayCircle className="size-4 text-teal" />
@@ -120,7 +120,7 @@ export function Hero() {
           {[
             { val: "14 days", lbl: "First system shipped" },
             { val: "12+ yrs", lbl: "Founder enterprise sales" },
-            { val: "100%", lbl: "Code ownership, day one" },
+            { val: "100%", lbl: "System access, day one" },
             { val: "B2B SaaS", lbl: "Primary wedge" },
           ].map((s) => (
             <div
@@ -283,7 +283,7 @@ export function RevenueStack() {
             8 agents across the 3 pillars.
             <br />
             <span className="text-ink-muted">
-              Shipped into your repo. Yours forever.
+              Deployed into your stack. Yours to run.
             </span>
           </h2>
         </div>
@@ -362,7 +362,7 @@ export function FounderBlock() {
               go-to-market and shipping AI in production. I&apos;ve actually
               been the VP Sales who built outbound from nothing. Now I ship
               the AI systems that do the same job at machine speed —{" "}
-              <em className="italic">and you own the code on day one</em>.
+              <em className="italic">and you get full access on day one</em>.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm">
               <Link
@@ -495,7 +495,7 @@ export function CompareTable() {
       diy: "90 days+",
       us: "14–30 days",
     },
-    { k: "You own the code", sdr: false, agency: false, diy: true, us: true },
+    { k: "Full system access", sdr: false, agency: false, diy: true, us: true },
     {
       k: "Scales 5×",
       sdr: "Hire 5",
@@ -595,11 +595,11 @@ export function PricingTiers() {
       price: "$3,000",
       cadence: "one-time",
       blurb:
-        "1 AI SDR engine, built and deployed in 14 days. Signal detection + enrichment + personalized outreach. Full code handoff.",
+        "1 AI SDR engine, built and deployed in 14 days. Signal detection + enrichment + personalized outreach. Full system handoff.",
       cta: "Book free AI audit",
       features: [
         "1 system shipped in 14 days",
-        "Full code handoff",
+        "Full system handoff",
         "ICP & signal config included",
         "3 months bug-fix support",
       ],
@@ -671,7 +671,7 @@ export function PricingTiers() {
             <strong className="font-semibold text-ink">
               alongside your team
             </strong>{" "}
-            — weekly meetings, real ownership, code in your repo. No
+            — weekly meetings, real ownership, full system access. No
             offshoring layers. No junior-dev surprises.
           </p>
         </div>
@@ -916,13 +916,13 @@ export function ThreeStepProcess() {
       num: "02",
       icon: Zap,
       title: "Build the engine",
-      desc: "14 days. Signal detection, enrichment, personalized outreach, reply triage — deployed in your repo. Weekly check-ins throughout.",
+      desc: "14 days. Signal detection, enrichment, personalized outreach, reply triage — deployed in your stack. Weekly check-ins throughout.",
     },
     {
       num: "03",
       icon: Rocket,
       title: "Launch & optimize",
-      desc: "Go live. Monitor deliverability, tune sequences, scale what works. You own the code. We optimize alongside you.",
+      desc: "Go live. Monitor deliverability, tune sequences, scale what works. You have full access. We optimize alongside you.",
     },
   ];
 
@@ -971,10 +971,10 @@ export function Deliverables() {
         <div className="mb-8 max-w-2xl">
           <p className="mono-label mb-4 text-accent">What you get</p>
           <h2 className="font-display text-[clamp(1.8rem,3.6vw,2.8rem)] font-bold leading-[1.08]">
-            After 14 days, <span className="text-accent">you own all of this.</span>
+            After 14 days, <span className="text-accent">you get full access to all of this.</span>
           </h2>
           <p className="mt-3 text-lg text-ink-soft">
-            No SaaS login. No vendor dependency. Everything ships into your repo,
+            No SaaS login. No vendor dependency. Everything deploys into your stack,
             your accounts, your infrastructure.
           </p>
         </div>
@@ -1007,11 +1007,11 @@ export function ObjectionFaq() {
     },
     {
       q: "What happens after the 14-day sprint?",
-      a: "You own the code. It runs in your accounts. We include 3 months of bug-fix support. Most clients move to an ongoing partnership for optimization and new agent deployments.",
+      a: "You keep full access. It runs in your accounts. We include 3 months of bug-fix support. Most clients move to an ongoing partnership for optimization and new agent deployments.",
     },
     {
-      q: "Who owns the code and data?",
-      a: "You do. 100%. Code ships to your GitHub repo. Workflows run in your accounts. If you stop working with us tomorrow, everything keeps running.",
+      q: "Who owns the system and data?",
+      a: "You do. 100%. The system and workflows run in your accounts with full access. If you stop working with us tomorrow, everything keeps running.",
     },
     {
       q: "Can my team maintain this without you?",
@@ -1052,7 +1052,7 @@ export function AeoAnswerBlocks() {
     },
     {
       q: "How does AI Ropeway work?",
-      a: "AI Ropeway builds and deploys custom AI GTM engines for B2B SaaS founders. The process takes 14 days: we audit your ICP and signals, build 8 AI agents (signal detection, enrichment, outreach, reply triage, CRM automation), and ship everything into your GitHub repo. You own the code from day one.",
+      a: "AI Ropeway builds and deploys custom AI GTM engines for B2B SaaS founders. The process takes 14 days: we audit your ICP and signals, build 8 AI agents (signal detection, enrichment, outreach, reply triage, CRM automation), and ship everything into your stack. You get full access from day one.",
     },
     {
       q: "How much does AI GTM automation cost?",
@@ -1060,7 +1060,7 @@ export function AeoAnswerBlocks() {
     },
     {
       q: "AI Ropeway vs Clay vs Apollo — what's the difference?",
-      a: "Clay and Apollo are SaaS tools — you pay monthly fees to use their platform. AI Ropeway builds custom AI systems deployed in your infrastructure. You own the code, there are no per-seat fees, and the system is tailored to your specific ICP and signals rather than one-size-fits-all.",
+      a: "Clay and Apollo are SaaS tools — you pay monthly fees to use their platform. AI Ropeway builds custom AI systems deployed in your infrastructure. You get full access, there are no per-seat fees, and the system is tailored to your specific ICP and signals rather than one-size-fits-all.",
     },
   ];
 
