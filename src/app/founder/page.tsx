@@ -20,7 +20,7 @@ const credentials = [
 ];
 
 const sameAs = [
-  "https://www.linkedin.com/in/bharatgulati",
+  "https://www.linkedin.com/in/bharat-gulati9711315523/",
   "https://www.aiplacers.com",
 ];
 
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
       "Founder of AI Ropeway. Ex-VP Sales who scaled AI GTM from zero. IIM Indore AI/ML alum.",
     firstName: "Bharat",
     lastName: "Gulati",
-    username: "bharatgulati",
+    username: "bharat-gulati9711315523",
   },
   twitter: {
     card: "summary_large_image",

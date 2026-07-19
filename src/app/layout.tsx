@@ -95,7 +95,7 @@ const jsonLd = {
       areaServed: ["IN", "AU", "GB", "US", "CA"],
       sameAs: [
         "https://www.aiplacers.com",
-        "https://www.linkedin.com/in/bharatgulati/",
+        "https://www.linkedin.com/in/bharat-gulati9711315523/",
       ],
       knowsAbout: [
         "AI GTM engines",
@@ -115,7 +115,7 @@ const jsonLd = {
         "@type": "EducationalOrganization",
         name: "IIM Indore",
       },
-      sameAs: ["https://www.linkedin.com/in/bharatgulati/"],
+      sameAs: ["https://www.linkedin.com/in/bharat-gulati9711315523/", "https://www.linkedin.com/company/ai-ropeway"],
       knowsAbout: [
         "Enterprise sales",
         "AI automation",

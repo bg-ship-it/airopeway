@@ -1098,13 +1098,23 @@ export function TrustSignals() {
           </span>
           <span className="h-4 w-px bg-line" />
           <a
-            href="https://www.linkedin.com/in/bharatgulati/"
+            href="https://www.linkedin.com/in/bharat-gulati9711315523/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 hover:text-ink"
           >
             <ExternalLink className="size-4 text-accent" />
             Founder on LinkedIn
+          </a>
+          <span className="h-4 w-px bg-line" />
+          <a
+            href="https://www.linkedin.com/company/ai-ropeway"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-ink"
+          >
+            <ExternalLink className="size-4 text-accent" />
+            AI Ropeway on LinkedIn
           </a>
           <span className="h-4 w-px bg-line" />
           <a
