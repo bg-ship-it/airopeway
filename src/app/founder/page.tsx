@@ -89,7 +89,7 @@ const publishedArticles = [
 export const metadata: Metadata = {
   title: "Bharat Gulati · Founder, AI Ropeway",
   description:
-    "Bharat Gulati — founder of AI Ropeway. Ex-VP Sales who scaled AI GTM from zero. IIM Indore AI/ML alum. 12+ yrs B2B enterprise sales. Ships AI GTM engines into your repo in 14 days.",
+    "Bharat Gulati — founder of AI Ropeway. Ex-VP Sales who scaled AI GTM from zero. IIM Indore AI/ML alum. 12+ yrs B2B enterprise sales. Ships AI GTM engines into your stack in 14 days.",
   alternates: { canonical: "/founder" },
   openGraph: {
     type: "profile",
@@ -304,7 +304,7 @@ export default function FounderPage() {
               <strong className="text-ink">Founder, AI Ropeway.</strong>{" "}
               AI GTM engineering studio for B2B SaaS founders. Signal
               detection, enrichment, personalized outreach, reply triage —
-              shipped into your repo in 14 days. You own everything we
+              live in your stack in 14 days. You get full access to everything we
               ship.
             </p>
             <p>
@@ -358,7 +358,7 @@ export default function FounderPage() {
           Book a 60-min call with Bharat
         </Cta>
         <p className="mt-6 text-sm text-ink-muted">
-          Live demo on your real ICP data, first call. Code in your repo,
+          Live demo on your real ICP data, first call. Code in your stack,
           day one.
         </p>
       </section>

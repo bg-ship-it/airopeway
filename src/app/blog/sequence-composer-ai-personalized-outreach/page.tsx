@@ -94,7 +94,7 @@ export default function Post() {
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Ship Sequence Composer with the rest of the stack</h2>
-              <p className="mx-auto mb-6 max-w-xl text-ink-soft">14-day sprint. Code in your repo. Live demo on your data, first call.</p>
+              <p className="mx-auto mb-6 max-w-xl text-ink-soft">14-day sprint. Full system access. Live demo on your data, first call.</p>
               <Cta href="/#audit" size="lg">Book live demo on your data</Cta>
               <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/lead-sourcer-signal-based-outbound" className="text-accent hover:underline">Lead Sourcer</Link> · <Link href="/blog/reply-triager-ai-reply-classification" className="text-accent hover:underline">Reply Triager</Link> · <Link href="/blog/inbox-operator-cold-email-deliverability" className="text-accent hover:underline">Inbox Operator</Link></p>
             </section>

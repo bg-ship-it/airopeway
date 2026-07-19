@@ -95,7 +95,7 @@ export default function Post() {
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Ship Account Mapper alongside the other 7 agents</h2>
-              <p className="mx-auto mb-6 max-w-xl text-ink-soft">14-day sprint. Code in your repo. Live demo on your data, first call.</p>
+              <p className="mx-auto mb-6 max-w-xl text-ink-soft">14-day sprint. Full system access. Live demo on your data, first call.</p>
               <Cta href="/#audit" size="lg">Book live demo on your data</Cta>
               <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/intent-watcher-ai-buying-signals" className="text-accent hover:underline">Intent Watcher</Link> · <Link href="/blog/sequence-composer-ai-personalized-outreach" className="text-accent hover:underline">Sequence Composer</Link> · <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">AI Ropeway vs Clay</Link></p>
             </section>

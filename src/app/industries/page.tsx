@@ -10,7 +10,7 @@ const SITE_URL = "https://www.airopeway.com";
 export const metadata: Metadata = {
   title: "AI GTM by industry · 16 vertical playbooks",
   description:
-    "Industry-specific AI GTM playbooks. Retail, healthcare, finance, SaaS, e-commerce, logistics, real estate + 9 more. Each shipped to your repo in 14 days.",
+    "Industry-specific AI GTM playbooks. Retail, healthcare, finance, SaaS, e-commerce, logistics, real estate + 9 more. Each live in your stack in 14 days.",
   alternates: { canonical: "/industries" },
   openGraph: {
     type: "website",
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     siteName: "AI Ropeway",
     title: "AI GTM by industry · 16 vertical playbooks | AI Ropeway",
     description:
-      "Industry-specific AI GTM playbooks across 16 verticals. Shipped to your repo in 14 days.",
+      "Industry-specific AI GTM playbooks across 16 verticals. Live in your stack in 14 days.",
   },
   twitter: {
     card: "summary_large_image",
     title: "AI GTM by industry · 16 vertical playbooks | AI Ropeway",
     description:
-      "Industry-specific AI GTM playbooks across 16 verticals. Shipped to your repo in 14 days.",
+      "Industry-specific AI GTM playbooks across 16 verticals. Live in your stack in 14 days.",
   },
 };
 

@@ -61,10 +61,10 @@ const faqs = [
   },
   {
     q: "Why not just hire SDRs or use an agency?",
-    a: "SDRs cost $96k+/year per rep and take 60-90 days to ramp. Agencies cost the same and you don't own the assets. An AI GTM engine costs $3k one-time or $2.5k/mo, ships in 14 days, scales 5x without new hires, and the code lives in your repo. The math only works against AI for very high-touch enterprise sales motions.",
+    a: "SDRs cost $96k+/year per rep and take 60-90 days to ramp. Agencies cost the same and you don't own the assets. An AI GTM engine costs $3k one-time or $2.5k/mo, ships in 14 days, scales 5x without new hires, and the system runs in your stack. The math only works against AI for very high-touch enterprise sales motions.",
   },
   {
-    q: "What does 'you own everything we ship' mean?",
+    q: "What does 'full access to everything we ship' mean?",
     a: "All agent code lands in your GitHub repo on day one. No SaaS subscription holds your data hostage. If you fire AI Ropeway tomorrow, your AI GTM engine keeps running on your infrastructure. No per-seat fees, no per-message fees, no lock-in.",
   },
   {
@@ -216,7 +216,7 @@ export default function PillarPost() {
               keep hiring SDRs, or do I ship an AI GTM engine? This is the
               honest, technical answer — what it is, what it costs, the 8
               agents that make it work, and the 14-day playbook to ship one
-              into your repo.
+              into your stack.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-muted">
               <span>
@@ -280,7 +280,7 @@ export default function PillarPost() {
               <ul className="my-6 space-y-3 pl-0">
                 {[
                   "One SDR: $96k/year fully-loaded, 60-90 days to ramp, books 4-8 meetings/month at steady state, churns every 14-18 months.",
-                  "One AI GTM Sprint: $3k one-time, 14 days to ship, books 30-50 meetings/quarter at steady state, code in your repo forever.",
+                  "One AI GTM Sprint: $3k one-time, 14 days to ship, books 30-50 meetings/quarter at steady state, full system access forever.",
                   "Scaling 5x: hire 4 more SDRs ($384k/year + ramp) vs. run the same AI GTM engine on more accounts (same cost).",
                   "Owning the asset: an SDR walks out the door with the playbook in their head. The AI GTM engine lives in your GitHub.",
                 ].map((point) => (
@@ -440,7 +440,7 @@ export default function PillarPost() {
                 Anthropic handles reasoning. Make.com and n8n handle the
                 workflow glue. Supabase stores the agent state. The
                 orchestration code — the part you actually own — lives
-                in your repo.
+                in your stack.
               </p>
               <p>
                 The mistake we see most often: founders pick a single
@@ -497,7 +497,7 @@ export default function PillarPost() {
                   ],
                   [
                     "Day 13 — Handover",
-                    "Code documented in your repo. README walks the team through running, monitoring, and tuning each agent.",
+                    "System documented in your stack. README walks the team through running, monitoring, and tuning each agent.",
                   ],
                   [
                     "Day 14 — Scale",
@@ -529,7 +529,7 @@ export default function PillarPost() {
               </p>
               <ul className="my-6 space-y-3">
                 <li className="rounded-2xl border border-line bg-surface p-5">
-                  <strong className="text-ink">Code in your repo, day one.</strong>{" "}
+                  <strong className="text-ink">Full system access, day one.</strong>{" "}
                   Every agent lands in your GitHub. No SaaS lock-in. No data
                   hostage situation. If we get hit by a bus, your engine
                   keeps running.

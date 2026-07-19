@@ -10,7 +10,7 @@ const SITE_URL = "https://www.airopeway.com";
 export const metadata: Metadata = {
   title: "About · Founder-led AI GTM engineering",
   description:
-    "Founded by Bharat Gulati — 12+ yrs enterprise sales, ex-VP Sales scaling AI GTM from zero, IIM Indore AI/ML. We ship AI GTM engines into your repo in 14 days.",
+    "Founded by Bharat Gulati — 12+ yrs enterprise sales, ex-VP Sales scaling AI GTM from zero, IIM Indore AI/ML. We ship AI GTM engines into your stack in 14 days.",
   alternates: { canonical: "/about" },
   openGraph: {
     type: "website",
@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     siteName: "AI Ropeway",
     title: "About AI Ropeway | Founder-led AI GTM engineering",
     description:
-      "Founded by Bharat Gulati — ex-VP Sales who scaled AI GTM from zero. We ship AI GTM engines into your repo, you own the code.",
+      "Founded by Bharat Gulati — ex-VP Sales who scaled AI GTM from zero. We ship AI GTM engines into your stack, you get full access.",
   },
   twitter: {
     card: "summary_large_image",
     title: "About AI Ropeway | Founder-led AI GTM engineering",
     description:
-      "Founded by Bharat Gulati — ex-VP Sales who scaled AI GTM from zero. We ship AI GTM engines into your repo.",
+      "Founded by Bharat Gulati — ex-VP Sales who scaled AI GTM from zero. We ship AI GTM engines into your stack.",
   },
 };
 
@@ -69,7 +69,7 @@ const jsonLd = {
 
 const principles = [
   "AI GTM engines, not strategy decks",
-  "Code shipped into your repo on day one",
+  "Full system access on day one",
   "Live demo on your ICP data, first call",
   "No SaaS lock-in, no per-seat fees",
   "Founder-led delivery, weekly meetings",
@@ -99,7 +99,7 @@ export default function AboutPage() {
               AI Ropeway is an AI GTM engineering studio for B2B SaaS founders.
               We design, build, and deploy AI GTM engines — signal detection,
               enrichment, personalized outreach, reply triage — shipped into
-              your repo in 14 days. You own everything we ship.
+              your stack in 14 days. You get full access to everything we ship.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
             <p>
               I&apos;ve actually been the VP Sales who built outbound from
               nothing. Now I ship the AI systems that do the same job at
-              machine speed — and you own the code on day one. No agency
+              machine speed — and you get full access on day one. No agency
               middle layer, no offshoring, no junior-dev surprises.
             </p>
             <p>

@@ -47,12 +47,12 @@ const tiers: Tier[] = [
     price: "$3,000",
     cadence: "one-time",
     blurb:
-      "1 AI SDR engine, built and deployed in 14 days. Signal detection + enrichment + personalized outreach. Full code handoff.",
+      "1 AI SDR engine, built and deployed in 14 days. Signal detection + enrichment + personalized outreach. Full system handoff.",
     cta: "Scope a Sprint",
     target: "Founders testing AI GTM",
     features: [
       "1 system shipped in 14 days",
-      "Full code handoff to your repo",
+      "Full system handoff",
       "ICP & signal config included",
       "3 months bug-fix support",
       "Free 60-min AI GTM audit first",
@@ -179,7 +179,7 @@ export default function PricingPage() {
               <strong className="font-semibold text-ink">
                 alongside your team
               </strong>{" "}
-              — weekly meetings, real ownership, code in your repo. No
+              — weekly meetings, real ownership, full system access. No
               offshoring layers. No junior-dev surprises. Every engagement
               starts with a free 60-min audit and live demo on your ICP data.
             </p>
@@ -284,7 +284,7 @@ export default function PricingPage() {
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
           {[
             {
-              title: "Code in your repo, day one",
+              title: "Full system access, day one",
               body: "Every system ships to your GitHub. No SaaS lock-in, no per-seat fees, no “data held hostage” on the way out.",
             },
             {

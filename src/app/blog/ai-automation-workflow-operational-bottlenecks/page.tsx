@@ -94,7 +94,7 @@ export default function Post() {
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Deploying the fix: the <Link href="/systems/ai-automation-and-workflow" className="text-accent hover:underline">AI Automation & Workflow</Link> system</h2>
             <p>Here's how the deployment works at AI Ropeway. Day 1–2: we run the bottleneck audit together and pick the top 3. Day 3–10: we build the automations — API integrations, AI processing logic, error handling, monitoring. Day 11–14: we deploy, test with live data, and hand off. You have working automations in production in 14 days.</p>
-            <p>The automations ship to your repo. You own the code. If you cancel tomorrow, the automations keep running. No vendor lock-in, no monthly seat fees for the automation itself.</p>
+            <p>The automations deploy into your stack. You get full access. If you cancel tomorrow, the automations keep running. No vendor lock-in, no monthly seat fees for the automation itself.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Measuring the ROI</h2>
             <p>Every automation gets three metrics tracked from day one:</p>

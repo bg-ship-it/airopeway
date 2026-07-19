@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Are AI Ropeway and Clay competitors?", a: "No — Clay is a layer inside an AI Ropeway deployment. Clay handles the waterfall enrichment best in the market. AI Ropeway builds the full 8-agent AI GTM engine that uses Clay as one of its data layers." },
   { q: "Do I need Clay if I hire AI Ropeway?", a: "Yes, typically. Clay is the enrichment layer Account Mapper runs on. If you don’t have Clay credits, we provision them as part of the sprint. Cost is passed through at usage." },
-  { q: "Why not just use Clay tables for everything?", a: "Clay is exceptional at table-based enrichment and one-off automations. It’s not designed to be the orchestration backbone for 8 coordinated agents, signal detection across web sources, inbox warmup, or reply triage. For that you need code in your repo." },
+  { q: "Why not just use Clay tables for everything?", a: "Clay is exceptional at table-based enrichment and one-off automations. It’s not designed to be the orchestration backbone for 8 coordinated agents, signal detection across web sources, inbox warmup, or reply triage. For that you need full system access." },
   { q: "What does the cost comparison look like?", a: "Clay alone: $349–$2,000+/month depending on credits. AI Ropeway Sprint: $3,000 one-time (Clay credits included for pilot). Most teams end up with both: AI Ropeway for the engine, Clay for the data layer inside it." },
 ];
 
@@ -86,7 +86,7 @@ export default function Post() {
             <p>Claygent (their AI agent inside tables) is also genuinely good for table-bound research tasks: scrape a website, extract a fact, score against a rubric. It’s designed for the table-cell unit of work.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">What AI Ropeway is genuinely best at</h2>
-            <p>Building the full AI GTM engine that runs continuously, autonomously, with measurable per-agent ROI. The 8 agents — Intent Watcher, Account Mapper (which uses Clay as a layer), Inbox Operator, Lead Sourcer, Sequence Composer, Reply Triager, CRM Auto-Pilot, Revenue Pulse — are coordinated as one system shipped to your repo in 14 days.</p>
+            <p>Building the full AI GTM engine that runs continuously, autonomously, with measurable per-agent ROI. The 8 agents — Intent Watcher, Account Mapper (which uses Clay as a layer), Inbox Operator, Lead Sourcer, Sequence Composer, Reply Triager, CRM Auto-Pilot, Revenue Pulse — are coordinated as one system live in your stack in 14 days.</p>
             <p>You can’t build Inbox Operator inside Clay. You can’t build Reply Triager inside Clay. Clay isn’t designed for that — it’s designed for tables. AI Ropeway uses Clay <em>inside</em> the Account Mapper agent because Clay is the best tool for that layer.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Honest comparison</h2>
@@ -102,7 +102,7 @@ export default function Post() {
             <p>You have a small team, a focused use case (build enriched lists, run one-off campaigns), and the bandwidth to configure tables yourself. Clay alone is the right call.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When to use AI Ropeway</h2>
-            <p>You want a continuous AI GTM engine — not a workbook you maintain. You want code in your repo, not a SaaS workbook locked behind a subscription. You want all 8 agents (not just the enrichment layer) running 24/7 with measured ROI. Then AI Ropeway is what you ship, with Clay as one of the data layers inside it.</p>
+            <p>You want a continuous AI GTM engine — not a workbook you maintain. You want full system access, not a SaaS workbook locked behind a subscription. You want all 8 agents (not just the enrichment layer) running 24/7 with measured ROI. Then AI Ropeway is what you ship, with Clay as one of the data layers inside it.</p>
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>

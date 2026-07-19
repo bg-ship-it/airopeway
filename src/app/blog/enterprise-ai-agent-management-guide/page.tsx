@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "How many AI agents can a mid-market company realistically run?", a: "There's no hard ceiling, but the bottleneck is orchestration, not compute. Most mid-market teams run 4–8 agents effectively once they have central logging, defined handoff rules, and a human-in-the-loop escalation path. The mistake is adding agents before the management layer exists." },
   { q: "What's the biggest risk of running multiple AI agents?", a: "Silent failure. An agent that stops producing results looks identical to an agent that was never deployed — unless you have monitoring. We've seen companies run a lead-scoring agent for 3 months without noticing it had stopped receiving data after an API key expired." },
-  { q: "Do I need to build my own orchestration layer?", a: "No. AI Ropeway deploys the management layer alongside the agents — central logging, guardrails, fallback logic, and a monitoring dashboard. It ships to your repo, so you own it. But building from scratch would take an engineering team 3–6 months." },
+  { q: "Do I need to build my own orchestration layer?", a: "No. AI Ropeway deploys the management layer alongside the agents — central logging, guardrails, fallback logic, and a monitoring dashboard. It deploys into your stack, so you have full access. But building from scratch would take an engineering team 3–6 months." },
   { q: "What does AI agent management cost?", a: "If you're deploying through AI Ropeway, the management layer is included in the sprint cost ($3k one-time or $2.5k/month ongoing). If you're building in-house, expect 2–3 senior engineers for 4–6 months, plus ongoing maintenance — roughly $150k–$300k in loaded cost." },
 ];
 

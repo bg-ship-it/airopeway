@@ -23,7 +23,7 @@ const sources: Source[] = [
     publisher: "Tremor",
     title: "Tremor dashboard components",
     url: "https://www.tremor.so",
-    note: "Charting library used to render the Revenue Pulse dashboard in your repo.",
+    note: "Charting library used to render the Revenue Pulse dashboard in your stack.",
   },
 ];
 
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   { q: "What metrics does Revenue Pulse track?", a: "Pipeline velocity per stage, agent-attributed meetings, cost per meeting per agent, reply rate per ICP segment, sequence performance, signal-to-meeting conversion, blended CAC, projected vs actual pipeline, and per-agent cost vs revenue contribution." },
-  { q: "Is it a dashboard or a Slack agent?", a: "Both. Dashboard is a Vercel-hosted Next.js page in your repo. Slack agent posts daily summaries and fires alerts when key metrics break threshold (deliverability drop, reply-rate drop, signal source going stale)." },
-  { q: "Can I add custom metrics?", a: "Yes — metrics live as queries against your Supabase event log. Adding a metric is adding a query + a chart. Done in your repo, deploys with the rest of the stack." },
+  { q: "Is it a dashboard or a Slack agent?", a: "Both. Dashboard is a Vercel-hosted Next.js page in your stack. Slack agent posts daily summaries and fires alerts when key metrics break threshold (deliverability drop, reply-rate drop, signal source going stale)." },
+  { q: "Can I add custom metrics?", a: "Yes — metrics live as queries against your Supabase event log. Adding a metric is adding a query + a chart. Done in your stack, deploys with the rest of the stack." },
   { q: "How is this different from a generic BI tool?", a: "Revenue Pulse is purpose-built for the 8-agent AI GTM engine. The metric definitions are the right ones for this architecture: per-agent ROI, signal-source decay, reply triage accuracy. Generic BI would need months of modeling to get the same view." },
 ];
 
@@ -82,7 +82,7 @@ export default function Post() {
             <p>Signal sources go stale. Sequences fatigue. Deliverability erodes. An AI GTM engine without Revenue Pulse looks great in month 1 and quietly degrades by month 4. Revenue Pulse surfaces the degradation early enough to fix the right agent without blowing up the whole stack.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Stack</h2>
-            <p>Supabase for the event log (every agent writes events). Next.js dashboard hosted on Vercel (in your repo). Slack bot for daily summary + threshold alerts. Charts via Tremor or Recharts. Optional integration with Linear or Notion for the weekly review.</p>
+            <p>Supabase for the event log (every agent writes events). Next.js dashboard hosted on Vercel (in your stack). Slack bot for daily summary + threshold alerts. Charts via Tremor or Recharts. Optional integration with Linear or Notion for the weekly review.</p>
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>

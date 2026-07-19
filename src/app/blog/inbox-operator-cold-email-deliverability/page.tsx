@@ -86,7 +86,7 @@ export default function Post() {
             <p>Founders skip Inbox Operator because the work is invisible when it’s done right. There is no flashy dashboard. No “wow” moment in the demo. Just the absence of a problem the team didn’t know they were going to have.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Stack & integration</h2>
-            <p>Built on Smartlead (or Instantly / Mailreef) for the sending infrastructure, plus custom monitoring code that watches placement-rate signals across providers and pulls inboxes that drop below threshold. Sending domains are provisioned via Cloudflare or Vercel — DNS records are versioned in your repo.</p>
+            <p>Built on Smartlead (or Instantly / Mailreef) for the sending infrastructure, plus custom monitoring code that watches placement-rate signals across providers and pulls inboxes that drop below threshold. Sending domains are provisioned via Cloudflare or Vercel — DNS records are versioned in your stack.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Common failure modes</h2>
             <ul className="list-disc space-y-2 pl-5">

@@ -89,7 +89,7 @@ export default function SystemsIndexPage() {
               We lead with AI GTM because that&apos;s where ROI lands fastest.
               But every layer of your business has an AI ropeway. Voice AI,
               content engines, ops automation, support deflection — each
-              shipped into your existing stack, code in your repo.
+              shipped into your existing stack, full system access.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <Link

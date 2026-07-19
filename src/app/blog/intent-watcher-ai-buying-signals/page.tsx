@@ -141,7 +141,7 @@ export default function Post() {
 
             <section className="mt-16 rounded-3xl border border-line bg-surface-soft p-8 text-center md:p-12">
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Ship Intent Watcher in 14 days</h2>
-              <p className="mx-auto mb-6 max-w-xl text-ink-soft">Live demo on your real ICP data, first call. Code in your repo, day one.</p>
+              <p className="mx-auto mb-6 max-w-xl text-ink-soft">Live demo on your real ICP data, first call. Full system access, day one.</p>
               <Cta href="/#audit" size="lg">Book live demo on your data</Cta>
               <p className="mt-6 text-xs text-ink-faint">
                 Related: <Link href="/blog/account-mapper-ai-account-enrichment" className="text-accent hover:underline">Account Mapper</Link> · <Link href="/blog/inbox-operator-cold-email-deliverability" className="text-accent hover:underline">Inbox Operator</Link> · <Link href="/blog/sequence-composer-ai-personalized-outreach" className="text-accent hover:underline">Sequence Composer</Link>

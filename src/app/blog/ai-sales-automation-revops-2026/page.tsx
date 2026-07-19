@@ -100,7 +100,7 @@ export default function Post() {
             </ul>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">The <Link href="/systems/sales-automation-and-revops" className="text-accent hover:underline">Sales Automation & RevOps</Link> system</h2>
-            <p>All of this ships as one system. Not 8 separate tools with 8 separate logins. One deployment sprint (14 days), code in your repo, and a management layer that monitors every agent. You bring your existing CRM, your existing email infrastructure, your existing data providers. We deploy the intelligence layer on top.</p>
+            <p>All of this ships as one system. Not 8 separate tools with 8 separate logins. One deployment sprint (14 days), full system access, and a management layer that monitors every agent. You bring your existing CRM, your existing email infrastructure, your existing data providers. We deploy the intelligence layer on top.</p>
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>
