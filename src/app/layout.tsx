@@ -32,7 +32,7 @@ const jbMono = JetBrains_Mono({
 const SITE_URL = "https://www.airopeway.com";
 const TITLE = "AI GTM engines that book meetings | AI Ropeway";
 const DESCRIPTION =
-  "AI GTM engines for B2B founders. Signal detection, enrichment, personalized outreach, reply triage. Shipped to your repo in 14 days. Live demo on your data.";
+  "AI GTM engines for B2B founders. Signal detection, enrichment, personalized outreach, reply triage. Live in your stack in 14 days. Live demo on your data.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -95,7 +95,7 @@ const jsonLd = {
       areaServed: ["IN", "AU", "GB", "US", "CA"],
       sameAs: [
         "https://www.aiplacers.com",
-        "https://www.linkedin.com/in/bharatgulati/",
+        "https://www.linkedin.com/in/bharat-gulati9711315523/",
       ],
       knowsAbout: [
         "AI GTM engines",
@@ -115,7 +115,7 @@ const jsonLd = {
         "@type": "EducationalOrganization",
         name: "IIM Indore",
       },
-      sameAs: ["https://www.linkedin.com/in/bharatgulati/"],
+      sameAs: ["https://www.linkedin.com/in/bharat-gulati9711315523/", "https://www.linkedin.com/company/ai-ropeway"],
       knowsAbout: [
         "Enterprise sales",
         "AI automation",
@@ -137,7 +137,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#service-sprint`,
       name: "AI GTM Sprint",
       description:
-        "1 AI SDR engine, built and deployed in 14 days. Signal detection, enrichment, personalized outreach. Full code handoff.",
+        "1 AI SDR engine, built and deployed in 14 days. Signal detection, enrichment, personalized outreach. Full system handoff.",
       provider: { "@id": `${SITE_URL}/#organization` },
       serviceType: "AI GTM Engine Deployment",
       offers: {
