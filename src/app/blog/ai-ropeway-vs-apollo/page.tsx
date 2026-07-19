@@ -38,8 +38,8 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Is AI Ropeway an Apollo alternative?", a: "Apollo's static data + outreach platform is different from an AI GTM engine. We use Apollo as one of the data sources inside Account Mapper. If you want a self-serve data + outreach SaaS, Apollo is the right tool. If you want a continuous AI GTM engine you own, AI Ropeway is the right tool." },
   { q: "Can I keep using Apollo if I hire AI Ropeway?", a: "Yes. Apollo is one of the providers in the Account Mapper waterfall. We typically keep existing Apollo seats and integrate them into the engine." },
-  { q: "What about Apollo's AI features (Apollo AI)?", a: "Apollo AI handles tasks inside Apollo's platform. AI Ropeway's agents run across your full stack — CRM, Slack, inbox, signal sources — with the orchestration running in your stack. Different scope, different ownership model." },
-  { q: "How does pricing compare?", a: "Apollo: $59–$149/seat/mo for the SaaS, $0.10–$0.40 per credit for data. AI Ropeway Sprint: $3,000 one-time, all 8 agents deployed into your stack. Most teams keep Apollo seats for the data layer and add AI Ropeway for the engine." },
+  { q: "What about Apollo's AI features (Apollo AI)?", a: "Apollo AI handles tasks inside Apollo's platform. AI Ropeway's agents run across your full stack — CRM, Slack, inbox, signal sources — with the orchestration code in your repo. Different scope, different ownership model." },
+  { q: "How does pricing compare?", a: "Apollo: $59–$149/seat/mo for the SaaS, $0.10–$0.40 per credit for data. AI Ropeway Sprint: $3,000 one-time, all 8 agents shipped to your repo. Most teams keep Apollo seats for the data layer and add AI Ropeway for the engine." },
 ];
 
 const jsonLd = {
@@ -53,7 +53,7 @@ const jsonLd = {
 
 const rows = [
   ["Primary product", "B2B data + sequencing platform", "Full 8-agent AI GTM engine"],
-  ["Asset ownership", "Account on Apollo's platform", "Code in your GitHub repo"],
+  ["Asset ownership", "Account on Apollo's platform", "Full system access in your stack"],
   ["Pricing", "$59–$149/seat + credit fees", "$3k one-time or $2.5k/mo"],
   ["Data coverage", "Apollo's database only", "Waterfall across Apollo + ZoomInfo + Clay + first-party"],
   ["Signal-based sourcing", "Static filters in their UI", "Continuous (Lead Sourcer + Intent Watcher agents)"],
@@ -61,7 +61,7 @@ const rows = [
   ["Inbox warmup", "Basic in higher tier", "Dedicated agent + monitoring (Inbox Operator)"],
   ["Reply triage", "Manual in inbox", "Auto-classified (Reply Triager agent)"],
   ["CRM hygiene", "Apollo CRM only", "Your CRM, auto-updated (CRM Auto-Pilot agent)"],
-  ["Pipeline analytics", "Apollo's reporting", "Custom dashboard in your stack (Revenue Pulse agent)"],
+  ["Pipeline analytics", "Apollo's reporting", "Custom dashboard in your repo (Revenue Pulse agent)"],
   ["Lock-in if you cancel", "Lose sequences, data, history", "Keep all code, run forever"],
 ];
 
@@ -87,7 +87,7 @@ export default function Post() {
             <p>Apollo AI handles in-platform tasks well — quick personalization, auto-bumping, simple reply suggestions. It’s a meaningful productivity layer for SDR teams already living inside Apollo.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">What AI Ropeway is genuinely best at</h2>
-            <p>Building the full AI GTM engine that runs continuously, autonomously, with 8 specialized agents coordinated across signal detection, enrichment, deliverability, outreach, reply triage, CRM hygiene, and analytics — all deployed into your stack with full access from day one.</p>
+            <p>Building the full AI GTM engine that runs continuously, autonomously, with 8 specialized agents coordinated across signal detection, enrichment, deliverability, outreach, reply triage, CRM hygiene, and analytics — all shipped to your repo so you own the asset on day one.</p>
             <p>Apollo can’t run continuous signal-based sourcing across the open web. Apollo can’t do reply triage with auto-handling of nurtures and objections. Apollo can’t auto-update your HubSpot deal stages from real activity. AI Ropeway can — because the 8 agents are designed for that scope.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Honest comparison</h2>
@@ -103,7 +103,7 @@ export default function Post() {
             <p>Small team, low complexity, need to ship this week. You’re fine running on someone else’s SaaS rails. You don’t need 8 coordinated agents — you just need to send some emails and book some meetings. Apollo is the right call.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When to use AI Ropeway</h2>
-            <p>You want the engine to keep running even if Apollo changes pricing or shuts off your account. You want continuous signal-based sourcing — not static filters. You want CRM Auto-Pilot keeping your HubSpot or Salesforce honest. You want full system access and measured per-agent ROI. AI Ropeway ships that engine in 14 days — and it can still use Apollo as one of its data layers.</p>
+            <p>You want the engine to keep running even if Apollo changes pricing or shuts off your account. You want continuous signal-based sourcing — not static filters. You want CRM Auto-Pilot keeping your HubSpot or Salesforce honest. You want code in your repo and measured per-agent ROI. AI Ropeway ships that engine in 14 days — and it can still use Apollo as one of its data layers.</p>
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>
