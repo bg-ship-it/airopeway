@@ -31,3 +31,15 @@ B2B SaaS and services founders at $1M-$20M ARR running founder-led sales with sm
 - AI Ropeway vs Apollo: https://www.airopeway.com/blog/ai-ropeway-vs-apollo
 - Founder: https://www.airopeway.com/founder
 - Contact: bg@aiplacers.com
+
+## Definitions
+- What is an AI GTM engine? A system of coordinated AI agents that detect buying signals, enrich accounts, write personalized outreach, and triage replies — custom-built for your ICP and deployed in your own infrastructure with full system access. Full definition: https://www.airopeway.com/what-is-an-ai-gtm-engine
+
+## Tools
+- AI SDR ROI calculator (in-house SDR cost vs an AI GTM engine with full access): https://www.airopeway.com/roi-calculator
+- Free 14-day AI GTM build plan (playbook): https://www.airopeway.com/ai-gtm-playbook
+
+## Comparisons
+- AiSDR alternative: https://www.airopeway.com/blog/aisdr-alternative
+- Artisan alternative: https://www.airopeway.com/blog/artisan-alternative
+- 11x alternative: https://www.airopeway.com/blog/11x-alternative
