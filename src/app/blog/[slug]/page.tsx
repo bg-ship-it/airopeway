@@ -8,6 +8,8 @@ import { getPost, getAllSlugs } from "@/lib/blog";
 import { imageUrl } from "@/lib/sanity";
 import { BlogCover } from "@/components/blog-cover";
 
+export const revalidate = 600;
+
 export async function generateStaticParams() {
   const slugs = await getAllSlugs();
   return slugs.map((slug) => ({ slug }));
