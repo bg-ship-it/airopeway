@@ -4,6 +4,8 @@ import { getAllPosts } from "@/lib/blog";
 
 const SITE_URL = "https://www.airopeway.com";
 
+export const revalidate = 600;
+
 const STATIC_BLOG_POSTS = [
   "ai-gtm-engines-complete-guide",
   "intent-watcher-ai-buying-signals",
