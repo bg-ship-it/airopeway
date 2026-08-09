@@ -8,6 +8,8 @@ import { BlogCover } from "@/components/blog-cover";
 
 const SITE_URL = "https://www.airopeway.com";
 
+export const revalidate = 600;
+
 export const metadata: Metadata = {
   title: "Blog",
   description:
