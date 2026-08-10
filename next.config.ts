@@ -42,6 +42,18 @@ const legacy: Record<string, string> = {
 };
 
 const nextConfig: NextConfig = {
+  // Blog hero images live in the Sanity CDN. Without this allowlist every
+  // /_next/image request returns 400 INVALID_IMAGE_OPTIMIZE_REQUEST and the
+  // heroes render broken. Do not drop this block when editing this file.
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/q7oqmxr6/**",
+      },
+    ],
+  },
   async redirects() {
     return [
       ...Object.entries(legacy).map(([source, destination]) => ({
