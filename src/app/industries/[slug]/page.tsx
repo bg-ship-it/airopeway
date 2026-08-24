@@ -44,6 +44,7 @@ export async function generateMetadata({
     description,
     alternates: { canonical: `/industries/${industry.id}` },
     openGraph: {
+      images: ["/opengraph-image"],
       type: "website",
       url: `${SITE_URL}/industries/${industry.id}`,
       siteName: "AI Ropeway",
@@ -51,6 +52,7 @@ export async function generateMetadata({
       description,
     },
     twitter: {
+      images: ["/opengraph-image"],
       card: "summary_large_image",
       title: ogTitle,
       description,

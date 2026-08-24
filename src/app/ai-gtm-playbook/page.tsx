@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: `/${SLUG}` },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "article",
     url: `${SITE_URL}/${SLUG}`,
     siteName: "AI Ropeway",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     authors: ["Bharat Gulati"],
   },
-  twitter: { card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
+  twitter: { images: ["/opengraph-image"], card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
 
 const checklist = [

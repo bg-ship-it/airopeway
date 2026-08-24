@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "AI insights, deployment playbooks, and GTM strategies from the AI Ropeway team.",
   alternates: { canonical: "/blog" },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/blog`,
     siteName: "AI Ropeway",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
       "AI insights, deployment playbooks, and GTM strategies from the AI Ropeway team.",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Blog | AI Ropeway",
     description:

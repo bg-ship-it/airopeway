@@ -92,6 +92,7 @@ export const metadata: Metadata = {
     "Bharat Gulati — founder of AI Ropeway. Ex-VP Sales who scaled AI GTM from zero. IIM Indore AI/ML alum. 12+ yrs B2B enterprise sales. Ships AI GTM engines into your stack in 14 days.",
   alternates: { canonical: "/founder" },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "profile",
     url: FOUNDER_URL,
     siteName: "AI Ropeway",
@@ -103,6 +104,7 @@ export const metadata: Metadata = {
     username: "bharat-gulati9711315523",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Bharat Gulati · Founder, AI Ropeway",
     description:

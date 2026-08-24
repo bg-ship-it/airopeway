@@ -23,18 +23,25 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
-  const title = post.seoTitle ?? post.title;
+  const title = (post.seoTitle ?? post.title).replace(/\s*\|\s*AI Ropeway\s*$/i, "");
   const description = post.seoDescription ?? post.excerpt ?? "";
   return {
     title,
     description,
     alternates: { canonical: `/blog/${slug}` },
     openGraph: {
+      images: ["/opengraph-image"],
       title,
       description,
       url: `https://www.airopeway.com/blog/${slug}`,
       type: "article",
       publishedTime: post.publishedAt ?? undefined,
+    },
+    twitter: {
+      images: ["/opengraph-image"],
+      card: "summary_large_image",
+      title,
+      description,
     },
   };
 }
