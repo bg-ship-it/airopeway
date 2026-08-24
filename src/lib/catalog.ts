@@ -10,6 +10,11 @@ export type SystemPage = {
   desc: string;
   intro: string;
   benefits: string[];
+  // Optional search-targeting overrides. Only set these where a system page
+  // competes with an editorial page for the same query — otherwise the page
+  // name and desc are the better default.
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 // Unique intro + benefits per system. Descriptive and accurate — no invented metrics.
@@ -29,6 +34,13 @@ const systemExtra: Record<
   },
   "02": {
     slug: "ai-agent-management",
+    // /blog/enterprise-ai-agent-management-guide and this page both surfaced for
+    // "ai agent management" (193 impressions at position 48.9 vs 113 at 75.5) and
+    // for every other query in that cluster the guide ranked higher. Pointing this
+    // page at service intent instead stops the two competing for the same term.
+    seoTitle: "AI Agent Management Services",
+    seoDescription:
+      "Run a fleet of AI agents in production: orchestration, monitoring, guardrails, and continuous tuning. Deployed into your stack in 14 days.",
     intro:
       "Deploying one AI agent is easy; running a fleet of them reliably is not. AI Agent Management gives you the orchestration, monitoring, and guardrails to run agents across sales, support, and operations without things silently breaking.",
     benefits: [
