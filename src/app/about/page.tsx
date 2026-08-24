@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "Founded by Bharat Gulati — 12+ yrs enterprise sales, ex-VP Sales scaling AI GTM from zero, IIM Indore AI/ML. We ship AI GTM engines into your stack in 14 days.",
   alternates: { canonical: "/about" },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/about`,
     siteName: "AI Ropeway",
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
       "Founded by Bharat Gulati — ex-VP Sales who scaled AI GTM from zero. We ship AI GTM engines into your stack, you get full access.",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "About AI Ropeway | Founder-led AI GTM engineering",
     description:

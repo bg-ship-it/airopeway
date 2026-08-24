@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/`,
     siteName: "AI Ropeway",
@@ -57,6 +58,7 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,

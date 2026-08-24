@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "Industry-specific AI GTM playbooks. Retail, healthcare, finance, SaaS, e-commerce, logistics, real estate + 9 more. Each live in your stack in 14 days.",
   alternates: { canonical: "/industries" },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/industries`,
     siteName: "AI Ropeway",
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
       "Industry-specific AI GTM playbooks across 16 verticals. Live in your stack in 14 days.",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "AI GTM by industry · 16 vertical playbooks | AI Ropeway",
     description:

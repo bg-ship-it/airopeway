@@ -14,13 +14,14 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: `/${SLUG}` },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/${SLUG}`,
     siteName: "AI Ropeway",
     title: `${TITLE} | AI Ropeway`,
     description: DESCRIPTION,
   },
-  twitter: { card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
+  twitter: { images: ["/opengraph-image"], card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
 
 const jsonLd = {

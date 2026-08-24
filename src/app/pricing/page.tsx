@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Transparent AI GTM pricing. Sprint $3k one-time, Partnership $2.5k/mo, Full Stack $5k/mo, Enterprise custom. Free 60-min audit + live demo on your data first.",
   alternates: { canonical: "/pricing" },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/pricing`,
     siteName: "AI Ropeway",
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
       "Transparent AI GTM pricing. Sprint, Partnership, Full Stack, Enterprise. Free 60-min audit first.",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Pricing | AI GTM engines from $3k | AI Ropeway",
     description:

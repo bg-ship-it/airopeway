@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "AI GTM is our wedge — but every layer of your business has an AI ropeway. Voice AI, content engines, ops automation, support deflection: 18 production-ready systems.",
   alternates: { canonical: "/systems" },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/systems`,
     siteName: "AI Ropeway",
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
       "Voice AI, content engines, ops automation, support deflection. 18 production-ready systems beyond AI GTM.",
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: "Beyond AI GTM · 18 other AI systems | AI Ropeway",
     description:

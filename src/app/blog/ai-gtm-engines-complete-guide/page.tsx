@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
   openGraph: {
+    images: ["/opengraph-image"],
     type: "article",
     url: `${SITE_URL}/blog/${SLUG}`,
     siteName: "AI Ropeway",
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
     authors: ["Bharat Gulati"],
   },
   twitter: {
+    images: ["/opengraph-image"],
     card: "summary_large_image",
     title: `${TITLE} | AI Ropeway`,
     description: DESCRIPTION,
