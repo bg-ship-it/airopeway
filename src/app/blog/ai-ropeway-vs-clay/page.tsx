@@ -8,7 +8,7 @@ const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-ropeway-vs-clay";
 const TITLE = "AI Ropeway vs Clay: tool vs full AI GTM engine";
 const DESCRIPTION =
-  "Honest comparison: Clay is the best data layer for waterfall enrichment. AI Ropeway is the AI GTM engine you build on top of Clay. Here's when you need both, and when you don't.";
+  "Clay is the best data layer for waterfall enrichment. AI Ropeway is the engine you build on top of it. When you need both, and when you don't.";
 const PUBLISHED = "2026-06-25T09:00:00.000Z";
 const MODIFIED = "2026-06-25T09:00:00.000Z";
 

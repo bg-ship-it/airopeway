@@ -6,7 +6,7 @@ const SITE_URL = "https://www.airopeway.com";
 const SLUG = "what-is-an-ai-gtm-engine";
 const TITLE = "What is an AI GTM engine?";
 const DESCRIPTION =
-  "An AI GTM engine is a system of coordinated AI agents that detect buying signals, enrich accounts, write personalized outreach, and triage replies — custom-built for your ICP and deployed in your own infrastructure. Full definition, components, and cost.";
+  "An AI GTM engine is a system of coordinated AI agents that detect buying signals, enrich accounts, write outreach, and triage replies. Full definition.";
 
 export const metadata: Metadata = {
   title: TITLE,

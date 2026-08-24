@@ -10,7 +10,7 @@ const SITE_URL = "https://www.airopeway.com";
 export const metadata: Metadata = {
   title: "Beyond AI GTM · 18 other AI systems we ship",
   description:
-    "AI GTM is our wedge — but every layer of your business has an AI ropeway. Voice AI, content engines, ops automation, support deflection: 18 production-ready systems.",
+    "AI GTM is our wedge — but every layer of your business has an AI ropeway. Voice AI, content engines, ops automation: 18 production-ready systems.",
   alternates: { canonical: "/systems" },
   openGraph: {
     images: ["/opengraph-image"],

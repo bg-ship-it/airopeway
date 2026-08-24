@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "sequence-composer-ai-personalized-outreach";
-const TITLE = "Sequence Composer: AI personalized outreach that isn't a template with merge tags";
+const TITLE =
+  "Sequence Composer: AI personalized outreach";
 const DESCRIPTION =
-  "How the Sequence Composer agent writes research-grounded cold outreach using the actual buying signal that fired — not the same template Apollo gave 50,000 other reps.";
+  "How the Sequence Composer agent writes research-grounded cold outreach from the actual signal that fired — not the template 50,000 reps also sent.";
 const PUBLISHED = "2026-06-25T05:00:00.000Z";
 const MODIFIED = "2026-06-25T05:00:00.000Z";
 

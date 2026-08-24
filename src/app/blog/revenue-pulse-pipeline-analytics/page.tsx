@@ -6,7 +6,8 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "revenue-pulse-pipeline-analytics";
-const TITLE = "Revenue Pulse: real-time pipeline analytics for AI GTM engines";
+const TITLE =
+  "Revenue Pulse: AI pipeline analytics";
 const DESCRIPTION =
   "How the Revenue Pulse agent measures pipeline velocity, agent performance, cost-per-meeting, and LTV — so you know which AI GTM agent earned its keep this week.";
 const PUBLISHED = "2026-06-25T08:00:00.000Z";

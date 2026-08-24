@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "intent-watcher-ai-buying-signals";
-const TITLE = "Intent Watcher: AI buying signals that fire only on warm prospects";
+const TITLE =
+  "Intent Watcher: AI buying signals";
 const DESCRIPTION =
-  "How the Intent Watcher agent surfaces real buying signals from LinkedIn, job posts, funding rounds, and review sites — so your outbound stops wasting reach on cold accounts.";
+  "How the Intent Watcher agent surfaces real buying signals from LinkedIn, job posts, funding rounds, and review sites — so outbound stops going cold.";
 const PUBLISHED = "2026-06-25T01:00:00.000Z";
 const MODIFIED = "2026-06-25T01:00:00.000Z";
 

@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "crm-auto-pilot-ai-crm-automation";
-const TITLE = "CRM Auto-Pilot: AI CRM automation that keeps your pipeline honest";
+const TITLE =
+  "CRM Auto-Pilot: AI CRM automation";
 const DESCRIPTION =
-  "How the CRM Auto-Pilot agent updates stages from real activity, fills missing fields, merges duplicates, and surfaces stale deals — so your CRM stops lying to you about pipeline.";
+  "How the CRM Auto-Pilot agent updates stages from real activity, fills fields, merges duplicates, and flags stale deals — so your CRM stops lying.";
 const PUBLISHED = "2026-06-25T07:00:00.000Z";
 const MODIFIED = "2026-06-25T07:00:00.000Z";
 

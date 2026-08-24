@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-automation-workflow-operational-bottlenecks";
-const TITLE = "AI automation for operational bottlenecks: find them, fix them, measure them";
+const TITLE =
+  "AI automation for operational bottlenecks";
 const DESCRIPTION =
-  "Every business has 3-5 operational bottlenecks costing them 20-40% of their team's time. Here's the framework for finding them, deploying AI automation, and measuring the ROI in 30 days.";
+  "Most teams lose 20-40% of their time to 3-5 bottlenecks. The framework for finding them, deploying AI automation, and measuring ROI in 30 days.";
 const PUBLISHED = "2026-06-27T09:00:00.000Z";
 const MODIFIED = "2026-06-27T09:00:00.000Z";
 

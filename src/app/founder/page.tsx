@@ -87,9 +87,9 @@ const publishedArticles = [
 ];
 
 export const metadata: Metadata = {
-  title: "Bharat Gulati · Founder, AI Ropeway",
+  title: "Bharat Gulati · Founder",
   description:
-    "Bharat Gulati — founder of AI Ropeway. Ex-VP Sales who scaled AI GTM from zero. IIM Indore AI/ML alum. 12+ yrs B2B enterprise sales. Ships AI GTM engines into your stack in 14 days.",
+    "Bharat Gulati, founder of AI Ropeway. Ex-VP Sales who scaled AI GTM from zero. IIM Indore AI/ML alum, 12+ years B2B enterprise sales.",
   alternates: { canonical: "/founder" },
   openGraph: {
     images: ["/opengraph-image"],

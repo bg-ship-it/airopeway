@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "inbox-operator-cold-email-deliverability";
-const TITLE = "Inbox Operator: cold email deliverability that lands in primary, not spam";
+const TITLE =
+  "Inbox Operator: cold email deliverability";
 const DESCRIPTION =
-  "How the Inbox Operator agent handles domain warmup, inbox rotation, deliverability monitoring, and the unsexy plumbing that decides whether your cold outreach reaches the inbox at all.";
+  "How the Inbox Operator agent handles domain warmup, inbox rotation, and deliverability monitoring — the plumbing that decides if you reach inbox.";
 const PUBLISHED = "2026-06-25T03:00:00.000Z";
 const MODIFIED = "2026-06-25T03:00:00.000Z";
 

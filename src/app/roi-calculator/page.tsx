@@ -5,7 +5,8 @@ import { Cta } from "@/components/cta";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "roi-calculator";
-const TITLE = "AI SDR ROI Calculator: in-house SDR cost vs an AI GTM engine";
+const TITLE =
+  "AI SDR ROI Calculator";
 const DESCRIPTION =
   "Compare the fully-loaded annual cost of hiring SDRs against a custom AI GTM engine you own. Move the sliders, see your first-year savings.";
 

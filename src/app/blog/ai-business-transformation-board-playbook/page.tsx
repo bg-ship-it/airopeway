@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-business-transformation-board-playbook";
-const TITLE = "AI business transformation: the board-level playbook";
+const TITLE =
+  "AI transformation: the board playbook";
 const DESCRIPTION =
-  "Most AI transformation projects stall because they start with technology and end with a strategy deck nobody reads. Here's the board-level playbook that starts with revenue and ends with deployed systems.";
+  "Most AI transformation stalls because it starts with technology and ends with a deck. The board-level playbook that starts with revenue instead.";
 const PUBLISHED = "2026-06-27T09:00:00.000Z";
 const MODIFIED = "2026-06-27T09:00:00.000Z";
 

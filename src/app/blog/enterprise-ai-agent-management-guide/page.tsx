@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "enterprise-ai-agent-management-guide";
-const TITLE = "Enterprise AI agent management: the guide nobody wrote yet";
+const TITLE =
+  "Enterprise AI agent management";
 const DESCRIPTION =
-  "Most companies deploy one AI agent and call it done. The real challenge is running 5, 10, or 18 agents without things breaking silently. Here's the management layer that makes multi-agent AI work.";
+  "Deploying one AI agent is easy. Running 5, 10, or 18 without silent failures is not. The management layer that makes multi-agent AI actually work.";
 const PUBLISHED = "2026-06-27T09:00:00.000Z";
 const MODIFIED = "2026-06-27T09:00:00.000Z";
 

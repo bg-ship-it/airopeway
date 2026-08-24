@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "account-mapper-ai-account-enrichment";
-const TITLE = "Account Mapper: AI account enrichment that gives outreach actual ammo";
+const TITLE =
+  "Account Mapper: AI account enrichment";
 const DESCRIPTION =
-  "How the Account Mapper agent builds ICP-scored account profiles automatically — firmographics, tech stack, headcount, recent news — so Sequence Composer writes outreach worth replying to.";
+  "How the Account Mapper agent builds ICP-scored profiles automatically — firmographics, tech stack, headcount, recent news — so outreach lands.";
 const PUBLISHED = "2026-06-25T02:00:00.000Z";
 const MODIFIED = "2026-06-25T02:00:00.000Z";
 

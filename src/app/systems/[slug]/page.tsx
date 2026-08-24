@@ -20,7 +20,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const system = getSystem(slug);
   if (!system) return {};
-  const description = `${system.desc} AI Ropeway deploys ${system.name} into your business — measurable outcomes, no months-long projects.`;
+  const description = `${system.desc} Deployed into your stack in 14 days, with full code handoff.`;
   const title = system.name;
   const ogTitle = `${system.name} | AI Ropeway`;
   return {
