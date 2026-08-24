@@ -20,7 +20,13 @@ export type SystemPage = {
 // Unique intro + benefits per system. Descriptive and accurate — no invented metrics.
 const systemExtra: Record<
   string,
-  { slug: string; intro: string; benefits: string[] }
+  {
+    slug: string;
+    intro: string;
+    benefits: string[];
+    seoTitle?: string;
+    seoDescription?: string;
+  }
 > = {
   "01": {
     slug: "ai-gtm-strategy-builder",
