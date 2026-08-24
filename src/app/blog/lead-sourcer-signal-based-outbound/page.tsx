@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "lead-sourcer-signal-based-outbound";
-const TITLE = "Lead Sourcer: signal-based outbound that beats list-buying";
+const TITLE =
+  "Lead Sourcer: signal-based outbound";
 const DESCRIPTION =
-  "How the Lead Sourcer agent surfaces net-new accounts in-market right now from intent signals — no buying lists, no spray-and-pray. The signal-based outbound layer of an AI GTM engine.";
+  "How the Lead Sourcer agent finds net-new accounts in-market right now from intent signals — no bought lists, no spray-and-pray outbound.";
 const PUBLISHED = "2026-06-25T04:00:00.000Z";
 const MODIFIED = "2026-06-25T04:00:00.000Z";
 

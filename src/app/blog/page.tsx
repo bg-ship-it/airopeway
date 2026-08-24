@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
+import { staticPosts } from "@/lib/static-posts";
 import { imageUrl } from "@/lib/sanity";
 import { BlogCover } from "@/components/blog-cover";
 
@@ -52,7 +53,14 @@ function formatDate(iso: string | null): string {
 }
 
 export default async function BlogPage() {
-  const posts = await getAllPosts();
+  const sanityPosts = await getAllPosts();
+  // Where a slug exists both as a static route and as a Sanity document, the
+  // static route is what renders — so drop the duplicate Sanity card.
+  const staticSlugs = new Set(staticPosts.map((p) => p.slug));
+  const posts = [
+    ...staticPosts,
+    ...sanityPosts.filter((p) => !staticSlugs.has(p.slug)),
+  ].sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""));
 
   return (
     <div className="mx-auto max-w-6xl px-5 py-32 md:py-40">
@@ -100,7 +108,7 @@ export default async function BlogPage() {
                 />
               )}
               <div className="flex flex-1 flex-col p-6">
-                {post.categories?.length > 0 && (
+                {post.categories.length > 0 && (
                   <span className="mono-label mb-2 text-accent">
                     {post.categories[0]}
                   </span>

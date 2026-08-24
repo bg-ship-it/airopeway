@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-gtm-strategy-pipeline";
-const TITLE = "How to build an AI GTM strategy that actually books meetings";
+const TITLE =
+  "How to build an AI GTM strategy";
 const DESCRIPTION =
-  "Most AI GTM strategies are strategy decks disguised as execution plans. Here's the founder's playbook for building a GTM engine that books meetings on autopilot — signals, enrichment, outreach, and measurement.";
+  "Most AI GTM strategies are decks disguised as execution. The founder's playbook for signals, enrichment, outreach, and measurement that books meetings.";
 const PUBLISHED = "2026-06-27T09:00:00.000Z";
 const MODIFIED = "2026-06-27T09:00:00.000Z";
 

@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-ropeway-vs-apollo";
-const TITLE = "AI Ropeway vs Apollo: data platform vs full AI GTM engine";
+const TITLE =
+  "AI Ropeway vs Apollo: honest comparison";
 const DESCRIPTION =
-  "Apollo is the best B2B data platform for SDR teams. AI Ropeway is the full AI GTM engine that uses Apollo as one of its data sources. Here's an honest comparison of where each one wins.";
+  "Apollo is the best B2B data platform for SDR teams. AI Ropeway is the GTM engine that uses Apollo as a data source. Where each one actually wins.";
 const PUBLISHED = "2026-06-25T10:00:00.000Z";
 const MODIFIED = "2026-06-25T10:00:00.000Z";
 

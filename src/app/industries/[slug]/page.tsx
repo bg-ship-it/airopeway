@@ -36,7 +36,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const industry = getIndustry(slug);
   if (!industry) return {};
-  const description = `AI GTM for ${industry.name}. ${industry.solution} Live in your stack in 14 days. Live demo on your ICP data, first call.`;
+  const description = `AI GTM for ${industry.name}: ${industry.solution}. Live in your stack in 14 days.`;
   const title = `AI GTM for ${industry.name}`;
   const ogTitle = `${title} | AI Ropeway`;
   return {

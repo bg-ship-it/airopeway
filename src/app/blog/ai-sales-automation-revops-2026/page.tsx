@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-sales-automation-revops-2026";
-const TITLE = "AI sales automation & RevOps in 2026: what actually works";
+const TITLE =
+  "AI sales automation & RevOps in 2026";
 const DESCRIPTION =
-  "Most AI sales tools automate the wrong things. Here's what's actually moving pipeline in 2026 — signal-based outbound, AI reply triage, and CRM automation that doesn't need a RevOps hire.";
+  "Most AI sales tools automate the wrong things. What actually moves pipeline in 2026: signal-based outbound, reply triage, and CRM automation.";
 const PUBLISHED = "2026-06-27T09:00:00.000Z";
 const MODIFIED = "2026-06-27T09:00:00.000Z";
 

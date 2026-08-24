@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "reply-triager-ai-reply-classification";
-const TITLE = "Reply Triager: AI reply classification that routes only hot leads to humans";
+const TITLE =
+  "Reply Triager: AI reply classification";
 const DESCRIPTION =
-  "How the Reply Triager agent classifies every inbound reply — hot, nurture, objection, unsubscribe — and auto-handles 80% of them so founders only touch the meetings that matter.";
+  "How the Reply Triager agent sorts every reply — hot, nurture, objection, unsubscribe — and auto-handles 80%, so you only touch real meetings.";
 const PUBLISHED = "2026-06-25T06:00:00.000Z";
 const MODIFIED = "2026-06-25T06:00:00.000Z";
 

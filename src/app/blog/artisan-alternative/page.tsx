@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "artisan-alternative";
-const TITLE = "Artisan alternative: AI BDR platform vs an owned AI GTM engine";
+const TITLE =
+  "Artisan alternative: rented vs owned";
 const DESCRIPTION =
-  "Honest comparison of Artisan (Ava) and a custom AI GTM engine. Artisan is a subscription AI BDR platform; AI Ropeway ships an owned engine into your stack. When each one wins.";
+  "Honest comparison of Artisan (Ava) and a custom AI GTM engine. Artisan is a subscription AI BDR; AI Ropeway ships an engine you own. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
 const MODIFIED = "2026-07-11T09:00:00.000Z";
 

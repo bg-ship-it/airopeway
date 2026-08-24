@@ -8,7 +8,7 @@ const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-gtm-playbook";
 const TITLE = "The 14-Day AI GTM Build Plan (free playbook)";
 const DESCRIPTION =
-  "The exact 14-day plan we use to ship an AI GTM engine into a founder's repo — the audit checklist, the 8-agent build order, and the deliverables. Free, no call required.";
+  "The exact 14-day plan we use to ship an AI GTM engine into a founder's repo: the audit checklist, the 8-agent build order, the deliverables.";
 
 export const metadata: Metadata = {
   title: TITLE,

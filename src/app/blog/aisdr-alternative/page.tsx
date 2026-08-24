@@ -6,9 +6,10 @@ import { PostSources, sourcesToCitations, type Source } from "@/components/post-
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "aisdr-alternative";
-const TITLE = "AiSDR alternative: rented AI SDR vs an engine you own";
+const TITLE =
+  "AiSDR alternative: rented vs owned";
 const DESCRIPTION =
-  "Honest comparison of AiSDR and a custom AI GTM engine. AiSDR is a subscription AI SDR platform; AI Ropeway ships an owned engine into your stack in 14 days. When each one wins.";
+  "Honest comparison of AiSDR and a custom AI GTM engine. AiSDR is a subscription; AI Ropeway ships an owned engine in 14 days. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
 const MODIFIED = "2026-07-11T09:00:00.000Z";
 
