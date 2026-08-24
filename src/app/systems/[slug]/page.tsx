@@ -20,9 +20,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const system = getSystem(slug);
   if (!system) return {};
-  const description = `${system.desc} Deployed into your stack in 14 days, with full code handoff.`;
-  const title = system.name;
-  const ogTitle = `${system.name} | AI Ropeway`;
+  const description =
+    system.seoDescription ??
+    `${system.desc} Deployed into your stack in 14 days, with full code handoff.`;
+  const title = system.seoTitle ?? system.name;
+  const ogTitle = `${title} | AI Ropeway`;
   return {
     title,
     description,
