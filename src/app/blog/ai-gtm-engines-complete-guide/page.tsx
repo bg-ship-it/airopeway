@@ -237,7 +237,7 @@ export default function PillarPost() {
           <div className="prose-doc space-y-6 text-[17px] leading-[1.75] text-ink-soft">
             <section>
               <h2 className="font-display mt-12 mb-4 text-2xl font-bold text-ink md:text-3xl">
-                What is an AI GTM engine?
+                The engine in one paragraph
               </h2>
               <p>
                 An AI GTM engine is a coordinated stack of AI agents that
@@ -257,6 +257,19 @@ export default function PillarPost() {
                 “we shipped an AI GTM engine” is the same as the difference
                 between bolting a turbocharger on a Civic and building an F1
                 power unit. Both have a turbo. Only one is engineered.
+              </p>
+              <p>
+                That is the short version. If the definition is all you came
+                for —{" "}
+                <Link
+                  href="/what-is-an-ai-gtm-engine"
+                  className="text-accent hover:underline"
+                >
+                  what is an AI GTM engine
+                </Link>{" "}
+                covers the components, the terminology, and the cost in one
+                page. The rest of this guide is the build: the eight agents,
+                the fourteen-day sequence, and the economics against hiring.
               </p>
             </section>
 
