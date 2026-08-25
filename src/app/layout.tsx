@@ -9,7 +9,7 @@ import { CookieBanner } from "@/components/cookie-banner";
 import { BlogPreview } from "@/components/sections/blog-preview";
 import { FloatingBottomCta } from "@/components/preview/floating-bottom-cta";
 
-const GTM_ID = "GTM-T3T6HRG9";
+const GTM_ID = "GTM-NCD9CLJ5";
 
 const grotesk = Space_Grotesk({
   variable: "--font-grotesk",
