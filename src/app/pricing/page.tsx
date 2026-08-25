@@ -145,6 +145,18 @@ const jsonLd = {
       };
     }),
     {
+      // Exactly the four rendered below by faqs.slice(0, 4). Structured data
+      // has to match what is on the page; the previous sitewide node claimed
+      // six on all 73 URLs.
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/pricing#faq`,
+      mainEntity: faqs.slice(0, 4).map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+    {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
