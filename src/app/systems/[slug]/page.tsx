@@ -59,9 +59,23 @@ export default async function SystemPage({
     .filter((s) => s.slug !== system.slug)
     .slice(Number(system.num) % 12, (Number(system.num) % 12) + 3);
 
+  const faqJsonLd = system.faqs?.length
+    ? [
+        {
+          "@type": "FAQPage",
+          mainEntity: system.faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ]
+    : [];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      ...faqJsonLd,
       {
         "@type": "Service",
         name: system.name,
@@ -144,6 +158,41 @@ export default async function SystemPage({
                 </li>
               ))}
             </ul>
+
+            {system.sections?.map((sec) => (
+              <div key={sec.h}>
+                <h2 className="font-display mt-12 text-2xl font-bold">{sec.h}</h2>
+                {sec.body.map((para) => (
+                  <p
+                    key={para}
+                    className="mt-4 text-[15px] leading-relaxed text-ink-soft"
+                  >
+                    {para}
+                  </p>
+                ))}
+              </div>
+            ))}
+
+            {system.faqs && system.faqs.length > 0 && (
+              <div>
+                <h2 className="font-display mt-12 text-2xl font-bold">
+                  Common questions
+                </h2>
+                <div className="mt-6 space-y-3">
+                  {system.faqs.map((f) => (
+                    <div
+                      key={f.q}
+                      className="rounded-2xl border border-line bg-surface p-5"
+                    >
+                      <h3 className="font-medium text-ink">{f.q}</h3>
+                      <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+                        {f.a}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <h2 className="font-display mt-12 text-2xl font-bold">
               How we deploy it
