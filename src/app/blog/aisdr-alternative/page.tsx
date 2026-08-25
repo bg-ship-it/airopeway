@@ -11,7 +11,8 @@ const TITLE =
 const DESCRIPTION =
   "Honest comparison of AiSDR and a custom AI GTM engine. AiSDR is a subscription; AI Ropeway ships an owned engine in 14 days. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
-const MODIFIED = "2026-07-11T09:00:00.000Z";
+const MODIFIED = "2026-08-25T00:00:00.000Z";
+const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
   { publisher: "AiSDR", title: "AiSDR pricing", url: "https://aisdr.com/pricing", note: "Primary source for AiSDR subscription pricing and included features referenced below. Verify current rates on their site." },
@@ -45,7 +46,7 @@ const jsonLd = {
 const rows = [
   ["Product model", "Subscription AI SDR platform", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "Monthly subscription (see site)", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Solo $250 · Explore $900 · Scale $2,500/mo", "$3k one-time or $2.5k/mo"],
   ["Personalization", "Platform AI + templates", "Written off the signal that fired, for your ICP"],
   ["Runs in", "AiSDR's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],
@@ -83,7 +84,13 @@ export default function Post() {
                 <tbody>{rows.map(([k, c, ar]) => (<tr key={k} className="border-t border-line"><td className="px-4 py-3 font-medium text-ink">{k}</td><td className="px-4 py-3 text-ink-muted">{c}</td><td className="px-4 py-3 text-ink-soft">{ar}</td></tr>))}</tbody>
               </table>
             </div>
-            <p className="text-sm text-ink-muted">Competitor features and pricing change often — confirm current details on <a href="https://aisdr.com/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">AiSDR&apos;s pricing page</a> before deciding.</p>
+            <p className="text-sm text-ink-muted">AiSDR pricing above was checked on {PRICING_CHECKED} against <a href="https://aisdr.com/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">AiSDR&apos;s pricing page</a>. AiSDR bills on message volume rather than seats, and all standard plans include unlimited users. Annual billing runs roughly 20% below the monthly rates shown. Vendors change plans without notice &mdash; confirm before deciding.</p>
+
+            <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Who should choose AiSDR over AI Ropeway</h2>
+            <p>AiSDR charges by message volume with unlimited users, which is a genuinely better model than ours for a team that needs many senders. If eight people each need to send from their own mailbox, we would charge a team of eight what we charge a solo founder &mdash; AiSDR lets you add all eight at no additional seat cost.</p>
+            <p>Their Solo tier is also contract-free, so you can test the idea for a single month and walk away. Our Sprint is a $3,000 commitment before a single email sends.</p>
+            <p>Pick AiSDR if you want volume across many senders, you have someone in-house watching reply quality, and you would rather not own or maintain anything.</p>
+            <p>One thing to check before signing: Explore and Scale require a quarterly contract paid in advance, so the month-to-month flexibility stops above the Solo tier.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When to pick which</h2>
             <p><strong className="text-ink">Pick AiSDR</strong> if you want plug-and-play SaaS today and are fine renting the workflow. <strong className="text-ink">Pick AI Ropeway</strong> if you want to own the system, tailor it to your ICP, and keep the code. Run the math with the <Link href="/roi-calculator" className="text-accent hover:underline">ROI calculator</Link>.</p>

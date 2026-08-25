@@ -11,7 +11,8 @@ const TITLE =
 const DESCRIPTION =
   "Honest comparison of Artisan (Ava) and a custom AI GTM engine. Artisan is a subscription AI BDR; AI Ropeway ships an engine you own. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
-const MODIFIED = "2026-07-11T09:00:00.000Z";
+const MODIFIED = "2026-08-25T00:00:00.000Z";
+const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
   { publisher: "Artisan", title: "Artisan", url: "https://www.artisan.co", note: "Primary source for Artisan (Ava) platform positioning and pricing referenced below. Verify current details on their site." },
@@ -45,7 +46,7 @@ const jsonLd = {
 const rows = [
   ["Product model", "All-in-one AI BDR platform (Ava)", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "Monthly subscription (see site)", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "from $250 · Intern $280 · Employee $660/mo · Ent. ~$1.5&ndash;3k/mo", "$3k one-time or $2.5k/mo"],
   ["Personalization", "Platform AI", "Written off the signal that fired, for your ICP"],
   ["Runs in", "Artisan's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],
@@ -83,7 +84,13 @@ export default function Post() {
                 <tbody>{rows.map(([k, c, ar]) => (<tr key={k} className="border-t border-line"><td className="px-4 py-3 font-medium text-ink">{k}</td><td className="px-4 py-3 text-ink-muted">{c}</td><td className="px-4 py-3 text-ink-soft">{ar}</td></tr>))}</tbody>
               </table>
             </div>
-            <p className="text-sm text-ink-muted">Competitor features and pricing change often — confirm current details on <a href="https://www.artisan.co" target="_blank" rel="noopener" className="text-accent hover:underline">Artisan&apos;s site</a> before deciding.</p>
+            <p className="text-sm text-ink-muted">Artisan pricing above was checked on {PRICING_CHECKED} against <a href="https://www.artisan.co/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">Artisan&apos;s pricing page</a>. Artisan prices on usage credits with no platform fee, so cost scales with outreach volume rather than seats. Enterprise deployments are quote-only and reported figures vary widely. Vendors change plans without notice &mdash; confirm before deciding.</p>
+
+            <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Who should choose Artisan over AI Ropeway</h2>
+            <p>Artisan&rsquo;s usage-credit model with no platform fee means spend tracks the work actually done rather than a seat count or a retainer. That is the cheapest honest way to find out whether AI outbound works for your ICP at all &mdash; run a real test for a few hundred dollars, and if it does not convert, stop.</p>
+            <p>We cannot offer that. A Sprint is $3,000 whether it works or not, and the first fortnight is build rather than sending. If you have not yet proven the channel, that is a worse bet than Artisan and we would say so.</p>
+            <p>Pick Artisan if you have not yet proven that AI outbound converts in your market and you want to test cheaply before committing to owning anything. Their free tier and $300 in starting credits make that test close to free.</p>
+            <p>Come back when you know it works and the subscription line starts costing more per year than the build would have cost once.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When to pick which</h2>
             <p><strong className="text-ink">Pick Artisan</strong> if you want one managed AI BDR product with minimal setup. <strong className="text-ink">Pick AI Ropeway</strong> if you want to own the system and shape it around your ICP. Run the math with the <Link href="/roi-calculator" className="text-accent hover:underline">ROI calculator</Link>.</p>

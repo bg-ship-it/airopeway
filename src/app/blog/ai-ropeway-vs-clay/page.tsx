@@ -10,7 +10,8 @@ const TITLE = "AI Ropeway vs Clay: tool vs full AI GTM engine";
 const DESCRIPTION =
   "Clay is the best data layer for waterfall enrichment. AI Ropeway is the engine you build on top of it. When you need both, and when you don't.";
 const PUBLISHED = "2026-06-25T09:00:00.000Z";
-const MODIFIED = "2026-06-25T09:00:00.000Z";
+const MODIFIED = "2026-08-25T00:00:00.000Z";
+const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
   {
@@ -39,7 +40,7 @@ const faqs = [
   { q: "Are AI Ropeway and Clay competitors?", a: "No — Clay is a layer inside an AI Ropeway deployment. Clay handles the waterfall enrichment best in the market. AI Ropeway builds the full 8-agent AI GTM engine that uses Clay as one of its data layers." },
   { q: "Do I need Clay if I hire AI Ropeway?", a: "Yes, typically. Clay is the enrichment layer Account Mapper runs on. If you don’t have Clay credits, we provision them as part of the sprint. Cost is passed through at usage." },
   { q: "Why not just use Clay tables for everything?", a: "Clay is exceptional at table-based enrichment and one-off automations. It’s not designed to be the orchestration backbone for 8 coordinated agents, signal detection across web sources, inbox warmup, or reply triage. For that you need full system access." },
-  { q: "What does the cost comparison look like?", a: "Clay alone: $349–$2,000+/month depending on credits. AI Ropeway Sprint: $3,000 one-time (Clay credits included for pilot). Most teams end up with both: AI Ropeway for the engine, Clay for the data layer inside it." },
+  { q: "What does the cost comparison look like?", a: "Clay alone, as of August 2026: Launch $185/month or Growth $495/month self-serve, with Enterprise starting near $30,000/year. Clay split its credits in March 2026 into Data Credits for marketplace data and Actions for platform work, so the effective cost depends on your enrichment mix rather than a flat tier. AI Ropeway Sprint: $3,000 one-time, Clay credits included for the pilot. Most teams end up with both — AI Ropeway for the engine, Clay for the data layer inside it." },
 ];
 
 const jsonLd = {
@@ -54,7 +55,7 @@ const jsonLd = {
 const rows = [
   ["Primary product", "Data tables + waterfall enrichment", "Full 8-agent AI GTM engine"],
   ["Asset ownership", "Workbook in Clay account", "Full system access in your stack"],
-  ["Pricing", "$349–$2,000+/mo subscription", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Free · Launch $185/mo · Growth $495/mo · Ent. from ~$30k/yr", "$3k one-time or $2.5k/mo"],
   ["Signal detection", "DIY with Claygent", "Built in (Intent Watcher agent)"],
   ["Sequence composition", "Configurable per table", "Built in (Sequence Composer agent)"],
   ["Inbox warmup & deliverability", "Out of scope", "Built in (Inbox Operator agent)"],
@@ -96,7 +97,7 @@ export default function Post() {
                 <tbody>{rows.map(([k, c, ar]) => (<tr key={k} className="border-t border-line"><td className="px-4 py-3 font-medium text-ink">{k}</td><td className="px-4 py-3 text-ink-muted">{c}</td><td className="px-4 py-3 text-ink-soft">{ar}</td></tr>))}</tbody>
               </table>
             </div>
-            <p className="text-sm text-ink-muted">Pricing figures sourced from <a href="https://www.clay.com/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">Clay’s pricing page</a> and <a href="https://www.apollo.io/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">Apollo’s pricing page</a> as of June 2026; check the source for current rates.</p>
+            <p className="text-sm text-ink-muted">Clay pricing above was checked on {PRICING_CHECKED} against <a href="https://www.clay.com/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">Clay&apos;s pricing page</a>. Clay restructured in March 2026, splitting credits into Data Credits for marketplace data (from $0.05) and Actions for platform work (under $0.01). Cost comparisons written before that &mdash; including an earlier version of this page, which quoted a $349 tier &mdash; reference plans that no longer exist. Vendors change plans without notice &mdash; confirm before deciding.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When to use Clay alone</h2>
             <p>You have a small team, a focused use case (build enriched lists, run one-off campaigns), and the bandwidth to configure tables yourself. Clay alone is the right call.</p>

@@ -11,7 +11,8 @@ const TITLE =
 const DESCRIPTION =
   "Apollo is the best B2B data platform for SDR teams. AI Ropeway is the GTM engine that uses Apollo as a data source. Where each one actually wins.";
 const PUBLISHED = "2026-06-25T10:00:00.000Z";
-const MODIFIED = "2026-06-25T10:00:00.000Z";
+const MODIFIED = "2026-08-25T00:00:00.000Z";
+const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
   {
@@ -55,7 +56,7 @@ const jsonLd = {
 const rows = [
   ["Primary product", "B2B data + sequencing platform", "Full 8-agent AI GTM engine"],
   ["Asset ownership", "Account on Apollo's platform", "Full system access in your stack"],
-  ["Pricing", "$59–$149/seat + credit fees", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Basic $49 · Pro $79 · Org $119 per user/mo (annual)", "$3k one-time or $2.5k/mo"],
   ["Data coverage", "Apollo's database only", "Waterfall across Apollo + ZoomInfo + Clay + first-party"],
   ["Signal-based sourcing", "Static filters in their UI", "Continuous (Lead Sourcer + Intent Watcher agents)"],
   ["Sequence composition", "Templates + AI suggestions", "Signal-grounded per touch (Sequence Composer agent)"],
@@ -98,7 +99,7 @@ export default function Post() {
                 <tbody>{rows.map(([k, c, ar]) => (<tr key={k} className="border-t border-line"><td className="px-4 py-3 font-medium text-ink">{k}</td><td className="px-4 py-3 text-ink-muted">{c}</td><td className="px-4 py-3 text-ink-soft">{ar}</td></tr>))}</tbody>
               </table>
             </div>
-            <p className="text-sm text-ink-muted">Apollo pricing sourced from <a href="https://www.apollo.io/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">Apollo’s pricing page</a> as of June 2026; check the source for current rates.</p>
+            <p className="text-sm text-ink-muted">Apollo pricing above was checked on {PRICING_CHECKED} against <a href="https://www.apollo.io/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">Apollo&apos;s pricing page</a>. Apollo prices per seat, and the Organization tier carries a three-user minimum, so its real entry point is closer to $4,300 a year than the headline figure suggests. Monthly billing runs roughly 20% above the annual rates shown. Vendors change plans without notice &mdash; confirm before deciding.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When to use Apollo alone</h2>
             <p>Small team, low complexity, need to ship this week. You’re fine running on someone else’s SaaS rails. You don’t need 8 coordinated agents — you just need to send some emails and book some meetings. Apollo is the right call.</p>
