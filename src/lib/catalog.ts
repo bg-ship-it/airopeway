@@ -15,6 +15,11 @@ export type SystemPage = {
   // name and desc are the better default.
   seoTitle?: string;
   seoDescription?: string;
+  // Optional long-form body. Without these a system page renders intro +
+  // benefits only, which is ~90 words of unique copy — too thin to rank for
+  // anything competitive. Populate them for systems with real search demand.
+  sections?: { h: string; body: string[] }[];
+  faqs?: { q: string; a: string }[];
 };
 
 // Unique intro + benefits per system. Descriptive and accurate — no invented metrics.
@@ -26,6 +31,8 @@ const systemExtra: Record<
     benefits: string[];
     seoTitle?: string;
     seoDescription?: string;
+    sections?: { h: string; body: string[] }[];
+    faqs?: { q: string; a: string }[];
   }
 > = {
   "01": {
@@ -57,6 +64,56 @@ const systemExtra: Record<
   },
   "03": {
     slug: "voice-ai-solutions",
+    // "voice ai consulting" and "voice ai implementation services" are
+    // buying-intent queries this page surfaced for but never answered. Sections
+    // below cover what the page can state from first-party knowledge; the
+    // measured latency figures, deployment numbers and per-minute pricing are
+    // deliberately absent until they can be quoted accurately.
+    sections: [
+      {
+        h: "What voice AI handles well — and what it doesn't",
+        body: [
+          "Voice agents are strongest on calls with a narrow, well-defined job: qualifying an inbound enquiry, confirming or rescheduling an appointment, chasing a form fill, answering the same tier-one question for the hundredth time that week. These are conversations with a predictable shape, where the caller wants a fast answer more than they want a person.",
+          "They are weakest where the call is the relationship. Escalations, renewals under strain, anything involving a distressed or angry caller, and any conversation where the next question genuinely cannot be anticipated — those belong with a human, and a voice agent that tries to hold them will damage the account faster than a slow callback would.",
+          "The practical test before deploying a voice agent to a call type: could a well-briefed new hire handle this from a one-page script on day one? If yes, it is a good candidate. If the honest answer is that it takes judgement built over months, keep it human and use the agent to route the call there faster.",
+        ],
+      },
+      {
+        h: "Why latency decides whether it works",
+        body: [
+          "In natural conversation people leave roughly a fifth of a second between turns. Every component in a voice pipeline eats into that budget: speech recognition, the model generating a reply, speech synthesis, and the round trip over the telephony network. Push total response time much past a second and callers start talking over the agent, repeating themselves, or assuming the line has dropped.",
+          "This is the single technical constraint that separates a voice deployment people tolerate from one they do not notice. It is also the reason a voice agent cannot simply be a chatbot with a phone number attached — the architecture has to be built backwards from the latency budget, streaming partial results rather than waiting for complete ones at each stage.",
+          "When evaluating any voice AI vendor, including us, ask what their measured response time is at the median and at the 95th percentile, and on which telephony provider. A vendor who quotes only model inference time is not measuring the thing the caller experiences.",
+        ],
+      },
+      {
+        h: "Interruptions, and why they are the hard part",
+        body: [
+          "The moment a real caller talks over the agent is the moment most voice demos fall apart. Handling it — barge-in — means the agent has to detect speech while it is still talking, stop cleanly mid-sentence, discard the rest of its planned reply, and pick up from what the caller actually said rather than from where its script was.",
+          "Done badly, the agent talks over the caller, or stops and restarts its whole sentence, or loses the thread entirely. Done well, it is the difference between a call that feels like a conversation and one that feels like fighting a phone menu. Any serious evaluation of a voice agent should include deliberately interrupting it three or four times.",
+        ],
+      },
+      {
+        h: "What it connects to",
+        body: [
+          "A voice agent that cannot see your systems is an answering machine with better manners. We deploy into your existing telephony and CRM rather than asking you to move to a new stack, so the agent can look up a caller before it greets them, write the outcome back to the record, and hand a warm transfer to a human with the context already attached.",
+          "That last part matters more than it sounds. The common failure in voice deployments is not the agent mishandling a call — it is the agent handling it correctly and then dropping the caller onto a colleague who has to start the conversation from scratch, which is a worse experience than never using the agent at all.",
+        ],
+      },
+      {
+        h: "Disclosure and consent",
+        body: [
+          "Rules on recording consent and on disclosing that a caller is speaking to an AI vary by jurisdiction and are tightening in most of them. Some regions require all-party consent to record; some require the AI nature of the caller to be disclosed up front; some require both, and the rules differ again for outbound calls versus inbound.",
+          "Our position is to disclose by default rather than to the legal minimum. Callers tend to react far better to a voice agent that says what it is in the first sentence than to one they work out halfway through, and the disclosure costs less in call outcome than the discovery does in trust. The specific requirements for your markets are part of the scoping call.",
+        ],
+      },
+    ],
+    faqs: [
+      { q: "Will callers know they are talking to an AI?", a: "Yes, if we build it — we disclose in the opening line by default rather than to the legal minimum. Disclosure requirements differ by jurisdiction and by whether the call is inbound or outbound, and we scope yours before deployment, but the practical argument is simpler than the legal one: callers who are told up front react better than callers who work it out midway." },
+      { q: "What happens when the agent cannot handle the call?", a: "It routes to a human, with the context it has already gathered attached to the transfer. The failure to design for is not the agent getting stuck — it is the agent handing over cleanly to a colleague who then has to restart the conversation from nothing, which is worse than not deploying the agent at all." },
+      { q: "Which calls should stay with humans?", a: "Escalations, renewals under strain, distressed or angry callers, and anything where the next question genuinely cannot be anticipated. A useful test: if a well-briefed new hire could handle the call from a one-page script on day one, a voice agent can too. If it takes judgement built over months, keep it human and use the agent to get the caller there faster." },
+      { q: "Does it replace the phone system we already have?", a: "No. We deploy into your existing telephony and CRM rather than asking you to migrate. The agent sits in front of what you run today, looks up the caller before greeting them, and writes outcomes back to the record." },
+    ],
     intro:
       "Voice AI handles inbound calls, outbound follow-ups, and tier-one support at scale — answering instantly, qualifying intent, and routing to a human only when needed. We deploy voice agents into your existing telephony and CRM.",
     benefits: [

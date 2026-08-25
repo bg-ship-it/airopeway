@@ -37,6 +37,8 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
+  { q: "What is enterprise agent lifecycle management?", a: "The full span of an agent's working life, not just the part where it runs: deployment, version control on prompts and config, monitoring in production, tuning as your data shifts, and a planned retirement with a named owner. Most teams implement the monitoring step and skip the other four, which is why agents drift and why nobody can say who owns the one that broke." },
+  { q: "How is AI agent performance management different from monitoring?", a: "Monitoring tells you an agent is running. Performance management tells you whether it is worth running. Monitoring watches error rates and uptime; performance management assigns each agent one primary business metric — signal-to-meeting conversion, enrichment accuracy, forecast accuracy — and reviews it on a cadence. An agent can be perfectly healthy and still be losing you money." },
   { q: "How many AI agents can a mid-market company realistically run?", a: "There's no hard ceiling, but the bottleneck is orchestration, not compute. Most mid-market teams run 4–8 agents effectively once they have central logging, defined handoff rules, and a human-in-the-loop escalation path. The mistake is adding agents before the management layer exists." },
   { q: "What's the biggest risk of running multiple AI agents?", a: "Silent failure. An agent that stops producing results looks identical to an agent that was never deployed — unless you have monitoring. We've seen companies run a lead-scoring agent for 3 months without noticing it had stopped receiving data after an API key expired." },
   { q: "Do I need to build my own orchestration layer?", a: "No. AI Ropeway deploys the management layer alongside the agents — central logging, guardrails, fallback logic, and a monitoring dashboard. It deploys into your stack, so you have full access. But building from scratch would take an engineering team 3–6 months." },
@@ -74,7 +76,7 @@ export default function Post() {
             <p>Three months later, the lead-scoring agent is feeding enriched data to the outreach agent, which is sending emails to contacts the CRM agent already marked as \"do not contact.\" Nobody noticed because there's no central log. Each agent was deployed by a different team using a different framework.</p>
             <p>This is the most common failure mode in enterprise AI and it's entirely preventable.</p>
 
-            <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">The five layers of agent management</h2>
+            <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">The six layers of agent management</h2>
             <p>After deploying AI systems across 40+ businesses — <Link href="/industries/saas" className="text-accent hover:underline">SaaS</Link>, <Link href="/industries/finance" className="text-accent hover:underline">finance</Link>, <Link href="/industries/healthcare" className="text-accent hover:underline">healthcare</Link>, <Link href="/industries/ecommerce" className="text-accent hover:underline">e-commerce</Link> — I've settled on five layers that every multi-agent deployment needs. Skip any of them and you'll pay for it within 90 days.</p>
 
             <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">1. Central logging and observability</h3>
@@ -86,11 +88,19 @@ export default function Post() {
             <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">3. Defined handoff protocols</h3>
             <p>When <Link href="/blog/intent-watcher-ai-buying-signals" className="text-accent hover:underline">Intent Watcher</Link> detects a buying signal, who gets it next? Account Mapper for enrichment, or Sequence Composer for immediate outreach? The answer depends on signal strength, account tier, and whether the contact is already in an active sequence. These rules need to be explicit, versioned, and testable.</p>
 
-            <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">4. Performance measurement per agent</h3>
+            <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">4. Performance management per agent</h3>
             <p>Each agent has one primary metric. Intent Watcher: signal-to-qualified-meeting conversion. Account Mapper: enrichment accuracy. <Link href="/blog/inbox-operator-cold-email-deliverability" className="text-accent hover:underline">Inbox Operator</Link>: deliverability rate. <Link href="/blog/revenue-pulse-pipeline-analytics" className="text-accent hover:underline">Revenue Pulse</Link>: forecast accuracy. If you can't measure an agent's individual contribution, you can't tell whether it's helping or costing you.</p>
 
             <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">5. Continuous tuning loop</h3>
             <p>Agents drift. The model weights don't change, but the data does — your ICP shifts, your competitors launch new products, your CRM data quality degrades. A tuning loop means weekly reviews of agent performance, quarterly recalibration of scoring thresholds, and monthly updates to content templates.</p>
+
+            <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">6. Lifecycle: versioning, rollback, and retirement</h3>
+            <p>Most writing on agent management stops at monitoring. The harder problem is what happens when an agent has to change or stop. Treat every prompt and config change like a code change: an agent whose prompt was edited on Tuesday and started underperforming on Wednesday is undiagnosable without a version history, and &ldquo;we think someone tweaked it&rdquo; is not a root cause.</p>
+            <p>Keep a rollback path for the same reason. The fastest fix for a misbehaving agent is almost always the previous version, not a debugging session with the pipeline still running.</p>
+            <p>Retirement is the step nobody plans for. Agents outlive their purpose — an ICP shifts, a tool gets replaced, a campaign ends — and an agent that nobody owns but whose output still flows into your CRM is the worst version of silent failure. Every agent needs a named human owner and a defined end-of-life, decided when it is deployed rather than discovered eighteen months later.</p>
+
+            <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When you don&rsquo;t need a management layer</h2>
+            <p>Below about three agents, this is overhead. Two agents with a documented handoff and one shared log will serve you better than a dashboard nobody opens. The threshold isn&rsquo;t a headcount or a budget — it&rsquo;s the first time two agents start writing to the same records. That is when the failure modes stop being independent and the management layer starts paying for itself.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">What this looks like in practice</h2>
             <p>At AI Ropeway, the <Link href="/systems/ai-agent-management" className="text-accent hover:underline">AI Agent Management system</Link> ships as part of every deployment. It's not a separate product — it's the infrastructure layer that makes the 8 GTM agents (and the 10 beyond-GTM <Link href="/systems" className="text-accent hover:underline">systems</Link>) run reliably at scale.</p>
