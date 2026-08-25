@@ -8,7 +8,6 @@ import { MobileCta } from "@/components/mobile-cta";
 import { CookieBanner } from "@/components/cookie-banner";
 import { BlogPreview } from "@/components/sections/blog-preview";
 import { FloatingBottomCta } from "@/components/preview/floating-bottom-cta";
-import { faqs } from "@/lib/content";
 
 const GTM_ID = "GTM-T3T6HRG9";
 
@@ -163,15 +162,6 @@ const jsonLd = {
         priceCurrency: "USD",
         description: "Monthly ongoing partnership",
       },
-    },
-    {
-      "@type": "FAQPage",
-      "@id": `${SITE_URL}/#faq`,
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
     },
   ],
 };
