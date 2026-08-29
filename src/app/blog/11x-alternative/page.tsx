@@ -11,7 +11,8 @@ const TITLE =
 const DESCRIPTION =
   "Honest comparison of 11x (Alice) and a custom AI GTM engine. One is a subscription; the other ships into your stack in 14 days. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
-const MODIFIED = "2026-07-11T09:00:00.000Z";
+const MODIFIED = "2026-08-25T00:00:00.000Z";
+const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
   { publisher: "11x", title: "11x", url: "https://www.11x.ai", note: "Primary source for 11x (Alice) platform positioning and pricing referenced below. Verify current details on their site." },
@@ -45,7 +46,7 @@ const jsonLd = {
 const rows = [
   ["Product model", "Subscription AI SDR platform (Alice)", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "Annual/monthly subscription (see site)", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Growth from $36k/yr listed; reported ~$5k/mo, first year $50&ndash;60k", "$3k one-time or $2.5k/mo"],
   ["Personalization", "Platform AI", "Written off the signal that fired, for your ICP"],
   ["Runs in", "11x's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],
@@ -83,7 +84,13 @@ export default function Post() {
                 <tbody>{rows.map(([k, c, ar]) => (<tr key={k} className="border-t border-line"><td className="px-4 py-3 font-medium text-ink">{k}</td><td className="px-4 py-3 text-ink-muted">{c}</td><td className="px-4 py-3 text-ink-soft">{ar}</td></tr>))}</tbody>
               </table>
             </div>
-            <p className="text-sm text-ink-muted">Competitor features and pricing change often — confirm current details on <a href="https://www.11x.ai" target="_blank" rel="noopener" className="text-accent hover:underline">11x&apos;s site</a> before deciding.</p>
+            <p className="text-sm text-ink-muted">11x pricing above was checked on {PRICING_CHECKED} against <a href="https://www.11x.ai/pricing" target="_blank" rel="noopener" className="text-accent hover:underline">11x&apos;s pricing page</a>. 11x&rsquo;s own site lists Growth from $36,000 a year. Third-party marketplace data reports a median contract nearer $40,000 with a range up to $65,000, and independent reviews describe roughly $5,000 a month with implementation fees on top. We publish the spread rather than a single number because the spread is real. Vendors change plans without notice &mdash; confirm before deciding.</p>
+
+            <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Who should choose 11x over AI Ropeway</h2>
+            <p>11x sells a managed relationship: an implementation team, a service agreement, and somebody accountable when it breaks at 2am. For an enterprise buyer who needs a vendor on a contract rather than a system in their repository &mdash; procurement sign-off, a security review, a name on the SLA &mdash; that is a real product difference, and we are not it.</p>
+            <p>Founder-led delivery is a feature at our size and a liability at theirs. If your board needs to see a vendor rather than a consultant, 11x is the more defensible purchase.</p>
+            <p>Pick 11x if you are enterprise, you want a vendor rather than an asset, and annual commitment with implementation support is what your procurement process expects rather than what it objects to.</p>
+            <p>Do read the exit terms closely. Reported contract lengths are twelve months, and several public reviews describe difficulty leaving mid-term even during stated opt-out windows.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">When to pick which</h2>
             <p><strong className="text-ink">Pick 11x</strong> if you want a managed, all-in-one AI SDR platform with minimal build. <strong className="text-ink">Pick AI Ropeway</strong> if you want to own the system and tailor it to your ICP. Run the math with the <Link href="/roi-calculator" className="text-accent hover:underline">ROI calculator</Link>.</p>
