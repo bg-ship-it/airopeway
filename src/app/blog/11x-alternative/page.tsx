@@ -46,7 +46,7 @@ const jsonLd = {
 const rows = [
   ["Product model", "Subscription AI SDR platform (Alice)", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "Growth from $36k/yr listed; reported ~$5k/mo, first year $50&ndash;60k", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Growth from $36k/yr listed; reported ~$5k/mo, first year $50–60k", "$3k one-time or $2.5k/mo"],
   ["Personalization", "Platform AI", "Written off the signal that fired, for your ICP"],
   ["Runs in", "11x's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],

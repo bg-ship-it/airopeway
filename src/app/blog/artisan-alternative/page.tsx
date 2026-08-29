@@ -46,7 +46,7 @@ const jsonLd = {
 const rows = [
   ["Product model", "All-in-one AI BDR platform (Ava)", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "from $250 · Intern $280 · Employee $660/mo · Ent. ~$1.5&ndash;3k/mo", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "from $250 · Intern $280 · Employee $660/mo · Ent. ~$1.5–3k/mo", "$3k one-time or $2.5k/mo"],
   ["Personalization", "Platform AI", "Written off the signal that fired, for your ICP"],
   ["Runs in", "Artisan's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],
