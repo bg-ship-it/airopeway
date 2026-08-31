@@ -38,6 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/industries`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/what-is-an-ai-gtm-engine`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/sdr-vs-gtm-engineer`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/roi-calculator`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/ai-gtm-playbook`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
@@ -47,36 +48,41 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  const staticBlogUrls: MetadataRoute.Sitemap = STATIC_BLOG_POSTS.map((slug) => ({
-    url: `${SITE_URL}/blog/${slug}`,
-    lastModified: lastModBlog,
-    changeFrequency: "monthly",
-    priority: slug === "ai-gtm-engines-complete-guide" ? 0.9 : 0.7,
-  }));
-
-  const systemUrls: MetadataRoute.Sitemap = systemPages.map((s) => ({
+  const systems: MetadataRoute.Sitemap = systemPages.map((s) => ({
     url: `${SITE_URL}/systems/${s.slug}`,
     lastModified: now,
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  const industryUrls: MetadataRoute.Sitemap = industryPages.map((i) => ({
+  const industries: MetadataRoute.Sitemap = industryPages.map((i) => ({
     url: `${SITE_URL}/industries/${i.id}`,
     lastModified: now,
-    changeFrequency: "monthly",
+    changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  const posts = await getAllPosts().catch(() => []);
-  const cmsBlogUrls: MetadataRoute.Sitemap = posts
-    .filter((p) => !STATIC_BLOG_POSTS.includes(p.slug))
-    .map((p) => ({
-      url: `${SITE_URL}/blog/${p.slug}`,
-      lastModified: p.publishedAt ? new Date(p.publishedAt) : now,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    }));
+  const staticPosts: MetadataRoute.Sitemap = STATIC_BLOG_POSTS.map((slug) => ({
+    url: `${SITE_URL}/blog/${slug}`,
+    lastModified: lastModBlog,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
-  return [...staticPages, ...staticBlogUrls, ...systemUrls, ...industryUrls, ...cmsBlogUrls];
+  let sanityPosts: MetadataRoute.Sitemap = [];
+  try {
+    const posts = await getAllPosts();
+    sanityPosts = posts
+      .filter((p) => !STATIC_BLOG_POSTS.includes(p.slug))
+      .map((p) => ({
+        url: `${SITE_URL}/blog/${p.slug}`,
+        lastModified: p.publishedAt ? new Date(p.publishedAt) : now,
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }));
+  } catch {
+    sanityPosts = [];
+  }
+
+  return [...staticPages, ...systems, ...industries, ...staticPosts, ...sanityPosts];
 }
