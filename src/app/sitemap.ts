@@ -48,41 +48,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  const systems: MetadataRoute.Sitemap = systemPages.map((s) => ({
-    url: `${SITE_URL}/systems/${s.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  const industries: MetadataRoute.Sitemap = industryPages.map((i) => ({
-    url: `${SITE_URL}/industries/${i.id}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  const staticPosts: MetadataRoute.Sitemap = STATIC_BLOG_POSTS.map((slug) => ({
+  const staticBlogUrls: MetadataRoute.Sitemap = STATIC_BLOG_POSTS.map((slug) => ({
     url: `${SITE_URL}/blog/${slug}`,
     lastModified: lastModBlog,
-    changeFrequency: "monthly" as const,
+    changeFrequency: "monthly",
+    priority: slug === "ai-gtm-engines-complete-guide" ? 0.9 : 0.7,
+  }));
+
+  const systemUrls: MetadataRoute.Sitemap = systemPages.map((s) => ({
+    url: `${SITE_URL}/systems/${s.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
     priority: 0.7,
   }));
 
-  let sanityPosts: MetadataRoute.Sitemap = [];
-  try {
-    const posts = await getAllPosts();
-    sanityPosts = posts
-      .filter((p) => !STATIC_BLOG_POSTS.includes(p.slug))
-      .map((p) => ({
-        url: `${SITE_URL}/blog/${p.slug}`,
-        lastModified: p.publishedAt ? new Date(p.publishedAt) : now,
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-      }));
-  } catch {
-    sanityPosts = [];
-  }
+  const industryUrls: MetadataRoute.Sitemap = industryPages.map((i) => ({
+    url: `${SITE_URL}/industries/${i.id}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
 
-  return [...staticPages, ...systems, ...industries, ...staticPosts, ...sanityPosts];
+  const posts = await getAllPosts().catch(() => []);
+  const cmsBlogUrls: MetadataRoute.Sitemap = posts
+    .filter((p) => !STATIC_BLOG_POSTS.includes(p.slug))
+    .map((p) => ({
+      url: `${SITE_URL}/blog/${p.slug}`,
+      lastModified: p.publishedAt ? new Date(p.publishedAt) : now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }));
+
+  return [...staticPages, ...staticBlogUrls, ...systemUrls, ...industryUrls, ...cmsBlogUrls];
 }
