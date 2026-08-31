@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Cta } from "@/components/cta";
 
 const SITE_URL = "https://www.airopeway.com";
-const SLUG = "sdr-vs-gtm-engineer";
+const SLUG = "hire-an-sdr";
 const TITLE = "Hire an SDR, or build the engine?";
 const DESCRIPTION =
   "Four ways to add outbound pipeline: hire an SDR, outsource, hire a GTM engineer, or build an engine you own. The real first-year math on each.";
