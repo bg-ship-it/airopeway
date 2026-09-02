@@ -80,7 +80,7 @@ export function Hero() {
             <strong className="font-semibold text-ink">14 days</strong>.
             Live demo on{" "}
             <strong className="font-semibold text-ink">your data</strong> on
-            our first call.
+            our first call — before you post the SDR job.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -93,10 +93,10 @@ export function Hero() {
               Book live demo on your data <ArrowRight className="size-4" />
             </a>
             <Link
-              href="#revenue-stack"
+              href="/hire-an-sdr"
               className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface/80 px-6 py-3 text-sm font-semibold text-ink hover:bg-surface"
             >
-              See the 8-agent stack ↓
+              Hire an SDR, or build this? <ArrowRight className="size-4" />
             </Link>
           </div>
 
