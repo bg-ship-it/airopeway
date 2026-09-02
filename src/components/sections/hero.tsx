@@ -21,24 +21,22 @@ export function Hero() {
 
           <Reveal delay={0.05}>
             <h1 className="font-display mt-6 text-[clamp(2.4rem,6vw,4.6rem)] font-bold leading-[1.02]">
-              Do <span className="text-accent">5×</span> more. Run on{" "}
-              <em className="font-medium italic">half</em> the team. Scale{" "}
-              <span className="text-accent">50×</span> faster —{" "}
-              <span className="text-ink-muted">or get left behind.</span>
+              Don&apos;t hire the next{" "}
+              <span className="text-accent">SDR</span>. Ship the{" "}
+              <span className="text-accent">engine</span> instead —{" "}
+              <span className="text-ink-muted">and keep it.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={0.1}>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-              Your competitors are deploying AI{" "}
-              <strong className="font-semibold text-ink">right now</strong>. Every
-              week you operate manually costs you market share, margin, and
-              momentum. AI Ropeway deploys{" "}
+              Three ways to add outbound pipeline: hire a rep, rent an agency,
+              or build an AI GTM engine you own. We build the engine —{" "}
               <strong className="font-semibold text-ink">
-                18 battle-tested AI systems
-              </strong>{" "}
-              into your business — turning operations into a revenue engine that
-              runs at machine speed.
+                live in your stack in 14 days
+              </strong>
+              , shipped into your own repo, yours to keep whether or not we stay.
+              For founder-led B2B SaaS at $1M–$20M ARR.
             </p>
           </Reveal>
 
@@ -47,8 +45,8 @@ export function Hero() {
               <Cta href="/#audit" size="lg">
                 {hero.primaryCta}
               </Cta>
-              <Cta href="/#systems" size="lg" variant="ghost" showArrow={false}>
-                {hero.secondaryCta} ↓
+              <Cta href="/hire-an-sdr" size="lg" variant="ghost">
+                Hire or build? See the math
               </Cta>
             </div>
           </Reveal>
