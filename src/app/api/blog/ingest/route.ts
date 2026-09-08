@@ -32,6 +32,21 @@ const writeClient = createClient({
   token: process.env.SANITY_WRITE_TOKEN,
 });
 
+/**
+ * The listing page renders author and categories, so every post needs them.
+ * Callers may pass a category by title or by _id; unknown strings pass through
+ * as ids so a new category does not require a code change here.
+ */
+const DEFAULT_AUTHOR_ID = "bharat-gulati";
+
+const CATEGORY_IDS: Record<string, string> = {
+  "AI GTM Strategy": "feb51085-76b9-4ff1-bde9-f8784f9389d8",
+  "Sales Automation & RevOps": "39f0eb9c-f23a-416a-a7e0-c9cbbbdd257c",
+  "AI Agent Management": "62a1cdd0-7428-4a5c-80bd-f5dbdbdb35c0",
+  "AI Automation & Workflow": "b1ff3250-7c2e-4431-b653-2bfb88902a17",
+  "AI Business Transformation": "fdf85d41-07d9-4330-8239-c4416c3aa5fc",
+};
+
 function authorized(request: NextRequest): boolean {
   const expected = process.env.BLOG_INGEST_TOKEN;
   if (!expected) {
@@ -93,6 +108,8 @@ export async function POST(request: NextRequest) {
       publishedAt,
       featured_image_url,
       featured_image_alt,
+      author,
+      categories,
     } = data ?? {};
 
     if (!title || !slug || !Array.isArray(body) || body.length === 0) {
@@ -120,6 +137,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const catRefs = (Array.isArray(categories) ? categories : [])
+      .map((c: string) => CATEGORY_IDS[c] ?? c)
+      .map((id: string, i: number) => ({
+        _type: "reference" as const,
+        _ref: id,
+        _key: `cat${i}`,
+      }));
+
     const mainImage = await uploadHeroImage(featured_image_url, featured_image_alt);
     if (featured_image_url && !mainImage) {
       return NextResponse.json(
@@ -136,6 +161,8 @@ export async function POST(request: NextRequest) {
       seoTitle: seoTitle || title,
       seoDescription: seoDescription || excerpt || "",
       publishedAt: publishedAt || new Date().toISOString(),
+      author: { _type: "reference", _ref: author || DEFAULT_AUTHOR_ID },
+      ...(catRefs.length ? { categories: catRefs } : {}),
       ...(mainImage ? { mainImage } : {}),
       body,
     });
