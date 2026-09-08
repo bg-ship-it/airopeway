@@ -26,7 +26,7 @@ const POST_FIELDS = `
   publishedAt,
   "imageRef": mainImage.asset->_id,
   "authorName": author->name,
-  "categories": categories[]->title
+  "categories": coalesce(categories[]->title, [])
 `;
 
 export async function getLatestPosts(limit = 3): Promise<BlogPost[]> {
