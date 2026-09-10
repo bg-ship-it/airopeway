@@ -4,7 +4,13 @@ import { getAllPosts } from "@/lib/blog";
 
 const SITE_URL = "https://www.airopeway.com";
 
-export const revalidate = 600;
+// Rendered per request, not cached. revalidate = 600 was set here and never took
+// effect: Next prerenders sitemap.ts as a static metadata file, so the route only
+// changed on deploy. Five posts published on 8 Sep were still missing from the
+// sitemap 11 hours later, with x-vercel-cache: HIT and age past 41,000s while
+// /blog, on the same revalidate, was correctly reporting STALE.
+// One GROQ query per request, and Google fetches this a handful of times a day.
+export const dynamic = "force-dynamic";
 
 const STATIC_BLOG_POSTS = [
   "ai-gtm-engines-complete-guide",
