@@ -39,6 +39,17 @@ const writeClient = createClient({
  */
 const DEFAULT_AUTHOR_ID = "bharat-gulati";
 
+/**
+ * Every post carries these unless the caller names its own. The first engine run
+ * after author was defaulted (10 Sep) still shipped with categories null, because
+ * the Cowork task does not send the field and it was merely optional here. Every
+ * other Ropeway post carries exactly these two, so a default beats a null chip.
+ */
+const DEFAULT_CATEGORY_IDS = [
+  "feb51085-76b9-4ff1-bde9-f8784f9389d8", // AI GTM Strategy
+  "39f0eb9c-f23a-416a-a7e0-c9cbbbdd257c", // Sales Automation & RevOps
+];
+
 const CATEGORY_IDS: Record<string, string> = {
   "AI GTM Strategy": "feb51085-76b9-4ff1-bde9-f8784f9389d8",
   "Sales Automation & RevOps": "39f0eb9c-f23a-416a-a7e0-c9cbbbdd257c",
@@ -137,7 +148,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const catRefs = (Array.isArray(categories) ? categories : [])
+    const catRefs = (Array.isArray(categories) && categories.length
+      ? categories
+      : DEFAULT_CATEGORY_IDS)
       .map((c: string) => CATEGORY_IDS[c] ?? c)
       .map((id: string, i: number) => ({
         _type: "reference" as const,
@@ -162,7 +175,7 @@ export async function POST(request: NextRequest) {
       seoDescription: seoDescription || excerpt || "",
       publishedAt: publishedAt || new Date().toISOString(),
       author: { _type: "reference", _ref: author || DEFAULT_AUTHOR_ID },
-      ...(catRefs.length ? { categories: catRefs } : {}),
+      categories: catRefs,
       ...(mainImage ? { mainImage } : {}),
       body,
     });
