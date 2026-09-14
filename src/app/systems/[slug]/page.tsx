@@ -29,6 +29,7 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: `/systems/${system.slug}` },
+    robots: system.noindex ? { index: false, follow: true } : undefined,
     openGraph: {
       images: ["/opengraph-image"],
       type: "website",

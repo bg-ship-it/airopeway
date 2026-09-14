@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { auditBenefits, founderQuote, industries, footer } from "@/lib/content";
 import { MotionBg } from "@/components/motion-bg";
+import { track } from "@/components/track-events";
 
 export function Audit() {
   const [submitted, setSubmitted] = useState(false);
@@ -30,6 +31,7 @@ export function Audit() {
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company}\nIndustry: ${form.industry}\nChallenge: ${form.challenge}`,
     );
+    track("audit_request", { industry: form.industry || "unspecified" });
     window.open(`mailto:${footer.email}?subject=${subject}&body=${body}`);
     setSubmitted(true);
   };

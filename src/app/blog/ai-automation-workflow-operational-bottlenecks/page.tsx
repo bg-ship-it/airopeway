@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: `/blog/${SLUG}` },
+  // Off-ICP cluster: 90 days to 12 Sep 2026 gave this group 466+ impressions at
+  // position ~49 and no clicks. Kept live for existing links, removed from index.
+  robots: { index: false, follow: true },
   openGraph: { images: ["/opengraph-image"], type: "article", url: `${SITE_URL}/blog/${SLUG}`, siteName: "AI Ropeway", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION, publishedTime: PUBLISHED, modifiedTime: MODIFIED, authors: ["Bharat Gulati"] },
   twitter: { images: ["/opengraph-image"], card: "summary_large_image", title: `${TITLE} | AI Ropeway`, description: DESCRIPTION },
 };
