@@ -33,7 +33,7 @@ const glossary = [
 const faqs = [
   { q: "What is an AI GTM engine?", a: "An AI GTM engine is a system of AI agents that automate go-to-market activities — detecting buying signals, enriching leads, writing personalized outreach, and triaging replies. Unlike SaaS tools, an AI GTM engine is custom-built for your ICP and deployed in your own infrastructure, so you get full access." },
   { q: "How is it different from a SaaS tool like Clay or Apollo?", a: "SaaS tools are rented platforms you pay for monthly and configure yourself. An AI GTM engine is a custom system built for your specific ICP and shipped into your own repo and accounts. You get full access; there are no per-seat fees; and tools like Clay can run as a data layer inside the engine." },
-  { q: "How much does an AI GTM engine cost?", a: "With AI Ropeway it starts at $3,000 for a one-time 14-day Sprint (one engine). Ongoing partnerships run $2,500–$5,000/month for continuous optimization and new agents. Every engagement starts with a free 60-minute audit." },
+  { q: "How much does an AI GTM engine cost?", a: "With AI Ropeway it starts at $3,000 for a one-time 14-day Sprint (one engine). Ongoing partnerships run $2,500/month, or $4,000/month plus $150–$250 per held meeting for the full eight-agent stack. No setup fee, no minimum term. Every engagement starts with a free 60-minute audit." },
   { q: "Who needs one?", a: "B2B SaaS and services founders at roughly $1M–$20M ARR running founder-led sales who want 20–60 qualified meetings a month without hiring a team of SDRs." },
 ];
 
@@ -90,7 +90,7 @@ export default function Page() {
           <p>A complete engine spans three layers — an AI SDR engine (signal detection, enrichment, deliverability), signal-based outbound (sourcing, personalized sequences, reply triage), and revenue-ops automation (CRM hygiene, pipeline analytics). AI Ropeway ships these as eight coordinated agents. The full breakdown lives in the <Link href="/blog/ai-gtm-engines-complete-guide" className="text-accent hover:underline">complete AI GTM engine guide</Link>.</p>
 
           <h2 className="font-display mt-10 mb-2 text-2xl font-bold text-ink">What it costs</h2>
-          <p>With AI Ropeway, a one-time 14-day Sprint starts at $3,000; ongoing partnerships run $2,500–$5,000/month. Run your own numbers with the <Link href="/roi-calculator" className="text-accent hover:underline">ROI calculator</Link>, or get the <Link href="/ai-gtm-playbook" className="text-accent hover:underline">free 14-day build plan</Link>.</p>
+          <p>With AI Ropeway, a one-time 14-day Sprint starts at $3,000; ongoing partnerships run $2,500/month, or $4,000/month plus $150–$250 per held meeting for the full eight-agent stack. No setup fee, no minimum term. Run your own numbers with the <Link href="/roi-calculator" className="text-accent hover:underline">ROI calculator</Link>, or get the <Link href="/ai-gtm-playbook" className="text-accent hover:underline">free 14-day build plan</Link>.</p>
 
           <h2 className="font-display mt-10 mb-3 text-2xl font-bold text-ink">Related terms</h2>
           <div className="space-y-3">

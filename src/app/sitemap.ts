@@ -12,6 +12,8 @@ const SITE_URL = "https://www.airopeway.com";
 // One GROQ query per request, and Google fetches this a handful of times a day.
 export const dynamic = "force-dynamic";
 
+// The three agent-management posts (enterprise guide, board playbook,
+// operational bottlenecks) are deliberately absent: they render with noindex.
 const STATIC_BLOG_POSTS = [
   "ai-gtm-engines-complete-guide",
   "intent-watcher-ai-buying-signals",
@@ -27,10 +29,7 @@ const STATIC_BLOG_POSTS = [
   "aisdr-alternative",
   "artisan-alternative",
   "11x-alternative",
-  "enterprise-ai-agent-management-guide",
   "ai-sales-automation-revops-2026",
-  "ai-business-transformation-board-playbook",
-  "ai-automation-workflow-operational-bottlenecks",
   "ai-gtm-strategy-pipeline",
 ];
 
@@ -61,7 +60,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: slug === "ai-gtm-engines-complete-guide" ? 0.9 : 0.7,
   }));
 
-  const systemUrls: MetadataRoute.Sitemap = systemPages.map((s) => ({
+  const systemUrls: MetadataRoute.Sitemap = systemPages
+    .filter((s) => !s.noindex)
+    .map((s) => ({
     url: `${SITE_URL}/systems/${s.slug}`,
     lastModified: now,
     changeFrequency: "monthly",
@@ -76,8 +77,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const posts = await getAllPosts().catch(() => []);
+  const noindexSlugs = new Set([
+    "enterprise-ai-agent-management-guide",
+    "ai-business-transformation-board-playbook",
+    "ai-automation-workflow-operational-bottlenecks",
+  ]);
   const cmsBlogUrls: MetadataRoute.Sitemap = posts
-    .filter((p) => !STATIC_BLOG_POSTS.includes(p.slug))
+    .filter((p) => !STATIC_BLOG_POSTS.includes(p.slug) && !noindexSlugs.has(p.slug))
     .map((p) => ({
       url: `${SITE_URL}/blog/${p.slug}`,
       lastModified: p.publishedAt ? new Date(p.publishedAt) : now,

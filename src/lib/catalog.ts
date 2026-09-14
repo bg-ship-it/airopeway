@@ -20,6 +20,11 @@ export type SystemPage = {
   // anything competitive. Populate them for systems with real search demand.
   sections?: { h: string; body: string[] }[];
   faqs?: { q: string; a: string }[];
+  // Off-ICP pages stay reachable from /systems but carry noindex and are
+  // dropped from the sitemap. In the 90 days to 12 Sep 2026 the agent
+  // management cluster drew 466 impressions at position 49 and zero clicks,
+  // and it competes with the GTM cluster for crawl attention.
+  noindex?: boolean;
 };
 
 // Unique intro + benefits per system. Descriptive and accurate — no invented metrics.
@@ -33,6 +38,7 @@ const systemExtra: Record<
     seoDescription?: string;
     sections?: { h: string; body: string[] }[];
     faqs?: { q: string; a: string }[];
+    noindex?: boolean;
   }
 > = {
   "01": {
@@ -47,6 +53,7 @@ const systemExtra: Record<
   },
   "02": {
     slug: "ai-agent-management",
+    noindex: true,
     // /blog/enterprise-ai-agent-management-guide and this page both surfaced for
     // "ai agent management" (193 impressions at position 48.9 vs 113 at 75.5) and
     // for every other query in that cluster the guide ranked higher. Pointing this
@@ -124,6 +131,7 @@ const systemExtra: Record<
   },
   "04": {
     slug: "ai-business-transformation",
+    noindex: true,
     intro:
       "Real transformation touches people, process, and technology together. We embed AI across how you operate, sell, support, and grow — not as a bolt-on, but as a redesign of the workflows that move your numbers.",
     benefits: [
@@ -144,6 +152,7 @@ const systemExtra: Record<
   },
   "06": {
     slug: "ai-enterprise-implementations",
+    noindex: true,
     intro:
       "Enterprise AI rollouts fail on integration, security, and scale — not models. We design large-scale implementations that fit complex stacks, satisfy security review, and roll out across teams without disruption.",
     benefits: [
@@ -164,6 +173,7 @@ const systemExtra: Record<
   },
   "08": {
     slug: "ai-saas-product-building",
+    noindex: true,
     intro:
       "If AI is your product, speed to a working build matters. We take AI-native SaaS from concept to launch — architecture, model integration, and a deployable front end — without the months most teams burn getting started.",
     benefits: [
@@ -174,6 +184,7 @@ const systemExtra: Record<
   },
   "09": {
     slug: "website-and-mobile-app-deployment",
+    noindex: true,
     intro:
       "We design and deploy high-converting web and mobile experiences with AI built in — fast, modern, and instrumented for conversion. From landing pages to full apps, shipped and live, not stuck in design review.",
     benefits: [
@@ -184,6 +195,7 @@ const systemExtra: Record<
   },
   "10": {
     slug: "ai-consultation-and-advisory",
+    noindex: true,
     intro:
       "Sometimes you need direction before deployment. Our AI advisory aligns technology choices with business outcomes — what to build, what to buy, what to skip — so you invest in the AI that actually moves your metrics.",
     benefits: [
@@ -204,6 +216,7 @@ const systemExtra: Record<
   },
   "12": {
     slug: "ai-trainings-and-workshops",
+    noindex: true,
     intro:
       "Adoption depends on capability. Our hands-on AI trainings and workshops upskill your team on the exact tools and use cases relevant to their roles — practical, not theoretical.",
     benefits: [
@@ -214,6 +227,7 @@ const systemExtra: Record<
   },
   "13": {
     slug: "ai-security-governance-and-risk",
+    noindex: true,
     intro:
       "Deploying AI without governance is a liability. We put the frameworks in place — data handling, access control, compliance, and risk review — so you can scale AI safely and pass scrutiny.",
     benefits: [
@@ -224,6 +238,7 @@ const systemExtra: Record<
   },
   "14": {
     slug: "ai-content-media-and-growth",
+    noindex: true,
     intro:
       "We scale content production and growth with AI media systems — research, drafting, repurposing, and distribution — so you publish more, consistently, without ballooning your team.",
     benefits: [
@@ -234,6 +249,7 @@ const systemExtra: Record<
   },
   "15": {
     slug: "ai-enablement-and-change-management",
+    noindex: true,
     intro:
       "Tools don't transform companies; people do. We drive adoption and embed AI into your culture and workflows so the systems you deploy are actually used — and keep delivering after launch.",
     benefits: [
@@ -244,6 +260,7 @@ const systemExtra: Record<
   },
   "16": {
     slug: "ai-data-analysis",
+    noindex: true,
     intro:
       "Your data already holds the decisions you're guessing at. We deploy AI analytics that turn raw data into clear, strategic answers — surfacing patterns, risks, and opportunities you can act on.",
     benefits: [
@@ -254,6 +271,7 @@ const systemExtra: Record<
   },
   "17": {
     slug: "ai-employees-deployment",
+    noindex: true,
     intro:
       "AI Employees are digital workers that execute defined tasks around the clock — qualifying leads, handling support, processing data — without fatigue. We place and manage them inside your operation.",
     benefits: [
@@ -264,6 +282,7 @@ const systemExtra: Record<
   },
   "18": {
     slug: "ai-business-intelligence",
+    noindex: true,
     intro:
       "We deploy real-time intelligence dashboards that make your data work for you — live metrics, alerts, and forecasts so leaders see what's happening and what's next without waiting on a report.",
     benefits: [

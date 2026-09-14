@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
+import { TrackEvents } from "@/components/track-events";
 import "./globals.css";
 import { SiteNav } from "@/components/nav";
 import { SiteFooter } from "@/components/footer";
@@ -160,7 +161,22 @@ const jsonLd = {
         "@type": "Offer",
         price: "2500",
         priceCurrency: "USD",
-        description: "Monthly ongoing partnership",
+        description: "Monthly ongoing partnership, no minimum term",
+      },
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service-fullstack`,
+      name: "Full Stack GTM",
+      description:
+        "All eight AI GTM agents in production: signal detection, sourcing, outreach, reply triage, CRM automation, content, pipeline analytics.",
+      provider: { "@id": `${SITE_URL}/#organization` },
+      serviceType: "Full AI GTM Stack",
+      offers: {
+        "@type": "Offer",
+        price: "4000",
+        priceCurrency: "USD",
+        description: "Monthly base plus $150–$250 per held meeting",
       },
     },
   ],
@@ -218,6 +234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <TrackEvents />
         <SiteNav />
         <main>{children}</main>
         <BlogPreview />

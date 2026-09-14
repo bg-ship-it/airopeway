@@ -42,8 +42,8 @@ const options = [
   {
     name: "Build the engine",
     cost: "$3k once",
-    unit: "or $2.5k–$5k per month",
-    detail: "A 14-day Sprint ships one engine into your own repo and accounts. Partnership and Full Stack add a new system each month.",
+    unit: "or $2.5k/mo, or $4k/mo + $150–$250 per held meeting",
+    detail: "A 14-day Sprint ships one engine into your own repo and accounts. Partnership adds a new agent each month. Full Stack runs all eight and bills the rest per held meeting.",
     catch: "You own the code. It keeps running whether or not we do.",
     win: true,
   },
