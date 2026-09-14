@@ -10,7 +10,7 @@ const TITLE = "AI Ropeway vs Clay: tool vs full AI GTM engine";
 const DESCRIPTION =
   "Clay is the best data layer for waterfall enrichment. AI Ropeway is the engine you build on top of it. When you need both, and when you don't.";
 const PUBLISHED = "2026-06-25T09:00:00.000Z";
-const MODIFIED = "2026-08-25T00:00:00.000Z";
+const MODIFIED = "2026-09-14T00:00:00.000Z";
 const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
@@ -55,7 +55,8 @@ const jsonLd = {
 const rows = [
   ["Primary product", "Data tables + waterfall enrichment", "Full 8-agent AI GTM engine"],
   ["Asset ownership", "Workbook in Clay account", "Full system access in your stack"],
-  ["Pricing", "Free · Launch $185/mo · Growth $495/mo · Ent. from ~$30k/yr", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Free · Launch $185/mo · Growth $495/mo · Ent. from ~$30k/yr", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
+  ["Setup fee / minimum term", "None; Enterprise annual", "None / none"],
   ["Signal detection", "DIY with Claygent", "Built in (Intent Watcher agent)"],
   ["Sequence composition", "Configurable per table", "Built in (Sequence Composer agent)"],
   ["Inbox warmup & deliverability", "Out of scope", "Built in (Inbox Operator agent)"],
@@ -114,7 +115,7 @@ export default function Post() {
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Ship the full engine in 14 days</h2>
               <p className="mx-auto mb-6 max-w-xl text-ink-soft">Clay is one of the 12+ tools in the stack we ship. The engine is the thing.</p>
               <Cta href="/#audit" size="lg">Book live demo on your data</Cta>
-              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/account-mapper-ai-account-enrichment" className="text-accent hover:underline">Account Mapper</Link> · <Link href="/blog/ai-ropeway-vs-apollo" className="text-accent hover:underline">AI Ropeway vs Apollo</Link> · <Link href="/blog/ai-gtm-engines-complete-guide" className="text-accent hover:underline">Pillar guide</Link></p>
+              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/11x-alternative" className="text-accent hover:underline">11x alternative</Link> · <Link href="/blog/aisdr-alternative" className="text-accent hover:underline">AiSDR alternative</Link> · <Link href="/blog/artisan-alternative" className="text-accent hover:underline">Artisan alternative</Link> · <Link href="/blog/ai-ropeway-vs-apollo" className="text-accent hover:underline">vs Apollo</Link> · <Link href="/blog/revengineer-alternative" className="text-accent hover:underline">RevEngineer alternative</Link> · <Link href="/blog/selling-com-alternative" className="text-accent hover:underline">Selling.com alternative</Link></p>
             </section>
           </div>
         </div>

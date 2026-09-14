@@ -29,6 +29,8 @@ const STATIC_BLOG_POSTS = [
   "aisdr-alternative",
   "artisan-alternative",
   "11x-alternative",
+  "revengineer-alternative",
+  "selling-com-alternative",
   "ai-sales-automation-revops-2026",
   "ai-gtm-strategy-pipeline",
 ];

@@ -10,6 +10,28 @@ import type { BlogPost } from "./blog";
 // with the TITLE/DESCRIPTION constants in the matching page.tsx.
 export const staticPosts: BlogPost[] = [
   {
+    _id: "static-revengineer-alternative",
+    slug: "revengineer-alternative",
+    title: "RevEngineer alternative: rent a growth arm or own the engine",
+    excerpt:
+      "RevEngineer.ai embeds a human-plus-AI growth pod on a retainer with setup fees and 3 to 12 month terms. AI Ropeway ships the engine into your repo. Where each one wins.",
+    publishedAt: "2026-09-14T09:00:00.000Z",
+    imageRef: null,
+    authorName: "Bharat Gulati",
+    categories: [],
+  },
+  {
+    _id: "static-selling-com-alternative",
+    slug: "selling-com-alternative",
+    title: "Selling.com alternative: a data platform you staff vs an engine you own",
+    excerpt:
+      "Selling.com sells a 386M-contact database with sequences and a dialer, demo-gated and billed annually. AI Ropeway builds the engine that runs on whatever data you already pay for.",
+    publishedAt: "2026-09-14T09:00:00.000Z",
+    imageRef: null,
+    authorName: "Bharat Gulati",
+    categories: [],
+  },
+  {
     _id: "static-11x-alternative",
     slug: "11x-alternative",
     title: "11x alternative: rent an AI SDR or own it",
