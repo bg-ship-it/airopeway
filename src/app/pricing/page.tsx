@@ -480,6 +480,13 @@ export default function PricingPage() {
               </div>
             ))}
           </div>
+          <p className="mt-4 text-center text-xs text-ink-faint">
+            Selling into the US from India? The{" "}
+            <Link href="/us-market-entry-gtm" className="text-accent hover:underline">
+              US market entry page
+            </Link>{" "}
+            has the 14-day plan and what the pack changes.
+          </p>
         </div>
       </section>
 

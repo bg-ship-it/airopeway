@@ -9,6 +9,7 @@ export const nav = [
   { label: "8 Agents", href: "/#revenue-stack" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Founder", href: "/#founder" },
+  { label: "US entry", href: "/us-market-entry-gtm" },
   { label: "More AI Systems", href: "/systems" },
   { label: "Blog", href: "/blog" },
 ];
