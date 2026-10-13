@@ -149,7 +149,13 @@ export default async function BlogPostPage({
       url: "https://www.airopeway.com",
     },
     datePublished: post.publishedAt ?? undefined,
+    // Sanity's _updatedAt, so a refreshed post reports as refreshed. Falls back
+    // to publishedAt rather than omitting the field, since a BlogPosting with no
+    // dateModified reads as never-updated.
+    dateModified: post.updatedAt ?? post.publishedAt ?? undefined,
     url: `https://www.airopeway.com/blog/${slug}`,
+    mainEntityOfPage: `https://www.airopeway.com/blog/${slug}`,
+    inLanguage: "en",
   };
 
   return (

@@ -14,6 +14,8 @@ export type BlogPost = {
 export type BlogPostFull = BlogPost & {
   seoTitle: string | null;
   seoDescription: string | null;
+  /** Sanity's last-edit timestamp, emitted as schema.org dateModified. */
+  updatedAt: string | null;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body: any[];
 };
@@ -48,6 +50,7 @@ export async function getPost(slug: string): Promise<BlogPostFull | null> {
       ${POST_FIELDS},
       seoTitle,
       seoDescription,
+      "updatedAt": _updatedAt,
       body
     }`,
     { slug }

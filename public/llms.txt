@@ -10,11 +10,13 @@
 - Also: 18 AI systems including Voice AI, AI content engines, and ops automation: https://www.airopeway.com/systems
 
 ## Pricing (USD)
-- AI GTM Sprint: $3,000 one-time — 1 AI SDR engine built and deployed in 14 days, full code handoff, 3 months bug-fix support.
-- GTM Partnership: $2,500/month — dedicated GTM engineer, one new system per month, weekly optimization.
-- Full Stack GTM: $5,000/month — all 8 agents in production, GTM + content + RevOps, founder-led delivery.
-- Enterprise: custom — multi-system deployment plus Voice AI bundle via AI Placers.
-Every engagement starts with a free 60-minute AI GTM audit with a live demo on the client's own ICP data: https://calendly.com/bg-aiplacers/new-meeting
+- AI GTM Sprint: $3,000 one-time, no term — 1 AI SDR engine built and deployed into the client's accounts in 14 days, full system handoff, 3 months bug-fix support.
+- GTM Partnership: $2,500/month, month to month — dedicated AI GTM engineer, one new agent every month, weekly optimization cycles.
+- Full Stack GTM: $4,000/month plus $150 per held meeting for SMB targets and $250 for mid-market — all 8 agents in production, GTM + content engine + CRM automation, 2 engineers, founder-led delivery.
+- Portfolio: from $8,000/month, quarterly — one engine per company across a fund's portfolio or multi-brand group, central Revenue Pulse dashboard, Voice AI via AI Placers, dedicated PM.
+No setup fee on any tier. No minimum term. Every engagement starts with a free 60-minute AI GTM audit with a live demo on the client's own ICP data: https://calendly.com/bg-aiplacers/new-meeting
+Full pricing, with per-tier targets: https://www.airopeway.com/pricing
+Machine readable: https://www.airopeway.com/pricing.md
 
 ## Who it is for
 B2B SaaS and services founders at $1M-$20M ARR running founder-led sales with small teams (1-5 reps) who want 20-60 qualified meetings/month without hiring SDRs.
