@@ -151,6 +151,16 @@ const addOns: [string, string, string][] = [
   ["US market entry pack", "$750 one-time", "US-hosted sending domains, US-timed sequences, US copy review. For teams selling into the US from outside it."],
 ];
 
+const comparisons: [string, string, string][] = [
+  ["/blog/11x-alternative", "vs 11x", "Subscription AI SDR, 12-month contracts"],
+  ["/blog/aisdr-alternative", "vs AiSDR", "Subscription AI SDR, per-tier pricing"],
+  ["/blog/artisan-alternative", "vs Artisan", "AI BDR platform, Enterprise on annual"],
+  ["/blog/revengineer-alternative", "vs RevEngineer", "Retainer growth arm, setup fee + 3–12 month terms"],
+  ["/blog/ai-ropeway-vs-clay", "vs Clay", "Enrichment workbook you configure"],
+  ["/blog/ai-ropeway-vs-apollo", "vs Apollo", "Data + sequencing, per seat"],
+  ["/blog/selling-com-alternative", "vs Selling.com", "Contact database + dialer, annual"],
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -465,6 +475,24 @@ export default function PricingPage() {
             </Link>
             .
           </p>
+        </div>
+      </section>
+
+      <section className="px-3 py-10 md:px-5">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-display mb-2 text-center text-3xl font-bold">How we compare</h2>
+          <p className="mx-auto mb-6 max-w-2xl text-center text-sm text-ink-muted">
+            Six honest comparisons, each with the competitor&rsquo;s current pricing, their
+            setup fee and minimum term, and a section on who should choose them over us.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {comparisons.map(([href, name, note]) => (
+              <Link key={href} href={href} className="card rounded-2xl p-5 transition-colors hover:border-line-strong">
+                <p className="font-display text-base font-semibold text-ink">{name}</p>
+                <p className="mt-1 text-xs text-ink-muted">{note}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

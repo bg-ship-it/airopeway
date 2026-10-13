@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "Honest comparison of 11x (Alice) and a custom AI GTM engine. One is a subscription; the other ships into your stack in 14 days. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
-const MODIFIED = "2026-08-25T00:00:00.000Z";
+const MODIFIED = "2026-09-14T00:00:00.000Z";
 const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Is AI Ropeway an 11x competitor?", a: "They target the same outcome — automated outbound that books meetings — with opposite models. 11x's Alice is a subscription AI SDR you run inside their platform. AI Ropeway builds a custom AI GTM engine and ships the code into your own repo." },
   { q: "What is the main difference?", a: "Ownership and fit. 11x is a rented platform; AI Ropeway is a bespoke engine built for your ICP, running in your accounts, with best-of-breed tools as data layers inside it — and you keep the code if you leave." },
-  { q: "Which is more affordable?", a: "11x is a subscription — check their site for current pricing. AI Ropeway is $3,000 one-time for a 14-day Sprint or $2,500/month ongoing. Compare against a hire in the ROI calculator." },
+  { q: "Which is more affordable?", a: "11x is a subscription — check their site for current pricing. AI Ropeway is $3,000 one-time for a 14-day Sprint, $2,500/month for an ongoing partnership, or $4,000/month plus $150–$250 per held meeting for the full eight-agent stack. No setup fee, no minimum term. Compare against a hire in the ROI calculator." },
   { q: "When should I choose 11x?", a: "If you want a managed, all-in-one AI SDR platform and minimal build, 11x is a strong option. If you want to own the system and tailor it to your ICP, pick the engine." },
 ];
 
@@ -46,7 +46,8 @@ const jsonLd = {
 const rows = [
   ["Product model", "Subscription AI SDR platform (Alice)", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "Growth from $36k/yr listed; reported ~$5k/mo, first year $50–60k", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Growth from $36k/yr listed; reported ~$5k/mo, first year $50–60k", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
+  ["Setup fee / minimum term", "Implementation fee reported; 12-month contracts", "None / none"],
   ["Personalization", "Platform AI", "Written off the signal that fired, for your ICP"],
   ["Runs in", "11x's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],
@@ -104,7 +105,7 @@ export default function Post() {
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Own the engine in 14 days</h2>
               <p className="mx-auto mb-6 max-w-xl text-ink-soft">See it built on your data first. The free 60-minute audit ends with a live demo on your ICP.</p>
               <Cta href="/#audit" size="lg">Book live demo on your data</Cta>
-              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/aisdr-alternative" className="text-accent hover:underline">AiSDR alternative</Link> · <Link href="/blog/artisan-alternative" className="text-accent hover:underline">Artisan alternative</Link> · <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">vs Clay</Link></p>
+              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/aisdr-alternative" className="text-accent hover:underline">AiSDR alternative</Link> · <Link href="/blog/artisan-alternative" className="text-accent hover:underline">Artisan alternative</Link> · <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">vs Clay</Link> · <Link href="/blog/ai-ropeway-vs-apollo" className="text-accent hover:underline">vs Apollo</Link> · <Link href="/blog/revengineer-alternative" className="text-accent hover:underline">RevEngineer alternative</Link> · <Link href="/blog/selling-com-alternative" className="text-accent hover:underline">Selling.com alternative</Link></p>
             </section>
           </div>
         </div>

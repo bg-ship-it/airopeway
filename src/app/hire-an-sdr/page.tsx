@@ -218,7 +218,11 @@ export default function Page() {
             <Link href="/blog/what-a-45k-sdr-actually-costs" className="text-accent hover:underline">
               what a £45k SDR actually costs
             </Link>
-            . If you are weighing an agency, we ran the cost-per-meeting comparison in{" "}
+            . If you are weighing an agency, the{" "}
+            <Link href="/blog/revengineer-alternative" className="text-accent hover:underline">
+              RevEngineer comparison
+            </Link>{" "}
+            is a worked example of retainer, setup fee and minimum term against an owned engine, and we ran the cost-per-meeting comparison in{" "}
             <Link href="/blog/outsource-sdr-vs-ai-sdr" className="text-accent hover:underline">
               outsource SDR vs AI SDR
             </Link>
