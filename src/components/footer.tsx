@@ -48,6 +48,9 @@ const footerColumns = [
       { label: "Founder", href: "/founder" },
       { label: "About", href: "/about" },
       { label: "Book a Call", href: BOOK_URL, external: true },
+      /* Both pages were in the sitemap and linked from nowhere on the site. */
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms", href: "/terms" },
     ],
   },
 ];
