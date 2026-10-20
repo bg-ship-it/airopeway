@@ -41,6 +41,14 @@ const legacy: Record<string, string> = {
   "/contact": "/#audit",
 };
 
+// Duplicate posts consolidated to one canonical URL. The Sanity post and the
+// code route carried near-identical titles and H1s for a single intent, and
+// both sat in the sitemap.
+const merged: Record<string, string> = {
+  "/blog/how-to-build-an-ai-gtm-strategy-that-books-meetings-on-autopilot":
+    "/blog/ai-gtm-strategy-pipeline",
+};
+
 const nextConfig: NextConfig = {
   // Blog hero images live in the Sanity CDN. Without this allowlist every
   // /_next/image request returns 400 INVALID_IMAGE_OPTIMIZE_REQUEST and the
@@ -57,6 +65,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       ...Object.entries(legacy).map(([source, destination]) => ({
+        source,
+        destination,
+        permanent: true,
+      })),
+      ...Object.entries(merged).map(([source, destination]) => ({
         source,
         destination,
         permanent: true,
