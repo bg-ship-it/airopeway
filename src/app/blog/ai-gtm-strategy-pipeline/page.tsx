@@ -37,6 +37,7 @@ export const metadata: Metadata = {
 };
 
 const faqs = [
+  { q: "What is an AI GTM strategy?", a: "A go-to-market plan where every step names the agent that executes it. A conventional strategy ends at the decision — ICP, channels, message. An AI GTM strategy continues into execution: which agent detects the signal, which enriches and scores, which writes and sends, which triages replies, which updates the CRM. The output is a running system rather than a document waiting to be staffed." },
   { q: "What's the difference between an AI GTM strategy and a regular GTM strategy?", a: "A regular GTM strategy defines your market, ICP, and channels. An AI GTM strategy does the same but then specifies which AI agents execute each step — signal detection, enrichment, outreach, triage, CRM updates — so the engine runs continuously without proportional headcount. The strategy isn't complete until it maps to deployed agents." },
   { q: "How long does it take to go from strategy to booked meetings?", a: "With AI Ropeway: 14 days to deploy the engine, then 2–4 weeks for the first batch of signal-based meetings. Most clients see 15–30 qualified meetings in the first 60 days. The key is starting with signal detection — you're reaching out to people who are already in-market, so conversion rates are 5–8x higher than cold outbound." },
   { q: "Do I need a big team to run this?", a: "No. The whole point is that the AI agents do the work that would otherwise require 3–5 SDRs, a RevOps hire, and a data analyst. A founder or one AE can manage the engine with 2–3 hours per week of oversight — reviewing flagged conversations, approving high-value outreach, checking the dashboard." },
@@ -68,6 +69,11 @@ export default function Post() {
 
           <div className="space-y-6 text-[17px] leading-[1.75] text-ink-soft">
             <p>This is the strategic companion to the <Link href="/blog/ai-gtm-engines-complete-guide" className="text-accent hover:underline">AI GTM engine guide</Link>. That post covers the 8 agents technically. This one covers the strategy layer — how to define your ICP, choose your signals, build your sequences, and set up the measurement framework so you know exactly what's working.</p>
+
+            <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">What is an AI GTM strategy?</h2>
+            <p>An AI GTM strategy is a go-to-market plan where every step names the agent that executes it. A conventional strategy stops at the decision — this is our ICP, these are our channels, this is our message. An AI GTM strategy carries on: this agent watches for the buying signal, this one enriches and scores the account, this one writes and sends, this one triages the reply, this one updates the CRM.</p>
+            <p>The practical difference is what you hold at the end. A conventional strategy produces a document that a team then has to staff and execute. An AI GTM strategy produces a running system, and the headcount it would have needed stays unhired. That is why it can be built in days rather than quarters — you are configuring agents, not recruiting a function.</p>
+            <p>It is not the same thing as buying AI tools. Tools sit in a stack and wait to be used. A strategy decides which signals are worth acting on, in what order, with what fallback when a step fails — and only then maps each decision onto an agent. Skip that and you get eight subscriptions and no pipeline.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Why most AI GTM strategies fail before they start</h2>
             <p>The typical AI GTM strategy starts with: \"Define your ICP.\" Correct. Then: \"Select your channels.\" Also correct. Then: \"Build your content strategy.\" Sure. Then 6 months pass. You have a strategy doc, a content calendar, and zero booked meetings.</p>
