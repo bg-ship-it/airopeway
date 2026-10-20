@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 import { staticPosts } from "@/lib/static-posts";
+import { mergedPostSlugs } from "@/lib/merged-posts";
 import { imageUrl } from "@/lib/sanity";
 import { BlogCover } from "@/components/blog-cover";
 
@@ -59,7 +60,9 @@ export default async function BlogPage() {
   const staticSlugs = new Set(staticPosts.map((p) => p.slug));
   const posts = [
     ...staticPosts,
-    ...sanityPosts.filter((p) => !staticSlugs.has(p.slug)),
+    ...sanityPosts.filter(
+      (p) => !staticSlugs.has(p.slug) && !mergedPostSlugs.has(p.slug),
+    ),
   ].sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""));
 
   return (

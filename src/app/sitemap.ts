@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { systemPages, industryPages } from "@/lib/catalog";
 import { getAllPosts } from "@/lib/blog";
+import { mergedPostSlugs } from "@/lib/merged-posts";
 
 const SITE_URL = "https://www.airopeway.com";
 
@@ -84,7 +85,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "ai-automation-workflow-operational-bottlenecks",
   ]);
   const cmsBlogUrls: MetadataRoute.Sitemap = posts
-    .filter((p) => !STATIC_BLOG_POSTS.includes(p.slug) && !noindexSlugs.has(p.slug))
+    .filter(
+      (p) =>
+        !STATIC_BLOG_POSTS.includes(p.slug) &&
+        !noindexSlugs.has(p.slug) &&
+        // Redirected elsewhere — advertising it tells Google to crawl a
+        // URL that only answers 308.
+        !mergedPostSlugs.has(p.slug),
+    )
     .map((p) => ({
       url: `${SITE_URL}/blog/${p.slug}`,
       lastModified: p.publishedAt ? new Date(p.publishedAt) : now,

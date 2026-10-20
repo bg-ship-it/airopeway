@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { mergedPosts } from "./src/lib/merged-posts";
 
 // URLs from the pre-Next.js static site. Google still has them indexed, so they
 // must 308 to the closest current page instead of 404ing.
@@ -41,13 +42,6 @@ const legacy: Record<string, string> = {
   "/contact": "/#audit",
 };
 
-// Duplicate posts consolidated to one canonical URL. The Sanity post and the
-// code route carried near-identical titles and H1s for a single intent, and
-// both sat in the sitemap.
-const merged: Record<string, string> = {
-  "/blog/how-to-build-an-ai-gtm-strategy-that-books-meetings-on-autopilot":
-    "/blog/ai-gtm-strategy-pipeline",
-};
 
 const nextConfig: NextConfig = {
   // Blog hero images live in the Sanity CDN. Without this allowlist every
@@ -69,8 +63,10 @@ const nextConfig: NextConfig = {
         destination,
         permanent: true,
       })),
-      ...Object.entries(merged).map(([source, destination]) => ({
-        source,
+      // Consolidated posts. Sourced from src/lib/merged-posts.ts so the
+      // sitemap and /blog filter against the same list.
+      ...Object.entries(mergedPosts).map(([slug, destination]) => ({
+        source: `/blog/${slug}`,
         destination,
         permanent: true,
       })),
