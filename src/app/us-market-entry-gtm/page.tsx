@@ -6,7 +6,7 @@ const SITE_URL = "https://www.airopeway.com";
 const SLUG = "us-market-entry-gtm";
 const TITLE = "US market entry GTM for Indian SaaS founders";
 const DESCRIPTION =
-  "Cold email from India to US buyers fails on timing, domain reputation and copy before the pitch is read. A 14-day engine built for US time, US domains and US signals, shipped into your accounts.";
+  "Cold email from India to US buyers fails on timing, domains and copy before the pitch is read. A 14-day engine built for US time, domains and signals.";
 
 export const metadata: Metadata = {
   title: TITLE,
