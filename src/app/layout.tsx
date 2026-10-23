@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { TrackEvents } from "@/components/track-events";
 import "./globals.css";
@@ -12,21 +12,35 @@ import { FloatingBottomCta } from "@/components/preview/floating-bottom-cta";
 
 const GTM_ID = "GTM-NCD9CLJ5";
 
-const grotesk = Space_Grotesk({
+// Self-hosted rather than next/font/google. The Google loader fetches the font
+// files at build time, and when that fetch fails the whole build fails with
+// "Execution of <NextFontGoogleFontFileReplacer as ImportMappingReplacement>::
+// result failed" and a module-not-found on the generated CSS. That took down
+// the production deploy of 830b3b0 for three days while the identical preview
+// build succeeded. Nothing here touches the network.
+//
+// Files are the latin-subset variable woff2 from Google Fonts. Space Grotesk
+// and JetBrains Mono are OFL-1.1, Inter is OFL-1.1 - all three permit
+// self-hosting. See src/app/fonts/README.md to refresh them.
+const grotesk = localFont({
+  src: "./fonts/SpaceGrotesk-latin.woff2",
   variable: "--font-grotesk",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: "300 700",
+  display: "swap",
 });
 
-const inter = Inter({
+const inter = localFont({
+  src: "./fonts/Inter-latin.woff2",
   variable: "--font-inter",
-  subsets: ["latin"],
+  weight: "100 900",
+  display: "swap",
 });
 
-const jbMono = JetBrains_Mono({
+const jbMono = localFont({
+  src: "./fonts/JetBrainsMono-latin.woff2",
   variable: "--font-mono-jb",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: "100 800",
+  display: "swap",
 });
 
 const SITE_URL = "https://www.airopeway.com";
