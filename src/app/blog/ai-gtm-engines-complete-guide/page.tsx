@@ -635,6 +635,10 @@ export default function PillarPost() {
                 ·{" "}
                 <Link href="/systems" className="text-accent hover:underline">
                   beyond AI GTM
+                </Link>{" "}
+                ·{" "}
+                <Link href="/gtm-engineer" className="text-accent hover:underline">
+                  what a GTM engineer builds
                 </Link>
               </p>
             </section>

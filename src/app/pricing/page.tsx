@@ -415,7 +415,11 @@ export default function PricingPage() {
                 <Link href="/hire-an-sdr" className="text-accent hover:underline">
                   hire, outsource or build
                 </Link>{" "}
-                breakdown.
+                breakdown, or against the cost of a{" "}
+                <Link href="/gtm-engineer" className="text-accent hover:underline">
+                  GTM engineer on payroll
+                </Link>
+                .
               </p>
             </div>
           </div>
