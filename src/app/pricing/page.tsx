@@ -12,7 +12,7 @@ const SITE_URL = "https://www.airopeway.com";
 export const metadata: Metadata = {
   title: "Pricing · AI GTM engines from $3k",
   description:
-    "Transparent AI GTM pricing with published targets. Sprint $3k one-time, Partnership $2.5k/mo, Full Stack $4k/mo + $150–$250 per held meeting, Portfolio custom. No setup fee, no minimum term, you keep the code.",
+    "AI GTM pricing, published in full. Sprint $3k once, Partnership $2.5k/mo, Full Stack $4k/mo plus $150–$250 per held meeting. No term, you keep the code.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     images: ["/opengraph-image"],
