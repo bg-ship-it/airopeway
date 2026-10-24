@@ -65,15 +65,15 @@ export default function Post() {
           <header className="mb-10">
             <p className="mono-label mb-4 text-accent">Strategy · Transformation</p>
             <h1 className="font-display text-[clamp(2rem,4.5vw,3.2rem)] font-bold leading-[1.06]">AI business transformation: <span className="text-accent">the board-level playbook</span></h1>
-            <p className="mt-5 text-lg leading-relaxed text-ink-soft">I've sat in enough boardrooms to know: the word \"transformation\" usually means \"expensive project with unclear outcomes that takes 18 months.\" This playbook is the opposite — start small, deploy fast, measure everything, expand what works.</p>
+            <p className="mt-5 text-lg leading-relaxed text-ink-soft">I've sat in enough boardrooms to know: the word "transformation" usually means "expensive project with unclear outcomes that takes 18 months." This playbook is the opposite — start small, deploy fast, measure everything, expand what works.</p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-muted"><span>By <Link href="/founder" className="text-accent hover:underline">Bharat Gulati</Link></span><span>June 27, 2026</span><span>~8 min read</span></div>
           </header>
 
           <div className="space-y-6 text-[17px] leading-[1.75] text-ink-soft">
-            <p>Most of the AI transformation content published in 2025–2026 reads the same way: big vision, vague timelines, \"start with a strategy workshop.\" Having deployed <Link href="/systems" className="text-accent hover:underline">18 AI systems</Link> across <Link href="/industries" className="text-accent hover:underline">16 industries</Link>, I can tell you the companies that actually transformed did the opposite of what the strategy decks recommend.</p>
+            <p>Most of the AI transformation content published in 2025–2026 reads the same way: big vision, vague timelines, "start with a strategy workshop." Having deployed <Link href="/systems" className="text-accent hover:underline">18 AI systems</Link> across <Link href="/industries" className="text-accent hover:underline">16 industries</Link>, I can tell you the companies that actually transformed did the opposite of what the strategy decks recommend.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Why most AI transformations fail</h2>
-            <p>The pattern is predictable. A board sees a McKinsey report about generative AI's $4.4 trillion annual potential. They hire a consulting firm for a 3-month \"AI readiness assessment.\" The firm delivers a 120-slide deck with a roadmap, a maturity model, and a recommendation to \"establish a Centre of Excellence.\" Six months in, the company has spent $200k and deployed zero AI systems.</p>
+            <p>The pattern is predictable. A board sees a McKinsey report about generative AI's $4.4 trillion annual potential. They hire a consulting firm for a 3-month "AI readiness assessment." The firm delivers a 120-slide deck with a roadmap, a maturity model, and a recommendation to "establish a Centre of Excellence." Six months in, the company has spent $200k and deployed zero AI systems.</p>
             <p>The problem isn't the board's ambition. It's the sequence. Strategy → assessment → planning → pilot → deployment is a sequence designed by consulting firms, not operators. The operator sequence is: deploy → measure → decide → expand.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">The four-phase playbook that works</h2>
@@ -96,11 +96,11 @@ export default function Post() {
             <p>Each system deploys in 14 days. By month 3, you have 4–5 systems running, each with its own ROI measurement, all connected through the agent management layer.</p>
 
             <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">Phase 4: Full transformation (months 6–12)</h3>
-            <p>By this point you're not \"transforming\" — you've already transformed. Phase 4 is about coverage: deploying the remaining systems into departments that haven't been touched yet, connecting the data flows between all agents, and building the <Link href="/systems/ai-business-intelligence" className="text-accent hover:underline">AI Business Intelligence</Link> layer that gives your board a single dashboard showing AI ROI across the entire operation.</p>
+            <p>By this point you're not "transforming" — you've already transformed. Phase 4 is about coverage: deploying the remaining systems into departments that haven't been touched yet, connecting the data flows between all agents, and building the <Link href="/systems/ai-business-intelligence" className="text-accent hover:underline">AI Business Intelligence</Link> layer that gives your board a single dashboard showing AI ROI across the entire operation.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">The board conversation that works</h2>
             <p>If you're a founder or CTO pitching this to your board, here's the framing that works:</p>
-            <p>\"We're going to deploy one AI system in the next 14 days. It will cost $3,000. In 30 days I'll show you the ROI. If it works — and based on 40+ deployments, the average ROI is 4.8x — we expand to 3 more systems. Total Phase 1 risk: $3,000 and 2 weeks of my attention. Total Phase 1 upside: we know exactly what AI is worth to us, with real data.\"</p>
+            <p>"We're going to deploy one AI system in the next 14 days. It will cost $3,000. In 30 days I'll show you the ROI. If it works — and based on 40+ deployments, the average ROI is 4.8x — we expand to 3 more systems. Total Phase 1 risk: $3,000 and 2 weeks of my attention. Total Phase 1 upside: we know exactly what AI is worth to us, with real data."</p>
             <p>No board says no to that. You're not asking for a $500k budget and an 18-month timeline. You're asking for $3k and 14 days.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">What transformation actually looks like</h2>
