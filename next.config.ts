@@ -80,6 +80,11 @@ const nextConfig: NextConfig = {
     return [
       { source: "/privacy-policy", destination: "/privacy-policy.html" },
       { source: "/terms", destination: "/terms.html" },
+      // Safari uses the <link rel="apple-touch-icon"> that app/apple-icon.png
+      // generates, but older iOS and some crawlers still request these paths
+      // directly and were getting a 404 on every page.
+      { source: "/apple-touch-icon.png", destination: "/apple-icon.png" },
+      { source: "/apple-touch-icon-precomposed.png", destination: "/apple-icon.png" },
     ];
   },
 };
