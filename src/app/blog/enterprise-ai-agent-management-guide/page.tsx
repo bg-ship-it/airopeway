@@ -75,18 +75,18 @@ export default function Post() {
             <p>If you've been following the <Link href="/blog/ai-gtm-engines-complete-guide" className="text-accent hover:underline">AI GTM engine series</Link>, you know the individual agents — Intent Watcher, Account Mapper, Sequence Composer, and the rest. This post zooms out. It's about what happens when you run all of them at once, inside a real business, with real data, real edge cases, and real consequences when something breaks.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">The one-agent illusion</h2>
-            <p>Here's the pattern I see in 8 out of 10 companies I audit: they deploy one AI agent — usually a chatbot or a lead-scoring model — and it works. Someone writes a LinkedIn post about it. The board hears about it. Then the CEO says \"do more of that\" and suddenly four teams are deploying four agents with no coordination.</p>
-            <p>Three months later, the lead-scoring agent is feeding enriched data to the outreach agent, which is sending emails to contacts the CRM agent already marked as \"do not contact.\" Nobody noticed because there's no central log. Each agent was deployed by a different team using a different framework.</p>
+            <p>Here's the pattern I see in 8 out of 10 companies I audit: they deploy one AI agent — usually a chatbot or a lead-scoring model — and it works. Someone writes a LinkedIn post about it. The board hears about it. Then the CEO says "do more of that" and suddenly four teams are deploying four agents with no coordination.</p>
+            <p>Three months later, the lead-scoring agent is feeding enriched data to the outreach agent, which is sending emails to contacts the CRM agent already marked as "do not contact." Nobody noticed because there's no central log. Each agent was deployed by a different team using a different framework.</p>
             <p>This is the most common failure mode in enterprise AI and it's entirely preventable.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">The six layers of agent management</h2>
             <p>After deploying AI systems across 40+ businesses — <Link href="/industries/saas" className="text-accent hover:underline">SaaS</Link>, <Link href="/industries/finance" className="text-accent hover:underline">finance</Link>, <Link href="/industries/healthcare" className="text-accent hover:underline">healthcare</Link>, <Link href="/industries/ecommerce" className="text-accent hover:underline">e-commerce</Link> — I've settled on five layers that every multi-agent deployment needs. Skip any of them and you'll pay for it within 90 days.</p>
 
             <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">1. Central logging and observability</h3>
-            <p>Every agent action — every API call, every decision, every data transformation — goes to one log. Not per-agent logs scattered across Datadog, CloudWatch, and a Notion doc. One structured log with agent ID, action type, timestamp, input hash, and output hash. When the <Link href="/blog/reply-triager-ai-reply-classification" className="text-accent hover:underline">Reply Triager</Link> misclassifies a \"yes, let's talk\" as \"not interested,\" you need to find that in under 60 seconds.</p>
+            <p>Every agent action — every API call, every decision, every data transformation — goes to one log. Not per-agent logs scattered across Datadog, CloudWatch, and a Notion doc. One structured log with agent ID, action type, timestamp, input hash, and output hash. When the <Link href="/blog/reply-triager-ai-reply-classification" className="text-accent hover:underline">Reply Triager</Link> misclassifies a "yes, let's talk" as "not interested," you need to find that in under 60 seconds.</p>
 
             <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">2. Guardrails and kill switches</h3>
-            <p>Every agent needs a boundary it cannot cross without human approval. For outreach agents, that's a send-rate cap and a content filter. For CRM agents, that's a \"never delete, only tag\" rule. For enrichment agents, that's a cost ceiling per batch. The guardrails aren't about distrust — they're about sleeping through the night.</p>
+            <p>Every agent needs a boundary it cannot cross without human approval. For outreach agents, that's a send-rate cap and a content filter. For CRM agents, that's a "never delete, only tag" rule. For enrichment agents, that's a cost ceiling per batch. The guardrails aren't about distrust — they're about sleeping through the night.</p>
 
             <h3 className="font-display mt-8 mb-2 text-xl font-semibold text-ink">3. Defined handoff protocols</h3>
             <p>When <Link href="/blog/intent-watcher-ai-buying-signals" className="text-accent hover:underline">Intent Watcher</Link> detects a buying signal, who gets it next? Account Mapper for enrichment, or Sequence Composer for immediate outreach? The answer depends on signal strength, account tier, and whether the contact is already in an active sequence. These rules need to be explicit, versioned, and testable.</p>
@@ -114,7 +114,7 @@ export default function Post() {
             <ul className="list-disc pl-5 space-y-2">
               <li>2 agents had been silently failing for 5+ weeks (broken API keys, no alerting)</li>
               <li>1 agent was enriching the same 200 contacts every day because the dedup logic had a bug — $4,200 in wasted API credits over 3 months</li>
-              <li>The outreach agent and the CRM agent had conflicting rules about contact status — resulting in 340 emails sent to contacts marked \"churned\"</li>
+              <li>The outreach agent and the CRM agent had conflicting rules about contact status — resulting in 340 emails sent to contacts marked "churned"</li>
             </ul>
             <p>Total cost of no management layer: roughly $47,000 in direct waste plus unmeasurable brand damage from the churned-contact emails. The management layer we deployed cost $3,000.</p>
 
