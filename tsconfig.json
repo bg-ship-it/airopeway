@@ -6,6 +6,10 @@
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
+    // Lets the serializer self-check import "./portable-text-to-markdown.ts"
+    // with its extension, which node's --experimental-strip-types requires to
+    // run a .ts file directly. Safe here because noEmit is on.
+    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",

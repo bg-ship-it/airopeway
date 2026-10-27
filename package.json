@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:pt": "node --experimental-strip-types --no-warnings src/lib/portable-text-to-markdown.test.ts"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",

@@ -28,7 +28,14 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: { canonical: `/blog/${slug}` },
+    alternates: {
+      canonical: `/blog/${slug}`,
+      // Points crawlers at the Markdown twin. This page only renders Sanity
+      // posts — the slugs that also have a route under src/app/blog/<slug>/ are
+      // served by that static segment instead — so every page carrying this
+      // link does have a twin at the URL it names.
+      types: { "text/markdown": `/blog/${slug}.md` },
+    },
     openGraph: {
       images: ["/opengraph-image"],
       title,
