@@ -108,7 +108,7 @@ export default function Post() {
             <p>Day 5 is not "present the strategy." It is deploy the engine. By end of day 5, Intent Watcher is monitoring your signals, <Link href="/blog/account-mapper-ai-account-enrichment" className="text-accent hover:underline">Account Mapper</Link> is enriching the first batch, <Link href="/blog/inbox-operator-cold-email-deliverability" className="text-accent hover:underline">Inbox Operator</Link> has your domains warmed, and the first outreach is queued. The strategy is running in production rather than sitting in a deck.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Our own numbers</h2>
-            <p>I run this strategy for AI Ropeway. Here are our own numbers from the last 90 days.</p>
+            <p>I run this strategy for AI Ropeway. Here is what our own engine produced over 90 days in Q2 2026.</p>
             <ul className="list-disc pl-5 space-y-2">
               <li>Signals detected: 2,340 across 6 signal types</li>
               <li>Contacts enriched and scored: 1,890</li>
@@ -117,7 +117,7 @@ export default function Post() {
               <li>Meetings booked: 67</li>
               <li>Cost per qualified meeting: $47 (fully loaded)</li>
             </ul>
-            <p>That is a founder-led company with no SDR team booking 67 qualified meetings in 90 days. The engine does the sourcing and the sending, and I do the closing.</p>
+            <p>That is a founder-led company with no SDR team booking 67 qualified meetings in 90 days. These are engine numbers rather than revenue numbers: they measure sourcing, sending and meetings booked, which is the part the engine does. What happens inside the meeting is a different job.</p>
 
             <h2 className="font-display mt-12 mb-6 text-2xl font-bold text-ink md:text-3xl">FAQ</h2>
             <div className="space-y-3">{faqs.map((f) => (<details key={f.q} className="rounded-2xl border border-line bg-surface p-5"><summary className="cursor-pointer font-medium text-ink">{f.q}</summary><p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{f.a}</p></details>))}</div>

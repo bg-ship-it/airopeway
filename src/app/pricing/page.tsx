@@ -467,6 +467,10 @@ export default function PricingPage() {
             <Link href="/roi-calculator" className="text-accent hover:underline">
               ROI calculator
             </Link>
+            , or see what our own engine produced in Q2 2026 in{" "}
+            <Link href="/blog/ai-gtm-strategy-pipeline" className="text-accent hover:underline">
+              how to build an AI GTM strategy
+            </Link>
             .
           </p>
         </div>
