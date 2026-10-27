@@ -14,7 +14,7 @@
 - GTM Partnership: $2,500/month, month to month — dedicated AI GTM engineer, one new agent every month, weekly optimization cycles.
 - Full Stack GTM: $4,000/month plus $150 per held meeting for SMB targets and $250 for mid-market — all 8 agents in production, GTM + content engine + CRM automation, 2 engineers, founder-led delivery.
 - Portfolio: from $8,000/month, quarterly — one engine per company across a fund's portfolio or multi-brand group, central Revenue Pulse dashboard, Voice AI via AI Placers, dedicated PM.
-No setup fee on any tier. No minimum term. Every engagement starts with a free 60-minute AI GTM audit with a live demo on the client's own ICP data: https://calendly.com/bg-aiplacers/new-meeting
+No setup fee on any tier. No minimum term. Every engagement starts with a free 60-minute AI GTM audit with a live demo on the client's own ICP data: https://cal.com/bharat-gulati-ard07h/gtm-audit-by-ai-ropeway
 Full pricing, with per-tier targets: https://www.airopeway.com/pricing
 Machine readable: https://www.airopeway.com/pricing.md
 
@@ -28,6 +28,7 @@ B2B SaaS and services founders at $1M-$20M ARR running founder-led sales with sm
 - Sister company: AI Placers — no-code AI voice agents for inbound/outbound calls (https://www.aiplacers.com).
 
 ## Resources
+- Full text of every page on this site, with every published question answered, in one file: https://www.airopeway.com/llms-full.txt
 - AI GTM guide: https://www.airopeway.com/blog/ai-gtm-engines-complete-guide
 - AI Ropeway vs Clay: https://www.airopeway.com/blog/ai-ropeway-vs-clay
 - AI Ropeway vs Apollo: https://www.airopeway.com/blog/ai-ropeway-vs-apollo

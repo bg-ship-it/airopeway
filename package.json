@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "gen:llms-full": "node scripts/gen-llms-full.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^6.2.0",
