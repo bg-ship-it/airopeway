@@ -4,11 +4,20 @@ import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { MotionBg } from "@/components/motion-bg";
 import { footer } from "@/lib/content";
+import {
+  AI_PLACERS_URL,
+  FOUNDER_ID,
+  FOUNDER_LINKEDIN_URL,
+  FOUNDER_NAME,
+  FOUNDER_URL,
+  SITE_URL,
+} from "@/lib/founder-schema";
 
-const SITE_URL = "https://www.airopeway.com";
-const FOUNDER_NAME = "Bharat Gulati";
+// Bharat's identity, his profile URLs and the canonical Person node all live in
+// one module now, so this page and layout.tsx cannot disagree about them.
+// FOUNDER_TITLE stays local: it is the visible heading on this page, which is
+// page copy rather than an entity claim (the schema jobTitle is "Founder & CEO").
 const FOUNDER_TITLE = "Founder & AI GTM Engineer, AI Ropeway";
-const FOUNDER_URL = `${SITE_URL}/founder`;
 
 const credentials = [
   "12+ years enterprise B2B sales",
@@ -19,16 +28,6 @@ const credentials = [
   "Serving B2B SaaS founders across India, AU, UK, US, CA",
 ];
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/bharat-gulati9711315523/";
-const AI_PLACERS_URL = "https://www.aiplacers.com";
-
-// Only URLs that identify Bharat himself. This array used to double as the list
-// of buttons rendered below, which is why aiplacers.com was in it — but a
-// company website does not identify a person, and schema.org sameAs is not a
-// link list. AI Placers stays in the graph through founderOf, which says the
-// true thing. The buttons now reference the constants directly, so the two
-// cannot drift apart again.
-const sameAs = [LINKEDIN_URL];
 
 const publishedArticles = [
   {
@@ -129,55 +128,15 @@ const jsonLd = {
       dateCreated: "2026-06-25T00:00:00.000Z",
       dateModified: "2026-06-25T00:00:00.000Z",
       isPartOf: { "@id": `${SITE_URL}/#website` },
-      mainEntity: { "@id": `${SITE_URL}/#bharat-gulati` },
+      mainEntity: { "@id": FOUNDER_ID },
     },
+    // Augments the canonical #founder node from src/lib/founder-schema.ts
+    // rather than declaring a second Person. subjectOf lives here because
+    // publishedArticles does; everything else about Bharat is defined once, in
+    // that module, and rendered site-wide by layout.tsx.
     {
       "@type": "Person",
-      "@id": `${SITE_URL}/#bharat-gulati`,
-      name: FOUNDER_NAME,
-      givenName: "Bharat",
-      familyName: "Gulati",
-      jobTitle: FOUNDER_TITLE,
-      description:
-        "Founder of AI Ropeway. Ex-VP Sales who scaled an AI automation platform's GTM from zero. IIM Indore AI/ML alum. 12+ years B2B enterprise sales. Ships AI GTM engines into client repos.",
-      url: FOUNDER_URL,
-      email: footer.email,
-      sameAs,
-      worksFor: { "@id": `${SITE_URL}/#organization` },
-      founderOf: [
-        { "@id": `${SITE_URL}/#organization` },
-        { "@type": "Organization", name: "AI Placers", url: AI_PLACERS_URL },
-      ],
-      alumniOf: {
-        "@type": "CollegeOrUniversity",
-        name: "Indian Institute of Management Indore",
-        sameAs: "https://www.iimidr.ac.in",
-      },
-      knowsAbout: [
-        "AI GTM engineering",
-        "AI SDR systems",
-        "signal-based outbound",
-        "revenue operations automation",
-        "B2B SaaS sales",
-        "AI agent orchestration",
-        "cold email deliverability",
-        "CRM automation",
-      ],
-      hasOccupation: {
-        "@type": "Occupation",
-        name: "AI GTM Engineer",
-        skills: [
-          "Claude",
-          "Clay",
-          "Apollo",
-          "Make.com",
-          "n8n",
-          "HubSpot",
-          "Salesforce",
-          "Supabase",
-          "Smartlead",
-        ],
-      },
+      "@id": FOUNDER_ID,
       subjectOf: publishedArticles.map((a) => ({
         "@type": "BlogPosting",
         "@id": `${SITE_URL}/blog/${a.slug}#article`,
@@ -235,7 +194,7 @@ export default function FounderPage() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href={LINKEDIN_URL}
+                  href={FOUNDER_LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-surface px-4 py-2 text-sm text-ink-soft hover:bg-surface-soft"
