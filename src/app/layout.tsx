@@ -8,6 +8,7 @@ import { SiteFooter } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { CookieBanner } from "@/components/cookie-banner";
 import { BlogPreview } from "@/components/sections/blog-preview";
+import { founderPerson } from "@/lib/founder-schema";
 import { FloatingBottomCta } from "@/components/preview/floating-bottom-cta";
 
 const GTM_ID = "GTM-NCD9CLJ5";
@@ -123,28 +124,10 @@ const jsonLd = {
         "B2B SaaS go-to-market",
       ],
     },
-    {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#founder`,
-      name: "Bharat Gulati",
-      jobTitle: "Founder & CEO",
-      url: `${SITE_URL}/founder`,
-      worksFor: { "@id": `${SITE_URL}/#organization` },
-      alumniOf: {
-        "@type": "EducationalOrganization",
-        name: "IIM Indore",
-      },
-      // The company page identifies the organization, not the person; it now
-      // sits on #organization above. A Person's sameAs carries only profiles of
-      // that human.
-      sameAs: ["https://www.linkedin.com/in/bharat-gulati9711315523/"],
-      knowsAbout: [
-        "Enterprise sales",
-        "AI automation",
-        "Go-to-market strategy",
-        "B2B SaaS",
-      ],
-    },
+    // The single canonical Person node, shared with /founder so the site emits
+    // one identity for Bharat rather than two competing ones. Its sameAs holds
+    // only his own profile — the company page identifies #organization above.
+    founderPerson,
     {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
