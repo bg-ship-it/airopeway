@@ -19,10 +19,16 @@ const credentials = [
   "Serving B2B SaaS founders across India, AU, UK, US, CA",
 ];
 
-const sameAs = [
-  "https://www.linkedin.com/in/bharat-gulati9711315523/",
-  "https://www.aiplacers.com",
-];
+const LINKEDIN_URL = "https://www.linkedin.com/in/bharat-gulati9711315523/";
+const AI_PLACERS_URL = "https://www.aiplacers.com";
+
+// Only URLs that identify Bharat himself. This array used to double as the list
+// of buttons rendered below, which is why aiplacers.com was in it — but a
+// company website does not identify a person, and schema.org sameAs is not a
+// link list. AI Placers stays in the graph through founderOf, which says the
+// true thing. The buttons now reference the constants directly, so the two
+// cannot drift apart again.
+const sameAs = [LINKEDIN_URL];
 
 const publishedArticles = [
   {
@@ -140,7 +146,7 @@ const jsonLd = {
       worksFor: { "@id": `${SITE_URL}/#organization` },
       founderOf: [
         { "@id": `${SITE_URL}/#organization` },
-        { "@type": "Organization", name: "AI Placers", url: "https://www.aiplacers.com" },
+        { "@type": "Organization", name: "AI Placers", url: AI_PLACERS_URL },
       ],
       alumniOf: {
         "@type": "CollegeOrUniversity",
@@ -229,7 +235,7 @@ export default function FounderPage() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href={sameAs[0]}
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-surface px-4 py-2 text-sm text-ink-soft hover:bg-surface-soft"
@@ -237,7 +243,7 @@ export default function FounderPage() {
                   LinkedIn <ArrowUpRight className="size-3.5" />
                 </a>
                 <a
-                  href={sameAs[1]}
+                  href={AI_PLACERS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-surface px-4 py-2 text-sm text-ink-soft hover:bg-surface-soft"

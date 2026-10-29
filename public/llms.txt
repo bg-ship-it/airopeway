@@ -22,7 +22,7 @@ Machine readable: https://www.airopeway.com/pricing.md
 B2B SaaS and services founders at $1M-$20M ARR running founder-led sales with small teams (1-5 reps) who want 20-60 qualified meetings/month without hiring SDRs.
 
 ## Key facts
-- Founder: Bharat Gulati — 12+ years enterprise sales, former VP Sales who scaled an AI automation platform's GTM from zero, IIM Indore alumnus (AI/ML specialization). https://www.linkedin.com/in/bharatgulati/
+- Founder: Bharat Gulati — 12+ years enterprise sales, former VP Sales who scaled an AI automation platform's GTM from zero, IIM Indore alumnus (AI/ML specialization). https://www.linkedin.com/in/bharat-gulati9711315523/
 - Clients own all code and infrastructure from day one; built with standard tools (Claude, Clay, Make.com, n8n, HubSpot, Supabase).
 - Based in New Delhi, India; serving clients globally.
 - Sister company: AI Placers — no-code AI voice agents for inbound/outbound calls (https://www.aiplacers.com).

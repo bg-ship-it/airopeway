@@ -109,10 +109,13 @@ const jsonLd = {
       },
       founder: { "@id": `${SITE_URL}/#founder` },
       areaServed: ["IN", "AU", "GB", "US", "CA"],
-      sameAs: [
-        "https://www.aiplacers.com",
-        "https://www.linkedin.com/in/bharat-gulati9711315523/",
-      ],
+      // sameAs must identify THIS organization. It previously listed the
+      // founder's personal profile (that identifies the person, modelled below
+      // as #founder) and aiplacers.com (a different company, modelled on
+      // /founder as founderOf). Both were telling a crawler that AI Ropeway is
+      // the same entity as something it is not — the opposite of what we need,
+      // given that "AI Ropeway" already collides with cable-car AI.
+      sameAs: ["https://www.linkedin.com/company/ai-ropeway"],
       knowsAbout: [
         "AI GTM engines",
         "AI SDR automation",
@@ -131,7 +134,10 @@ const jsonLd = {
         "@type": "EducationalOrganization",
         name: "IIM Indore",
       },
-      sameAs: ["https://www.linkedin.com/in/bharat-gulati9711315523/", "https://www.linkedin.com/company/ai-ropeway"],
+      // The company page identifies the organization, not the person; it now
+      // sits on #organization above. A Person's sameAs carries only profiles of
+      // that human.
+      sameAs: ["https://www.linkedin.com/in/bharat-gulati9711315523/"],
       knowsAbout: [
         "Enterprise sales",
         "AI automation",
