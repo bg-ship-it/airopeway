@@ -85,6 +85,11 @@ const nextConfig: NextConfig = {
       // directly and were getting a 404 on every page.
       { source: "/apple-touch-icon.png", destination: "/apple-icon.png" },
       { source: "/apple-touch-icon-precomposed.png", destination: "/apple-icon.png" },
+      // Markdown twins of the Sanity-rendered posts, for AI crawlers. The
+      // handler cannot sit at /blog/[slug] because that segment is already a
+      // page, so the public URL is a rewrite onto it. The param is constrained
+      // to exclude a trailing .md so :slug does not swallow the extension.
+      { source: "/blog/:slug([^/]+?)\\.md", destination: "/api/blog-md/:slug" },
     ];
   },
 };
