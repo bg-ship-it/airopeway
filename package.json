@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "gen:llms-full": "node scripts/gen-llms-full.mjs",
     "test:pt": "node --experimental-strip-types --no-warnings src/lib/portable-text-to-markdown.test.ts"
   },
   "dependencies": {
