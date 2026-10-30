@@ -153,5 +153,5 @@ export const footer = {
     "Founded by Bharat Gulati · IIM Indore Alumnus · Also founder of AI Placers",
     "Serving businesses globally",
   ],
-  email: "bg@aiplacers.com",
+  email: "bg@airopeway.com",
 };

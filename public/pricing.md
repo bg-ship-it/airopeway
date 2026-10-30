@@ -97,6 +97,6 @@ engagements.
 ## Contact
 
 - Book the free audit: https://cal.com/bharat-gulati-ard07h/gtm-audit-by-ai-ropeway
-- Email: bg@aiplacers.com
+- Email: bg@airopeway.com
 - Full pricing page: https://www.airopeway.com/pricing
 - ROI calculator: https://www.airopeway.com/roi-calculator
