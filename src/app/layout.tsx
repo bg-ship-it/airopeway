@@ -101,7 +101,7 @@ const jsonLd = {
       name: "AI Ropeway",
       url: `${SITE_URL}/`,
       description: DESCRIPTION,
-      email: "bg@aiplacers.com",
+      email: "bg@airopeway.com",
       foundingDate: "2024",
       address: {
         "@type": "PostalAddress",

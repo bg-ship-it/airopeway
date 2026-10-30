@@ -33,7 +33,7 @@ B2B SaaS and services founders at $1M-$20M ARR running founder-led sales with sm
 - AI Ropeway vs Clay: https://www.airopeway.com/blog/ai-ropeway-vs-clay
 - AI Ropeway vs Apollo: https://www.airopeway.com/blog/ai-ropeway-vs-apollo
 - Founder: https://www.airopeway.com/founder
-- Contact: bg@aiplacers.com
+- Contact: bg@airopeway.com
 
 ## Definitions
 - What is an AI GTM engine? A system of coordinated AI agents that detect buying signals, enrich accounts, write personalized outreach, and triage replies — custom-built for your ICP and deployed in your own infrastructure with full system access. Full definition: https://www.airopeway.com/what-is-an-ai-gtm-engine
