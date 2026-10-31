@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "Honest comparison of AiSDR and a custom AI GTM engine. AiSDR is a subscription; AI Ropeway ships an owned engine in 14 days. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
-const MODIFIED = "2026-08-25T00:00:00.000Z";
+const MODIFIED = "2026-09-14T00:00:00.000Z";
 const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Is AI Ropeway an AiSDR competitor?", a: "They solve the same job — booking meetings from outbound — but with opposite models. AiSDR is a subscription AI SDR platform you log into. AI Ropeway builds a custom AI GTM engine and deploys it into your own stack, with full access from day one." },
   { q: "What is the main difference?", a: "Ownership and fit. With AiSDR you rent a general platform and lose access when you stop paying. With AI Ropeway the engine is built around your specific ICP and signals, runs in your accounts, and keeps running whether or not you renew." },
-  { q: "Which is cheaper?", a: "AiSDR is a monthly subscription — check their pricing page for current tiers. AI Ropeway is $3,000 one-time for a 14-day Sprint or $2,500/month for an ongoing partnership. Use the ROI calculator to compare against your numbers." },
+  { q: "Which is cheaper?", a: "AiSDR is a monthly subscription — check their pricing page for current tiers. AI Ropeway is $3,000 one-time for a 14-day Sprint, $2,500/month for an ongoing partnership, or $4,000/month plus $150–$250 per held meeting for the full eight-agent stack. No setup fee, no minimum term. Use the ROI calculator to compare against your numbers." },
   { q: "When should I pick AiSDR?", a: "If you want plug-and-play SaaS today, a light lift, and you are comfortable renting the workflow, AiSDR can get you sending fast. If you want to own the system and tailor it to your ICP, pick the engine." },
 ];
 
@@ -46,7 +46,8 @@ const jsonLd = {
 const rows = [
   ["Product model", "Subscription AI SDR platform", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "Solo $250 · Explore $900 · Scale $2,500/mo", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Solo $250 · Explore $900 · Scale $2,500/mo", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
+  ["Setup fee / minimum term", "None on Solo; annual on higher tiers", "None / none"],
   ["Personalization", "Platform AI + templates", "Written off the signal that fired, for your ICP"],
   ["Runs in", "AiSDR's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],
@@ -104,7 +105,7 @@ export default function Post() {
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Own the engine in 14 days</h2>
               <p className="mx-auto mb-6 max-w-xl text-ink-soft">See it built on your data first. The free 60-minute audit ends with a live demo on your ICP.</p>
               <Cta href="/#audit" size="lg">Book live demo on your data</Cta>
-              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/artisan-alternative" className="text-accent hover:underline">Artisan alternative</Link> · <Link href="/blog/11x-alternative" className="text-accent hover:underline">11x alternative</Link> · <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">vs Clay</Link></p>
+              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/11x-alternative" className="text-accent hover:underline">11x alternative</Link> · <Link href="/blog/artisan-alternative" className="text-accent hover:underline">Artisan alternative</Link> · <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">vs Clay</Link> · <Link href="/blog/ai-ropeway-vs-apollo" className="text-accent hover:underline">vs Apollo</Link> · <Link href="/blog/revengineer-alternative" className="text-accent hover:underline">RevEngineer alternative</Link> · <Link href="/blog/selling-com-alternative" className="text-accent hover:underline">Selling.com alternative</Link></p>
             </section>
           </div>
         </div>
