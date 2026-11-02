@@ -31,7 +31,7 @@ B2B SaaS and services founders at $1M-$20M ARR running founder-led sales with sm
 
 Full text of airopeway.com's key pages in one document: each page's URL, summary,
 and every question-and-answer pair published on it. 103 answered questions
-across 24 pages. Last generated 2026-10-29.
+across 24 pages. Last generated 2026-10-30.
 The short index is at https://www.airopeway.com/llms.txt.
 
 ## Pricing, in full
@@ -133,7 +133,7 @@ engagements.
 ### Contact
 
 - Book the free audit: https://cal.com/bharat-gulati-ard07h/gtm-audit-by-ai-ropeway
-- Email: bg@aiplacers.com
+- Email: bg@airopeway.com
 - Full pricing page: https://www.airopeway.com/pricing
 - ROI calculator: https://www.airopeway.com/roi-calculator
 

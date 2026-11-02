@@ -854,7 +854,7 @@ export function StatusFooter() {
     <div className="mx-auto max-w-6xl px-5 py-8">
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line pt-6 text-xs text-ink-faint">
         <span className="font-mono">
-          © 2026 AI Ropeway · bg@aiplacers.com
+          © 2026 AI Ropeway · bg@airopeway.com
         </span>
       </div>
     </div>
@@ -1118,11 +1118,11 @@ export function TrustSignals() {
           </a>
           <span className="h-4 w-px bg-line" />
           <a
-            href="mailto:bg@aiplacers.com"
+            href="mailto:bg@airopeway.com"
             className="inline-flex items-center gap-2 hover:text-ink"
           >
             <Mail className="size-4 text-accent" />
-            bg@aiplacers.com
+            bg@airopeway.com
           </a>
           <span className="h-4 w-px bg-line" />
           <a
