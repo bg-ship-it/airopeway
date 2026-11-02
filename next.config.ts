@@ -44,6 +44,11 @@ const legacy: Record<string, string> = {
 
 
 const nextConfig: NextConfig = {
+  // Server source maps were 14MB of a 45MB build output — a third of what each
+  // deployment stores, for files only a human debugging a stack trace reads.
+  // Vercel bills Deployment and Functions Storage on retained output, so this
+  // is the largest per-deployment cut available without touching the app.
+  experimental: { serverSourceMaps: false },
   // Blog hero images live in the Sanity CDN. Without this allowlist every
   // /_next/image request returns 400 INVALID_IMAGE_OPTIMIZE_REQUEST and the
   // heroes render broken. Do not drop this block when editing this file.
