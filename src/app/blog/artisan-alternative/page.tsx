@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "Honest comparison of Artisan (Ava) and a custom AI GTM engine. Artisan is a subscription AI BDR; AI Ropeway ships an engine you own. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
-const MODIFIED = "2026-08-25T00:00:00.000Z";
+const MODIFIED = "2026-09-14T00:00:00.000Z";
 const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Is AI Ropeway an Artisan competitor?", a: "Same job, opposite model. Artisan's Ava is a subscription AI BDR you manage inside their platform. AI Ropeway builds a custom AI GTM engine and ships the code into your own repo, so you own the whole system." },
   { q: "What is the core difference?", a: "Artisan is an all-in-one AI BDR product. AI Ropeway is a bespoke engine built for your ICP, running in your accounts, using best-of-breed tools as data layers inside it — and you keep the code if you ever leave." },
-  { q: "Which costs less?", a: "Artisan is a subscription — check their site for current tiers. AI Ropeway is $3,000 one-time for a 14-day Sprint or $2,500/month ongoing. Compare against a hire in the ROI calculator." },
+  { q: "Which costs less?", a: "Artisan is a subscription — check their site for current tiers. AI Ropeway is $3,000 one-time for a 14-day Sprint, $2,500/month for an ongoing partnership, or $4,000/month plus $150–$250 per held meeting for the full eight-agent stack. No setup fee, no minimum term. Compare against a hire in the ROI calculator." },
   { q: "When is Artisan the better call?", a: "If you want a single all-in-one AI BDR product with a managed UI and minimal setup, Artisan is a strong pick. If you want to own and shape the system around your ICP, pick the engine." },
 ];
 
@@ -46,7 +46,8 @@ const jsonLd = {
 const rows = [
   ["Product model", "All-in-one AI BDR platform (Ava)", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "from $250 · Intern $280 · Employee $660/mo · Ent. ~$1.5–3k/mo", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "from $250 · Intern $280 · Employee $660/mo · Ent. ~$1.5–3k/mo", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
+  ["Setup fee / minimum term", "None listed; Enterprise on annual contract", "None / none"],
   ["Personalization", "Platform AI", "Written off the signal that fired, for your ICP"],
   ["Runs in", "Artisan's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],
@@ -104,7 +105,7 @@ export default function Post() {
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">Own the engine in 14 days</h2>
               <p className="mx-auto mb-6 max-w-xl text-ink-soft">See it built on your data first. The free 60-minute audit ends with a live demo on your ICP.</p>
               <Cta href="/#audit" size="lg">Book live demo on your data</Cta>
-              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/aisdr-alternative" className="text-accent hover:underline">AiSDR alternative</Link> · <Link href="/blog/11x-alternative" className="text-accent hover:underline">11x alternative</Link> · <Link href="/blog/ai-ropeway-vs-apollo" className="text-accent hover:underline">vs Apollo</Link></p>
+              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/11x-alternative" className="text-accent hover:underline">11x alternative</Link> · <Link href="/blog/aisdr-alternative" className="text-accent hover:underline">AiSDR alternative</Link> · <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">vs Clay</Link> · <Link href="/blog/ai-ropeway-vs-apollo" className="text-accent hover:underline">vs Apollo</Link> · <Link href="/blog/revengineer-alternative" className="text-accent hover:underline">RevEngineer alternative</Link> · <Link href="/blog/selling-com-alternative" className="text-accent hover:underline">Selling.com alternative</Link></p>
             </section>
           </div>
         </div>

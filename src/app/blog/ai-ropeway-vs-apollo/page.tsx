@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "Apollo is the best B2B data platform for SDR teams. AI Ropeway is the GTM engine that uses Apollo as a data source. Where each one actually wins.";
 const PUBLISHED = "2026-06-25T10:00:00.000Z";
-const MODIFIED = "2026-08-25T00:00:00.000Z";
+const MODIFIED = "2026-09-14T00:00:00.000Z";
 const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [
@@ -56,7 +56,8 @@ const jsonLd = {
 const rows = [
   ["Primary product", "B2B data + sequencing platform", "Full 8-agent AI GTM engine"],
   ["Asset ownership", "Account on Apollo's platform", "Full system access in your stack"],
-  ["Pricing", "Basic $49 · Pro $79 · Org $119 per user/mo (annual)", "$3k one-time or $2.5k/mo"],
+  ["Pricing", "Basic $49 · Pro $79 · Org $119 per user/mo (annual)", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
+  ["Setup fee / minimum term", "None; annual billing on listed prices", "None / none"],
   ["Data coverage", "Apollo's database only", "Waterfall across Apollo + ZoomInfo + Clay + first-party"],
   ["Signal-based sourcing", "Static filters in their UI", "Continuous (Lead Sourcer + Intent Watcher agents)"],
   ["Sequence composition", "Templates + AI suggestions", "Signal-grounded per touch (Sequence Composer agent)"],
@@ -116,7 +117,7 @@ export default function Post() {
               <h2 className="font-display mb-4 text-2xl font-bold text-ink md:text-3xl">See the full engine in action</h2>
               <p className="mx-auto mb-6 max-w-xl text-ink-soft">Live demo on your ICP data, first call. We use Apollo if you already have it.</p>
               <Cta href="/#audit" size="lg">Book live demo on your data</Cta>
-              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/lead-sourcer-signal-based-outbound" className="text-accent hover:underline">Lead Sourcer</Link> · <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">AI Ropeway vs Clay</Link> · <Link href="/blog/ai-gtm-engines-complete-guide" className="text-accent hover:underline">Pillar guide</Link></p>
+              <p className="mt-6 text-xs text-ink-faint">Related: <Link href="/blog/11x-alternative" className="text-accent hover:underline">11x alternative</Link> · <Link href="/blog/aisdr-alternative" className="text-accent hover:underline">AiSDR alternative</Link> · <Link href="/blog/artisan-alternative" className="text-accent hover:underline">Artisan alternative</Link> · <Link href="/blog/ai-ropeway-vs-clay" className="text-accent hover:underline">vs Clay</Link> · <Link href="/blog/revengineer-alternative" className="text-accent hover:underline">RevEngineer alternative</Link> · <Link href="/blog/selling-com-alternative" className="text-accent hover:underline">Selling.com alternative</Link></p>
             </section>
           </div>
         </div>
