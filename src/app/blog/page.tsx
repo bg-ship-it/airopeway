@@ -7,6 +7,7 @@ import { staticPosts } from "@/lib/static-posts";
 import { mergedPostSlugs } from "@/lib/merged-posts";
 import { imageUrl } from "@/lib/sanity";
 import { BlogCover } from "@/components/blog-cover";
+import { BOOK_URL } from "@/lib/content";
 
 const SITE_URL = "https://www.airopeway.com";
 
@@ -141,12 +142,14 @@ export default async function BlogPage() {
         <p className="mt-2 text-ink-muted">
           Book a free AI audit and get a custom deployment plan in 48 hours.
         </p>
-        <Link
-          href="/#audit"
+        <a
+          href={BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-5 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-canvas hover:opacity-80 transition-opacity"
         >
           Claim free AI audit <ArrowUpRight className="size-4" />
-        </Link>
+        </a>
       </div>
     </div>
   );
