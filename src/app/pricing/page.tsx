@@ -4,7 +4,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { MotionBg } from "@/components/motion-bg";
 import { Reveal } from "@/components/reveal";
-import { faqs } from "@/lib/content";
+import { BOOK_URL, faqs } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
 const SITE_URL = "https://www.airopeway.com";
@@ -355,8 +355,10 @@ export default function PricingPage() {
                   For: {tier.target}
                 </p>
 
-                <Link
-                  href="/#audit"
+                <a
+                  href={BOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     "focus-ring mt-5 inline-flex cursor-pointer items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold transition-colors",
                     tier.featured
@@ -366,7 +368,7 @@ export default function PricingPage() {
                 >
                   {tier.cta}
                   <ArrowRight className="size-4" />
-                </Link>
+                </a>
               </div>
             </Reveal>
           ))}
