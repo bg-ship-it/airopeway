@@ -10,23 +10,23 @@ import { cn } from "@/lib/cn";
 const SITE_URL = "https://www.airopeway.com";
 
 export const metadata: Metadata = {
-  title: "Pricing · Results as a Service from $300 a meeting",
+  title: "Pricing · Results as a Service from $200 a meeting",
   description:
-    "AI GTM pricing, published in full. Results as a Service: $300 per held meeting, setup refunded under three. Or own the engine: Sprint $3k once, Partnership $2.5k/mo.",
+    "AI GTM pricing, published in full. Results as a Service: $200 per held meeting, setup refunded under three. Or own the engine: Sprint $3k once, Partnership $2.5k/mo.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/pricing`,
     siteName: "AI Ropeway",
-    title: "Pricing | Results as a Service from $300 a meeting | AI Ropeway",
+    title: "Pricing | Results as a Service from $200 a meeting | AI Ropeway",
     description:
       "Pay per held meeting with Results as a Service, or own the engine: Sprint $3k, Partnership $2.5k/mo. No term.",
   },
   twitter: {
     images: ["/opengraph-image"],
     card: "summary_large_image",
-    title: "Pricing | Results as a Service from $300 a meeting | AI Ropeway",
+    title: "Pricing | Results as a Service from $200 a meeting | AI Ropeway",
     description:
       "Pay per held meeting with Results as a Service, or own the engine: Sprint $3k, Partnership $2.5k/mo. No term.",
   },
@@ -41,7 +41,7 @@ type Tier = {
   featured?: boolean;
   /** Per-held-meeting price for structured data, when the tier has one. */
   perMeeting?: string;
-  more?: { label: string; href: string };
+  more?: { label: string; href: string; external?: boolean }[];
   features: string[];
   outcomes: string[];
   target: string;
@@ -50,20 +50,21 @@ type Tier = {
 const tiers: Tier[] = [
   {
     name: "Results as a Service",
-    price: "$300",
+    price: "$200",
     cadence: "per held meeting · 45-day pilot",
     blurb:
       "We build and run the outbound. You pay when a prospect actually shows up. $1,000 setup, refunded in full if the pilot books fewer than three held meetings.",
     cta: "Book a RaaS fit call",
     featured: true,
-    perMeeting: "300-450",
-    more: { label: "Full RaaS terms", href: "/results-as-a-service" },
+    perMeeting: "200-300",
+    more: [
+      { label: "Enterprise? Book an AI GTM strategy call for pricing", href: BOOK_URL, external: true },
+      { label: "Full RaaS terms", href: "/results-as-a-service" },
+    ],
     target: "Teams that want results before commitment",
     features: [
-      "$300 per held meeting, $450 for mid-market targets",
+      "$200 per held meeting, $300 for mid-market targets",
       "$1,000 setup, refunded under 3 held meetings",
-      "Capped at 12 meetings: $4,600 at most",
-      "No term after day 45",
       "Buy the engine at day 45 for $3,000",
     ],
     outcomes: [
@@ -146,7 +147,7 @@ const benchmarks: [string, string, string][] = [
   ["Reply to held meeting", "20–30%", "35–50%"],
   ["Show rate", "50–60%", "65–75%"],
   ["Time to first held meeting", "~5 months for a new SDR hire", "Day 18–25 from kickoff"],
-  ["Cost per held meeting", "$900–$1,500 in-house SDR", "$300 flat on RaaS · $170–$310 on Partnership"],
+  ["Cost per held meeting", "$900–$1,500 in-house SDR", "$200 on RaaS · $170–$310 on Partnership"],
 ];
 
 const addOns: [string, string, string][] = [
@@ -252,7 +253,7 @@ export default function PricingPage() {
             <p className="mx-auto mt-5 max-w-2xl text-lg text-ink-soft">
               Start with Results as a Service:{" "}
               <strong className="font-semibold text-ink">
-                $300 for each meeting a prospect attends
+                $200 for each meeting a prospect attends
               </strong>
               , setup refunded if we book fewer than three. Once it works, own
               the engine with a Sprint, or have us run it on Partnership. Every
@@ -380,17 +381,19 @@ export default function PricingPage() {
                   {tier.cta}
                   <ArrowRight className="size-4" />
                 </a>
-                {tier.more && (
+                {tier.more?.map((m) => (
                   <Link
-                    href={tier.more.href}
+                    key={m.href}
+                    href={m.href}
+                    {...(m.external && { target: "_blank", rel: "noopener noreferrer" })}
                     className={cn(
                       "mt-3 text-center text-xs font-semibold underline-offset-2 hover:underline",
                       tier.featured ? "text-white/75" : "text-accent",
                     )}
                   >
-                    {tier.more.label}
+                    {m.label}
                   </Link>
-                )}
+                ))}
               </div>
             </Reveal>
           ))}
