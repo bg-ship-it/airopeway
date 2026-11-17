@@ -410,7 +410,7 @@ export default function PricingPage() {
           Sprint, Partnership and custom plans hand over the agents, prompts,
           Supabase schema and Make/n8n scenarios to your GitHub and your
           accounts from day one. On RaaS the engine runs in ours for 45 days,
-          then moves to you for $3,000 if you want it.
+          then moves to you for $3,000.
         </p>
       </section>
 
