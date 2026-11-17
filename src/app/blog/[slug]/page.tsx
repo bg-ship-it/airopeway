@@ -7,6 +7,7 @@ import { ArrowLeft } from "lucide-react";
 import { getPost, getAllSlugs } from "@/lib/blog";
 import { imageUrl } from "@/lib/sanity";
 import { BlogCover } from "@/components/blog-cover";
+import { BOOK_URL } from "@/lib/content";
 
 export const revalidate = 600;
 
@@ -239,12 +240,14 @@ export default async function BlogPostPage({
         <p className="mt-1.5 text-sm text-ink-muted">
           Book a free AI audit — get a custom roadmap in 48 hours.
         </p>
-        <Link
-          href="/#audit"
+        <a
+          href={BOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-4 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-canvas hover:opacity-80 transition-opacity"
         >
           Claim free audit
-        </Link>
+        </a>
       </div>
     </article>
   );
