@@ -28,7 +28,7 @@ export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 export const FOUNDER_NAME = "Bharat Gulati";
 export const FOUNDER_URL = `${SITE_URL}/founder`;
-export const FOUNDER_EMAIL = "bg@aiplacers.com";
+export const FOUNDER_EMAIL = "bg@airopeway.com";
 
 /** Bharat's own profile. Only URLs that identify the person belong here. */
 export const FOUNDER_LINKEDIN_URL =
