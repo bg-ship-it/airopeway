@@ -4,31 +4,31 @@ import { Check, ArrowRight } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { MotionBg } from "@/components/motion-bg";
 import { Reveal } from "@/components/reveal";
-import { faqs } from "@/lib/content";
+import { BOOK_URL, faqs } from "@/lib/content";
 import { cn } from "@/lib/cn";
 
 const SITE_URL = "https://www.airopeway.com";
 
 export const metadata: Metadata = {
-  title: "Pricing · AI GTM engines from $3k",
+  title: "Pricing · Results as a Service from $200 a meeting",
   description:
-    "AI GTM pricing, published in full. Sprint $3k once, Partnership $2.5k/mo, Full Stack $4k/mo plus $150–$250 per held meeting. No term, you keep the code.",
+    "AI GTM pricing, published in full. Results as a Service: $200 per held meeting, setup refunded under three. Or own the engine: Sprint $3k once, Partnership $2.5k/mo.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/pricing`,
     siteName: "AI Ropeway",
-    title: "Pricing | AI GTM engines from $3k | AI Ropeway",
+    title: "Pricing | Results as a Service from $200 a meeting | AI Ropeway",
     description:
-      "Sprint $3k, Partnership $2.5k/mo, Full Stack $4k/mo + per held meeting. No setup fee, no term, you keep the code.",
+      "Pay per held meeting with Results as a Service, or own the engine: Sprint $3k, Partnership $2.5k/mo. No term.",
   },
   twitter: {
     images: ["/opengraph-image"],
     card: "summary_large_image",
-    title: "Pricing | AI GTM engines from $3k | AI Ropeway",
+    title: "Pricing | Results as a Service from $200 a meeting | AI Ropeway",
     description:
-      "Sprint $3k, Partnership $2.5k/mo, Full Stack $4k/mo + per held meeting. No setup fee, no term, you keep the code.",
+      "Pay per held meeting with Results as a Service, or own the engine: Sprint $3k, Partnership $2.5k/mo. No term.",
   },
 };
 
@@ -39,12 +39,40 @@ type Tier = {
   blurb: string;
   cta: string;
   featured?: boolean;
+  /** Per-held-meeting price for structured data, when the tier has one. */
+  perMeeting?: string;
+  more?: { label: string; href: string; external?: boolean }[];
   features: string[];
   outcomes: string[];
   target: string;
 };
 
 const tiers: Tier[] = [
+  {
+    name: "Results as a Service",
+    price: "$200",
+    cadence: "per held meeting · 45-day pilot",
+    blurb:
+      "We build and run the outbound. You pay when a prospect actually shows up. $1,000 setup, refunded in full if the pilot books fewer than three held meetings.",
+    cta: "Book a RaaS fit call",
+    featured: true,
+    perMeeting: "200-300",
+    more: [
+      { label: "Enterprise? Book an AI GTM strategy call for pricing", href: BOOK_URL, external: true },
+      { label: "Full RaaS terms", href: "/results-as-a-service" },
+    ],
+    target: "Teams that want results before commitment",
+    features: [
+      "$200 per held meeting, $300 for mid-market targets",
+      "$1,000 setup, refunded under 3 held meetings",
+      "Buy the engine at day 45 for $3,000",
+    ],
+    outcomes: [
+      "First held meetings from week 3",
+      "Weekly numbers: reached, replied, held",
+      "Three pilots run at a time",
+    ],
+  },
   {
     name: "AI GTM Sprint",
     price: "$3,000",
@@ -89,45 +117,22 @@ const tiers: Tier[] = [
     ],
   },
   {
-    name: "Full Stack GTM",
-    price: "$4,000",
-    cadence: "/mo + $150–$250 per held meeting",
+    name: "Full Stack & Portfolio",
+    price: "Custom",
+    cadence: "from $4,000/mo · scoped on the audit",
     blurb:
-      "All eight agents in production: GTM + content engine + CRM automation. Base covers the build and the engineers; the per-meeting part only bills when a prospect shows up.",
-    cta: "Scope Full Stack",
-    featured: true,
-    target: "Scaling companies",
+      "All eight agents in production, or one engine per company across a fund or multi-brand group. Scoped after RaaS or a Sprint has proven the motion.",
+    cta: "Talk to Founder",
+    target: "Scaling companies, PE/VC portfolios",
     features: [
       "All 8 agents in production",
-      "$150 per held meeting for SMB targets, $250 for mid-market",
+      "Per-meeting pricing available on top of the base",
       "Bi-weekly strategy calls, 2 engineers",
-      "Founder-led delivery",
-      "Quarterly architecture review",
-    ],
-    outcomes: [
-      "6,000 prospects sourced / month",
-      "300–600 signal-qualified accounts / month",
-      "15–30 held meetings / month",
-      "$280–$520 blended per held meeting, falling with volume",
-    ],
-  },
-  {
-    name: "Portfolio",
-    price: "Custom",
-    cadence: "from $8,000/mo · quarterly",
-    blurb:
-      "One engine per company across a fund's portfolio or a multi-brand group, with a central Revenue Pulse dashboard. Voice AI via AI Placers. Dedicated PM.",
-    cta: "Talk to Founder",
-    target: "PE/VC portfolios, multi-brand groups",
-    features: [
-      "One engine per company, shared playbook",
       "Central pipeline reporting across companies",
       "Voice AI add-on (via AI Placers)",
-      "Dedicated PM, quarterly business reviews",
-      "Priority response SLA",
     ],
     outcomes: [
-      "Full Stack targets, per company",
+      "15–30 held meetings / month per company",
       "Fund-level pipeline view from month two",
     ],
   },
@@ -142,7 +147,7 @@ const benchmarks: [string, string, string][] = [
   ["Reply to held meeting", "20–30%", "35–50%"],
   ["Show rate", "50–60%", "65–75%"],
   ["Time to first held meeting", "~5 months for a new SDR hire", "Day 18–25 from kickoff"],
-  ["Cost per held meeting", "$900–$1,500 in-house SDR", "$170–$520 by tier"],
+  ["Cost per held meeting", "$900–$1,500 in-house SDR", "$200 on RaaS · $170–$310 on Partnership"],
 ];
 
 const addOns: [string, string, string][] = [
@@ -173,13 +178,12 @@ const jsonLd = {
         availability: "https://schema.org/InStock",
         category: t.cadence,
       };
-      if (numericMatch && t.name === "Full Stack GTM") {
-        offer.price = numericMatch[1].replace(/,/g, "");
+      if (t.perMeeting) {
         offer.priceSpecification = {
           "@type": "UnitPriceSpecification",
           priceCurrency: "USD",
-          price: "150-250",
-          unitText: "per held meeting, in addition to the monthly base",
+          price: t.perMeeting,
+          unitText: "per held meeting",
         };
       } else if (numericMatch) {
         offer.price = numericMatch[1].replace(/,/g, "");
@@ -241,39 +245,30 @@ export default function PricingPage() {
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl border border-line bg-surface-soft px-5 py-16 text-center md:px-12 md:py-20">
           <MotionBg />
           <div className="relative z-10 mx-auto max-w-2xl">
-            <p className="mono-label mb-4 text-accent">Pricing</p>
+            <p className="mono-label mb-4 text-accent">Pricing · Results as a Service</p>
             <h1 className="font-display text-[clamp(2.4rem,5.5vw,4rem)] font-bold leading-[1.05]">
-              Transparent. <span className="text-accent">Specific.</span> No
-              decks before the price.
+              Pay for <span className="text-accent">meetings,</span> not
+              promises.
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-ink-soft">
-              AI GTM engines that work 24/7. Founder works{" "}
+              Start with Results as a Service:{" "}
               <strong className="font-semibold text-ink">
-                alongside your team
-              </strong>{" "}
-              — weekly meetings, real ownership, full system access. No
-              offshoring layers. No junior-dev surprises. Every engagement
-              starts with a free 60-min audit and live demo on your ICP data.
+                $200 for each meeting a prospect attends
+              </strong>
+              , setup refunded if we book fewer than three. Once it works, own
+              the engine with a Sprint, or have us run it on Partnership. Every
+              price is on this page.
             </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Cta href="/#audit" size="lg">
+                Book a RaaS fit call
+              </Cta>
+              <Cta href="/results-as-a-service" variant="ghost" size="lg" showArrow={false}>
+                How RaaS works
+              </Cta>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section className="px-5 pb-6 md:px-8">
-        <Link
-          href="/results-as-a-service"
-          className="focus-ring mx-auto flex max-w-6xl flex-col items-start gap-3 rounded-3xl border-2 border-accent bg-surface px-6 py-5 transition-colors hover:bg-surface-soft sm:flex-row sm:items-center sm:justify-between"
-        >
-          <span>
-            <span className="mono-label text-accent">New · Results as a Service</span>
-            <span className="font-display mt-1 block text-lg font-bold text-ink">
-              Rather pay for results? $300 per held meeting, setup refunded under three.
-            </span>
-          </span>
-          <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-accent">
-            See RaaS pricing <ArrowRight className="size-4" />
-          </span>
-        </Link>
       </section>
 
       <section className="px-5 pb-8 md:px-8">
@@ -293,7 +288,7 @@ export default function PricingPage() {
                     className="absolute -top-3 left-7 rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-white"
                     style={{ background: "var(--color-accent)" }}
                   >
-                    Flagship
+                    Start here
                   </span>
                 )}
                 <h2 className="font-display text-xl font-bold">{tier.name}</h2>
@@ -372,8 +367,10 @@ export default function PricingPage() {
                   For: {tier.target}
                 </p>
 
-                <Link
-                  href="/#audit"
+                <a
+                  href={BOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     "focus-ring mt-5 inline-flex cursor-pointer items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold transition-colors",
                     tier.featured
@@ -383,7 +380,20 @@ export default function PricingPage() {
                 >
                   {tier.cta}
                   <ArrowRight className="size-4" />
-                </Link>
+                </a>
+                {tier.more?.map((m) => (
+                  <Link
+                    key={m.href}
+                    href={m.href}
+                    {...(m.external && { target: "_blank", rel: "noopener noreferrer" })}
+                    className={cn(
+                      "mt-3 text-center text-xs font-semibold underline-offset-2 hover:underline",
+                      tier.featured ? "text-white/75" : "text-accent",
+                    )}
+                  >
+                    {m.label}
+                  </Link>
+                ))}
               </div>
             </Reveal>
           ))}
@@ -391,14 +401,16 @@ export default function PricingPage() {
 
         <p className="mx-auto mt-8 max-w-2xl px-5 text-center text-xs text-ink-faint">
           Every engagement starts with a free 60-minute AI GTM audit and live
-          demo on your ICP data. Final scope set in the audit. No setup fee on
-          any tier. No minimum term. Targets last reviewed {TARGETS_REVIEWED}.
+          demo on your ICP data. Final scope set in the audit. No setup fee
+          except the RaaS one, and that comes back under three held meetings.
+          No minimum term. Targets last reviewed {TARGETS_REVIEWED}.
         </p>
         <p className="mx-auto mt-4 max-w-3xl px-5 text-center text-sm text-ink-soft">
           <strong className="font-semibold text-ink">You keep the code.</strong>{" "}
-          Every tier hands over the agents, prompts, Supabase schema and
-          Make/n8n scenarios to your GitHub and your accounts. No handoff fee,
-          no export request, nothing held on our side.
+          Sprint, Partnership and custom plans hand over the agents, prompts,
+          Supabase schema and Make/n8n scenarios to your GitHub and your
+          accounts from day one. On RaaS the engine runs in ours for 45 days,
+          then moves to you for $3,000 if you want it.
         </p>
       </section>
 

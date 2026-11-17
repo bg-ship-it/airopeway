@@ -9,21 +9,20 @@ import { BOOK_URL } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Results as a Service (RaaS) · pay per held meeting",
   description:
-    "Results as a Service for B2B outbound: $1,000 setup, refunded under three held meetings, then $300 per meeting that takes place. 45 days, capped, then buy the engine.",
+    "Results as a Service for B2B outbound: $1,000 setup, refunded under three held meetings, then $200 per meeting that takes place. 45 days, then buy the engine.",
   alternates: { canonical: "/results-as-a-service" },
   openGraph: {
     images: ["/opengraph-image"],
     url: "https://www.airopeway.com/results-as-a-service",
     title: "Results as a Service (RaaS) | AI Ropeway",
     description:
-      "Pay for meetings that happen, not hours, seats or software. $300 per held meeting, setup refunded under three.",
+      "Pay for meetings that happen, not hours, seats or software. $200 per held meeting, setup refunded under three.",
   },
 };
 
 const SETUP = 1000;
-const PER_MEETING = 300;
+const PER_MEETING = 200;
 const FLOOR = 3;
-const CAP = 12;
 
 const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
 
@@ -31,7 +30,7 @@ const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
 const bill = (held: number) =>
   held < FLOOR ? held * PER_MEETING : SETUP + held * PER_MEETING;
 
-const scenarios = [0, 2, 3, 6, 10, CAP];
+const scenarios = [0, 2, 3, 6, 10, 15];
 
 const included = [
   "ICP, signals and target list built with you",
@@ -64,7 +63,7 @@ const steps: [string, string, string][] = [
 
 const compare: [string, string, string, string][] = [
   ["Upfront", `${usd(SETUP)}, refundable`, "$3,000", "$2,500 / mo"],
-  ["Per held meeting", `${usd(PER_MEETING)} SMB · $450 mid-market`, "None", "None"],
+  ["Per held meeting", `${usd(PER_MEETING)} SMB · $300 mid-market · enterprise on a call`, "None", "None"],
   ["Who carries the risk", "Shared", "You, with the Sprint guarantee", "You, month to month"],
   ["Where it runs", "Our accounts during the pilot", "Your accounts from day one", "Your accounts from day one"],
   ["Owning the engine", "Buy it at day 45 for $3,000", "Included", "Included"],
@@ -106,8 +105,8 @@ const pilotFaqs: [string, string][] = [
     "Domains, inboxes and data cost money before the first meeting exists, and a pilot works better when both sides have committed something. If we miss the floor, it comes back.",
   ],
   [
-    "Is there a ceiling on what I can be billed?",
-    `Yes. The pilot is capped at ${CAP} held meetings, so the most it can cost is ${usd(bill(CAP))}. You can raise the cap if you want more.`,
+    "What does it cost for enterprise targets?",
+    "Enterprise pricing is set on a call, because sales cycles, buying committees and meeting definitions vary. Book an AI GTM strategy call and you get a fixed per-meeting price before anything starts.",
   ],
   [
     "What if a meeting is a poor fit?",
@@ -167,7 +166,7 @@ export default function ResultsAsAServicePage() {
               </Cta>
             </div>
             <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-soft">
-              {["Setup refunded under 3 meetings", `Capped at ${usd(bill(CAP))}`, "No term after day 45"].map((t) => (
+              {["Setup refunded under 3 meetings", "$300 for mid-market", "Buy the engine at day 45"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="size-4 text-teal" />
                   {t}
@@ -221,7 +220,7 @@ export default function ResultsAsAServicePage() {
               </div>
               <p className="mt-3 text-sm leading-relaxed text-white/65">
                 We build and run the outbound for 45 days. You pay mostly when
-                a prospect shows up. $450 per meeting for mid-market targets.
+                a prospect shows up. $300 per meeting for mid-market targets.
               </p>
               <ul className="mt-6 flex-1 space-y-3">
                 {included.map((f) => (
@@ -241,6 +240,14 @@ export default function ResultsAsAServicePage() {
                 className="focus-ring mt-5 inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-white py-3 text-sm font-semibold text-ink transition-colors hover:bg-white/90"
               >
                 Book a RaaS fit call
+              </a>
+              <a
+                href={BOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 text-center text-xs font-semibold text-white/75 underline-offset-2 hover:underline"
+              >
+                Enterprise? Book an AI GTM strategy call for pricing
               </a>
             </div>
           </Reveal>
@@ -265,7 +272,6 @@ export default function ResultsAsAServicePage() {
                       <tr key={n} className="border-t border-line">
                         <td className="px-4 py-3 font-medium text-ink">
                           {n}
-                          {n === CAP && " (cap)"}
                         </td>
                         <td className="px-4 py-3 text-ink-soft">
                           {usd(bill(n))}
