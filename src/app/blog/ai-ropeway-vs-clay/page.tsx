@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
+import { PRICE_SHORT, TERMS_SHORT } from "@/lib/content";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-ropeway-vs-clay";
@@ -55,8 +56,8 @@ const jsonLd = {
 const rows = [
   ["Primary product", "Data tables + waterfall enrichment", "Full 8-agent AI GTM engine"],
   ["Asset ownership", "Workbook in Clay account", "Full system access in your stack"],
-  ["Pricing", "Free · Launch $185/mo · Growth $495/mo · Ent. from ~$30k/yr", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
-  ["Setup fee / minimum term", "None; Enterprise annual", "None / none"],
+  ["Pricing", "Free · Launch $185/mo · Growth $495/mo · Ent. from ~$30k/yr", PRICE_SHORT],
+  ["Setup fee / minimum term", "None; Enterprise annual", TERMS_SHORT],
   ["Signal detection", "DIY with Claygent", "Built in (Intent Watcher agent)"],
   ["Sequence composition", "Configurable per table", "Built in (Sequence Composer agent)"],
   ["Inbox warmup & deliverability", "Out of scope", "Built in (Inbox Operator agent)"],

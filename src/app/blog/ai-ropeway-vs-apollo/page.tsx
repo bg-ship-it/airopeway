@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
+import { PRICE_SHORT, TERMS_SHORT } from "@/lib/content";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "ai-ropeway-vs-apollo";
@@ -56,8 +57,8 @@ const jsonLd = {
 const rows = [
   ["Primary product", "B2B data + sequencing platform", "Full 8-agent AI GTM engine"],
   ["Asset ownership", "Account on Apollo's platform", "Full system access in your stack"],
-  ["Pricing", "Basic $49 · Pro $79 · Org $119 per user/mo (annual)", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
-  ["Setup fee / minimum term", "None; annual billing on listed prices", "None / none"],
+  ["Pricing", "Basic $49 · Pro $79 · Org $119 per user/mo (annual)", PRICE_SHORT],
+  ["Setup fee / minimum term", "None; annual billing on listed prices", TERMS_SHORT],
   ["Data coverage", "Apollo's database only", "Waterfall across Apollo + ZoomInfo + Clay + first-party"],
   ["Signal-based sourcing", "Static filters in their UI", "Continuous (Lead Sourcer + Intent Watcher agents)"],
   ["Sequence composition", "Templates + AI suggestions", "Signal-grounded per touch (Sequence Composer agent)"],

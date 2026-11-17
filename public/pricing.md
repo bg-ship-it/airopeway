@@ -3,8 +3,25 @@
 Custom AI GTM engines built and deployed into the client's own accounts. Signal
 detection, enrichment, personalized outreach, reply triage.
 
-Currency: USD. No setup fee on any tier. No minimum term.
+Currency: USD. No setup fee except the RaaS one, which is refunded under three held meetings.
 Last reviewed: 2026-10-14. Targets last reviewed by AI Ropeway: 2026-09-14.
+
+## Results as a Service (RaaS) — $200 per held meeting
+
+45-day pilot. $1,000 setup, refunded in full if the pilot books fewer than three held
+meetings. $200 per held meeting, $300 for mid-market targets, enterprise priced on an
+AI GTM strategy call. A held meeting is one the prospect attends with a buyer inside
+the ICP agreed in writing; poor-fit meetings flagged within 5 business days are not
+billed. The engine runs in AI Ropeway's accounts during the pilot.
+
+- First held meetings from week 3
+- Weekly numbers: reached, replied, held
+- At day 45: buy the engine for $3,000, or move to Partnership
+- Three pilots run at a time
+
+Full terms: https://www.airopeway.com/results-as-a-service
+
+For: teams that want results before commitment.
 
 ## AI GTM Sprint — $3,000 one-time
 
@@ -35,34 +52,20 @@ month, 8–15 held meetings per month, $170–$310 per held meeting.
 
 For: growing B2B SaaS teams.
 
-## Full Stack GTM — $4,000/month plus per held meeting
+## Full Stack & Portfolio — custom, from $4,000/month
 
-$150 per held meeting for SMB targets, $250 for mid-market. The base covers the build
-and the engineers; the per-meeting portion bills only when a prospect attends.
+Scoped on the audit, usually after RaaS or a Sprint has proven the motion.
 
-- All 8 agents in production
-- GTM plus content engine plus CRM automation
-- 2 engineers, founder-led delivery
-- Bi-weekly strategy calls
-- Quarterly architecture review
-
-Targets: 6,000 prospects sourced per month, 300–600 signal-qualified accounts per
-month, 15–30 held meetings per month, $280–$520 blended per held meeting, falling
-with volume.
-
-For: scaling companies.
-
-## Portfolio — from $8,000/month
-
-Billed quarterly.
-
-- One engine per company across a fund's portfolio or multi-brand group
-- Central Revenue Pulse dashboard, fund-level pipeline view from month two
+- All 8 agents in production, or one engine per company across a fund or multi-brand group
+- Per-meeting pricing available on top of the base
+- Bi-weekly strategy calls, 2 engineers
+- Central pipeline reporting across companies
 - Voice AI add-on via AI Placers
-- Dedicated PM, quarterly business reviews
-- Priority response SLA
 
-For: PE and VC portfolios, multi-brand groups.
+Targets: 15–30 held meetings per month per company; fund-level pipeline view from
+month two.
+
+For: scaling companies, PE and VC portfolios, multi-brand groups.
 
 ## What every tier includes
 

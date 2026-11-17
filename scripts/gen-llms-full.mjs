@@ -44,6 +44,20 @@ function metaField(src, field) {
   const m = block.match(new RegExp(`(?:^|[\\s{,])${field}:\\s*("(?:[^"\\\\]|\\\\.)*")`, "m"));
   return m ? JSON.parse(m[1]) : null;
 }
+// Shared copy from src/lib/content.ts that FAQ answers interpolate, e.g.
+// a: `${PRICE_SENTENCE} Every engagement...`. Without this those answers would
+// silently drop out of the file.
+const shared = Object.fromEntries(
+  [...readFileSync("src/lib/content.ts", "utf8").matchAll(/^export const ([A-Z_]+)\s*=\s*\n?\s*("(?:[^"\\]|\\.)*");/gm)]
+    .map((m) => [m[1], JSON.parse(m[2])]),
+);
+const lit = (s) =>
+  s[0] === "`"
+    ? s.slice(1, -1).replace(/\$\{(\w+)\}/g, (_, k) => {
+        if (!(k in shared)) throw new Error(`gen-llms-full: unknown \${${k}} in a FAQ`);
+        return shared[k];
+      })
+    : JSON.parse(s);
 // faqs: [{ q: "...", a: "..." }, ...]
 function faqs(src) {
   const start = src.search(/^const (faqs|FAQS)\b/m);
@@ -52,9 +66,9 @@ function faqs(src) {
   const end = slice.search(/^\];/m);
   const body = end < 0 ? slice : slice.slice(0, end);
   const out = [];
-  const re = /\bq:\s*("(?:[^"\\]|\\.)*")\s*,\s*\n?\s*a:\s*("(?:[^"\\]|\\.)*")/g;
+  const re = /\bq:\s*("(?:[^"\\]|\\.)*")\s*,\s*\n?\s*a:\s*("(?:[^"\\]|\\.)*"|`[^`]*`)/g;
   let m;
-  while ((m = re.exec(body))) out.push({ q: JSON.parse(m[1]), a: JSON.parse(m[2]) });
+  while ((m = re.exec(body))) out.push({ q: JSON.parse(m[1]), a: lit(m[2]) });
   return out;
 }
 

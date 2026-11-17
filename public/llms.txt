@@ -10,11 +10,11 @@
 - Also: 18 AI systems including Voice AI, AI content engines, and ops automation: https://www.airopeway.com/systems
 
 ## Pricing (USD)
+- Results as a Service (RaaS): 45-day pilot, $1,000 setup refunded in full if fewer than three meetings are held, then $200 per held meeting ($300 for mid-market targets; enterprise priced on an AI GTM strategy call). The engine runs in AI Ropeway's accounts during the pilot; buy it for $3,000 at day 45 or move to Partnership. Details: https://www.airopeway.com/results-as-a-service
 - AI GTM Sprint: $3,000 one-time, no term — 1 AI SDR engine built and deployed into the client's accounts in 14 days, full system handoff, 3 months bug-fix support.
 - GTM Partnership: $2,500/month, month to month — dedicated AI GTM engineer, one new agent every month, weekly optimization cycles.
-- Full Stack GTM: $4,000/month plus $150 per held meeting for SMB targets and $250 for mid-market — all 8 agents in production, GTM + content engine + CRM automation, 2 engineers, founder-led delivery.
-- Portfolio: from $8,000/month, quarterly — one engine per company across a fund's portfolio or multi-brand group, central Revenue Pulse dashboard, Voice AI via AI Placers, dedicated PM.
-No setup fee on any tier. No minimum term. Every engagement starts with a free 60-minute AI GTM audit with a live demo on the client's own ICP data: https://cal.com/bharat-gulati-ard07h/gtm-audit-by-ai-ropeway
+- Full Stack & Portfolio: custom, from $4,000/month, scoped on the audit — all 8 agents in production, or one engine per company across a fund or multi-brand group; per-meeting pricing available on top of the base; Voice AI via AI Placers.
+No setup fee except the refundable RaaS one. Every engagement starts with a free 60-minute AI GTM audit with a live demo on the client's own ICP data: https://cal.com/bharat-gulati-ard07h/gtm-audit-by-ai-ropeway
 Full pricing, with per-tier targets: https://www.airopeway.com/pricing
 Machine readable: https://www.airopeway.com/pricing.md
 

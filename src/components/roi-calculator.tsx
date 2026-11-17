@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 import { Cta } from "@/components/cta";
 import { track } from "@/components/track-events";
 
@@ -12,13 +13,12 @@ type Plan = "sprint" | "partnership" | "fullstack";
 // Pricing as published on /pricing. Keep in sync with the tiers there.
 const SPRINT = 3000;
 const PARTNERSHIP_MO = 2500;
-const FULLSTACK_BASE_MO = 4000;
-const FULLSTACK_PER_MEETING = { smb: 150, midmarket: 250 } as const;
+const FULLSTACK_BASE_MO = 4000; // "from" price; final scope is custom
 
 const plans: { id: Plan; label: string; sub: string }[] = [
   { id: "sprint", label: "Sprint", sub: "$3k one-time" },
   { id: "partnership", label: "Partnership", sub: "$3k + $2.5k/mo" },
-  { id: "fullstack", label: "Full Stack", sub: "$4k/mo + per meeting" },
+  { id: "fullstack", label: "Full Stack", sub: "from $4k/mo" },
 ];
 
 export function RoiCalculator() {
@@ -26,7 +26,6 @@ export function RoiCalculator() {
   const [costPerRep, setCostPerRep] = useState(96000);
   const [plan, setPlan] = useState<Plan>("partnership");
   const [meetings, setMeetings] = useState(15);
-  const [segment, setSegment] = useState<keyof typeof FULLSTACK_PER_MEETING>("smb");
   const tracked = useRef(false);
   const mark = () => {
     if (tracked.current) return;
@@ -48,8 +47,7 @@ export function RoiCalculator() {
     aiAnnual = SPRINT + PARTNERSHIP_MO * 12;
     aiMeetingsAnnual = 12 * 12; // target: 8–15 meetings/month
   } else {
-    const perMeeting = FULLSTACK_PER_MEETING[segment];
-    aiAnnual = (FULLSTACK_BASE_MO + perMeeting * meetings) * 12;
+    aiAnnual = FULLSTACK_BASE_MO * 12;
     aiMeetingsAnnual = meetings * 12;
   }
 
@@ -106,6 +104,9 @@ export function RoiCalculator() {
               </button>
             ))}
           </div>
+          <p className="mt-2 text-xs text-ink-faint">
+            Rather pay only for results? The <Link href="/results-as-a-service" className="text-accent hover:underline">RaaS pilot</Link> is $200 per held meeting, $300 for mid-market.
+          </p>
         </div>
 
         {plan === "fullstack" && (
@@ -124,17 +125,6 @@ export function RoiCalculator() {
                 <span className="font-display w-10 text-right text-xl font-bold text-ink">{meetings}</span>
               </div>
               <p className="mt-2 text-xs text-ink-faint">Full Stack target is 15–30 held meetings a month once all eight agents are live.</p>
-            </div>
-            <div>
-              <label className="mono-label text-ink-faint">Your target accounts</label>
-              <div className="mt-3 grid grid-cols-2 gap-2">
-                <button onClick={() => { mark(); setSegment("smb"); }} className={btn(segment === "smb")}>
-                  SMB<br /><span className="text-xs text-ink-faint">$150 per meeting held</span>
-                </button>
-                <button onClick={() => { mark(); setSegment("midmarket"); }} className={btn(segment === "midmarket")}>
-                  Mid-market<br /><span className="text-xs text-ink-faint">$250 per meeting held</span>
-                </button>
-              </div>
             </div>
           </>
         )}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
+import { PRICE_SENTENCE, PRICE_SHORT, TERMS_SHORT } from "@/lib/content";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "artisan-alternative";
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Is AI Ropeway an Artisan competitor?", a: "Same job, opposite model. Artisan's Ava is a subscription AI BDR you manage inside their platform. AI Ropeway builds a custom AI GTM engine and ships the code into your own repo, so you own the whole system." },
   { q: "What is the core difference?", a: "Artisan is an all-in-one AI BDR product. AI Ropeway is a bespoke engine built for your ICP, running in your accounts, using best-of-breed tools as data layers inside it — and you keep the code if you ever leave." },
-  { q: "Which costs less?", a: "Artisan is a subscription — check their site for current tiers. AI Ropeway is $3,000 one-time for a 14-day Sprint, $2,500/month for an ongoing partnership, or $4,000/month plus $150–$250 per held meeting for the full eight-agent stack. No setup fee, no minimum term. Compare against a hire in the ROI calculator." },
+  { q: "Which costs less?", a: `Artisan is a subscription — check their site for current tiers. ${PRICE_SENTENCE} Compare against a hire in the ROI calculator.` },
   { q: "When is Artisan the better call?", a: "If you want a single all-in-one AI BDR product with a managed UI and minimal setup, Artisan is a strong pick. If you want to own and shape the system around your ICP, pick the engine." },
 ];
 
@@ -46,8 +47,8 @@ const jsonLd = {
 const rows = [
   ["Product model", "All-in-one AI BDR platform (Ava)", "Custom AI GTM engine in your stack"],
   ["What you own", "Access while subscribed", "The code, forever"],
-  ["Pricing", "from $250 · Intern $280 · Employee $660/mo · Ent. ~$1.5–3k/mo", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
-  ["Setup fee / minimum term", "None listed; Enterprise on annual contract", "None / none"],
+  ["Pricing", "from $250 · Intern $280 · Employee $660/mo · Ent. ~$1.5–3k/mo", PRICE_SHORT],
+  ["Setup fee / minimum term", "None listed; Enterprise on annual contract", TERMS_SHORT],
   ["Personalization", "Platform AI", "Written off the signal that fired, for your ICP"],
   ["Runs in", "Artisan's platform", "Your accounts, your infrastructure"],
   ["Data / enrichment layer", "Bundled", "Best-of-breed (Clay, etc.) inside the engine"],
