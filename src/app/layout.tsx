@@ -169,17 +169,37 @@ const jsonLd = {
     },
     {
       "@type": "Service",
-      "@id": `${SITE_URL}/#service-fullstack`,
-      name: "Full Stack GTM",
+      "@id": `${SITE_URL}/#service-raas`,
+      name: "Results as a Service (RaaS) pilot",
       description:
-        "All eight AI GTM agents in production: signal detection, sourcing, outreach, reply triage, CRM automation, content, pipeline analytics.",
+        "45-day outbound pilot billed per held meeting. $1,000 setup, refunded if fewer than three meetings are held. $200 per held meeting, $300 for mid-market targets, enterprise priced on a strategy call. Buy the engine for $3,000 at day 45.",
+      url: `${SITE_URL}/results-as-a-service`,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      serviceType: "Pay-per-meeting outbound",
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "200",
+          priceCurrency: "USD",
+          unitText: "per held meeting",
+        },
+      },
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service-fullstack`,
+      name: "Full Stack & Portfolio",
+      description:
+        "All eight AI GTM agents in production across GTM, content and RevOps, or one engine per company across a portfolio. Scoped on the audit.",
       provider: { "@id": `${SITE_URL}/#organization` },
       serviceType: "Full AI GTM Stack",
       offers: {
         "@type": "Offer",
         price: "4000",
         priceCurrency: "USD",
-        description: "Monthly base plus $150–$250 per held meeting",
+        description: "Custom scope, from $4,000 per month",
       },
     },
   ],

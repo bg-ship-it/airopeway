@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
+import { PRICE_SHORT, TERMS_SHORT } from "@/lib/content";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "selling-com-alternative";
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Is AI Ropeway a Selling.com competitor?", a: "Only partly. Selling.com sells contact data plus the tools to work it: sequences, a power dialer, AI personas, intent signals. AI Ropeway builds a custom engine that decides who to contact and why, writes the outreach off the signal, and handles replies and CRM. The engine can run on Selling.com data, or on Apollo, Clay or your own CRM." },
   { q: "What is the main difference?", a: "Selling.com gives your SDR team a bigger database and a faster dialer. It assumes you have the team. AI Ropeway replaces most of the team's manual work with eight owned agents and ships the code into your repo. Selling.com is demo-gated and billed annually; AI Ropeway publishes its prices and has no minimum term." },
-  { q: "Which is more affordable?", a: "Selling.com does not publish prices; G2 lists annual billing with a short trial. AI Ropeway is $3,000 one-time for a Sprint, $2,500 a month for Partnership, or $4,000 a month plus $150–$250 per held meeting for Full Stack. If you keep a Selling.com seat for the data, the engine sits on top of it." },
+  { q: "Which is more affordable?", a: "Selling.com does not publish prices; G2 lists annual billing with a short trial. AI Ropeway is $200 per held meeting on a 45-day Results as a Service pilot, $3,000 one-time for a Sprint, or $2,500 a month for Partnership. If you keep a Selling.com seat for the data, the engine sits on top of it." },
   { q: "Can the engine use Selling.com as its data source?", a: "Yes. The Lead Sourcer and Account Mapper agents take any provider with an API or CSV export. Selling.com exports to Salesforce, HubSpot, Zoho and Salesloft, and has an API, so it slots in as the data layer like Apollo or Clay would." },
   { q: "When should I choose Selling.com?", a: "If you have an SDR team, your bottleneck is contact coverage and dial volume, and you sell into large enterprises where their database is deepest, buy the platform. If your bottleneck is that nobody is running outbound at all, buy the engine." },
 ];
@@ -49,8 +50,8 @@ const jsonLd = {
 const rows = [
   ["Product model", "B2B contact database with sequences, dialer and intent signals", "Custom AI GTM engine shipped into your stack"],
   ["What you own", "Exports while subscribed; platform access ends on cancel", "The code, forever"],
-  ["Pricing", "Not published; demo-gated, billed annually, short trial", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
-  ["Setup fee / minimum term", "Annual contract", "None / none"],
+  ["Pricing", "Not published; demo-gated, billed annually, short trial", PRICE_SHORT],
+  ["Setup fee / minimum term", "Annual contract", TERMS_SHORT],
   ["Who does the work", "Your SDRs, using their tools", "Eight owned agents, one dedicated engineer"],
   ["Data coverage", "386M contacts, 65M companies, strongest at 1,000+ employee enterprises", "Whatever you already pay for: Apollo, Clay, Selling.com, your CRM"],
   ["Signal detection", "Buyerwatch intent and Selling Signals inside the platform", "Intent Watcher agent, tuned to your ICP, any source"],
@@ -84,7 +85,7 @@ export default function Post() {
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Where a custom engine wins</h2>
             <p>Selling.com assumes you have the team. It makes SDRs faster; it does not replace the judgement of who to contact this week, what to say, and what to do when they reply. Those three decisions are where an AI Ropeway engine lives. The Intent Watcher decides who, the Sequence Composer writes off the signal that fired, and the Reply Triager and CRM Auto-Pilot close the loop without a human touching the inbox.</p>
             <p>The engine is data-agnostic. It takes Selling.com exports, Apollo, Clay or your own CRM as the sourcing layer, so buying the engine does not mean leaving a database you like. It means the database stops being the product and starts being an input.</p>
-            <p>The commercial model is the other difference. Selling.com is demo-gated and billed annually. AI Ropeway prices are on the page, there is no setup fee, no minimum term, and the code ships into your GitHub at every tier.</p>
+            <p>The commercial model is the other difference. Selling.com is demo-gated and billed annually. AI Ropeway prices are on the page. Sprint and Partnership have no setup fee and no minimum term, and the code ships into your GitHub. The <Link href="/results-as-a-service" className="text-accent hover:underline">Results as a Service</Link> pilot bills per held meeting and hands the code over when you buy the engine at day 45.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Honest comparison</h2>
             <div className="my-6 overflow-x-auto rounded-2xl border border-line">

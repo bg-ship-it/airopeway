@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Cta } from "@/components/cta";
 import { PostSources, sourcesToCitations, type Source } from "@/components/post-sources";
+import { PRICE_SHORT, TERMS_SHORT } from "@/lib/content";
 
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "revengineer-alternative";
@@ -31,8 +32,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   { q: "Is AI Ropeway a RevEngineer competitor?", a: "They target the same outcome, qualified meetings from signal-based outbound, with opposite models. RevEngineer embeds a retainer team that runs the engine for you. AI Ropeway builds the engine and ships the code into your repo." },
-  { q: "What is the main difference?", a: "Ownership and term. RevEngineer is a monthly retainer with setup fees and three to twelve month minimums; the engine stays with them. AI Ropeway is $3,000 one-time, $2,500 a month, or $4,000 a month plus $150–$250 per held meeting, no minimum, and you keep the code." },
-  { q: "Which is more affordable?", a: "RevEngineer's Starter tier is $4,500 a month plus $5,000 setup on a three-month minimum, so $18,500 for the first quarter. AI Ropeway's Sprint is $3,000 one-time. At their Growth tier the first year is listed at $96,700; a year of Full Stack at 15 held meetings a month is about $75,000 with no setup fee and no term." },
+  { q: "What is the main difference?", a: "Ownership and term. RevEngineer is a monthly retainer with setup fees and three to twelve month minimums; the engine stays with them. AI Ropeway is $200 per held meeting on a 45-day Results as a Service pilot, or $3,000 one-time for a Sprint, or $2,500 a month with no minimum, and you keep the code." },
+  { q: "Which is more affordable?", a: "RevEngineer's Starter tier is $4,500 a month plus $5,000 setup on a three-month minimum, so $18,500 for the first quarter. AI Ropeway's Sprint is $3,000 one-time. At their Growth tier the first year is listed at $96,700; a 45-day Results as a Service pilot at 15 held meetings a month comes to about $5,500, setup included." },
   { q: "Does RevEngineer use human SDRs?", a: "Yes, from the Growth tier up. One human BDR runs four LinkedIn profiles on Growth, two run eight on Scale, and a four-person pod runs sixteen on Enterprise. Starter is AI-only with a fractional CMO." },
   { q: "When should I choose RevEngineer?", a: "If you are an international founder entering the US, or a fund that wants one vendor across a portfolio, and you want people on the account rather than a system in your repo, RevEngineer is a reasonable option. If you want to own the system, pick the engine." },
 ];
@@ -49,8 +50,8 @@ const jsonLd = {
 const rows = [
   ["Product model", "Retainer growth arm: AI signal mining plus human BDR pods", "Custom AI GTM engine shipped into your stack"],
   ["What you own", "Pipeline, playbooks, custom tools (Enterprise only). Engine stays with them", "The code, forever"],
-  ["Pricing", "$4,500 / $8,500 / $22,500 per month, Enterprise custom", "$3k one-time · $2.5k/mo · $4k/mo + $150–$250 per held meeting"],
-  ["Setup fee / minimum term", "$5k / $10k / $15k / $30k setup; 3 / 6 / 12 / 12 months", "None / none"],
+  ["Pricing", "$4,500 / $8,500 / $22,500 per month, Enterprise custom", PRICE_SHORT],
+  ["Setup fee / minimum term", "$5k / $10k / $15k / $30k setup; 3 / 6 / 12 / 12 months", TERMS_SHORT],
   ["Who does the work", "0 to 4 human BDRs running 2 to 16 LinkedIn profiles, plus AI", "Eight owned agents, one dedicated engineer"],
   ["Primary channel", "LinkedIn-first, email second, retargeting", "Email-first, LinkedIn where the signal warrants it"],
   ["Data layer", "Apollo, Clearbit, ZoomInfo cascade on their side", "Best-of-breed (Clay, Apollo, etc.) inside your engine"],
@@ -84,7 +85,7 @@ export default function Post() {
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Where a custom engine wins</h2>
             <p>RevEngineer is a retainer. When the engagement ends, the pricing FAQ says you keep &ldquo;the pipeline, the intelligence, the playbooks&rdquo; and any custom tools built on the Enterprise tier. What you do not keep is the engine itself: the signal mining, the sequencing, the enrichment cascade and the LinkedIn pods all run on their side.</p>
             <p>An AI Ropeway engine runs in your accounts from day one. The Intent Watcher, Lead Sourcer, Sequence Composer and Reply Triager agents are deployed into your repo and your infrastructure, with Clay, Apollo, Smartlead or whatever data layer you already pay for wired in underneath. If you stop working with us, the engine keeps running.</p>
-            <p>The second difference is commitment. RevEngineer&rsquo;s Starter tier is a three-month minimum with a $5,000 setup fee. Growth is six months and $10,000 setup. Scale and Enterprise are twelve months with $15,000 and $30,000 setup. AI Ropeway has no setup fee and no minimum term on any tier.</p>
+            <p>The second difference is commitment. RevEngineer&rsquo;s Starter tier is a three-month minimum with a $5,000 setup fee. Growth is six months and $10,000 setup. Scale and Enterprise are twelve months with $15,000 and $30,000 setup. AI Ropeway&rsquo;s Sprint and Partnership have no setup fee and no minimum term. The <Link href="/results-as-a-service" className="text-accent hover:underline">Results as a Service</Link> pilot has a $1,000 setup fee that comes back if fewer than three meetings are held.</p>
 
             <h2 className="font-display mt-12 mb-3 text-2xl font-bold text-ink md:text-3xl">Honest comparison</h2>
             <div className="my-6 overflow-x-auto rounded-2xl border border-line">

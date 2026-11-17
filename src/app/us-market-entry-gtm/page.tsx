@@ -201,7 +201,16 @@ export default function Page() {
 
           <h2 className="font-display mt-10 mb-2 text-2xl font-bold text-ink">Price</h2>
           <p>
-            Sprint at $3,000 one-time, plus the US market entry pack at $750 one-time. The pack covers the
+            The lowest-risk way in is{" "}
+            <Link href="/results-as-a-service" className="text-accent hover:underline">
+              Results as a Service
+            </Link>
+            : a 45-day pilot with a $1,000 setup fee, refunded if fewer than three meetings are held, then $200
+            for each US meeting that actually happens ($300 for mid-market targets). You pay for meetings, not
+            for the experiment. At day 45 you buy the engine for $3,000 or move to Partnership.
+          </p>
+          <p>
+            To own it from day one: Sprint at $3,000 one-time, plus the US market entry pack at $750 one-time. The pack covers the
             US-hosted sending domains, US-timed scheduling and a US copy review before anything goes live. No
             setup fee beyond that, no minimum term. Partnership at $2,500 a month if you want an engineer
             adding an agent each month and tuning the sequences as the replies come in. The full ladder is on
