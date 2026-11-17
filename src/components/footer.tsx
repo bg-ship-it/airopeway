@@ -45,6 +45,7 @@ const footerColumns = [
     links: [
       { label: "8 Agents", href: "/#revenue-stack" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Results as a Service", href: "/results-as-a-service" },
       { label: "Founder", href: "/founder" },
       { label: "About", href: "/about" },
       { label: "Book a Call", href: BOOK_URL, external: true },
