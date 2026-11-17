@@ -8,6 +8,7 @@ export const BOOK_URL = "https://cal.com/bharat-gulati-ard07h/gtm-audit-by-ai-ro
 export const nav = [
   { label: "8 Agents", href: "/#revenue-stack" },
   { label: "Pricing", href: "/#pricing" },
+  { label: "RaaS", href: "/results-as-a-service" },
   { label: "Founder", href: "/#founder" },
   { label: "US entry", href: "/us-market-entry-gtm" },
   { label: "More AI Systems", href: "/systems" },

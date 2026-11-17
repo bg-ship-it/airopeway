@@ -259,6 +259,23 @@ export default function PricingPage() {
         </div>
       </section>
 
+      <section className="px-5 pb-6 md:px-8">
+        <Link
+          href="/results-as-a-service"
+          className="focus-ring mx-auto flex max-w-6xl flex-col items-start gap-3 rounded-3xl border-2 border-accent bg-surface px-6 py-5 transition-colors hover:bg-surface-soft sm:flex-row sm:items-center sm:justify-between"
+        >
+          <span>
+            <span className="mono-label text-accent">New · Results as a Service</span>
+            <span className="font-display mt-1 block text-lg font-bold text-ink">
+              Rather pay for results? $300 per held meeting, setup refunded under three.
+            </span>
+          </span>
+          <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-accent">
+            See RaaS pricing <ArrowRight className="size-4" />
+          </span>
+        </Link>
+      </section>
+
       <section className="px-5 pb-8 md:px-8">
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
           {tiers.map((tier, i) => (
