@@ -58,7 +58,7 @@ const steps: [string, string, string][] = [
   ["Day 0", "Fit call", "Free. We agree the ICP, the deal size and exactly what counts as a meeting."],
   ["Days 1–10", "Build", "Target list, signals, sending setup and copy. Nothing goes out until you approve it."],
   ["Days 11–45", "Live", "Meetings land on your calendar. You get the numbers every week."],
-  ["Day 45", "Your call", "Buy the engine, move to Partnership, or stop. Nothing owed beyond the meetings held."],
+  ["Day 45", "Next step", "Buy the engine for $3,000 or move to Partnership."],
 ];
 
 const compare: [string, string, string, string][] = [
@@ -67,7 +67,7 @@ const compare: [string, string, string, string][] = [
   ["Who carries the risk", "Shared", "You, with the Sprint guarantee", "You, month to month"],
   ["Where it runs", "Our accounts during the pilot", "Your accounts from day one", "Your accounts from day one"],
   ["Owning the engine", "Buy it at day 45 for $3,000", "Included", "Included"],
-  ["Term", "45 days, then your call", "One-time", "Cancel any month"],
+  ["Term", "45-day pilot", "One-time", "Cancel any month"],
   ["Best for", "Testing outbound or a new market", "Teams that want to own and run it", "Teams that want it run for them"],
 ];
 
