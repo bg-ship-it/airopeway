@@ -47,7 +47,7 @@ const jbMono = localFont({
 const SITE_URL = "https://www.airopeway.com";
 const TITLE = "AI GTM engines that book meetings | AI Ropeway";
 const DESCRIPTION =
-  "AI GTM engines for B2B founders. Signal detection, enrichment, personalized outreach, reply triage. Live in your stack in 14 days. Live demo on your data.";
+  "AI GTM engines for B2B founders: signals, enrichment, outreach, reply triage. Start on Results as a Service at $200 per held meeting, or own the engine.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

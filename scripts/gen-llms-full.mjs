@@ -104,7 +104,7 @@ const home = byRoute.get("/");
 if (home && !home.title) {
   home.title = "AI GTM engines that book meetings";
   home.desc =
-    "AI GTM engines for B2B founders. Signal detection, enrichment, personalized outreach, reply triage. Live in your stack in 14 days. Live demo on your data.";
+    "AI GTM engines for B2B founders: signals, enrichment, outreach, reply triage. Start on Results as a Service at $200 per held meeting, or own the engine.";
 }
 const pages = rows.filter((r) => !r.route.startsWith("/blog/"));
 

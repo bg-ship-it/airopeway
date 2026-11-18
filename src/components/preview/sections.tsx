@@ -25,7 +25,8 @@ import {
   Mail,
   Globe,
 } from "lucide-react";
-import { BOOK_URL } from "@/lib/content";
+import { BOOK_URL, PRICE_SENTENCE } from "@/lib/content";
+import { tiers } from "@/lib/pricing";
 
 const accentChips = [
   "var(--color-coral)",
@@ -58,7 +59,7 @@ export function Hero() {
         <div className="relative z-10 mx-auto max-w-3xl text-center">
           <span className="mono-label inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface/80 px-4 py-1.5 text-ink-soft">
             <span className="size-1.5 rounded-full bg-accent" />
-            AI GTM engineering · for B2B SaaS founders
+            AI GTM engineering · Results as a Service
           </span>
 
           <h1 className="font-display mt-6 text-[clamp(2.4rem,6vw,4.6rem)] font-bold leading-[1.02]">
@@ -66,21 +67,20 @@ export function Hero() {
             <span className="text-accent">book meetings</span> on autopilot.
             <br />
             <em className="font-medium italic text-ink-muted">
-              Full access to everything we ship.
+              Pay only for the ones that happen.
             </em>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            We design, build, and deploy{" "}
+            We design, build, and run{" "}
             <strong className="font-semibold text-ink">
               AI GTM engines
             </strong>{" "}
             for B2B founders — signal detection, enrichment, personalized
-            outreach, reply triage. Live in your stack in{" "}
-            <strong className="font-semibold text-ink">14 days</strong>.
-            Live demo on{" "}
-            <strong className="font-semibold text-ink">your data</strong> on
-            our first call — before you post the SDR job.
+            outreach, reply triage. Start on Results as a Service at{" "}
+            <strong className="font-semibold text-ink">$200 per held meeting</strong>,
+            setup refunded if fewer than three meetings happen. Buy the engine
+            at day 45, or own it from day one with a Sprint.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -90,20 +90,20 @@ export function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-canvas hover:opacity-80"
             >
-              Book live demo on your data <ArrowRight className="size-4" />
+              Book a RaaS fit call <ArrowRight className="size-4" />
             </a>
             <Link
-              href="/hire-an-sdr"
+              href="/results-as-a-service"
               className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface/80 px-6 py-3 text-sm font-semibold text-ink hover:bg-surface"
             >
-              Hire an SDR, or build this? <ArrowRight className="size-4" />
+              How RaaS works <ArrowRight className="size-4" />
             </Link>
           </div>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-muted">
             <span className="inline-flex items-center gap-1.5">
               <Code2 className="size-4 text-teal" />
-              Full system access, day one
+              Billed only for held meetings
             </span>
             <span className="inline-flex items-center gap-1.5">
               <PlayCircle className="size-4 text-teal" />
@@ -111,16 +111,23 @@ export function Hero() {
             </span>
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="size-4 text-teal" />
-              No lock-in, no SaaS fees
+              Setup refunded under 3 meetings
             </span>
           </div>
+
+          <p className="mt-4 text-sm text-ink-muted">
+            Weighing an SDR hire instead?{" "}
+            <Link href="/hire-an-sdr" className="font-semibold text-accent hover:underline">
+              Compare the first-year cost
+            </Link>
+          </p>
         </div>
 
         <div className="relative z-10 mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-3 md:grid-cols-4">
           {[
-            { val: "14 days", lbl: "First system shipped" },
+            { val: "$200", lbl: "Per held meeting on RaaS" },
             { val: "12+ yrs", lbl: "Founder enterprise sales" },
-            { val: "100%", lbl: "System access, day one" },
+            { val: "Week 3", lbl: "First held meetings" },
             { val: "B2B SaaS", lbl: "Primary wedge" },
           ].map((s) => (
             <div
@@ -495,6 +502,13 @@ export function CompareTable() {
       diy: "90 days+",
       us: "14–30 days",
     },
+    {
+      k: "Pay per held meeting",
+      sdr: false,
+      agency: "Often booked, not held",
+      diy: false,
+      us: "$200 on RaaS",
+    },
     { k: "Full system access", sdr: false, agency: false, diy: true, us: true },
     {
       k: "Scales 5×",
@@ -589,72 +603,6 @@ export function CompareTable() {
 }
 
 export function PricingTiers() {
-  const tiers = [
-    {
-      name: "AI GTM Sprint",
-      price: "$3,000",
-      cadence: "one-time",
-      blurb:
-        "1 AI SDR engine, built and deployed in 14 days. Signal detection + enrichment + personalized outreach. Full system handoff.",
-      cta: "Book free AI audit",
-      features: [
-        "1 system shipped in 14 days",
-        "Full system handoff",
-        "ICP & signal config included",
-        "3 months bug-fix support",
-      ],
-      target: "Founders testing AI GTM",
-    },
-    {
-      name: "GTM Partnership",
-      price: "$2,500",
-      cadence: "/mo · ongoing",
-      blurb:
-        "Dedicated AI GTM engineer. 1 new system every month. Continuous optimization. Weekly check-ins.",
-      cta: "Book free AI audit",
-      features: [
-        "Dedicated GTM engineer",
-        "Ship a new agent every month",
-        "Weekly optimization cycles",
-        "Slack channel access",
-      ],
-      target: "Growing B2B teams",
-    },
-    {
-      name: "Full Stack GTM",
-      price: "$5,000",
-      cadence: "/mo · 2 engineers",
-      blurb:
-        "Full Revenue Stack live: GTM + content engine + CRM automation. Bi-weekly strategy calls.",
-      cta: "Book free AI audit",
-      featured: true,
-      features: [
-        "All 8 agents in production",
-        "GTM + content + RevOps",
-        "Bi-weekly strategy calls",
-        "Founder-led delivery",
-        "Quarterly architecture review",
-      ],
-      target: "Scaling companies",
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      cadence: "multi-system",
-      blurb:
-        "Multi-system deployment + Voice AI bundle (via AI Placers). Dedicated PM. Quarterly business reviews.",
-      cta: "Book free AI audit",
-      features: [
-        "Multi-system custom build",
-        "Voice AI add-on (via AI Placers)",
-        "Dedicated PM",
-        "Quarterly business reviews",
-        "Priority response SLA",
-      ],
-      target: "Mid-market B2B",
-    },
-  ];
-
   return (
     <section id="pricing" className="px-3 md:px-5">
       <div className="mx-auto mt-6 max-w-6xl rounded-3xl border border-line bg-surface-soft px-5 py-20 md:px-12 md:py-24">
@@ -665,13 +613,12 @@ export function PricingTiers() {
             decks before the price.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            Your AI agents work{" "}
-            <strong className="font-semibold text-ink">24/7</strong>. The
-            founder works{" "}
+            Start on{" "}
             <strong className="font-semibold text-ink">
-              alongside your team
+              Results as a Service
             </strong>{" "}
-            — weekly meetings, real ownership, full system access. No
+            and pay only for meetings that happen, or own the engine from day
+            one. Either way the founder works alongside your team. No
             offshoring layers. No junior-dev surprises.
           </p>
         </div>
@@ -688,7 +635,7 @@ export function PricingTiers() {
             >
               {t.featured && (
                 <span className="mono-label mb-3 inline-block w-fit rounded-full bg-accent px-3 py-1 text-canvas">
-                  FLAGSHIP
+                  START HERE
                 </span>
               )}
               <h3 className="font-display text-lg font-bold">{t.name}</h3>
@@ -724,13 +671,26 @@ export function PricingTiers() {
               >
                 {t.cta} <ArrowRight className="size-3.5" />
               </a>
+              {t.more?.map((m) => (
+                <Link
+                  key={m.href}
+                  href={m.href}
+                  {...(m.external && { target: "_blank", rel: "noopener noreferrer" })}
+                  className="mt-3 text-center text-[11px] font-semibold text-accent underline-offset-2 hover:underline"
+                >
+                  {m.label}
+                </Link>
+              ))}
             </div>
           ))}
         </div>
 
         <p className="mt-6 text-xs text-ink-muted">
           Every engagement starts with a free 60-minute AI GTM audit and live
-          demo on your ICP data.
+          demo on your ICP data.{" "}
+          <Link href="/pricing" className="font-semibold text-accent hover:underline">
+            Full pricing, targets and add-ons
+          </Link>
         </p>
       </div>
     </section>
@@ -879,7 +839,7 @@ export function WhoThisIsFor() {
               <Check className="size-5" /> This is for you if
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-ink-soft">
-              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />B2B SaaS or services company, $100k–$20M ARR</li>
+              <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />B2B SaaS or services company with paying customers and a deal worth $5,000+ a year</li>
               <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Founder-led or small sales team (1–20 reps)</li>
               <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />CRM/ERP already in place (HubSpot, Salesforce, GHL, etc.)</li>
               <li className="flex items-start gap-2"><Check className="mt-0.5 size-4 shrink-0 text-teal" />Outbound is a priority channel (or should be)</li>
@@ -895,7 +855,7 @@ export function WhoThisIsFor() {
               <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Pre-revenue or pre-product — you need product-market fit first</li>
               <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Pure inbound/PLG with no outbound intent</li>
               <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Looking for a SaaS tool — we build and hand off custom systems</li>
-              <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Enterprise with 12-month procurement cycles for a $3k project</li>
+              <li className="flex items-start gap-2"><X className="mt-0.5 size-4 shrink-0 text-ink-faint" />Deal size under $2,000 a year — the meeting maths does not work</li>
             </ul>
           </div>
         </div>
@@ -1011,7 +971,7 @@ export function ObjectionFaq() {
     },
     {
       q: "Who owns the system and data?",
-      a: "You do. 100%. The system and workflows run in your accounts with full access. If you stop working with us tomorrow, everything keeps running.",
+      a: "On a Sprint or Partnership, you do from day one: the system and workflows run in your accounts with full access, and keep running if you stop working with us. On a Results as a Service pilot it runs in our accounts for 45 days, then moves to your GitHub and accounts when you buy the engine for $3,000.",
     },
     {
       q: "Can my team maintain this without you?",
@@ -1056,7 +1016,7 @@ export function AeoAnswerBlocks() {
     },
     {
       q: "How much does AI GTM automation cost?",
-      a: "AI Ropeway starts at $3,000 for a one-time AI GTM Sprint (1 system, 14-day deployment). Ongoing partnerships run $2,500–$5,000/month with continuous optimization and new agent deployments. Every engagement starts with a free 60-minute AI GTM audit.",
+      a: `${PRICE_SENTENCE} Every engagement starts with a free 60-minute AI GTM audit.`,
     },
     {
       q: "AI Ropeway vs Clay vs Apollo — what's the difference?",

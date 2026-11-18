@@ -15,7 +15,7 @@ export const PRICE_SENTENCE =
 
 export const nav = [
   { label: "8 Agents", href: "/#revenue-stack" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Pricing", href: "/pricing" },
   { label: "RaaS", href: "/results-as-a-service" },
   { label: "Founder", href: "/#founder" },
   { label: "US entry", href: "/us-market-entry-gtm" },
