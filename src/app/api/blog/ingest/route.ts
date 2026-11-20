@@ -75,6 +75,24 @@ type MainImage = {
   asset: { _type: "reference"; _ref: string };
 };
 
+/**
+ * Sanity-safe filename from an image URL. Signed URLs (Runway's CloudFront ?_jwt=...)
+ * carry a query string that must not end up in the filename: Sanity rejects it with
+ * 400 "Validation failed". Uses the path only, swaps odd characters, caps the length.
+ */
+function imageFilename(url: string, fallback = "hero.png"): string {
+  let name = "";
+  try {
+    name = new URL(url).pathname.split("/").pop() || "";
+  } catch {
+    return fallback;
+  }
+  const dot = name.lastIndexOf(".");
+  const ext = dot > 0 ? name.slice(dot).replace(/[^A-Za-z0-9.]/g, "").slice(0, 6) : "";
+  const base = (dot > 0 ? name.slice(0, dot) : name).replace(/[^A-Za-z0-9_-]+/g, "_").slice(0, 80);
+  return base ? base + ext : fallback;
+}
+
 /** Download an image by URL and upload it into the Sanity asset store. */
 async function uploadHeroImage(url?: string, alt?: string): Promise<MainImage | null> {
   if (!url) return null;
@@ -88,7 +106,7 @@ async function uploadHeroImage(url?: string, alt?: string): Promise<MainImage | 
   const contentType = response.headers.get("content-type") || "image/png";
   const buffer = Buffer.from(await response.arrayBuffer());
   const asset = await writeClient.assets.upload("image", buffer, {
-    filename: url.split("/").pop() || "hero.png",
+    filename: imageFilename(url),
     contentType,
   });
 
