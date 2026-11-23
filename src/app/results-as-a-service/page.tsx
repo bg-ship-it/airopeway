@@ -7,7 +7,7 @@ import { Reveal } from "@/components/reveal";
 import { BOOK_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Results as a Service (RaaS) · pay per held meeting",
+  title: "Results as a Service (RaaS) · $200 a meeting",
   description:
     "Results as a Service for B2B outbound: $1,000 setup, refunded under three held meetings, then $200 per meeting that takes place. 45 days, then buy the engine.",
   alternates: { canonical: "/results-as-a-service" },

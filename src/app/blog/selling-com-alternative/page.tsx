@@ -8,9 +8,9 @@ import { PRICE_SHORT, TERMS_SHORT } from "@/lib/content";
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "selling-com-alternative";
 const TITLE =
-  "Selling.com alternative: a data platform you staff vs an engine you own";
+  "Selling.com alternative: data vs owned engine";
 const DESCRIPTION =
-  "Selling.com (formerly Infotelligent) sells a 386M-contact database with sequences and a dialer, demo-gated and billed annually. AI Ropeway builds the engine that runs on whatever data you already pay for. Honest comparison.";
+  "Selling.com sells a 386M-contact database with sequences and a dialer, demo-gated and billed annually. AI Ropeway builds the engine that runs on your data.";
 const PUBLISHED = "2026-09-14T09:00:00.000Z";
 const MODIFIED = "2026-09-14T09:00:00.000Z";
 const PRICING_CHECKED = "14 September 2026";

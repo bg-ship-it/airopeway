@@ -11,9 +11,9 @@ import { tiers } from "@/lib/pricing";
 const SITE_URL = "https://www.airopeway.com";
 
 export const metadata: Metadata = {
-  title: "Pricing · Results as a Service from $200 a meeting",
+  title: "Pricing · $200 per held meeting",
   description:
-    "AI GTM pricing, published in full. Results as a Service: $200 per held meeting, setup refunded under three. Or own the engine: Sprint $3k once, Partnership $2.5k/mo.",
+    "AI GTM pricing in full. Results as a Service: $200 per held meeting, setup refunded under three. Or own the engine: Sprint $3k once, Partnership $2.5k/mo.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     images: ["/opengraph-image"],
