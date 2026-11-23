@@ -8,9 +8,9 @@ import { PRICE_SHORT, TERMS_SHORT } from "@/lib/content";
 const SITE_URL = "https://www.airopeway.com";
 const SLUG = "selling-com-alternative";
 const TITLE =
-  "Selling.com alternative: a data platform you staff vs an engine you own";
+  "Selling.com alternative: data vs owned engine";
 const DESCRIPTION =
-  "Selling.com (formerly Infotelligent) sells a 386M-contact database with sequences and a dialer, demo-gated and billed annually. AI Ropeway builds the engine that runs on whatever data you already pay for. Honest comparison.";
+  "Selling.com sells a 386M-contact database with sequences and a dialer, demo-gated and billed annually. AI Ropeway builds the engine that runs on your data.";
 const PUBLISHED = "2026-09-14T09:00:00.000Z";
 const MODIFIED = "2026-09-14T09:00:00.000Z";
 const PRICING_CHECKED = "14 September 2026";
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: "Is AI Ropeway a Selling.com competitor?", a: "Only partly. Selling.com sells contact data plus the tools to work it: sequences, a power dialer, AI personas, intent signals. AI Ropeway builds a custom engine that decides who to contact and why, writes the outreach off the signal, and handles replies and CRM. The engine can run on Selling.com data, or on Apollo, Clay or your own CRM." },
   { q: "What is the main difference?", a: "Selling.com gives your SDR team a bigger database and a faster dialer. It assumes you have the team. AI Ropeway replaces most of the team's manual work with eight owned agents and ships the code into your repo. Selling.com is demo-gated and billed annually; AI Ropeway publishes its prices and has no minimum term." },
-  { q: "Which is more affordable?", a: "Selling.com does not publish prices; G2 lists annual billing with a short trial. AI Ropeway is $200 per held meeting on a 45-day Results as a Service pilot, $3,000 one-time for a Sprint, or $2,500 a month for Partnership. If you keep a Selling.com seat for the data, the engine sits on top of it." },
+  { q: "Which is more affordable?", a: "Selling.com does not publish prices; G2 lists annual billing with a short trial. AI Ropeway is $250 per held meeting on a 45-day Results as a Service pilot, $3,000 one-time for a Sprint, or $2,500 a month for Partnership. If you keep a Selling.com seat for the data, the engine sits on top of it." },
   { q: "Can the engine use Selling.com as its data source?", a: "Yes. The Lead Sourcer and Account Mapper agents take any provider with an API or CSV export. Selling.com exports to Salesforce, HubSpot, Zoho and Salesloft, and has an API, so it slots in as the data layer like Apollo or Clay would." },
   { q: "When should I choose Selling.com?", a: "If you have an SDR team, your bottleneck is contact coverage and dial volume, and you sell into large enterprises where their database is deepest, buy the platform. If your bottleneck is that nobody is running outbound at all, buy the engine." },
 ];

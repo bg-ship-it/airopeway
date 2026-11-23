@@ -21,10 +21,10 @@ export type Tier = {
 export const tiers: Tier[] = [
   {
     name: "Results as a Service",
-    price: "$200",
+    price: "$250",
     cadence: "per held meeting · 45-day pilot",
     blurb:
-      "We build and run the outbound. You pay when a prospect actually shows up. $1,000 setup, refunded in full if the pilot books fewer than three held meetings.",
+      "We build and run the outbound. You pay when a prospect actually shows up. $1,000 setup, refunded in full if the pilot books fewer than five held meetings.",
     cta: "Book a RaaS fit call",
     featured: true,
     perMeeting: "200-300",
@@ -34,8 +34,8 @@ export const tiers: Tier[] = [
     ],
     target: "Teams that want results before commitment",
     features: [
-      "$200 per held meeting, $300 for mid-market targets",
-      "$1,000 setup, refunded under 3 held meetings",
+      "$250 per held meeting, $300 for mid-market targets",
+      "$1,000 setup, refunded under 5 held meetings",
       "Buy the engine at day 45 for $3,000",
     ],
     outcomes: [

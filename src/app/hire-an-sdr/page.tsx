@@ -42,7 +42,7 @@ const options = [
   {
     name: "Build the engine",
     cost: "$3k once",
-    unit: "or $2.5k/mo, or $200 per held meeting on a RaaS pilot",
+    unit: "or $2.5k/mo, or $250 per held meeting on a RaaS pilot",
     detail: "A 14-day Sprint ships one engine into your own repo and accounts. Partnership adds a new agent each month. Results as a Service runs it for 45 days and bills only for meetings that happen, then you buy the engine.",
     catch: "You own the code. It keeps running whether or not we do.",
     win: true,

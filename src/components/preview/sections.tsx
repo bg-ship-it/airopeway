@@ -78,8 +78,8 @@ export function Hero() {
             </strong>{" "}
             for B2B founders — signal detection, enrichment, personalized
             outreach, reply triage. Start on Results as a Service at{" "}
-            <strong className="font-semibold text-ink">$200 per held meeting</strong>,
-            setup refunded if fewer than three meetings happen. Buy the engine
+            <strong className="font-semibold text-ink">$250 per held meeting</strong>,
+            setup refunded if fewer than five meetings happen. Buy the engine
             at day 45, or own it from day one with a Sprint.
           </p>
 
@@ -111,7 +111,7 @@ export function Hero() {
             </span>
             <span className="inline-flex items-center gap-1.5">
               <ShieldCheck className="size-4 text-teal" />
-              Setup refunded under 3 meetings
+              Setup refunded under 5 meetings
             </span>
           </div>
 
@@ -125,7 +125,7 @@ export function Hero() {
 
         <div className="relative z-10 mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-3 md:grid-cols-4">
           {[
-            { val: "$200", lbl: "Per held meeting on RaaS" },
+            { val: "$250", lbl: "Per held meeting on RaaS" },
             { val: "12+ yrs", lbl: "Founder enterprise sales" },
             { val: "Week 3", lbl: "First held meetings" },
             { val: "B2B SaaS", lbl: "Primary wedge" },
@@ -507,7 +507,7 @@ export function CompareTable() {
       sdr: false,
       agency: "Often booked, not held",
       diy: false,
-      us: "$200 on RaaS",
+      us: "$250 on RaaS",
     },
     { k: "Full system access", sdr: false, agency: false, diy: true, us: true },
     {

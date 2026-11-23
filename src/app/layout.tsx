@@ -47,7 +47,7 @@ const jbMono = localFont({
 const SITE_URL = "https://www.airopeway.com";
 const TITLE = "AI GTM engines that book meetings | AI Ropeway";
 const DESCRIPTION =
-  "AI GTM engines for B2B founders: signals, enrichment, outreach, reply triage. Start on Results as a Service at $200 per held meeting, or own the engine.";
+  "AI GTM engines for B2B founders: signals, enrichment, outreach, reply triage. Start on Results as a Service at $250 per held meeting, or own the engine.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -172,7 +172,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#service-raas`,
       name: "Results as a Service (RaaS) pilot",
       description:
-        "45-day outbound pilot billed per held meeting. $1,000 setup, refunded if fewer than three meetings are held. $200 per held meeting, $300 for mid-market targets, enterprise priced on a strategy call. Buy the engine for $3,000 at day 45.",
+        "45-day outbound pilot billed per held meeting. $1,000 setup, refunded if fewer than five meetings are held. $250 per held meeting, $300 for mid-market targets, enterprise priced on a strategy call. Buy the engine for $3,000 at day 45.",
       url: `${SITE_URL}/results-as-a-service`,
       provider: { "@id": `${SITE_URL}/#organization` },
       serviceType: "Pay-per-meeting outbound",
@@ -181,7 +181,7 @@ const jsonLd = {
         priceCurrency: "USD",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
-          price: "200",
+          price: "250",
           priceCurrency: "USD",
           unitText: "per held meeting",
         },
