@@ -9,7 +9,7 @@ Last reviewed: 2026-10-14. Targets last reviewed by AI Ropeway: 2026-09-14.
 ## Results as a Service (RaaS) — $250 per held meeting
 
 45-day pilot. $1,000 setup, refunded in full if the pilot books fewer than five held
-meetings. $250 per held meeting, $300 for mid-market targets, enterprise priced on an
+meetings. $250 per held meeting, $350 for mid-market targets, enterprise priced on an
 AI GTM strategy call. A held meeting is one the prospect attends with a buyer inside
 the ICP agreed in writing; poor-fit meetings flagged within 5 business days are not
 billed. The engine runs in AI Ropeway's accounts during the pilot.

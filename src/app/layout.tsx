@@ -172,7 +172,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#service-raas`,
       name: "Results as a Service (RaaS) pilot",
       description:
-        "45-day outbound pilot billed per held meeting. $1,000 setup, refunded if fewer than five meetings are held. $250 per held meeting, $300 for mid-market targets, enterprise priced on a strategy call. Buy the engine for $3,000 at day 45.",
+        "45-day outbound pilot billed per held meeting. $1,000 setup, refunded if fewer than five meetings are held. $250 per held meeting, $350 for mid-market targets, enterprise priced on a strategy call. Buy the engine for $3,000 at day 45.",
       url: `${SITE_URL}/results-as-a-service`,
       provider: { "@id": `${SITE_URL}/#organization` },
       serviceType: "Pay-per-meeting outbound",

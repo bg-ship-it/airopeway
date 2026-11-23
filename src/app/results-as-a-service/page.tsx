@@ -63,7 +63,7 @@ const steps: [string, string, string][] = [
 
 const compare: [string, string, string, string][] = [
   ["Upfront", `${usd(SETUP)}, refundable`, "$3,000", "$2,500 / mo"],
-  ["Per held meeting", `${usd(PER_MEETING)} SMB · $300 mid-market · enterprise on a call`, "None", "None"],
+  ["Per held meeting", `${usd(PER_MEETING)} SMB · $350 mid-market · enterprise on a call`, "None", "None"],
   ["Who carries the risk", "Shared", "You, with the Sprint guarantee", "You, month to month"],
   ["Where it runs", "Our accounts during the pilot", "Your accounts from day one", "Your accounts from day one"],
   ["Owning the engine", "Buy it at day 45 for $3,000", "Included", "Included"],
@@ -166,7 +166,7 @@ export default function ResultsAsAServicePage() {
               </Cta>
             </div>
             <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-soft">
-              {["Setup refunded under 5 meetings", "$300 for mid-market", "Buy the engine at day 45"].map((t) => (
+              {["Setup refunded under 5 meetings", "$350 for mid-market", "Buy the engine at day 45"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="size-4 text-teal" />
                   {t}
@@ -220,7 +220,7 @@ export default function ResultsAsAServicePage() {
               </div>
               <p className="mt-3 text-sm leading-relaxed text-white/65">
                 We build and run the outbound for 45 days. You pay mostly when
-                a prospect shows up. $300 per meeting for mid-market targets.
+                a prospect shows up. $350 per meeting for mid-market targets.
               </p>
               <ul className="mt-6 flex-1 space-y-3">
                 {included.map((f) => (

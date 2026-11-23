@@ -11,7 +11,7 @@ export const BOOK_URL = "https://cal.com/bharat-gulati-ard07h/gtm-audit-by-ai-ro
 export const PRICE_SHORT = "RaaS $250 per held meeting · $3k Sprint · $2.5k/mo";
 export const TERMS_SHORT = "RaaS: $1,000 setup, refunded under 5 meetings · Sprint & Partnership: none / none";
 export const PRICE_SENTENCE =
-  "AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($300 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership.";
+  "AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($350 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership.";
 
 export const nav = [
   { label: "8 Agents", href: "/#revenue-stack" },

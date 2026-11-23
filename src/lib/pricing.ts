@@ -34,7 +34,7 @@ export const tiers: Tier[] = [
     ],
     target: "Teams that want results before commitment",
     features: [
-      "$250 per held meeting, $300 for mid-market targets",
+      "$250 per held meeting, $350 for mid-market targets",
       "$1,000 setup, refunded under 5 held meetings",
       "Buy the engine at day 45 for $3,000",
     ],

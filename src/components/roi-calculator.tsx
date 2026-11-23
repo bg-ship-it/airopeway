@@ -105,7 +105,7 @@ export function RoiCalculator() {
             ))}
           </div>
           <p className="mt-2 text-xs text-ink-faint">
-            Rather pay only for results? The <Link href="/results-as-a-service" className="text-accent hover:underline">RaaS pilot</Link> is $250 per held meeting, $300 for mid-market.
+            Rather pay only for results? The <Link href="/results-as-a-service" className="text-accent hover:underline">RaaS pilot</Link> is $250 per held meeting, $350 for mid-market.
           </p>
         </div>
 

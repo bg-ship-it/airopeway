@@ -10,7 +10,7 @@
 - Also: 18 AI systems including Voice AI, AI content engines, and ops automation: https://www.airopeway.com/systems
 
 ## Pricing (USD)
-- Results as a Service (RaaS): 45-day pilot, $1,000 setup refunded in full if fewer than five meetings are held, then $250 per held meeting ($300 for mid-market targets; enterprise priced on an AI GTM strategy call). The engine runs in AI Ropeway's accounts during the pilot; buy it for $3,000 at day 45 or move to Partnership. Details: https://www.airopeway.com/results-as-a-service
+- Results as a Service (RaaS): 45-day pilot, $1,000 setup refunded in full if fewer than five meetings are held, then $250 per held meeting ($350 for mid-market targets; enterprise priced on an AI GTM strategy call). The engine runs in AI Ropeway's accounts during the pilot; buy it for $3,000 at day 45 or move to Partnership. Details: https://www.airopeway.com/results-as-a-service
 - AI GTM Sprint: $3,000 one-time, no term — 1 AI SDR engine built and deployed into the client's accounts in 14 days, full system handoff, 3 months bug-fix support.
 - GTM Partnership: $2,500/month, month to month — dedicated AI GTM engineer, one new agent every month, weekly optimization cycles.
 - Full Stack & Portfolio: custom, from $4,000/month, scoped on the audit — all 8 agents in production, or one engine per company across a fund or multi-brand group; per-meeting pricing available on top of the base; Voice AI via AI Placers.
@@ -45,7 +45,7 @@ Last reviewed: 2026-10-14. Targets last reviewed by AI Ropeway: 2026-09-14.
 ### Results as a Service (RaaS) — $250 per held meeting
 
 45-day pilot. $1,000 setup, refunded in full if the pilot books fewer than five held
-meetings. $250 per held meeting, $300 for mid-market targets, enterprise priced on an
+meetings. $250 per held meeting, $350 for mid-market targets, enterprise priced on an
 AI GTM strategy call. A held meeting is one the prospect attends with a buyer inside
 the ICP agreed in writing; poor-fit meetings flagged within 5 business days are not
 billed. The engine runs in AI Ropeway's accounts during the pilot.
@@ -288,7 +288,7 @@ An AI GTM engine is a system of AI agents that automate go-to-market activities 
 SaaS tools are rented platforms you pay for monthly and configure yourself. An AI GTM engine is a custom system built for your specific ICP and shipped into your own repo and accounts. You get full access; there are no per-seat fees; and tools like Clay can run as a data layer inside the engine.
 
 **How much does an AI GTM engine cost?**
-AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($300 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership. Every engagement starts with a free 60-minute audit.
+AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($350 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership. Every engagement starts with a free 60-minute audit.
 
 **Who needs one?**
 B2B SaaS and services founders at roughly $1M–$20M ARR running founder-led sales who want 20–60 qualified meetings a month without hiring a team of SDRs.
@@ -310,7 +310,7 @@ They target the same outcome — automated outbound that books meetings — with
 Ownership and fit. 11x is a rented platform; AI Ropeway is a bespoke engine built for your ICP, running in your accounts, with best-of-breed tools as data layers inside it — and you keep the code if you leave.
 
 **Which is more affordable?**
-11x is a subscription — check their site for current pricing. AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($300 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership. Compare against a hire in the ROI calculator.
+11x is a subscription — check their site for current pricing. AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($350 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership. Compare against a hire in the ROI calculator.
 
 **When should I choose 11x?**
 If you want a managed, all-in-one AI SDR platform and minimal build, 11x is a strong option. If you want to own the system and tailor it to your ICP, pick the engine.
@@ -493,7 +493,7 @@ They solve the same job — booking meetings from outbound — but with opposite
 Ownership and fit. With AiSDR you rent a general platform and lose access when you stop paying. With AI Ropeway the engine is built around your specific ICP and signals, runs in your accounts, and keeps running whether or not you renew.
 
 **Which is cheaper?**
-AiSDR is a monthly subscription — check their pricing page for current tiers. AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($300 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership. Use the ROI calculator to compare against your numbers.
+AiSDR is a monthly subscription — check their pricing page for current tiers. AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($350 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership. Use the ROI calculator to compare against your numbers.
 
 **When should I pick AiSDR?**
 If you want plug-and-play SaaS today, a light lift, and you are comfortable renting the workflow, AiSDR can get you sending fast. If you want to own the system and tailor it to your ICP, pick the engine.
@@ -513,7 +513,7 @@ Same job, opposite model. Artisan's Ava is a subscription AI BDR you manage insi
 Artisan is an all-in-one AI BDR product. AI Ropeway is a bespoke engine built for your ICP, running in your accounts, using best-of-breed tools as data layers inside it — and you keep the code if you ever leave.
 
 **Which costs less?**
-Artisan is a subscription — check their site for current tiers. AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($300 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership. Compare against a hire in the ROI calculator.
+Artisan is a subscription — check their site for current tiers. AI Ropeway starts with Results as a Service: a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250 per held meeting ($350 for mid-market targets). Teams that want to own and run the engine from day one take the $3,000 Sprint or the $2,500/month Partnership. Compare against a hire in the ROI calculator.
 
 **When is Artisan the better call?**
 If you want a single all-in-one AI BDR product with a managed UI and minimal setup, Artisan is a strong pick. If you want to own and shape the system around your ICP, pick the engine.
