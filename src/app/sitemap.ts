@@ -99,7 +99,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     )
     .map((p) => ({
       url: `${SITE_URL}/blog/${p.slug}`,
-      lastModified: p.publishedAt ? new Date(p.publishedAt) : now,
+      // Last edit, not first publish: a price change in a post is what should
+      // prompt Google to recrawl it.
+      lastModified: new Date(p.updatedAt ?? p.publishedAt ?? now),
       changeFrequency: "monthly",
       priority: 0.6,
     }));
