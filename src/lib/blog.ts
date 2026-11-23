@@ -6,6 +6,9 @@ export type BlogPost = {
   slug: string;
   excerpt: string;
   publishedAt: string | null;
+  /** Sanity's last-edit timestamp: sitemap lastmod and schema.org dateModified.
+   *  Optional because static-posts.ts entries have none. */
+  updatedAt?: string | null;
   imageRef: string | null;
   authorName: string | null;
   categories: string[];
@@ -14,8 +17,6 @@ export type BlogPost = {
 export type BlogPostFull = BlogPost & {
   seoTitle: string | null;
   seoDescription: string | null;
-  /** Sanity's last-edit timestamp, emitted as schema.org dateModified. */
-  updatedAt: string | null;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body: any[];
 };
@@ -26,6 +27,7 @@ const POST_FIELDS = `
   "slug": slug.current,
   excerpt,
   publishedAt,
+  "updatedAt": _updatedAt,
   "imageRef": mainImage.asset->_id,
   "authorName": author->name,
   "categories": coalesce(categories[]->title, [])
@@ -50,7 +52,6 @@ export async function getPost(slug: string): Promise<BlogPostFull | null> {
       ${POST_FIELDS},
       seoTitle,
       seoDescription,
-      "updatedAt": _updatedAt,
       body
     }`,
     { slug }
