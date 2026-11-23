@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "AI Ropeway — AI GTM engines that book meetings on autopilot. Full access to everything we ship.";
+  "AI Ropeway — AI GTM engines that book meetings. Results as a Service: $250 per held meeting, setup refunded under 5 held meetings.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -61,21 +61,21 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            For B2B SaaS Founders
+            Results as a Service
           </div>
           <div
             style={{
-              fontSize: "68px",
+              fontSize: "60px",
               fontWeight: 700,
               color: "#1a1813",
               lineHeight: 1.05,
               letterSpacing: "-2px",
             }}
           >
-            AI GTM engines that book meetings on autopilot.
+            AI GTM engines that book meetings. Pay only for the ones that happen.
           </div>
           <div style={{ fontSize: "30px", color: "#433f38", marginTop: "6px" }}>
-            8 agents. Live in your stack in 14 days. Full access from day one.
+            $250 per held meeting. $1,000 setup, refunded under 5 held meetings.
           </div>
         </div>
 

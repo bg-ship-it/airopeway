@@ -205,7 +205,7 @@ export default function Page() {
             <Link href="/results-as-a-service" className="text-accent hover:underline">
               Results as a Service
             </Link>
-            : a 45-day pilot with a $1,000 setup fee, refunded if fewer than three meetings are held, then $200
+            : a 45-day pilot with a $1,000 setup fee, refunded if fewer than five meetings are held, then $250
             for each US meeting that actually happens ($300 for mid-market targets). You pay for meetings, not
             for the experiment. At day 45 you buy the engine for $3,000 or move to Partnership.
           </p>

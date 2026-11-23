@@ -11,23 +11,23 @@ import { tiers } from "@/lib/pricing";
 const SITE_URL = "https://www.airopeway.com";
 
 export const metadata: Metadata = {
-  title: "Pricing · $200 per held meeting",
+  title: "Pricing · $250 per held meeting",
   description:
-    "AI GTM pricing in full. Results as a Service: $200 per held meeting, setup refunded under three. Or own the engine: Sprint $3k once, Partnership $2.5k/mo.",
+    "AI GTM pricing in full. Results as a Service: $250 per held meeting, setup refunded under five. Or own the engine: Sprint $3k once, Partnership $2.5k/mo.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     images: ["/opengraph-image"],
     type: "website",
     url: `${SITE_URL}/pricing`,
     siteName: "AI Ropeway",
-    title: "Pricing | Results as a Service from $200 a meeting | AI Ropeway",
+    title: "Pricing | Results as a Service from $250 a meeting | AI Ropeway",
     description:
       "Pay per held meeting with Results as a Service, or own the engine: Sprint $3k, Partnership $2.5k/mo. No term.",
   },
   twitter: {
     images: ["/opengraph-image"],
     card: "summary_large_image",
-    title: "Pricing | Results as a Service from $200 a meeting | AI Ropeway",
+    title: "Pricing | Results as a Service from $250 a meeting | AI Ropeway",
     description:
       "Pay per held meeting with Results as a Service, or own the engine: Sprint $3k, Partnership $2.5k/mo. No term.",
   },
@@ -42,7 +42,7 @@ const benchmarks: [string, string, string][] = [
   ["Reply to held meeting", "20–30%", "35–50%"],
   ["Show rate", "50–60%", "65–75%"],
   ["Time to first held meeting", "~5 months for a new SDR hire", "Day 18–25 from kickoff"],
-  ["Cost per held meeting", "$900–$1,500 in-house SDR", "$200 on RaaS · $170–$310 on Partnership"],
+  ["Cost per held meeting", "$900–$1,500 in-house SDR", "$250 on RaaS · $170–$310 on Partnership"],
 ];
 
 const addOns: [string, string, string][] = [
@@ -148,9 +148,9 @@ export default function PricingPage() {
             <p className="mx-auto mt-5 max-w-2xl text-lg text-ink-soft">
               Start with Results as a Service:{" "}
               <strong className="font-semibold text-ink">
-                $200 for each meeting a prospect attends
+                $250 for each meeting a prospect attends
               </strong>
-              , setup refunded if we book fewer than three. Once it works, own
+              , setup refunded if we book fewer than five. Once it works, own
               the engine with a Sprint, or have us run it on Partnership. Every
               price is on this page.
             </p>
@@ -297,7 +297,7 @@ export default function PricingPage() {
         <p className="mx-auto mt-8 max-w-2xl px-5 text-center text-xs text-ink-faint">
           Every engagement starts with a free 60-minute AI GTM audit and live
           demo on your ICP data. Final scope set in the audit. No setup fee
-          except the RaaS one, and that comes back under three held meetings.
+          except the RaaS one, and that comes back under five held meetings.
           No minimum term. Targets last reviewed {TARGETS_REVIEWED}.
         </p>
         <p className="mx-auto mt-4 max-w-3xl px-5 text-center text-sm text-ink-soft">

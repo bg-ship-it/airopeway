@@ -7,22 +7,22 @@ import { Reveal } from "@/components/reveal";
 import { BOOK_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Results as a Service (RaaS) · $200 a meeting",
+  title: "Results as a Service (RaaS) · $250 a meeting",
   description:
-    "Results as a Service for B2B outbound: $1,000 setup, refunded under three held meetings, then $200 per meeting that takes place. 45 days, then buy the engine.",
+    "Results as a Service for B2B outbound: $1,000 setup, refunded under five held meetings, then $250 per meeting that takes place. 45 days, then buy the engine.",
   alternates: { canonical: "/results-as-a-service" },
   openGraph: {
     images: ["/opengraph-image"],
     url: "https://www.airopeway.com/results-as-a-service",
     title: "Results as a Service (RaaS) | AI Ropeway",
     description:
-      "Pay for meetings that happen, not hours, seats or software. $200 per held meeting, setup refunded under three.",
+      "Pay for meetings that happen, not hours, seats or software. $250 per held meeting, setup refunded under five.",
   },
 };
 
 const SETUP = 1000;
-const PER_MEETING = 200;
-const FLOOR = 3;
+const PER_MEETING = 250;
+const FLOOR = 5;
 
 const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
 
@@ -30,7 +30,7 @@ const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
 const bill = (held: number) =>
   held < FLOOR ? held * PER_MEETING : SETUP + held * PER_MEETING;
 
-const scenarios = [0, 2, 3, 6, 10, 15];
+const scenarios = [0, 2, 4, 5, 10, 15];
 
 const included = [
   "ICP, signals and target list built with you",
@@ -97,7 +97,7 @@ const pilotFaqs: [string, string][] = [
     "A pricing model where you pay for the result, not the tool or the hours. Here the result is a held sales meeting with a buyer who fits the ICP you agreed in writing. SaaS charges for access and agencies charge for time; RaaS charges when the outcome happens.",
   ],
   [
-    "What happens if you book fewer than three meetings?",
+    "What happens if you book fewer than five meetings?",
     `The ${usd(SETUP)} setup is refunded in full within 7 days of day 45. You pay ${usd(PER_MEETING)} only for the meetings that took place.`,
   ],
   [
@@ -152,7 +152,7 @@ export default function ResultsAsAServicePage() {
               Outbound sold as a result, not a subscription. A 45-day RaaS
               pilot: {usd(SETUP)} to set up,{" "}
               <strong className="font-semibold text-ink">
-                refunded if it produces fewer than three held meetings
+                refunded if it produces fewer than five held meetings
               </strong>
               , then {usd(PER_MEETING)} for each meeting a prospect actually
               attends.
@@ -166,7 +166,7 @@ export default function ResultsAsAServicePage() {
               </Cta>
             </div>
             <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-ink-soft">
-              {["Setup refunded under 3 meetings", "$300 for mid-market", "Buy the engine at day 45"].map((t) => (
+              {["Setup refunded under 5 meetings", "$300 for mid-market", "Buy the engine at day 45"].map((t) => (
                 <li key={t} className="flex items-center gap-2">
                   <Check className="size-4 text-teal" />
                   {t}
