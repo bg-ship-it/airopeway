@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { systemPages, industryPages } from "@/lib/catalog";
 import { getAllPosts } from "@/lib/blog";
 import { mergedPostSlugs } from "@/lib/merged-posts";
+import staticPostDates from "@/lib/static-post-dates.json";
 
 const SITE_URL = "https://www.airopeway.com";
 
@@ -38,7 +39,8 @@ const STATIC_BLOG_POSTS = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
-  const lastModBlog = new Date("2026-06-27");
+  // Each code-route post's own MODIFIED date, via `npm run gen:llms-full`.
+  const postDates: Record<string, string> = staticPostDates;
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "weekly", priority: 1 },
@@ -61,7 +63,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticBlogUrls: MetadataRoute.Sitemap = STATIC_BLOG_POSTS.map((slug) => ({
     url: `${SITE_URL}/blog/${slug}`,
-    lastModified: lastModBlog,
+    lastModified: new Date(postDates[slug] ?? "2026-06-27"),
     changeFrequency: "monthly",
     priority: slug === "ai-gtm-engines-complete-guide" ? 0.9 : 0.7,
   }));

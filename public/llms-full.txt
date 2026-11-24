@@ -31,7 +31,7 @@ B2B SaaS and services founders at $1M-$20M ARR running founder-led sales with sm
 
 Full text of airopeway.com's key pages in one document: each page's URL, summary,
 and every question-and-answer pair published on it. 113 answered questions
-across 26 pages. Last generated 2026-11-23.
+across 26 pages. Last generated 2026-11-24.
 The short index is at https://www.airopeway.com/llms.txt.
 
 ## Pricing, in full
@@ -299,7 +299,7 @@ B2B SaaS and services founders at roughly $1M–$20M ARR running founder-led sal
 
 URL: https://www.airopeway.com/blog/11x-alternative
 Published: 2026-07-11
-Updated: 2026-09-14
+Updated: 2026-11-24
 
 Honest comparison of 11x (Alice) and a custom AI GTM engine. One is a subscription; the other ships into your stack in 14 days. When each wins.
 
@@ -319,6 +319,7 @@ If you want a managed, all-in-one AI SDR platform and minimal build, 11x is a st
 
 URL: https://www.airopeway.com/blog/account-mapper-ai-account-enrichment
 Published: 2026-06-25
+Updated: 2026-07-19
 
 How the Account Mapper agent builds ICP-scored profiles automatically — firmographics, tech stack, headcount, recent news — so outreach lands.
 
@@ -376,6 +377,7 @@ Starting with a 'strategy phase' that takes 6 months and produces a deck. By the
 
 URL: https://www.airopeway.com/blog/ai-gtm-engines-complete-guide
 Published: 2026-06-25
+Updated: 2026-10-23
 
 What an AI GTM engine is, the 8 agents that build one, how to ship in 14 days, and the build-vs-buy economics for B2B SaaS founders.
 
@@ -401,6 +403,7 @@ Most B2B SaaS founders don't. Our CRM Auto-Pilot agent (one of the 8) is purpose
 
 URL: https://www.airopeway.com/blog/ai-gtm-strategy-pipeline
 Published: 2026-06-27
+Updated: 2026-10-27
 
 Most AI GTM strategies are decks disguised as execution. The founder's playbook for signals, enrichment, outreach, and measurement that books meetings.
 
@@ -423,7 +426,7 @@ Even better. Your SDRs move from manual prospecting to handling the warm convers
 
 URL: https://www.airopeway.com/blog/ai-ropeway-vs-apollo
 Published: 2026-06-25
-Updated: 2026-09-14
+Updated: 2026-11-24
 
 Apollo is the best B2B data platform for SDR teams. AI Ropeway is the GTM engine that uses Apollo as a data source. Where each one actually wins.
 
@@ -443,7 +446,7 @@ Apollo: $59–$149/seat/mo for the SaaS, $0.10–$0.40 per credit for data. AI R
 
 URL: https://www.airopeway.com/blog/ai-ropeway-vs-clay
 Published: 2026-06-25
-Updated: 2026-09-14
+Updated: 2026-11-24
 
 Clay is the best data layer for waterfall enrichment. AI Ropeway is the engine you build on top of it. When you need both, and when you don't.
 
@@ -463,6 +466,7 @@ Clay alone, as of August 2026: Launch $185/month or Growth $495/month self-serve
 
 URL: https://www.airopeway.com/blog/ai-sales-automation-revops-2026
 Published: 2026-06-27
+Updated: 2026-10-24
 
 Most AI sales tools automate the wrong things. What actually moves pipeline in 2026: signal-based outbound, reply triage, and CRM automation.
 
@@ -482,7 +486,7 @@ Apollo and Outreach are point tools — data provider and sequencer respectively
 
 URL: https://www.airopeway.com/blog/aisdr-alternative
 Published: 2026-07-11
-Updated: 2026-09-14
+Updated: 2026-11-24
 
 Honest comparison of AiSDR and a custom AI GTM engine. AiSDR is a subscription; AI Ropeway ships an owned engine in 14 days. When each wins.
 
@@ -502,7 +506,7 @@ If you want plug-and-play SaaS today, a light lift, and you are comfortable rent
 
 URL: https://www.airopeway.com/blog/artisan-alternative
 Published: 2026-07-11
-Updated: 2026-09-14
+Updated: 2026-11-24
 
 Honest comparison of Artisan (Ava) and a custom AI GTM engine. Artisan is a subscription AI BDR; AI Ropeway ships an engine you own. When each wins.
 
@@ -566,6 +570,7 @@ If you're deploying through AI Ropeway, the management layer is included in the 
 
 URL: https://www.airopeway.com/blog/inbox-operator-cold-email-deliverability
 Published: 2026-06-25
+Updated: 2026-07-19
 
 How the Inbox Operator agent handles domain warmup, inbox rotation, and deliverability monitoring — the plumbing that decides if you reach inbox.
 
@@ -585,6 +590,7 @@ Outlook has stricter authentication signals than Gmail (SPF/DKIM/DMARC enforceme
 
 URL: https://www.airopeway.com/blog/intent-watcher-ai-buying-signals
 Published: 2026-06-25
+Updated: 2026-07-19
 
 How the Intent Watcher agent surfaces real buying signals from LinkedIn, job posts, funding rounds, and review sites — so outbound stops going cold.
 
@@ -642,6 +648,7 @@ Yes. Misclassifications are 1-click correctable and feed back into the model. Mo
 
 URL: https://www.airopeway.com/blog/revengineer-alternative
 Published: 2026-09-14
+Updated: 2026-11-24
 
 RevEngineer.ai sells a PE-backed AI growth arm from $4,500/month plus setup on 3 to 12 month terms. AI Ropeway ships the engine into your repo for $3,000.
 
@@ -664,6 +671,7 @@ If you are an international founder entering the US, or a fund that wants one ve
 
 URL: https://www.airopeway.com/blog/revenue-pulse-pipeline-analytics
 Published: 2026-06-25
+Updated: 2026-07-19
 
 How the Revenue Pulse agent measures pipeline velocity, agent performance, cost-per-meeting, and LTV — so you know which AI GTM agent earned its keep this week.
 
@@ -683,6 +691,7 @@ Revenue Pulse is purpose-built for the 8-agent AI GTM engine. The metric definit
 
 URL: https://www.airopeway.com/blog/selling-com-alternative
 Published: 2026-09-14
+Updated: 2026-11-24
 
 Selling.com sells a 386M-contact database with sequences and a dialer, demo-gated and billed annually. AI Ropeway builds the engine that runs on your data.
 
@@ -705,6 +714,7 @@ If you have an SDR team, your bottleneck is contact coverage and dial volume, an
 
 URL: https://www.airopeway.com/blog/sequence-composer-ai-personalized-outreach
 Published: 2026-06-25
+Updated: 2026-07-19
 
 How the Sequence Composer agent writes research-grounded cold outreach from the actual signal that fired — not the template 50,000 reps also sent.
 

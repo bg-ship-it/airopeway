@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "How the Account Mapper agent builds ICP-scored profiles automatically — firmographics, tech stack, headcount, recent news — so outreach lands.";
 const PUBLISHED = "2026-06-25T02:00:00.000Z";
-const MODIFIED = "2026-06-25T02:00:00.000Z";
+const MODIFIED = "2026-07-19T00:00:00.000Z";
 
 const sources: Source[] = [
   {

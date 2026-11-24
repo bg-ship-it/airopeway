@@ -7,7 +7,9 @@
 // MODIFIED dates, and its `faqs` array. Page bodies are JSX, so they are not
 // included -- a page with no FAQs contributes its summary only.
 //
-// Run after editing any page's FAQs, metadata, or public/pricing.md:
+// Also writes src/lib/static-post-dates.json (sitemap lastmod for code-route posts).
+//
+// Run after editing any page's FAQs, metadata, MODIFIED date, or public/pricing.md:
 //   npm run gen:llms-full
 
 import { readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
@@ -145,4 +147,14 @@ const doc = [
 ].join("\n");
 
 writeFileSync(OUT, doc.replace(/\n{3,}/g, "\n\n"));
+
+// Code-route blog posts have no CMS timestamp, so the sitemap reads their
+// lastmod from here: each page's MODIFIED (falling back to PUBLISHED), the same
+// date its JSON-LD dateModified carries. Bump MODIFIED when you edit a post's
+// content, then run this script.
+const DATES = "src/lib/static-post-dates.json";
+const dates = Object.fromEntries(
+  blog.filter((r) => r.modified || r.published).map((r) => [r.route.replace("/blog/", ""), (r.modified ?? r.published).slice(0, 10)]),
+);
+writeFileSync(DATES, JSON.stringify(dates, null, 2) + "\n");
 console.log(`wrote ${OUT}: ${rows.filter((r) => r.faqs.length).length} pages, ${rows.reduce((a, r) => a + r.faqs.length, 0)} answered questions`);

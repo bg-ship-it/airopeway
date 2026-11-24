@@ -10,7 +10,7 @@ const TITLE = "The complete guide to AI GTM engines (2026)";
 const DESCRIPTION =
   "What an AI GTM engine is, the 8 agents that build one, how to ship in 14 days, and the build-vs-buy economics for B2B SaaS founders.";
 const PUBLISHED = "2026-06-25T00:00:00.000Z";
-const MODIFIED = "2026-06-25T00:00:00.000Z";
+const MODIFIED = "2026-10-23T00:00:00.000Z";
 
 const sources: Source[] = [
   {

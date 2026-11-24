@@ -12,7 +12,7 @@ const TITLE =
 const DESCRIPTION =
   "Honest comparison of Artisan (Ava) and a custom AI GTM engine. Artisan is a subscription AI BDR; AI Ropeway ships an engine you own. When each wins.";
 const PUBLISHED = "2026-07-11T09:00:00.000Z";
-const MODIFIED = "2026-09-14T00:00:00.000Z";
+const MODIFIED = "2026-11-24T00:00:00.000Z";
 const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [

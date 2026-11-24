@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "Most AI GTM strategies are decks disguised as execution. The founder's playbook for signals, enrichment, outreach, and measurement that books meetings.";
 const PUBLISHED = "2026-06-27T09:00:00.000Z";
-const MODIFIED = "2026-06-27T09:00:00.000Z";
+const MODIFIED = "2026-10-27T00:00:00.000Z";
 
 const sources: Source[] = [
   {
