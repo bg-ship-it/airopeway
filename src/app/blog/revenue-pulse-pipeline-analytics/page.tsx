@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "How the Revenue Pulse agent measures pipeline velocity, agent performance, cost-per-meeting, and LTV — so you know which AI GTM agent earned its keep this week.";
 const PUBLISHED = "2026-06-25T08:00:00.000Z";
-const MODIFIED = "2026-06-25T08:00:00.000Z";
+const MODIFIED = "2026-07-19T00:00:00.000Z";
 
 const sources: Source[] = [
   {

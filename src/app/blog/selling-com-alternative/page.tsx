@@ -12,7 +12,7 @@ const TITLE =
 const DESCRIPTION =
   "Selling.com sells a 386M-contact database with sequences and a dialer, demo-gated and billed annually. AI Ropeway builds the engine that runs on your data.";
 const PUBLISHED = "2026-09-14T09:00:00.000Z";
-const MODIFIED = "2026-09-14T09:00:00.000Z";
+const MODIFIED = "2026-11-24T00:00:00.000Z";
 const PRICING_CHECKED = "14 September 2026";
 
 const sources: Source[] = [

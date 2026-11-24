@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "How the Sequence Composer agent writes research-grounded cold outreach from the actual signal that fired — not the template 50,000 reps also sent.";
 const PUBLISHED = "2026-06-25T05:00:00.000Z";
-const MODIFIED = "2026-06-25T05:00:00.000Z";
+const MODIFIED = "2026-07-19T00:00:00.000Z";
 
 const sources: Source[] = [
   {

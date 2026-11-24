@@ -12,7 +12,7 @@ const TITLE =
 const DESCRIPTION =
   "RevEngineer.ai sells a PE-backed AI growth arm from $4,500/month plus setup on 3 to 12 month terms. AI Ropeway ships the engine into your repo for $3,000.";
 const PUBLISHED = "2026-09-14T09:00:00.000Z";
-const MODIFIED = "2026-09-14T09:00:00.000Z";
+const MODIFIED = "2026-11-24T00:00:00.000Z";
 const PRICING_CHECKED = "12 September 2026";
 
 const sources: Source[] = [

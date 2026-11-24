@@ -12,7 +12,7 @@ const TITLE =
 const DESCRIPTION =
   "Apollo is the best B2B data platform for SDR teams. AI Ropeway is the GTM engine that uses Apollo as a data source. Where each one actually wins.";
 const PUBLISHED = "2026-06-25T10:00:00.000Z";
-const MODIFIED = "2026-09-14T00:00:00.000Z";
+const MODIFIED = "2026-11-24T00:00:00.000Z";
 const PRICING_CHECKED = "25 August 2026";
 
 const sources: Source[] = [

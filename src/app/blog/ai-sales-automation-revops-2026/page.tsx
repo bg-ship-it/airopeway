@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "Most AI sales tools automate the wrong things. What actually moves pipeline in 2026: signal-based outbound, reply triage, and CRM automation.";
 const PUBLISHED = "2026-06-27T09:00:00.000Z";
-const MODIFIED = "2026-06-27T09:00:00.000Z";
+const MODIFIED = "2026-10-24T00:00:00.000Z";
 
 const sources: Source[] = [
   {

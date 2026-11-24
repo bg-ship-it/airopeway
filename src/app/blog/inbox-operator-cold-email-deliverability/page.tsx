@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "How the Inbox Operator agent handles domain warmup, inbox rotation, and deliverability monitoring — the plumbing that decides if you reach inbox.";
 const PUBLISHED = "2026-06-25T03:00:00.000Z";
-const MODIFIED = "2026-06-25T03:00:00.000Z";
+const MODIFIED = "2026-07-19T00:00:00.000Z";
 
 const sources: Source[] = [
   {

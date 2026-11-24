@@ -11,7 +11,7 @@ const TITLE =
 const DESCRIPTION =
   "How the Intent Watcher agent surfaces real buying signals from LinkedIn, job posts, funding rounds, and review sites — so outbound stops going cold.";
 const PUBLISHED = "2026-06-25T01:00:00.000Z";
-const MODIFIED = "2026-06-25T01:00:00.000Z";
+const MODIFIED = "2026-07-19T00:00:00.000Z";
 
 const sources: Source[] = [
   {
