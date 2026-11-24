@@ -69,7 +69,7 @@ export default function Page() {
         <section className="mt-14 space-y-4 text-[17px] leading-[1.75] text-ink-soft">
           <h2 className="font-display text-2xl font-bold text-ink">How the numbers work</h2>
           <p>
-            The in-house figure is fully loaded: base salary, tooling, management overhead, and ramp time before an SDR hits quota. Industry benchmarks put this near $96,000 per rep per year in the US. The AI Ropeway figure is the real engagement cost — a $3,000 one-time Sprint, the Sprint plus a $2,500/month partnership, or Full Stack from $4,000/month. To pay only for results first, the <Link href="/results-as-a-service" className="text-accent hover:underline">Results as a Service pilot</Link> is $250 per held meeting ($300 for mid-market). The cost-per-meeting rows use the published targets on the pricing page.
+            The in-house figure is fully loaded: base salary, tooling, management overhead, and ramp time before an SDR hits quota. Industry benchmarks put this near $96,000 per rep per year in the US. The AI Ropeway figure is the real engagement cost — a $3,000 one-time Sprint, the Sprint plus a $2,500/month partnership, or Full Stack from $4,000/month. To pay only for results first, the <Link href="/results-as-a-service" className="text-accent hover:underline">Results as a Service pilot</Link> is $250 per held meeting ($350 for mid-market). The cost-per-meeting rows use the published targets on the pricing page.
           </p>
           <p>
             The difference most calculators miss: with an SDR hire you rent the output and lose it the day they leave. With an AI GTM engine, the full system lives in <em>your</em> stack — it keeps running whether or not you keep working with us.
